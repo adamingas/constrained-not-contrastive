@@ -1,0 +1,12 @@
+{
+  "selection": "First case, longest state, and longest action in each category; deduplicate IDs. Selected without inspecting correctness.",
+  "case_ids": [
+    "multiple_0",
+    "multiple_15",
+    "live_multiple_0-0-0",
+    "live_multiple_26-6-1",
+    "live_multiple_976-215-0"
+  ],
+  "variant": "full_schema",
+  "check": "Compare saved MLX-backbone predictions with Transformers BF16 MPS using the same unmodified upstream Engine and checkpoint."
+}

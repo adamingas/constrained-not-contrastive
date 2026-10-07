@@ -1,0 +1,15 @@
+{
+  "n": 40,
+  "layout": "passage, question, then options in user message",
+  "correct": {
+    "qwen_full": 37,
+    "qwen_no_context": 27
+  },
+  "full_accuracy": 0.925,
+  "context_gain": 0.25,
+  "rule": {
+    "minimum_full_accuracy": 0.7,
+    "minimum_context_gain": 0.15
+  },
+  "qualified": true
+}

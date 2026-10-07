@@ -1,0 +1,10 @@
+{
+  "bfcl": {
+    "base": "Choose the available function that best matches the user request. Choose NO_TOOL if no function can fulfill it.",
+    "tuned": "Select a tool by its documented capability, not just a similar name or keyword. Check the requested operation, domain, parameter meanings, and allowed values. Do not assume a tool supports operations absent from its documentation. Choose NO_TOOL when the available tools cannot fulfill the request. Pick a suitable function when one exists; do not abstain merely because optional arguments are unspecified.\nExamples: A weather-query tool cannot book a flight: choose NO_TOOL for flight booking. A stock-price lookup cannot execute a stock purchase: choose NO_TOOL for buying shares. Between a hotel-search tool and a hotel-cancellation tool, choose cancellation for cancelling a reservation. Between food-edit and drink-edit tools, choose drink-edit for changing a latte."
+  },
+  "wiki": {
+    "base": "Choose a linked Wikipedia article that helps reach the target article.",
+    "tuned": "Navigate to the target Wikipedia article using only the listed outgoing links. Select the target itself when listed. Otherwise choose the best bridge: a directly related concept, relevant field, geographic region, or broad hub likely to contain a link toward the target. Prefer a useful bridge over superficial word overlap. Avoid returning to an article already visited when a plausible unvisited route exists. You do not know future link lists, so use your factual knowledge of the relationships between topics.\nExamples: to reach a marine animal, a biology or ocean article may be a better bridge than an unrelated location. To reach a country's capital, its country is often a good bridge. To reach a scientist, their scientific field may lead there."
+  }
+}

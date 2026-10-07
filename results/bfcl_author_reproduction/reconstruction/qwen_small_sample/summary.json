@@ -1,0 +1,42 @@
+{
+  "results": [
+    {
+      "category": "multiple",
+      "variant": "full_schema",
+      "n": 10,
+      "qwen_correct": 10,
+      "clm_correct": 6,
+      "qwen_only_correct": 4,
+      "clm_only_correct": 0
+    },
+    {
+      "category": "multiple",
+      "variant": "name_description",
+      "n": 10,
+      "qwen_correct": 10,
+      "clm_correct": 9,
+      "qwen_only_correct": 1,
+      "clm_only_correct": 0
+    },
+    {
+      "category": "live_multiple",
+      "variant": "full_schema",
+      "n": 10,
+      "qwen_correct": 10,
+      "clm_correct": 5,
+      "qwen_only_correct": 5,
+      "clm_only_correct": 0
+    },
+    {
+      "category": "live_multiple",
+      "variant": "name_description",
+      "n": 10,
+      "qwen_correct": 9,
+      "clm_correct": 7,
+      "qwen_only_correct": 2,
+      "clm_only_correct": 0
+    }
+  ],
+  "unique_requests": 20,
+  "scope": "Small exploratory sample; accuracy only; function names only."
+}

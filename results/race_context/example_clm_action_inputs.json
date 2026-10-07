@@ -1,0 +1,26 @@
+[
+  {
+    "letter": "A",
+    "internal_key": "2",
+    "text": "The students must get to school on time.",
+    "tokens": 9
+  },
+  {
+    "letter": "B",
+    "internal_key": "3",
+    "text": "The students should keep their hair black.",
+    "tokens": 8
+  },
+  {
+    "letter": "C",
+    "internal_key": "0",
+    "text": "The students can have part-time jobs.",
+    "tokens": 8
+  },
+  {
+    "letter": "D",
+    "internal_key": "1",
+    "text": "The students are allowed to wear their own clothes.",
+    "tokens": 10
+  }
+]

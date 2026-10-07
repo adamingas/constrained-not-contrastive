@@ -1,0 +1,16 @@
+{"backbone": "Qwen/Qwen3-8B", "dtype": "mlx.core.bfloat16", "head_parameters_total": 18887680, "head_config": {"model": "Qwen/Qwen3-8B", "hidden_size": 4096, "projection_dim": 512, "width": 1536, "depth": 3, "activation": "gelu", "layernorm": true, "residual": false}, "head_scale": 100.0, "head_port_max_abs_error": {"state": 3.8743019104003906e-07, "action": 3.8743019104003906e-07}, "upstream_commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7", "packages": {"mlx": "0.32.3", "mlx-lm": "0.32.0", "torch": "2.14.1", "transformers": "5.18.0"}}
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9213.16it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /Users/ext-adamos.spanashis/projects/clm/models/qwen3-8b
+Key            | Status     |  | 
+---------------+------------+--+-
+lm_head.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+{'text': 'Customer: my invoice was charged twice and nobody answers the phone!\n\nWhich team should handle this?', 'cosine': 0.9998896718025208, 'max_abs_error': 0.0037986934185028076}
+{'text': 'Charges, invoices, refunds', 'cosine': 0.9999855756759644, 'max_abs_error': 0.002996891736984253}
+{'text': 'Bugs and outages', 'cosine': 0.999980092048645, 'max_abs_error': 0.00244218111038208}
+{'text': 'Mario is on flat safe ground. The goal is to his right with no obstacles. Walking is preferred to jumping when safe.\n\nWhich action should Mario take to reach the goal safely?', 'cosine': 0.9999412298202515, 'max_abs_error': 0.002364613115787506}
+{'text': 'Jump up and move left', 'cosine': 0.9999786615371704, 'max_abs_error': 0.003720015287399292}
+{'text': 'Walk right', 'cosine': 0.9999666810035706, 'max_abs_error': 0.0043167173862457275}
+{'embedding_comparison': [{'text': 'Customer: my invoice was charged twice and nobody answers the phone!\n\nWhich team should handle this?', 'cosine': 0.9998896718025208, 'max_abs_error': 0.0037986934185028076}, {'text': 'Charges, invoices, refunds', 'cosine': 0.9999855756759644, 'max_abs_error': 0.002996891736984253}, {'text': 'Bugs and outages', 'cosine': 0.999980092048645, 'max_abs_error': 0.00244218111038208}, {'text': 'Mario is on flat safe ground. The goal is to his right with no obstacles. Walking is preferred to jumping when safe.\n\nWhich action should Mario take to reach the goal safely?', 'cosine': 0.9999412298202515, 'max_abs_error': 0.002364613115787506}, {'text': 'Jump up and move left', 'cosine': 0.9999786615371704, 'max_abs_error': 0.003720015287399292}, {'text': 'Walk right', 'cosine': 0.9999666810035706, 'max_abs_error': 0.0043167173862457275}], 'mlx_billing_probabilities': [[0.9879662394523621, 0.012033739127218723]], 'transformers_billing_probabilities': [[0.9882976412773132, 0.011702336370944977]]}

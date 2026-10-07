@@ -1,0 +1,21 @@
+{"completed": 25, "total": 500, "elapsed_seconds": 10.1, "last_qwen_cached_tokens": 29, "last_qwen_processed_tokens": 145}
+{"completed": 50, "total": 500, "elapsed_seconds": 20.3, "last_qwen_cached_tokens": 29, "last_qwen_processed_tokens": 124}
+{"completed": 75, "total": 500, "elapsed_seconds": 30.2, "last_qwen_cached_tokens": 29, "last_qwen_processed_tokens": 117}
+{"completed": 100, "total": 500, "elapsed_seconds": 41.8, "last_qwen_cached_tokens": 128, "last_qwen_processed_tokens": 52}
+{"completed": 125, "total": 500, "elapsed_seconds": 53.1, "last_qwen_cached_tokens": 169, "last_qwen_processed_tokens": 40}
+{"completed": 150, "total": 500, "elapsed_seconds": 68.8, "last_qwen_cached_tokens": 29, "last_qwen_processed_tokens": 140}
+{"completed": 175, "total": 500, "elapsed_seconds": 81.9, "last_qwen_cached_tokens": 311, "last_qwen_processed_tokens": 38}
+{"completed": 200, "total": 500, "elapsed_seconds": 90.6, "last_qwen_cached_tokens": 44, "last_qwen_processed_tokens": 206}
+{"completed": 225, "total": 500, "elapsed_seconds": 95.6, "last_qwen_cached_tokens": 133, "last_qwen_processed_tokens": 46}
+{"completed": 250, "total": 500, "elapsed_seconds": 102.6, "last_qwen_cached_tokens": 122, "last_qwen_processed_tokens": 59}
+{"completed": 275, "total": 500, "elapsed_seconds": 109.3, "last_qwen_cached_tokens": 196, "last_qwen_processed_tokens": 42}
+{"completed": 300, "total": 500, "elapsed_seconds": 115.1, "last_qwen_cached_tokens": 153, "last_qwen_processed_tokens": 71}
+{"completed": 325, "total": 500, "elapsed_seconds": 122.6, "last_qwen_cached_tokens": 29, "last_qwen_processed_tokens": 102}
+{"completed": 350, "total": 500, "elapsed_seconds": 127.5, "last_qwen_cached_tokens": 82, "last_qwen_processed_tokens": 49}
+{"completed": 375, "total": 500, "elapsed_seconds": 133.8, "last_qwen_cached_tokens": 110, "last_qwen_processed_tokens": 42}
+{"completed": 400, "total": 500, "elapsed_seconds": 141.7, "last_qwen_cached_tokens": 31, "last_qwen_processed_tokens": 100}
+{"completed": 425, "total": 500, "elapsed_seconds": 148.1, "last_qwen_cached_tokens": 114, "last_qwen_processed_tokens": 58}
+{"completed": 450, "total": 500, "elapsed_seconds": 155.2, "last_qwen_cached_tokens": 29, "last_qwen_processed_tokens": 175}
+{"completed": 475, "total": 500, "elapsed_seconds": 165.2, "last_qwen_cached_tokens": 34, "last_qwen_processed_tokens": 112}
+{"completed": 500, "total": 500, "elapsed_seconds": 176.0, "last_qwen_cached_tokens": 29, "last_qwen_processed_tokens": 128}
+COMPLETE: each model evaluated each of 500 requests once.

@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-10-03T01:02:03.259617+00:00",
+  "platform": "macOS-15.7.3-arm64-arm-64bit",
+  "processor": "Apple M4 Max",
+  "memory_bytes": 68719476736,
+  "hardware_model": "Mac16,5",
+  "inference": "single benchmark process, shared BF16 backbone, sequential stages; no remote inference or model training",
+  "model_loading_excluded": true,
+  "clm_cold_actions": "sequential embedding calls; not a batched serving benchmark"
+}

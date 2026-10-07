@@ -1,0 +1,83 @@
+{
+  "frozen_at_utc": "2026-10-03T11:58:30.277022+00:00",
+  "status": "best_effort_reconstruction_not_authors_exact_protocol",
+  "primary_variant": "full_schema",
+  "secondary_variant": "name_description",
+  "categories": {
+    "multiple": 200,
+    "live_multiple": 1053
+  },
+  "selection": "Every row in both complete public categories; no row filters or development search.",
+  "score": "Exact function-name match. No arguments generated or scored. Not an official BFCL aggregate.",
+  "candidate_set": "All original functions, in original order. No added abstention option.",
+  "out_of_scope": "Irrelevance, parallel calls, multi-turn and agentic BFCL categories require an additional decision/generation protocol not released by the authors.",
+  "instructions": "Which function should be called to fulfill this request?",
+  "state_format": "All original message contents with their role labels, in source order.",
+  "action_formats": {
+    "full_schema": "Original function dictionary passed to upstream Choice; upstream to_text renders all fields as prose.",
+    "name_description": "Original function name + colon + original description; parameter schema omitted. Fixed secondary sensitivity check."
+  },
+  "truncation": "None. Full input text retained. This differs from the README 2048-token default where exceeded.",
+  "latency": "Local Apple Silicon reconstruction, not RTX 4090 or Jev latency. Primary first-encounter times include action-cache misses. Separate warm-action timing forces state recomputation on each call.",
+  "runtime": "Unmodified upstream Engine/schema/PyTorch heads on CPU; normalized BF16 Qwen3-8B last-token embeddings through MLX, no chat template.",
+  "weights": {
+    "head_sha256": "b2b4a8c9c2d39263eff78a351eb909a342ce9b3bf21a3f07c1d1bf15f1c4eda5",
+    "backbone_config_sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30"
+  },
+  "upstream_commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7",
+  "script_sha256": "8fe60c6cf2eced13770f2eec5d75d597f0ffe79228f60a8dfa763820081e05e7",
+  "inputs_sha256": "eb6c018a1b061c3108311715f6d9b4fdbf336e74dd14bed7cbb8f8f1b6083172",
+  "sources": {
+    "repo": "ShishirPatil/gorilla",
+    "commit": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+    "files": {
+      "BFCL_v4_multiple.json": {
+        "url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multiple.json",
+        "sha256": "aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a",
+        "rows": 200
+      },
+      "answers_BFCL_v4_multiple.json": {
+        "url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer/BFCL_v4_multiple.json",
+        "sha256": "244e00ce9395df948bcafc7bee64e8f9c87ef70887587d83cae45b13699f3047",
+        "rows": 200
+      },
+      "BFCL_v4_live_multiple.json": {
+        "url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_multiple.json",
+        "sha256": "fd8ccfad4d911420d0e3341dbe2fff77d1d341da934248b9bb2bda24ab3a10c8",
+        "rows": 1053
+      },
+      "answers_BFCL_v4_live_multiple.json": {
+        "url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer/BFCL_v4_live_multiple.json",
+        "sha256": "97e90d59c5bd76c55a2920ce93e5566e9046307d3f558578f085f9d3a56c3084",
+        "rows": 1053
+      }
+    }
+  },
+  "lengths": {
+    "full_schema/state": {
+      "max": 951,
+      "median": 34,
+      "over_2048": 0,
+      "n": 1253
+    },
+    "full_schema/action": {
+      "max": 967,
+      "median": 173,
+      "over_2048": 0,
+      "n": 4735
+    },
+    "name_description/state": {
+      "max": 951,
+      "median": 34,
+      "over_2048": 0,
+      "n": 1253
+    },
+    "name_description/action": {
+      "max": 121,
+      "median": 24,
+      "over_2048": 0,
+      "n": 4735
+    }
+  },
+  "prior_exposure": "Earlier experiments evaluated subsets of these public categories. This run is a fixed reconstruction, not a newly held-out prompt-selection test."
+}

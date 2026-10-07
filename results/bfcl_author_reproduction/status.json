@@ -1,0 +1,31 @@
+{
+  "checked_at_utc": "2026-10-03T11:48:26.880558+00:00",
+  "status": "cannot_execute_exact_reproduction_missing_evaluation_protocol",
+  "model_inference_run": false,
+  "repo_commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7",
+  "public_remote_matches_local_commit": true,
+  "claimed_result": {
+    "clm_success_percent": 95.2,
+    "clm_latency_ms": 76.8,
+    "jev_success_percent": 99.2,
+    "jev_latency_ms": 125.5,
+    "source": "https://github.com/Contrastive-LM/CLM/blob/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7/assets/zero-shot.png"
+  },
+  "sources_checked": [
+    "Public GitHub repository main, file inventory and available commit history",
+    "Remote public branches/tags and releases",
+    "Public issue/PR listings for BFCL references",
+    "Public GitHub organization repository list",
+    "Hugging Face organization model/dataset listing and released reference-head files/model card",
+    "Authors Notion blog, zero-shot section and expanded experimental details (the latter describes synthetic candidate-count/length latency experiments)"
+  ],
+  "missing": [
+    "BFCL category/subset and exact evaluated case IDs",
+    "Code and exact state/question/action serialization used for BFCL",
+    "Treatment of function arguments, multiple calls, missing arguments and no-call cases",
+    "Definition of the reported success rate and evaluator configuration",
+    "Per-example predictions supporting the aggregate result",
+    "BFCL-specific hardware/software and latency timing/cache/batching protocol"
+  ],
+  "decision": "Do not substitute the previous adapted function-selection experiments or invent a new adapter and label it a reproduction. Obtain original BFCL evaluation artifacts before running."
+}

@@ -1,0 +1,14 @@
+{
+  "device": {
+    "device_name": "Apple M4 Max",
+    "max_recommended_working_set_size": 51539607552,
+    "memory_size": 68719476736,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 38654705664,
+    "resource_limit": 499000
+  },
+  "model_dtype": "mlx.core.bfloat16",
+  "clm_heads_device": "cpu",
+  "threads": 4,
+  "qwen_cache_capacity": 16
+}

@@ -1,0 +1,31 @@
+{
+  "backbone": "Qwen/Qwen3-8B",
+  "dtype": "mlx.core.bfloat16",
+  "head_parameters_total": 18887680,
+  "head_config": {
+    "model": "Qwen/Qwen3-8B",
+    "hidden_size": 4096,
+    "projection_dim": 512,
+    "width": 1536,
+    "depth": 3,
+    "activation": "gelu",
+    "layernorm": true,
+    "residual": false
+  },
+  "head_scale": 100.0,
+  "head_port_max_abs_error": {
+    "state": 3.8743019104003906e-07,
+    "action": 3.8743019104003906e-07
+  },
+  "upstream_commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7",
+  "packages": {
+    "mlx": "0.32.3",
+    "mlx-lm": "0.32.0",
+    "torch": "2.14.1",
+    "transformers": "5.18.0"
+  },
+  "wired_memory_limit_bytes": 25769803776,
+  "prefill_chunk_size": 1024,
+  "max_accuracy_prompt_tokens": 16384,
+  "cases_sha256": "475fa49053e5a5e0dcb5396db7e1e31145789f6ce5d97a8a968faf89c8de5d67"
+}

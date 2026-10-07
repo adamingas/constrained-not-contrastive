@@ -1,0 +1,27 @@
+{
+  "verified": [
+    {
+      "trace": "episode_holdout_17_clm:timing_v4.json",
+      "seed": 17,
+      "frames": 333,
+      "score": 46,
+      "states_verified": 56,
+      "all_recorded_states_exact_match": true,
+      "simulation_seconds": 5.55
+    },
+    {
+      "trace": "episode_holdout_17_timing_v4.json",
+      "seed": 17,
+      "frames": 1800,
+      "score": 305,
+      "states_verified": 300,
+      "all_recorded_states_exact_match": true,
+      "simulation_seconds": 30.0
+    }
+  ],
+  "files": {
+    "trex_clm.gif": 288265,
+    "trex_comparison.gif": 2598097,
+    "trex_qwen.gif": 1826334
+  }
+}

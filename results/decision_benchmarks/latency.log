@@ -1,0 +1,32 @@
+{"backbone": "Qwen/Qwen3-8B", "dtype": "mlx.core.bfloat16", "head_parameters_total": 18887680, "head_config": {"model": "Qwen/Qwen3-8B", "hidden_size": 4096, "projection_dim": 512, "width": 1536, "depth": 3, "activation": "gelu", "layernorm": true, "residual": false}, "head_scale": 100.0, "head_port_max_abs_error": {"state": 3.8743019104003906e-07, "action": 3.8743019104003906e-07}, "upstream_commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7", "packages": {"mlx": "0.32.3", "mlx-lm": "0.32.0", "torch": "2.14.1", "transformers": "5.18.0"}}
+latency 1 multiple_28
+latency 2 multiple_96
+latency 3 multiple_187
+latency 4 multiple_178
+latency 5 live_multiple_475-146-0
+latency 6 live_multiple_145-57-0
+latency 7 live_multiple_76-35-0
+latency 8 live_irrelevance_343-81-4
+latency 9 live_irrelevance_249-50-0
+latency 10 live_irrelevance_668-213-0
+latency 11 Great_Lakes_Storm_of_1913__Alexander_Hamilton
+latency 12 Aztec__Cell_%28biology%29
+latency 13 Rugby_football__United_Arab_Emirates
+latency 14 Plutonium__Western_Sahara
+latency 15 Abhidhamma_Pitaka__Mozambique
+latency 16 BT_Tower__Egypt
+latency 17 Space_Shuttle_Columbia_disaster__Greenland
+latency 18 Guinea-Bissau__Sleep
+latency 19 High_German_consonant_shift__Attention-deficit_hyperactivity_disorder
+latency 20 Sugar_beet__Brazil
+latency 21 multiple_28
+latency 22 multiple_96
+latency 23 multiple_187
+latency 24 multiple_178
+latency 25 multiple_100
+latency 26 live_multiple_475-146-0
+latency 27 live_multiple_145-57-0
+latency 28 live_multiple_76-35-0
+latency 29 live_multiple_441-144-1
+latency 30 live_multiple_538-152-0
+DONE latency

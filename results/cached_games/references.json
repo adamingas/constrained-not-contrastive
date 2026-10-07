@@ -1,0 +1,69 @@
+[
+  {
+    "game": "trex",
+    "seed": 0,
+    "method": "planner",
+    "frames": 1800,
+    "score": 305,
+    "survived": true
+  },
+  {
+    "game": "trex",
+    "seed": 1,
+    "method": "planner",
+    "frames": 1800,
+    "score": 305,
+    "survived": true
+  },
+  {
+    "game": "trex",
+    "seed": 2,
+    "method": "planner",
+    "frames": 1800,
+    "score": 305,
+    "survived": true
+  },
+  {
+    "game": "trex",
+    "seed": 3,
+    "method": "planner",
+    "frames": 1800,
+    "score": 305,
+    "survived": true
+  },
+  {
+    "game": "trex",
+    "seed": 4,
+    "method": "planner",
+    "frames": 1800,
+    "score": 305,
+    "survived": true
+  },
+  {
+    "game": "mario",
+    "level": "1-1",
+    "method": "heuristic",
+    "frames": 708,
+    "max_x": 1226,
+    "flag_get": false,
+    "died": true
+  },
+  {
+    "game": "mario",
+    "level": "1-2",
+    "method": "heuristic",
+    "frames": 94,
+    "max_x": 180,
+    "flag_get": false,
+    "died": true
+  },
+  {
+    "game": "mario",
+    "level": "2-1",
+    "method": "heuristic",
+    "frames": 518,
+    "max_x": 834,
+    "flag_get": false,
+    "died": true
+  }
+]

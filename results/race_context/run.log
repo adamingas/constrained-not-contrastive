@@ -1,0 +1,50 @@
+{"backbone": "Qwen/Qwen3-8B", "dtype": "mlx.core.bfloat16", "head_parameters_total": 18887680, "head_config": {"model": "Qwen/Qwen3-8B", "hidden_size": 4096, "projection_dim": 512, "width": 1536, "depth": 3, "activation": "gelu", "layernorm": true, "residual": false}, "head_scale": 100.0, "head_port_max_abs_error": {"state": 3.8743019104003906e-07, "action": 3.8743019104003906e-07}, "upstream_commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7", "packages": {"mlx": "0.32.3", "mlx-lm": "0.32.0", "torch": "2.14.1", "transformers": "5.18.0"}}
+{"split": "pilot", "case": 1, "of": 40}
+{"split": "pilot", "case": 2, "of": 40}
+{"split": "pilot", "case": 3, "of": 40}
+{"split": "pilot", "case": 4, "of": 40}
+{"split": "pilot", "case": 5, "of": 40}
+{"split": "pilot", "case": 6, "of": 40}
+{"split": "pilot", "case": 7, "of": 40}
+{"split": "pilot", "case": 8, "of": 40}
+{"split": "pilot", "case": 9, "of": 40}
+{"split": "pilot", "case": 10, "of": 40}
+{"split": "pilot", "case": 11, "of": 40}
+{"split": "pilot", "case": 12, "of": 40}
+{"split": "pilot", "case": 13, "of": 40}
+{"split": "pilot", "case": 14, "of": 40}
+{"split": "pilot", "case": 15, "of": 40}
+{"split": "pilot", "case": 16, "of": 40}
+{"split": "pilot", "case": 17, "of": 40}
+{"split": "pilot", "case": 18, "of": 40}
+{"split": "pilot", "case": 19, "of": 40}
+{"split": "pilot", "case": 20, "of": 40}
+{"split": "pilot", "case": 21, "of": 40}
+{"split": "pilot", "case": 22, "of": 40}
+{"split": "pilot", "case": 23, "of": 40}
+{"split": "pilot", "case": 24, "of": 40}
+{"split": "pilot", "case": 25, "of": 40}
+{"split": "pilot", "case": 26, "of": 40}
+{"split": "pilot", "case": 27, "of": 40}
+{"split": "pilot", "case": 28, "of": 40}
+{"split": "pilot", "case": 29, "of": 40}
+{"split": "pilot", "case": 30, "of": 40}
+{"split": "pilot", "case": 31, "of": 40}
+{"split": "pilot", "case": 32, "of": 40}
+{"split": "pilot", "case": 33, "of": 40}
+{"split": "pilot", "case": 34, "of": 40}
+{"split": "pilot", "case": 35, "of": 40}
+{"split": "pilot", "case": 36, "of": 40}
+{"split": "pilot", "case": 37, "of": 40}
+{"split": "pilot", "case": 38, "of": 40}
+{"split": "pilot", "case": 39, "of": 40}
+{"split": "pilot", "case": 40, "of": 40}
+PILOT {"n": 40, "correct": {"qwen_full": 24, "qwen_no_context": 26}, "full_accuracy": 0.6, "context_gain": -0.05, "rule": {"minimum_full_accuracy": 0.7, "minimum_context_gain": 0.15}, "qualified": false}
+Traceback (most recent call last):
+  File "/Users/ext-adamos.spanashis/projects/clm/experiments/bench_race_context.py", line 77, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/ext-adamos.spanashis/projects/clm/experiments/bench_race_context.py", line 72, in main
+    if not gate(run(c,'pilot')):raise RuntimeError('Pilot failed the predeclared qualification rule; no test inference performed.')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Pilot failed the predeclared qualification rule; no test inference performed.

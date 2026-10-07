@@ -1,0 +1,20 @@
+{
+  "sample_size": 500,
+  "seed": 20261004,
+  "sampling": "Uniform random 500 from the two categories combined, excluding the previous 20 Qwen sample requests. Preserve original dataset order; no regrouping.",
+  "counts": {
+    "multiple": 78,
+    "live_multiple": 422
+  },
+  "variant": "name_description ONLY",
+  "rules": "Choose the available function that best fulfills the request. Reply with exactly one option letter, without explanation.\n\nAvailable functions:\n\n",
+  "qwen_cache": "16-entry LRU of exact-token fixed preambles. Reuse longest matching prefix from a previous request, including partial matches. Cache contains system and user-start marker only, never the changing question. Empty at start. Each request predicted once.",
+  "clm_cache": "Upstream Engine with 32MiB projected-action-vector arena, empty at start. State-vector cache bypassed so every request recomputes its state; some distinct dataset IDs share request wording. No separately cached encoder vectors.",
+  "model": "Original BF16 Qwen3-8B via MLX for both; original CLM PyTorch heads on CPU, four threads.",
+  "qwen_output": "Native output-head rows for single-token allowed letters only; argmax; thinking disabled. Algebraically identical allowed logits without computing unused vocabulary rows.",
+  "latency": "Single observation per request per method, alternating execution order. Includes tokenizer, cache lookup/update, all cache misses and output scoring. Excludes model load, file I/O, and one unrelated runtime warmup whose KV is discarded. No per-question warmup or repeats.",
+  "scope": "Function selection only; no argument evaluation. Earlier CLM reconstruction has seen these public requests; Qwen small sample excluded. No prompt tuning.",
+  "inputs_sha256": "c760751694cf6832c7e359d42f63e61f07ba306b34547ed8cc5d83354cf8f78c",
+  "script_sha256": "e818b6d352aa8cbe6af1b35a00b734cc143fcc1bd4b54f4549e0412eafb3ab16",
+  "head_sha256": "b2b4a8c9c2d39263eff78a351eb909a342ce9b3bf21a3f07c1d1bf15f1c4eda5"
+}

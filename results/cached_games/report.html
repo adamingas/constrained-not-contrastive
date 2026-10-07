@@ -1,0 +1,125 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Cached game decisions: CLM vs constrained Qwen</title><style>body{max-width:1120px;margin:40px auto;padding:0 24px;color:#24334b;background:#f8fafc;font:16px/1.55 system-ui}h1,h2{line-height:1.2}table{border-collapse:collapse;width:100%;margin:20px 0;background:white}th,td{text-align:left;padding:10px;border-bottom:1px solid #d9e0e9}th{background:#e8edf5}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;background:#e8edf5;font-size:13px}img{max-width:100%}.replays{display:grid;grid-template-columns:1fr 1fr;gap:16px}figure{margin:0}figure img{image-rendering:pixelated}details{margin:12px 0}.note{padding:18px;background:#e5edf8;border-left:4px solid #477ba1}</style></head><body><p class="note">Follow-up: a better cached Qwen prompt now survives a held-out 30-second T-Rex run with about 3% additional decision latency. <a href="../trex_prompt_tuning/report.html">Read the prompt-tuning experiment</a>. The results below retain the original prompts.</p><h1>Cached game decisions: CLM vs constrained Qwen</h1><p>Qwen3-8B BF16 · Apple M4 Max · 3 October 2026 · actual NES Mario and upstream T-Rex physics</p><p class="note">Both models reuse their fixed prefixes. Qwen caches rules and action definitions; CLM caches rules and action embeddings. Every changing state is processed afresh. This is one-token greedy constrained selection, with no generation loop, thinking tokens, planner hints, safety shield, or whole-request memoization.</p><p><strong>Caching removes almost all of Qwen’s measured latency disadvantage.</strong> Cached Qwen/CLM paired median latency ratios are 1.011 on T-Rex and 1.010 on Mario. Game quality remains poor: neither model finished any test episode successfully. Qwen made forward progress in Mario, while CLM stalled; CLM survived longer in T-Rex.</p><h2>Matched-state latency</h2><img src="latency.png" alt="Cached and uncached decision latency"><table><thead><tr><th>Game</th><th>Method</th><th>Prefix</th><th>States</th><th>Median ms</th><th>95th percentile ms</th></tr></thead><tbody><tr><td>trex</td><td>clm</td><td>uncached</td><td>80</td><td>348.7</td><td>413.7</td></tr><tr><td>trex</td><td>clm</td><td>cached</td><td>80</td><td>153.4</td><td>227.8</td></tr><tr><td>trex</td><td>qwen</td><td>uncached</td><td>80</td><td>460.7</td><td>479.9</td></tr><tr><td>trex</td><td>qwen</td><td>cached</td><td>80</td><td>155.7</td><td>236.3</td></tr><tr><td>mario</td><td>clm</td><td>uncached</td><td>56</td><td>463.4</td><td>524.4</td></tr><tr><td>mario</td><td>clm</td><td>cached</td><td>56</td><td>299.8</td><td>323.4</td></tr><tr><td>mario</td><td>qwen</td><td>uncached</td><td>56</td><td>578.2</td><td>607.9</td></tr><tr><td>mario</td><td>qwen</td><td>cached</td><td>56</td><td>300.6</td><td>328.5</td></tr></tbody></table><p>136 frozen states: 80 T-Rex states from five planner trajectories and 56 Mario states from three heuristic trajectories. Each is evaluated under all four conditions, with deterministic randomized order. Latency includes tokenization, cache branching, model evaluation, head scoring, and synchronized result extraction. It excludes environment observation extraction and one-time setup. Uncached CLM still retains its fixed action embeddings: only its state prefix is recomputed.</p><h2>Token work per decision</h2><table><thead><tr><th>Game</th><th>Method</th><th>Median total</th><th>Cached prefix</th><th>Median newly processed</th></tr></thead><tbody><tr><td>trex</td><td>clm</td><td>306.5</td><td>191</td><td>115.5</td></tr><tr><td>trex</td><td>qwen</td><td>385.5</td><td>262</td><td>123.5</td></tr><tr><td>mario</td><td>clm</td><td>409.0</td><td>211</td><td>198.0</td></tr><tr><td>mario</td><td>qwen</td><td>518.0</td><td>312</td><td>206.0</td></tr></tbody></table><p>Cached tokens remain in attention; caching avoids recomputing their transformer states, but does not make attention to them free. The same BF16 backbone, MLX implementation, and process-local 24 GiB wired-memory limit are used for both methods.</p><h2>Closed-loop play</h2><table><thead><tr><th>Game</th><th>Seed / level</th><th>Method</th><th>Game time</th><th>Score / furthest x</th><th>Outcome</th><th>Decisions</th></tr></thead><tbody><tr><td>T-Rex</td><td>0</td><td>clm</td><td>8.42 s</td><td>74</td><td>crashed</td><td>85</td></tr><tr><td>T-Rex</td><td>0</td><td>qwen</td><td>5.55 s</td><td>46</td><td>crashed</td><td>56</td></tr><tr><td>T-Rex</td><td>1</td><td>qwen</td><td>5.55 s</td><td>46</td><td>crashed</td><td>56</td></tr><tr><td>T-Rex</td><td>1</td><td>clm</td><td>6.63 s</td><td>56</td><td>crashed</td><td>67</td></tr><tr><td>T-Rex</td><td>2</td><td>clm</td><td>9.10 s</td><td>80</td><td>crashed</td><td>91</td></tr><tr><td>T-Rex</td><td>2</td><td>qwen</td><td>5.55 s</td><td>46</td><td>crashed</td><td>56</td></tr><tr><td>T-Rex</td><td>3</td><td>qwen</td><td>5.55 s</td><td>46</td><td>crashed</td><td>56</td></tr><tr><td>T-Rex</td><td>3</td><td>clm</td><td>10.40 s</td><td>93</td><td>crashed</td><td>104</td></tr><tr><td>T-Rex</td><td>4</td><td>clm</td><td>7.47 s</td><td>64</td><td>crashed</td><td>75</td></tr><tr><td>T-Rex</td><td>4</td><td>qwen</td><td>5.55 s</td><td>46</td><td>crashed</td><td>56</td></tr><tr><td>Mario</td><td>1-1</td><td>clm</td><td>5.00 s</td><td>x=40</td><td>stalled</td><td>25</td></tr><tr><td>Mario</td><td>1-1</td><td>qwen</td><td>2.67 s</td><td>x=296</td><td>died</td><td>14</td></tr><tr><td>Mario</td><td>1-2</td><td>qwen</td><td>1.57 s</td><td>x=180</td><td>died</td><td>8</td></tr><tr><td>Mario</td><td>1-2</td><td>clm</td><td>5.00 s</td><td>x=40</td><td>stalled</td><td>25</td></tr><tr><td>Mario</td><td>2-1</td><td>clm</td><td>5.00 s</td><td>x=40</td><td>stalled</td><td>25</td></tr><tr><td>Mario</td><td>2-1</td><td>qwen</td><td>3.80 s</td><td>x=307</td><td>died</td><td>19</td></tr></tbody></table><p>Five T-Rex seeds (0–4), up to 30 simulated seconds; three Mario levels (1-1, 1-2, 2-1), up to 30 seconds, stopping after five seconds without new maximum x. T-Rex acts every 6 frames (100 ms); Mario every 12 (200 ms). The environment is paused during inference: these are lockstep action-quality tests, not claims of successful real-time deployment. Mario is deterministic, so repeating the identical start would not create independent trials.</p><h2>T-Rex matched-state safety check</h2><table><thead><tr><th>Method</th><th>Subset</th><th>Planner-safe choices</th></tr></thead><tbody><tr><td>clm</td><td>all</td><td>79/80</td></tr><tr><td>clm</td><td>critical</td><td>21/22</td></tr><tr><td>clm</td><td>forced</td><td>0/1</td></tr><tr><td>qwen</td><td>all</td><td>79/80</td></tr><tr><td>qwen</td><td>critical</td><td>21/22</td></tr><tr><td>qwen</td><td>forced</td><td>0/1</td></tr></tbody></table><p>The planner evaluates whether an action permits future survival under its physics/search horizon. “Critical” excludes states where all three actions are safe; “forced” has exactly one safe action. The fixed sample contains only one forced state, so the overall safety percentage is a weak measure of game skill. Closed-loop survival is the stronger test. Planner results were used only for evaluation and generating reference trajectories, never supplied to either model.</p><h2>Exploratory raw-prompt check</h2><p>After seeing the main results, I reran Qwen with the same fixed rules/actions and changing state, removed the chat template, and appended <code>Answer:</code>. It still used one bare constrained letter and a cached prefix. This was an exploratory check, not a newly selected primary result. It did not improve play: all five T-Rex runs again crashed at 5.55 seconds; all three Mario runs stalled at the starting x=40. Later-run latency measurements are not interleaved with the primary comparison.</p><table><thead><tr><th>Game</th><th>Raw Qwen median ms</th><th>Matched states</th></tr></thead><tbody><tr><td>trex</td><td>152.9</td><td>80</td></tr><tr><td>mario</td><td>298.8</td><td>56</td></tr></tbody></table><p><a href="raw_metadata.json">Exact raw prompts</a> · <a href="raw_matched.jsonl">Raw matched predictions</a> · <a href="raw_episodes.jsonl">Raw episode traces</a></p><h2>Reference controllers</h2><table><thead><tr><th>Game</th><th>Seed / level</th><th>Reference</th><th>Game time</th><th>Score / x</th><th>Outcome</th></tr></thead><tbody><tr><td>trex</td><td>0</td><td>planner</td><td>30.00 s</td><td>305</td><td>survived</td></tr><tr><td>trex</td><td>1</td><td>planner</td><td>30.00 s</td><td>305</td><td>survived</td></tr><tr><td>trex</td><td>2</td><td>planner</td><td>30.00 s</td><td>305</td><td>survived</td></tr><tr><td>trex</td><td>3</td><td>planner</td><td>30.00 s</td><td>305</td><td>survived</td></tr><tr><td>trex</td><td>4</td><td>planner</td><td>30.00 s</td><td>305</td><td>survived</td></tr><tr><td>mario</td><td>1-1</td><td>heuristic</td><td>11.80 s</td><td>1226</td><td>died</td></tr><tr><td>mario</td><td>1-2</td><td>heuristic</td><td>1.57 s</td><td>180</td><td>died</td></tr><tr><td>mario</td><td>2-1</td><td>heuristic</td><td>8.63 s</td><td>834</td><td>died</td></tr></tbody></table><p>The Mario reference is a simple jump heuristic, not an optimal policy or accuracy oracle. Mario observations are structured prose from visible RAM terrain/enemy geometry, with current motion and button state. T-Rex observations use visible engine geometry. Neither model receives images; this tests decisions given symbolic state, not visual perception.</p><h2>Cache setup (one observed measurement)</h2><table><thead><tr><th>Game</th><th>Method</th><th>Prefix setup ms</th><th>Action embedding setup ms</th></tr></thead><tbody><tr><td>trex</td><td>qwen</td><td>358</td><td>0</td></tr><tr><td>trex</td><td>clm</td><td>251</td><td>180</td></tr><tr><td>mario</td><td>qwen</td><td>340</td><td>0</td></tr><tr><td>mario</td><td>clm</td><td>298</td><td>260</td></tr></tbody></table><p>Setup excludes model loading. These single cold measurements are descriptive rather than stable latency estimates. Qwen caches its instruction/action prefix once; CLM separately caches its rules prefix and each action vector.</p><h2>Implementation checks</h2><pre>{
+  &quot;cache_equivalence&quot;: {
+    &quot;trex_clm_cached_over_uncached&quot;: {
+      &quot;median_paired_ratio&quot;: 0.44398857158870286,
+      &quot;bootstrap95&quot;: [
+        0.44290285100290505,
+        0.44550954023437256
+      ],
+      &quot;choice_agreement&quot;: 79,
+      &quot;n&quot;: 80,
+      &quot;max_probability_difference&quot;: 0.026708006858825684
+    },
+    &quot;trex_qwen_cached_over_uncached&quot;: {
+      &quot;median_paired_ratio&quot;: 0.3352185097416306,
+      &quot;bootstrap95&quot;: [
+        0.33335340845211375,
+        0.374110158611476
+      ],
+      &quot;choice_agreement&quot;: 80,
+      &quot;n&quot;: 80,
+      &quot;max_probability_difference&quot;: 0.030198633670806885
+    },
+    &quot;trex_cached_qwen_over_clm&quot;: {
+      &quot;median_paired_ratio&quot;: 1.010595598864191,
+      &quot;bootstrap95&quot;: [
+        1.008730371646474,
+        1.01339196142127
+      ]
+    },
+    &quot;mario_clm_cached_over_uncached&quot;: {
+      &quot;median_paired_ratio&quot;: 0.627414985024884,
+      &quot;bootstrap95&quot;: [
+        0.5739705592818022,
+        0.6374467785398927
+      ],
+      &quot;choice_agreement&quot;: 56,
+      &quot;n&quot;: 56,
+      &quot;max_probability_difference&quot;: 0.013484865427017212
+    },
+    &quot;mario_qwen_cached_over_uncached&quot;: {
+      &quot;median_paired_ratio&quot;: 0.5130768424174255,
+      &quot;bootstrap95&quot;: [
+        0.4827860193377804,
+        0.5182515994961552
+      ],
+      &quot;choice_agreement&quot;: 54,
+      &quot;n&quot;: 56,
+      &quot;max_probability_difference&quot;: 0.11334294080734253
+    },
+    &quot;mario_cached_qwen_over_clm&quot;: {
+      &quot;median_paired_ratio&quot;: 1.0100536032371383,
+      &quot;bootstrap95&quot;: [
+        1.0060436604739738,
+        1.0136624940807788
+      ]
+    }
+  },
+  &quot;output_head&quot;: {
+    &quot;full_vocab_choice_agreement&quot;: 10,
+    &quot;n&quot;: 10,
+    &quot;label_ids&quot;: {
+      &quot;trex&quot;: [
+        32,
+        33,
+        34
+      ],
+      &quot;mario&quot;: [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    }
+  },
+  &quot;CLM_head_max_abs_error&quot;: {
+    &quot;state&quot;: 3.8743019104003906e-07,
+    &quot;action&quot;: 3.8743019104003906e-07
+  }
+}</pre><p>Qwen uses the original LM-head rows for the allowed letters (A–C or A–F), equivalent to masking all other tokens before greedy decoding. Ten checks against the full-vocabulary LM head must choose the same action. Cached and uncached BF16 computations can differ slightly because matrix shapes and reduction order change; the agreement and largest probability differences above disclose this.</p><h2>Exact example prompts</h2><details><summary>trex: literal qwen input</summary><pre>[
+  {
+    &quot;role&quot;: &quot;system&quot;,
+    &quot;content&quot;: &quot;You control the Chrome T-Rex runner. Survive as long as possible. The dinosaur runs right automatically, while obstacles move left. A decision lasts 6 frames (100 ms) at 60 frames per second. All distances are pixels. The dinosaur left edge is x=50 and its standing width is 44, height 47; ground standing top y=93. Larger y means lower. Cacti must be jumped over; low birds can be jumped, head-height birds can be ducked under, and high birds can pass overhead. Jump only when an obstacle is sufficiently near; an early jump can land on the obstacle. A jump begins with about -10.6 pixels/frame vertical velocity and gravity adds 0.6 each frame. A new jump can start only on the ground. Duck in the air accelerates descent. The state contains observable geometry, not a recommended action.\n\nChoose exactly one action letter.\nA: run: Run forward on the ground without jumping or ducking. Release duck if held.\nB: jump: Jump over an obstacle. If already airborne, continue the current jump without starting another.\nC: duck: Duck under a bird; if airborne, drop rapidly toward the ground.&quot;
+  },
+  {
+    &quot;role&quot;: &quot;user&quot;,
+    &quot;content&quot;: &quot;Dinosaur top_y=15.0, vertical velocity=4.6, airborne=True, ducking=False, rapid descent=False. Running speed=7.14 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=22, top_y=105, width=51, height=35, leftward speed=7.14, gap from dinosaur front=-72.\nFrame 1140; score=182.\n\nWhich action should the dinosaur take now to survive?&quot;
+  }
+]</pre></details><details><summary>trex: literal clm input</summary><pre>You control the Chrome T-Rex runner. Survive as long as possible. The dinosaur runs right automatically, while obstacles move left. A decision lasts 6 frames (100 ms) at 60 frames per second. All distances are pixels. The dinosaur left edge is x=50 and its standing width is 44, height 47; ground standing top y=93. Larger y means lower. Cacti must be jumped over; low birds can be jumped, head-height birds can be ducked under, and high birds can pass overhead. Jump only when an obstacle is sufficiently near; an early jump can land on the obstacle. A jump begins with about -10.6 pixels/frame vertical velocity and gravity adds 0.6 each frame. A new jump can start only on the ground. Duck in the air accelerates descent. The state contains observable geometry, not a recommended action.
+
+Current state:
+Dinosaur top_y=15.0, vertical velocity=4.6, airborne=True, ducking=False, rapid descent=False. Running speed=7.14 pixels/frame. Previous held action=run.
+Visible obstacles: cactusSmall, left_x=22, top_y=105, width=51, height=35, leftward speed=7.14, gap from dinosaur front=-72.
+Frame 1140; score=182.
+
+Which action should the dinosaur take now to survive?</pre></details><details><summary>trex: fixed CLM action texts</summary><pre>{
+  &quot;run&quot;: &quot;Run forward on the ground without jumping or ducking. Release duck if held.&quot;,
+  &quot;jump&quot;: &quot;Jump over an obstacle. If already airborne, continue the current jump without starting another.&quot;,
+  &quot;duck&quot;: &quot;Duck under a bird; if airborne, drop rapidly toward the ground.&quot;
+}</pre></details><details><summary>mario: literal qwen input</summary><pre>[
+  {
+    &quot;role&quot;: &quot;system&quot;,
+    &quot;content&quot;: &quot;You control Super Mario Bros. Reach the flag to the right without dying. Each decision holds its buttons for 12 frames (200 ms) at 60 frames per second. Observations use world pixel coordinates; x increases right, y increases downward. Mario is about 16 pixels wide. Feet_y is the bottom of his body. Grounded means standing on a solid surface. Solid terrain rectangles can be floor, pipes, bricks, or blocks. Missing floor is a pit: falling into it is fatal. Jump over enemies, pits, and tall obstacles. Enemies can be stomped by landing on them from above; side contact is dangerous. Walk right on clear floor; use jumps when needed for progress or safety. Holding jump while rising increases jump height; releasing jump shortens the jump. Jump must be released between separate jumps: continuing to hold it after landing does not start a new jump. Horizontal momentum persists briefly after release. Negative vertical velocity means rising. The state gives only currently visible geometry and current motion.\n\nChoose exactly one action letter.\nA: wait: Release all buttons; remain still or coast with current momentum.\nB: right: Walk right with jump released.\nC: left: Walk left with jump released.\nD: jump: Hold jump without a horizontal direction.\nE: jump_right: Hold jump and right to jump forward or continue an airborne jump to the right.\nF: jump_left: Hold jump and left to jump backward or continue an airborne jump to the left.&quot;
+  },
+  {
+    &quot;role&quot;: &quot;user&quot;,
+    &quot;content&quot;: &quot;Mario x=163, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=144..304, y=208..240; x=256..272, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 84; furthest x reached=163.\n\nWhich action should Mario take now to reach the flag safely?&quot;
+  }
+]</pre></details><details><summary>mario: literal clm input</summary><pre>You control Super Mario Bros. Reach the flag to the right without dying. Each decision holds its buttons for 12 frames (200 ms) at 60 frames per second. Observations use world pixel coordinates; x increases right, y increases downward. Mario is about 16 pixels wide. Feet_y is the bottom of his body. Grounded means standing on a solid surface. Solid terrain rectangles can be floor, pipes, bricks, or blocks. Missing floor is a pit: falling into it is fatal. Jump over enemies, pits, and tall obstacles. Enemies can be stomped by landing on them from above; side contact is dangerous. Walk right on clear floor; use jumps when needed for progress or safety. Holding jump while rising increases jump height; releasing jump shortens the jump. Jump must be released between separate jumps: continuing to hold it after landing does not start a new jump. Horizontal momentum persists briefly after release. Negative vertical velocity means rising. The state gives only currently visible geometry and current motion.
+
+Current state:
+Mario x=163, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.
+Visible solid terrain rectangles (world pixels): x=144..304, y=208..240; x=256..272, y=144..160. Empty space between rectangles is air, including pits where no floor exists.
+Visible enemies: none.
+Frame 84; furthest x reached=163.
+
+Which action should Mario take now to reach the flag safely?</pre></details><details><summary>mario: fixed CLM action texts</summary><pre>{
+  &quot;wait&quot;: &quot;Release all buttons; remain still or coast with current momentum.&quot;,
+  &quot;right&quot;: &quot;Walk right with jump released.&quot;,
+  &quot;left&quot;: &quot;Walk left with jump released.&quot;,
+  &quot;jump&quot;: &quot;Hold jump without a horizontal direction.&quot;,
+  &quot;jump_right&quot;: &quot;Hold jump and right to jump forward or continue an airborne jump to the right.&quot;,
+  &quot;jump_left&quot;: &quot;Hold jump and left to jump backward or continue an airborne jump to the left.&quot;
+}</pre></details><h2>Mario replays</h2><p>Actual emulator frames at 10 frames per second, shown at simulated game speed. Inference waiting time is omitted.</p><div class="replays"><figure><figcaption>Level 1-1 · clm</figcaption><img width="512" src="mario_1-1_clm.gif"></figure><figure><figcaption>Level 1-1 · qwen</figcaption><img width="512" src="mario_1-1_qwen.gif"></figure><figure><figcaption>Level 1-2 · clm</figcaption><img width="512" src="mario_1-2_clm.gif"></figure><figure><figcaption>Level 1-2 · qwen</figcaption><img width="512" src="mario_1-2_qwen.gif"></figure><figure><figcaption>Level 2-1 · clm</figcaption><img width="512" src="mario_2-1_clm.gif"></figure><figure><figcaption>Level 2-1 · qwen</figcaption><img width="512" src="mario_2-1_qwen.gif"></figure></div><h2>Reproduce and inspect</h2><p>Run <code>.venv/bin/python -u experiments/games/bench.py</code>, then <code>.venv/bin/python -u experiments/games/raw_check.py</code>, then <code>.venv/bin/python experiments/games/analyze.py</code>. The NES worker uses the separate <code>.venv-games</code> environment and the pinned package list in <code>experiments/games/requirements-games.txt</code>. Outputs are resumable; use a fresh output directory for an independent repeat.</p><p>Raw data: <a href="summary.json">summary</a>, <a href="metadata.json">metadata</a>, <a href="cases.json">frozen states</a>, <a href="matched.jsonl">matched predictions</a>, <a href="episodes.jsonl">complete episode decisions</a>, <a href="audit.jsonl">head audits</a>. Sources: <a href="https://github.com/Kautenja/gym-super-mario-bros">NES environment</a>, <a href="https://github.com/Contrastive-LM/CLM">CLM repository and T-Rex engine</a>.</p></body></html>

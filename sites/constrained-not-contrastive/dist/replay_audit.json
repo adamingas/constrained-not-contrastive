@@ -1,0 +1,67 @@
+{
+  "artwork": "Schematic rendering reconstructed from original simulator positions, not a screen recording.",
+  "displayed_course": 42,
+  "fps": 20,
+  "runs": [
+    {
+      "method": "clm",
+      "seed": 42,
+      "decisions_verified": 300,
+      "frames": 1800,
+      "obstacles_passed": 21,
+      "all_observations_match": true,
+      "all_choices_are_argmax": true,
+      "all_fixed_prefixes_cached": true
+    },
+    {
+      "method": "qwen",
+      "seed": 42,
+      "decisions_verified": 300,
+      "frames": 1800,
+      "obstacles_passed": 21,
+      "all_observations_match": true,
+      "all_choices_are_argmax": true,
+      "all_fixed_prefixes_cached": true
+    },
+    {
+      "method": "clm",
+      "seed": 314159,
+      "decisions_verified": 300,
+      "frames": 1800,
+      "obstacles_passed": 22,
+      "all_observations_match": true,
+      "all_choices_are_argmax": true,
+      "all_fixed_prefixes_cached": true
+    },
+    {
+      "method": "qwen",
+      "seed": 314159,
+      "decisions_verified": 300,
+      "frames": 1800,
+      "obstacles_passed": 22,
+      "all_observations_match": true,
+      "all_choices_are_argmax": true,
+      "all_fixed_prefixes_cached": true
+    },
+    {
+      "method": "clm",
+      "seed": 271828,
+      "decisions_verified": 300,
+      "frames": 1800,
+      "obstacles_passed": 23,
+      "all_observations_match": true,
+      "all_choices_are_argmax": true,
+      "all_fixed_prefixes_cached": true
+    },
+    {
+      "method": "qwen",
+      "seed": 271828,
+      "decisions_verified": 300,
+      "frames": 1800,
+      "obstacles_passed": 23,
+      "all_observations_match": true,
+      "all_choices_are_argmax": true,
+      "all_fixed_prefixes_cached": true
+    }
+  ]
+}

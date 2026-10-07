@@ -1,0 +1,85 @@
+{
+  "plan": {
+    "selection": "First case, longest state, and longest action in each category; deduplicate IDs. Selected without inspecting correctness.",
+    "case_ids": [
+      "multiple_0",
+      "multiple_15",
+      "live_multiple_0-0-0",
+      "live_multiple_26-6-1",
+      "live_multiple_976-215-0"
+    ],
+    "variant": "full_schema",
+    "check": "Compare saved MLX-backbone predictions with Transformers BF16 MPS using the same unmodified upstream Engine and checkpoint."
+  },
+  "rows": [
+    {
+      "id": "multiple_0",
+      "mlx_choice": "circle_properties.get",
+      "transformers_choice": "circle_properties.get",
+      "same_choice": true,
+      "max_probability_difference": 0.021479219797979898,
+      "transformers_probabilities": {
+        "triangle_properties.get": 0.3001506661631476,
+        "circle_properties.get": 0.6998493338368524
+      },
+      "check_seconds": 1.110786208882928
+    },
+    {
+      "id": "multiple_15",
+      "mlx_choice": "windFarm.potential",
+      "transformers_choice": "windFarm.potential",
+      "same_choice": true,
+      "max_probability_difference": 0.024344948930321464,
+      "transformers_probabilities": {
+        "solarFarm.potential": 0.21465315391568676,
+        "windFarm.potential": 0.7853468460843134
+      },
+      "check_seconds": 0.556417791871354
+    },
+    {
+      "id": "live_multiple_0-0-0",
+      "mlx_choice": "ChaFod",
+      "transformers_choice": "ChaFod",
+      "same_choice": true,
+      "max_probability_difference": 0.0009731479215685512,
+      "transformers_probabilities": {
+        "ChaFod": 0.9683842110541776,
+        "ChaDri.change_drink": 0.03161578894582229
+      },
+      "check_seconds": 0.7975082909688354
+    },
+    {
+      "id": "live_multiple_26-6-1",
+      "mlx_choice": "archival_memory_insert",
+      "transformers_choice": "archival_memory_insert",
+      "same_choice": true,
+      "max_probability_difference": 0.024838866106152047,
+      "transformers_probabilities": {
+        "send_message": 0.0008583592898761914,
+        "pause_heartbeats": 0.000920533869689032,
+        "message_chatgpt": 0.014200792303336766,
+        "core_memory_append": 0.027134510835272362,
+        "core_memory_replace": 0.037925593483210646,
+        "recall_memory_search": 0.15506561849509534,
+        "archival_memory_insert": 0.7457864844509394,
+        "archival_memory_search": 0.01007017693052749,
+        "http_request": 0.00803793034205264
+      },
+      "check_seconds": 3.5608551669865847
+    },
+    {
+      "id": "live_multiple_976-215-0",
+      "mlx_choice": "get_service_providers",
+      "transformers_choice": "get_service_providers",
+      "same_choice": true,
+      "max_probability_difference": 0.05742298210840868,
+      "transformers_probabilities": {
+        "get_service_providers": 0.5146961784935143,
+        "view_service_provider_profile": 0.48530382150648566
+      },
+      "check_seconds": 1.3730840829666704
+    }
+  ],
+  "all_same_choice": true,
+  "scope": "Five fixed cases; not a full second-backend benchmark or CUDA/vLLM parity claim."
+}

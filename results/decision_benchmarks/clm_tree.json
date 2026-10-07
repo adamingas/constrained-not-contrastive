@@ -1,0 +1,480 @@
+{
+  "sha": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7",
+  "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "da99af4e448bfb98c00944dd775dfa50eece5007",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/da99af4e448bfb98c00944dd775dfa50eece5007"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8a4a82e117e7f89dd1854af1b5cb7d42a3e74d40",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/8a4a82e117e7f89dd1854af1b5cb7d42a3e74d40"
+    },
+    {
+      "path": ".github/workflows/workflow.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b49a9a332dc808042af9cd4fe357302bf2bbb84",
+      "size": 890,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/3b49a9a332dc808042af9cd4fe357302bf2bbb84"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d8d6b6b45ff1506b4671974ca2a96b887b40edf",
+      "size": 355,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/9d8d6b6b45ff1506b4671974ca2a96b887b40edf"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/d645695673349e3947e8e5ae42332d0ac3164cd7"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa5296ff44714967c5916494428796aba6efed20",
+      "size": 21687,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/aa5296ff44714967c5916494428796aba6efed20"
+    },
+    {
+      "path": "assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "246eb1a06a21f59973d20c40ce93c9b525ad4756",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/246eb1a06a21f59973d20c40ce93c9b525ad4756"
+    },
+    {
+      "path": "assets/agentic.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5f604f9347ce40d0a4709dd56fa34bdb2beb6e8",
+      "size": 200457,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/c5f604f9347ce40d0a4709dd56fa34bdb2beb6e8"
+    },
+    {
+      "path": "assets/logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cef530b203693ef085818948de5c06331e1809fc",
+      "size": 233432,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/cef530b203693ef085818948de5c06331e1809fc"
+    },
+    {
+      "path": "assets/playground.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03d5a169ce7bf9dc3584312f9ee58a9fcd8d42ec",
+      "size": 258976,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/03d5a169ce7bf9dc3584312f9ee58a9fcd8d42ec"
+    },
+    {
+      "path": "assets/zero-shot.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e5a8b71059f812bf431bcb3c2e56559697f8575",
+      "size": 166548,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/7e5a8b71059f812bf431bcb3c2e56559697f8575"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "80abc1fe1ae5db9f15904821e0ab5d8c2faa0f6a",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/80abc1fe1ae5db9f15904821e0ab5d8c2faa0f6a"
+    },
+    {
+      "path": "docs/FINETUNING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3a0a79955e5ee5ac04baa877e9144bfdfbc79c1",
+      "size": 2473,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/b3a0a79955e5ee5ac04baa877e9144bfdfbc79c1"
+    },
+    {
+      "path": "download_head.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "63afafacebcedd76f3c59750ef6205cde37ac1ab",
+      "size": 872,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/63afafacebcedd76f3c59750ef6205cde37ac1ab"
+    },
+    {
+      "path": "evaluation",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "06ab455ea143c6896d61cbd2ea88d3b49df1f110",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/06ab455ea143c6896d61cbd2ea88d3b49df1f110"
+    },
+    {
+      "path": "evaluation/bon_eval.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7eeba76eaf9735a570d4db2a6c5e859cd48b0f6",
+      "size": 15004,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/c7eeba76eaf9735a570d4db2a6c5e859cd48b0f6"
+    },
+    {
+      "path": "examples",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2c8f07987e23003d9892b1dad7b5b269bd147a22",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/2c8f07987e23003d9892b1dad7b5b269bd147a22"
+    },
+    {
+      "path": "examples/common.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1eb2b201465cd51fe00c2a96249f04104198f75d",
+      "size": 9747,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/1eb2b201465cd51fe00c2a96249f04104198f75d"
+    },
+    {
+      "path": "examples/t_rex",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7a22139b8944f566f8f2032c5d0a4c0002403692",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/7a22139b8944f566f8f2032c5d0a4c0002403692"
+    },
+    {
+      "path": "examples/t_rex/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a9a49f67e1520b68ff3e45fffe5ae0ee15abef9",
+      "size": 3346,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/4a9a49f67e1520b68ff3e45fffe5ae0ee15abef9"
+    },
+    {
+      "path": "examples/t_rex/results",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "16712bceff247a3f89db0dc4af3e213a6be35577",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/16712bceff247a3f89db0dc4af3e213a6be35577"
+    },
+    {
+      "path": "examples/t_rex/results/clm_realtime.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80c03fd7d226cebc0698cebe0bfac687f864e338",
+      "size": 3768,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/80c03fd7d226cebc0698cebe0bfac687f864e338"
+    },
+    {
+      "path": "examples/t_rex/results/jev_realtime.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2a4877481bc09041805ee7891a15b2fea6e2f78",
+      "size": 3796,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/d2a4877481bc09041805ee7891a15b2fea6e2f78"
+    },
+    {
+      "path": "examples/t_rex/run.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a890e66e1d71eb2d19ef116873eb140d0a4c1b7",
+      "size": 8264,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/2a890e66e1d71eb2d19ef116873eb140d0a4c1b7"
+    },
+    {
+      "path": "examples/t_rex/trex",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "43e87580cfb1ef77336d14df8d5758f4a7cb525c",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/43e87580cfb1ef77336d14df8d5758f4a7cb525c"
+    },
+    {
+      "path": "examples/t_rex/trex/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff3b51667a7af7fa08029c2b7b97b0a6d9175c2f",
+      "size": 483,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/ff3b51667a7af7fa08029c2b7b97b0a6d9175c2f"
+    },
+    {
+      "path": "examples/t_rex/trex/backends.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d561c0805ede225bc1852d553ad0f346ba195806",
+      "size": 5906,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/d561c0805ede225bc1852d553ad0f346ba195806"
+    },
+    {
+      "path": "examples/t_rex/trex/brain.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bcb0629bad90461a23bc4abaab4c2a83d18f20fb",
+      "size": 6934,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/bcb0629bad90461a23bc4abaab4c2a83d18f20fb"
+    },
+    {
+      "path": "examples/t_rex/trex/course.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "245e11d245e0951f9cc1ecfca4718b4108145204",
+      "size": 1405,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/245e11d245e0951f9cc1ecfca4718b4108145204"
+    },
+    {
+      "path": "examples/t_rex/trex/engine.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cefe0209b4d45388c18efe83487f32de5c1de675",
+      "size": 25264,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/cefe0209b4d45388c18efe83487f32de5c1de675"
+    },
+    {
+      "path": "examples/t_rex/trex/match.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1de42f01151048da518113286f7d642b9d3186c",
+      "size": 3387,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/b1de42f01151048da518113286f7d642b9d3186c"
+    },
+    {
+      "path": "examples/t_rex/trex/pilot.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8fbea13ffc9831aea3057f019547ec39f9e39568",
+      "size": 29006,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/8fbea13ffc9831aea3057f019547ec39f9e39568"
+    },
+    {
+      "path": "examples/t_rex/trex/planner.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fdfa3619275289845ec124068aee28dc966d4ac1",
+      "size": 22396,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/fdfa3619275289845ec124068aee28dc966d4ac1"
+    },
+    {
+      "path": "examples/t_rex/trex/safety.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "865f947bee9052f1d9da5f8c576b6d00673bf0ea",
+      "size": 3571,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/865f947bee9052f1d9da5f8c576b6d00673bf0ea"
+    },
+    {
+      "path": "preprocessing",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "517b48e445a9eca2bea2633bb88e2ab03cd6ec87",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/517b48e445a9eca2bea2633bb88e2ab03cd6ec87"
+    },
+    {
+      "path": "preprocessing/hf_embeddings.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d40873ffbe2b2bd200816e0e0eda524f1b88f94",
+      "size": 9401,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/4d40873ffbe2b2bd200816e0e0eda524f1b88f94"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "068a904ff96e8e48366c35fdb04d9f8bf57cb2b3",
+      "size": 1843,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/068a904ff96e8e48366c35fdb04d9f8bf57cb2b3"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80dae2fd16ce2d795864e7efdd6b915ffd16e487",
+      "size": 330,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/80dae2fd16ce2d795864e7efdd6b915ffd16e487"
+    },
+    {
+      "path": "serve_qwen3_8b.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f9169c81accc2cae8a631ec9d091e4aa8eca6d13",
+      "size": 947,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/f9169c81accc2cae8a631ec9d091e4aa8eca6d13"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "48580e7b915fabee70177857183e2262043a3c8e",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/48580e7b915fabee70177857183e2262043a3c8e"
+    },
+    {
+      "path": "src/clm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8d642b1bbaeb38d832c33872746f92845df399dd",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/8d642b1bbaeb38d832c33872746f92845df399dd"
+    },
+    {
+      "path": "src/clm/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9774ad69e380fad590659d9902fb9f7f0e06064",
+      "size": 1503,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/d9774ad69e380fad590659d9902fb9f7f0e06064"
+    },
+    {
+      "path": "src/clm/cache.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05b5ed8aa325c4edf7bce0f8fb3af5d5817b8490",
+      "size": 7817,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/05b5ed8aa325c4edf7bce0f8fb3af5d5817b8490"
+    },
+    {
+      "path": "src/clm/client.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56eaa802ec5afb5c68ed357694d5d52ff7d41979",
+      "size": 7538,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/56eaa802ec5afb5c68ed357694d5d52ff7d41979"
+    },
+    {
+      "path": "src/clm/embedder.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b19cb70d6a04a3b63f740a27504c8ebfd97add0c",
+      "size": 3558,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/b19cb70d6a04a3b63f740a27504c8ebfd97add0c"
+    },
+    {
+      "path": "src/clm/engine.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c21c3993cf02d6ace3b98ef36f2fc940a5b1a57c",
+      "size": 7698,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/c21c3993cf02d6ace3b98ef36f2fc940a5b1a57c"
+    },
+    {
+      "path": "src/clm/heads.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0509daed26fd736fa4c464da840d3573304c5df",
+      "size": 7547,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/e0509daed26fd736fa4c464da840d3573304c5df"
+    },
+    {
+      "path": "src/clm/py.typed",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "src/clm/schema.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb96d342f63e049287396a23b5d514bbd069db8d",
+      "size": 6894,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/eb96d342f63e049287396a23b5d514bbd069db8d"
+    },
+    {
+      "path": "src/clm/server.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e44c0d879b74ae98e4f8e932245b40663252f536",
+      "size": 11757,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/e44c0d879b74ae98e4f8e932245b40663252f536"
+    },
+    {
+      "path": "src/clm/static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a499b9f0fba08e19f6ba1147874c33ece8616068",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/a499b9f0fba08e19f6ba1147874c33ece8616068"
+    },
+    {
+      "path": "src/clm/static/app.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10eb06f31d014d2d63f68fe2f52d0292e88042db",
+      "size": 22072,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/10eb06f31d014d2d63f68fe2f52d0292e88042db"
+    },
+    {
+      "path": "src/clm/static/app.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b553abd6e2e3c9443f94a7fe270ee4fdce4eb8d2",
+      "size": 36097,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/b553abd6e2e3c9443f94a7fe270ee4fdce4eb8d2"
+    },
+    {
+      "path": "src/clm/static/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f63eb006523999fc347f606f0f3299eb41aeed6",
+      "size": 11240,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/5f63eb006523999fc347f606f0f3299eb41aeed6"
+    },
+    {
+      "path": "tools",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cc1c836e84279be064c2e7da1f47c11f7dec1d4b",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/cc1c836e84279be064c2e7da1f47c11f7dec1d4b"
+    },
+    {
+      "path": "tools/playground_mock.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c80241ae2f636127a6f172ff9e69f10aaf92226",
+      "size": 5681,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/2c80241ae2f636127a6f172ff9e69f10aaf92226"
+    },
+    {
+      "path": "train",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a296e6321c4bdbf3e1fd1eb002b1c4cced47ebf2",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/trees/a296e6321c4bdbf3e1fd1eb002b1c4cced47ebf2"
+    },
+    {
+      "path": "train/adapters.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2c8909680537a201cbe3cf38eb233748b94ba20",
+      "size": 3500,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/f2c8909680537a201cbe3cf38eb233748b94ba20"
+    },
+    {
+      "path": "train/embed_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6cd523b4598ccd8ea01bf3f4128a102e1be27b5",
+      "size": 4739,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/c6cd523b4598ccd8ea01bf3f4128a102e1be27b5"
+    },
+    {
+      "path": "train/finetune.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7de22f100873e9bdcc511383b31598a475073ffa",
+      "size": 40079,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/7de22f100873e9bdcc511383b31598a475073ffa"
+    },
+    {
+      "path": "train/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa84e4844b3619a5fc9a3e656392a6d06f925d02",
+      "size": 136,
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM/git/blobs/fa84e4844b3619a5fc9a3e656392a6d06f925d02"
+    }
+  ],
+  "truncated": false
+}

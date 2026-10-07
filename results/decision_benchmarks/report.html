@@ -1,0 +1,416 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CLM versus constrained Qwen: public benchmark adaptations</title><style>body{font:16px/1.55 system-ui,sans-serif;color:#243447;background:#fafaf7;max-width:1200px;margin:36px auto;padding:0 24px}h1{font-size:32px;line-height:1.2}h2{margin-top:40px}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0;display:block;overflow:auto}th,td{padding:10px 13px;border-bottom:1px solid #cfd7dd;text-align:left}th{background:#e7edf0}a{color:#076c83}img{width:100%}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf0f1;padding:18px;font-size:13px}.note{border-left:4px solid #d58b29;padding:12px 18px;background:#fff4df}.lead{font-size:20px}details{margin:18px 0}</style></head><body><h1>Constrained Qwen versus CLM</h1><p class="lead">Public tool-selection and Wikipedia-navigation experiments, with frozen prompts, cached decisions, and no planner-provided answers.</p><p class="note">These are adaptations of benchmark families cited by the CLM authors, not reproductions of their reported scores. We compare the released CLM head to its original Qwen3-8B backbone on the same Mac; Jev is not run here. A desired conclusion was not used to select test cases or suppress unfavorable outcomes.</p><p><strong>Main finding:</strong> constrained Qwen selected the correct tool on 55/60 requests (91.7%), versus CLM’s 40/60 (66.7%), at approximately 81 versus 79 ms per cached decision. Qwen retained every CLM-correct answer and added 15. The paired accuracy difference is +25 percentage points, with a 95% bootstrap interval of +15 to +36.7 points.</p><p>The broader claim needs restraint: Wikipedia next-step scores were close to the random-link baseline, and the five actual races ended 1/5 for Qwen and 0/5 for CLM. Longer Qwen instructions changed BFCL from 79/90 to 78/90 and Wiki next-step accuracy from 15/40 to 16/40. The strongest supported result is a competitive constrained-decoding baseline with little cached latency overhead, not a general guarantee that longer prompts greatly improve accuracy.</p><h2>What was available</h2><table><thead><tr><th>Reported comparison</th><th>Availability and treatment here</th></tr></thead><tbody><tr><td>BFCL v4</td><td>Public BFCL requests and function schemas available. Authors’ selected cases/prompts unavailable; our experiment tests function selection, not argument generation or the full BFCL score.</td></tr><tr><td>WikiRacing</td><td>Authors’ 30 races and harness unavailable. We use the public Wikispeedia directed graph, all outgoing links, title-only observations, and five short actual races.</td></tr><tr><td>Super Mario / T-Rex</td><td>Previously tested in this workspace. The planner-assisted T-Rex result is excluded from this report’s evidence.</td></tr><tr><td>DeepSWE / Terminal-Bench verifier</td><td>Task-specific fine-tuned heads and sampled candidate solutions are involved. The accessible DeepSWE evaluation dataset contains embeddings and metadata, not the original state/action text needed by Qwen. No fair text-based reproduction completed.</td></tr></tbody></table><p>Sources: <a href="https://github.com/Contrastive-LM/CLM">CLM release</a>, <a href="https://gorilla.cs.berkeley.edu/blogs/15_bfcl_v4_web_search.html">BFCL v4</a>, <a href="https://snap.stanford.edu/data/wikispeedia.html">Wikispeedia</a>, <a href="https://huggingface.co/datasets/tarsur385/deepswe-prm-embeddings-8k">DeepSWE embedding dataset</a>.</p><details><summary>Authors’ reported zero-shot comparison with Jev</summary><table><thead><tr><th>Benchmark</th><th>CLM success</th><th>Jev success</th><th>CLM latency</th><th>Jev latency</th></tr></thead><tbody><tr><td>T-Rex</td><td>5/5</td><td>5/5</td><td>16.5 ms</td><td>149.8 ms</td></tr><tr><td>BFCL v4</td><td>95.2%</td><td>99.2%</td><td>76.8 ms</td><td>125.5 ms</td></tr><tr><td>WikiRacing</td><td>26/30</td><td>30/30</td><td>79.8 ms</td><td>225 ms</td></tr><tr><td>Super Mario</td><td>5/5</td><td>5/5</td><td>33.5 ms</td><td>132.6 ms</td></tr></tbody></table><p>Transcribed from the release’s <a href="https://github.com/Contrastive-LM/CLM/blob/main/assets/zero-shot.png">zero-shot figure</a>. These are author-reported measurements with different inputs and deployment conditions; they are not directly comparable to the local latencies below.</p></details><h2>Accuracy</h2><img src="accuracy.png" alt="Accuracy with 95% Wilson intervals"><p>The no-abstention comparison uses the original function candidates on 60 positive requests. It was added as a diagnostic after discovering that CLM always selected the synthetic NO_TOOL candidate in the primary JSON-action test. The primary 90-request test has 30 requests from each of multiple, live_multiple, and live_irrelevance; NO_TOOL is available to both models on every request. Its 33.3% always-abstain baseline is therefore essential context.</p><table><thead><tr><th>Task / condition</th><th>Method</th><th>Correct</th><th>95% Wilson interval</th><th>Cached decision median</th></tr></thead><tbody><tr><td>bfcl</td><td>CLM · direct action text</td><td>30/90 (33.3%)</td><td>24.5–43.6%</td><td>80.1 ms</td></tr><tr><td>bfcl</td><td>CLM · prose schemas</td><td>40/90 (44.4%)</td><td>34.6–54.7%</td><td>80.1 ms</td></tr><tr><td>bfcl</td><td>Qwen · short prompt</td><td>79/90 (87.8%)</td><td>79.4–93.0%</td><td>85.2 ms</td></tr><tr><td>bfcl</td><td>Qwen · longer prompt</td><td>78/90 (86.7%)</td><td>78.1–92.2%</td><td>86.2 ms</td></tr><tr><td>wiki</td><td>CLM · direct action text</td><td>14/40 (35.0%)</td><td>22.1–50.5%</td><td>85.2 ms</td></tr><tr><td>wiki</td><td>Qwen · short prompt</td><td>15/40 (37.5%)</td><td>24.2–53.0%</td><td>96.1 ms</td></tr><tr><td>wiki</td><td>Qwen · longer prompt</td><td>16/40 (40.0%)</td><td>26.3–55.4%</td><td>99.8 ms</td></tr></tbody></table><details><summary>Primary results by BFCL category</summary><table><thead><tr><th>Task / condition</th><th>Method</th><th>Correct</th><th>95% Wilson interval</th><th>Cached decision median</th></tr></thead><tbody><tr><td>bfcl_live_irrelevance</td><td>CLM · direct action text</td><td>30/30 (100.0%)</td><td>88.6–100.0%</td><td>78.9 ms</td></tr><tr><td>bfcl_live_irrelevance</td><td>CLM · prose schemas</td><td>26/30 (86.7%)</td><td>70.3–94.7%</td><td>78.6 ms</td></tr><tr><td>bfcl_live_irrelevance</td><td>Qwen · short prompt</td><td>23/30 (76.7%)</td><td>59.1–88.2%</td><td>86.5 ms</td></tr><tr><td>bfcl_live_irrelevance</td><td>Qwen · longer prompt</td><td>21/30 (70.0%)</td><td>52.1–83.3%</td><td>87.0 ms</td></tr><tr><td>bfcl_live_multiple</td><td>CLM · direct action text</td><td>0/30 (0.0%)</td><td>-0.0–11.4%</td><td>81.9 ms</td></tr><tr><td>bfcl_live_multiple</td><td>CLM · prose schemas</td><td>9/30 (30.0%)</td><td>16.7–47.9%</td><td>82.2 ms</td></tr><tr><td>bfcl_live_multiple</td><td>Qwen · short prompt</td><td>29/30 (96.7%)</td><td>83.3–99.4%</td><td>88.2 ms</td></tr><tr><td>bfcl_live_multiple</td><td>Qwen · longer prompt</td><td>28/30 (93.3%)</td><td>78.7–98.2%</td><td>90.7 ms</td></tr><tr><td>bfcl_multiple</td><td>CLM · direct action text</td><td>0/30 (0.0%)</td><td>-0.0–11.4%</td><td>79.7 ms</td></tr><tr><td>bfcl_multiple</td><td>CLM · prose schemas</td><td>5/30 (16.7%)</td><td>7.3–33.6%</td><td>79.9 ms</td></tr><tr><td>bfcl_multiple</td><td>Qwen · short prompt</td><td>27/30 (90.0%)</td><td>74.4–96.5%</td><td>84.0 ms</td></tr><tr><td>bfcl_multiple</td><td>Qwen · longer prompt</td><td>29/30 (96.7%)</td><td>83.3–99.4%</td><td>84.9 ms</td></tr><tr><td>wikispeedia</td><td>CLM · direct action text</td><td>14/40 (35.0%)</td><td>22.1–50.5%</td><td>85.2 ms</td></tr><tr><td>wikispeedia</td><td>Qwen · short prompt</td><td>15/40 (37.5%)</td><td>24.2–53.0%</td><td>96.1 ms</td></tr><tr><td>wikispeedia</td><td>Qwen · longer prompt</td><td>16/40 (40.0%)</td><td>26.3–55.4%</td><td>99.8 ms</td></tr></tbody></table></details><p>Wikispeedia scores whether the selected outgoing link is on any shortest route to the target. This is a strict graph metric: a plausible but longer route counts as wrong. Neither model sees graph distances or future link lists. The episode experiment below instead measures actual arrival within eight clicks.</p><p><strong>Wiki next-step baseline:</strong> a uniformly random outgoing link has 32.6% expected accuracy on these starting states, since several links may belong to equally short routes. The 35–40% model scores therefore give little evidence of a useful advantage on this metric alone.</p><h2>Fairness diagnostics</h2><table><thead><tr><th>Task / condition</th><th>Method</th><th>Correct</th><th>95% Wilson interval</th><th>Cached decision median</th></tr></thead><tbody><tr><td>forced_tool</td><td>CLM · direct action text</td><td>40/60 (66.7%)</td><td>54.1–77.3%</td><td>76.3 ms</td></tr><tr><td>forced_tool</td><td>CLM · prose schemas</td><td>35/60 (58.3%)</td><td>45.7–69.9%</td><td>77.3 ms</td></tr><tr><td>forced_tool</td><td>Qwen · short prompt</td><td>55/60 (91.7%)</td><td>81.9–96.4%</td><td>84.3 ms</td></tr><tr><td>menu_context</td><td>CLM · menu in state, JSON</td><td>30/90 (33.3%)</td><td>24.5–43.6%</td><td>85.5 ms</td></tr><tr><td>menu_context</td><td>CLM · menu in state, prose</td><td>37/90 (41.1%)</td><td>31.5–51.4%</td><td>85.7 ms</td></tr></tbody></table><p>All eligible held-out cases receive each diagnostic; there is no test-driven prompt search. Menu-in-state CLM receives the same available-function information that Qwen sees. CLM action serialization is tested both as compact JSON and using the release’s prose serializer. These diagnostics are explicitly separate from the development-selected primary comparison.</p><h2>Matched cached latency</h2><table><thead><tr><th>Task</th><th>Comparison</th><th>Median ms, A → B</th><th>Paired median overhead</th><th>95% interval</th></tr></thead><tbody><tr><td>bfcl</td><td>CLM · direct action text → Qwen · short prompt</td><td>82.4 → 87.6</td><td>+6.0%</td><td>+4.0 to +6.8%</td></tr><tr><td>bfcl</td><td>CLM · direct action text → Qwen · longer prompt</td><td>82.4 → 88.9</td><td>+6.9%</td><td>+4.9 to +8.3%</td></tr><tr><td>bfcl</td><td>Qwen · short prompt → Qwen · longer prompt</td><td>87.6 → 88.9</td><td>+1.1%</td><td>+0.9 to +1.4%</td></tr><tr><td>wiki</td><td>CLM · direct action text → Qwen · short prompt</td><td>91.2 → 94.7</td><td>+3.1%</td><td>+0.9 to +11.6%</td></tr><tr><td>wiki</td><td>CLM · direct action text → Qwen · longer prompt</td><td>91.2 → 96.1</td><td>+4.5%</td><td>+2.8 to +13.9%</td></tr><tr><td>wiki</td><td>Qwen · short prompt → Qwen · longer prompt</td><td>94.7 → 96.1</td><td>+1.5%</td><td>+1.1 to +1.9%</td></tr><tr><td>bfcl_forced_tool</td><td>CLM · direct action text → Qwen · short prompt</td><td>79.0 → 80.9</td><td>+2.9%</td><td>-0.2 to +6.4%</td></tr><tr><td>bfcl_forced_tool</td><td>CLM · prose schemas → Qwen · short prompt</td><td>79.1 → 80.9</td><td>+3.0%</td><td>-0.3 to +5.9%</td></tr></tbody></table><p>Five interleaved repetitions on each of ten held-out states per task family. Compute each state’s median, then compare paired ratios; 95% intervals bootstrap states, not individual repetitions. A ≤10% median overhead was specified before held-out results as a descriptive “near latency” threshold, not a universal guarantee. Both methods reuse their actual caches: CLM caches action vectors; Qwen caches the instruction/menu KV prefix. The changing request is recomputed on every call. Complete-answer memoization is disabled.</p><h2>Different requests sharing the same tool menu</h2><table><thead><tr><th>Task / condition</th><th>Method</th><th>Correct</th><th>95% Wilson interval</th><th>Cached decision median</th></tr></thead><tbody><tr><td></td><td>CLM · direct action text</td><td>12/24 (50.0%)</td><td>31.4–68.6%</td><td>81.4 ms</td></tr><tr><td></td><td>Qwen · short prompt</td><td>21/24 (87.5%)</td><td>69.0–95.7%</td><td>87.8 ms</td></tr><tr><td></td><td>Qwen · longer prompt</td><td>20/24 (83.3%)</td><td>64.1–93.3%</td><td>87.9 ms</td></tr></tbody></table><p>Six held-out schema groups receive 24 additional public BFCL requests in total, in source order, with one cache setup per group. These requests were not used to tune prompts. They supplement the timing microbenchmark with genuine fixed-menu reuse. Requests within a menu are correlated; this is a small feasibility test, not 24 independent task families.</p><h2>Actual Wikipedia races</h2><table><thead><tr><th>Method</th><th>Reached target within 8 clicks</th><th>Total clicks</th><th>Total cache setup</th><th>Total decision time</th></tr></thead><tbody><tr><td>CLM · direct action text</td><td>0/5</td><td>40</td><td>15.85 s</td><td>3.97 s</td></tr><tr><td>Qwen · short prompt</td><td>1/5</td><td>38</td><td>12.27 s</td><td>3.62 s</td></tr><tr><td>Qwen · longer prompt</td><td>1/5</td><td>38</td><td>20.63 s</td><td>3.52 s</td></tr></tbody></table><p>The first five frozen held-out pairs, at most eight clicks each, all outgoing links retained. Each model follows its own actions; no action is replaced by an oracle. Page-menu KV caches and individual CLM article vectors are reused where possible within each race. Different paths require different work, so cumulative times are application outcomes, not matched per-state latency comparisons.</p><p>A uniform-random policy reached the target in 0.288% of 50,000 eight-click simulations on these same five starting pairs. Unlike the first-step metric, actual arrival is very unlikely by chance. Five model races still provide only pilot-scale evidence.</p><details><summary>CLM · direct action text paths</summary><pre>[
+  {
+    &quot;id&quot;: &quot;Great_Lakes_Storm_of_1913__Alexander_Hamilton&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Great_Lakes_Storm_of_1913&quot;,
+      &quot;Telephone&quot;,
+      &quot;Internet&quot;,
+      &quot;World_Wide_Web&quot;,
+      &quot;Gmail&quot;,
+      &quot;Google&quot;,
+      &quot;Gmail&quot;,
+      &quot;Google&quot;,
+      &quot;Gmail&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Aztec__Cell_%28biology%29&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Aztec&quot;,
+      &quot;Hern%C3%A1n_Cort%C3%A9s&quot;,
+      &quot;Christopher_Columbus&quot;,
+      &quot;Montserrat&quot;,
+      &quot;Christopher_Columbus&quot;,
+      &quot;Montserrat&quot;,
+      &quot;Christopher_Columbus&quot;,
+      &quot;Montserrat&quot;,
+      &quot;Christopher_Columbus&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Rugby_football__United_Arab_Emirates&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Rugby_football&quot;,
+      &quot;Football_%28soccer%29&quot;,
+      &quot;Tokyo&quot;,
+      &quot;Osaka&quot;,
+      &quot;Tokyo&quot;,
+      &quot;Jakarta&quot;,
+      &quot;Tokyo&quot;,
+      &quot;Jakarta&quot;,
+      &quot;Tokyo&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Plutonium__Western_Sahara&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Plutonium&quot;,
+      &quot;Gabon&quot;,
+      &quot;Equatorial_Guinea&quot;,
+      &quot;Gabon&quot;,
+      &quot;Equatorial_Guinea&quot;,
+      &quot;Gabon&quot;,
+      &quot;Equatorial_Guinea&quot;,
+      &quot;Gabon&quot;,
+      &quot;Equatorial_Guinea&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Abhidhamma_Pitaka__Mozambique&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Abhidhamma_Pitaka&quot;,
+      &quot;Pali_Canon&quot;,
+      &quot;Abhidhamma_Pitaka&quot;,
+      &quot;Pali_Canon&quot;,
+      &quot;Abhidhamma_Pitaka&quot;,
+      &quot;Buddhism&quot;,
+      &quot;Malaysia&quot;,
+      &quot;Cambodia&quot;,
+      &quot;Islam&quot;
+    ]
+  }
+]</pre></details><details><summary>Qwen · short prompt paths</summary><pre>[
+  {
+    &quot;id&quot;: &quot;Great_Lakes_Storm_of_1913__Alexander_Hamilton&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Great_Lakes_Storm_of_1913&quot;,
+      &quot;Canada&quot;,
+      &quot;Skiing&quot;,
+      &quot;Canada&quot;,
+      &quot;Skiing&quot;,
+      &quot;Canada&quot;,
+      &quot;Skiing&quot;,
+      &quot;Canada&quot;,
+      &quot;Skiing&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Aztec__Cell_%28biology%29&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Aztec&quot;,
+      &quot;Hern%C3%A1n_Cort%C3%A9s&quot;,
+      &quot;Inca_Empire&quot;,
+      &quot;Spanish_conquest_of_the_Inca_Empire&quot;,
+      &quot;Hern%C3%A1n_Cort%C3%A9s&quot;,
+      &quot;North_America&quot;,
+      &quot;Caribbean_Sea&quot;,
+      &quot;Gulf_of_Mexico&quot;,
+      &quot;Spain&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Rugby_football__United_Arab_Emirates&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Rugby_football&quot;,
+      &quot;England&quot;,
+      &quot;British_Isles&quot;,
+      &quot;Orkney&quot;,
+      &quot;Clay&quot;,
+      &quot;Mineral&quot;,
+      &quot;Chlorine&quot;,
+      &quot;Chemical_element&quot;,
+      &quot;Periodic_table&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Plutonium__Western_Sahara&quot;,
+    &quot;success&quot;: true,
+    &quot;path&quot;: [
+      &quot;Plutonium&quot;,
+      &quot;Columbia_River&quot;,
+      &quot;Missouri_River&quot;,
+      &quot;United_States&quot;,
+      &quot;El_Salvador&quot;,
+      &quot;Spain&quot;,
+      &quot;Western_Sahara&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Abhidhamma_Pitaka__Mozambique&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Abhidhamma_Pitaka&quot;,
+      &quot;Buddhism&quot;,
+      &quot;Europe&quot;,
+      &quot;Mammal&quot;,
+      &quot;Paleontology&quot;,
+      &quot;Fossil&quot;,
+      &quot;History&quot;,
+      &quot;Herodotus&quot;,
+      &quot;Persian_Empire&quot;
+    ]
+  }
+]</pre></details><details><summary>Qwen · longer prompt paths</summary><pre>[
+  {
+    &quot;id&quot;: &quot;Great_Lakes_Storm_of_1913__Alexander_Hamilton&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Great_Lakes_Storm_of_1913&quot;,
+      &quot;Canada&quot;,
+      &quot;Stephen_Harper&quot;,
+      &quot;Canada&quot;,
+      &quot;Stephen_Harper&quot;,
+      &quot;Canada&quot;,
+      &quot;Stephen_Harper&quot;,
+      &quot;Canada&quot;,
+      &quot;Stephen_Harper&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Aztec__Cell_%28biology%29&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Aztec&quot;,
+      &quot;Holy_Roman_Empire&quot;,
+      &quot;Franks&quot;,
+      &quot;Language&quot;,
+      &quot;Science&quot;,
+      &quot;Pollution&quot;,
+      &quot;Industry&quot;,
+      &quot;Industrial_Revolution&quot;,
+      &quot;Sociology&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Rugby_football__United_Arab_Emirates&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Rugby_football&quot;,
+      &quot;England&quot;,
+      &quot;British_Isles&quot;,
+      &quot;Orkney&quot;,
+      &quot;Fish&quot;,
+      &quot;Vertebrate&quot;,
+      &quot;Whale&quot;,
+      &quot;United_States&quot;,
+      &quot;Houston%2C_Texas&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Plutonium__Western_Sahara&quot;,
+    &quot;success&quot;: true,
+    &quot;path&quot;: [
+      &quot;Plutonium&quot;,
+      &quot;Columbia_River&quot;,
+      &quot;Missouri_River&quot;,
+      &quot;United_States&quot;,
+      &quot;Middle_East&quot;,
+      &quot;Africa&quot;,
+      &quot;Western_Sahara&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;Abhidhamma_Pitaka__Mozambique&quot;,
+    &quot;success&quot;: false,
+    &quot;path&quot;: [
+      &quot;Abhidhamma_Pitaka&quot;,
+      &quot;Buddhism&quot;,
+      &quot;Europe&quot;,
+      &quot;Bratislava&quot;,
+      &quot;Roman_Empire&quot;,
+      &quot;Franks&quot;,
+      &quot;Austria&quot;,
+      &quot;Liechtenstein&quot;,
+      &quot;Holy_Roman_Empire&quot;
+    ]
+  }
+]</pre></details><h2>Setup costs and limits of the timing claim</h2><table><thead><tr><th>Task</th><th>Method</th><th>Median menu setup</th><th>Median setup + first decision</th></tr></thead><tbody><tr><td>bfcl</td><td>CLM · direct action text</td><td>599.2 ms</td><td>703.2 ms</td></tr><tr><td>bfcl</td><td>CLM · prose schemas</td><td>664.7 ms</td><td>759.7 ms</td></tr><tr><td>bfcl</td><td>Qwen · short prompt</td><td>482.5 ms</td><td>591.2 ms</td></tr><tr><td>bfcl</td><td>Qwen · longer prompt</td><td>601.7 ms</td><td>709.6 ms</td></tr><tr><td>wiki</td><td>CLM · direct action text</td><td>563.4 ms</td><td>651.4 ms</td></tr><tr><td>wiki</td><td>Qwen · short prompt</td><td>180.8 ms</td><td>277.3 ms</td></tr><tr><td>wiki</td><td>Qwen · longer prompt</td><td>392.4 ms</td><td>494.5 ms</td></tr></tbody></table><p>Model loading is excluded. Setup includes Qwen prefix construction or CLM action embedding; the latter currently uses sequential embedding calls. Thus these cold CLM timings describe this implementation, not an optimized batched server. A changing Wikipedia link menu cannot automatically reuse the entire previous Qwen prefix. The cached-decision numbers apply after the required menu cache exists. No claim about H100 serving, concurrency, remote API latency, or Jev’s implementation follows from this local measurement.</p><h2>Prompt engineering: what the experiment establishes</h2><p>The short and longer Qwen prompts use identical weights and identical one-token constraints. Both were evaluated on the same held-out cases. A longer prompt is not automatically better; see the paired differences below. This experiment does not measure MLP training time or cost, so it cannot quantify how much easier prompt engineering is. No training is needed to deploy the Qwen baseline tested here.</p><pre>[
+  {
+    &quot;family&quot;: &quot;bfcl&quot;,
+    &quot;a&quot;: &quot;clm_base&quot;,
+    &quot;b&quot;: &quot;qwen_raw_base&quot;,
+    &quot;n&quot;: 90,
+    &quot;b_minus_a_percentage_points&quot;: 54.44444444444444,
+    &quot;paired_bootstrap95_pp&quot;: [
+      41.11111111111111,
+      66.66666666666666
+    ],
+    &quot;b_only_correct&quot;: 56,
+    &quot;a_only_correct&quot;: 7
+  },
+  {
+    &quot;family&quot;: &quot;bfcl&quot;,
+    &quot;a&quot;: &quot;qwen_raw_base&quot;,
+    &quot;b&quot;: &quot;qwen_raw_tuned&quot;,
+    &quot;n&quot;: 90,
+    &quot;b_minus_a_percentage_points&quot;: -1.1111111111111112,
+    &quot;paired_bootstrap95_pp&quot;: [
+      -5.555555555555555,
+      3.3333333333333335
+    ],
+    &quot;b_only_correct&quot;: 2,
+    &quot;a_only_correct&quot;: 3
+  },
+  {
+    &quot;family&quot;: &quot;wiki&quot;,
+    &quot;a&quot;: &quot;clm_base&quot;,
+    &quot;b&quot;: &quot;qwen_raw_base&quot;,
+    &quot;n&quot;: 40,
+    &quot;b_minus_a_percentage_points&quot;: 2.5,
+    &quot;paired_bootstrap95_pp&quot;: [
+      -12.5,
+      20.0
+    ],
+    &quot;b_only_correct&quot;: 6,
+    &quot;a_only_correct&quot;: 5
+  },
+  {
+    &quot;family&quot;: &quot;wiki&quot;,
+    &quot;a&quot;: &quot;qwen_raw_base&quot;,
+    &quot;b&quot;: &quot;qwen_raw_tuned&quot;,
+    &quot;n&quot;: 40,
+    &quot;b_minus_a_percentage_points&quot;: 2.5,
+    &quot;paired_bootstrap95_pp&quot;: [
+      -7.5,
+      12.5
+    ],
+    &quot;b_only_correct&quot;: 3,
+    &quot;a_only_correct&quot;: 2
+  },
+  {
+    &quot;family&quot;: &quot;bfcl_forced_tool&quot;,
+    &quot;a&quot;: &quot;clm_base&quot;,
+    &quot;b&quot;: &quot;qwen_raw_base&quot;,
+    &quot;n&quot;: 60,
+    &quot;b_minus_a_percentage_points&quot;: 25.0,
+    &quot;paired_bootstrap95_pp&quot;: [
+      15.0,
+      36.666666666666664
+    ],
+    &quot;b_only_correct&quot;: 15,
+    &quot;a_only_correct&quot;: 0
+  }
+]</pre><h2>Implementation and sampling</h2><p>BF16 Qwen3-8B on Apple M4 Max, 64 GB, MLX; same loaded backbone for both paths. CLM uses the released approximately 18.9-million-parameter projection-head pair with normalized final hidden states; the port is checked against PyTorch. Qwen uses its original LM-head rows for verified single-token labels. It performs one state forward pass and argmax over only allowed labels, with no generation loop, thinking tokens, or additional completion pass. A–Z and verified single-token two-letter labels support larger menus. The full-vocabulary restricted-argmax audit is recorded below.</p><p>Development: 10 BFCL and 10 Wiki cases. Held-out: 90 BFCL and 40 Wiki cases. BFCL schemas are disjoint across development and test; Wiki targets are disjoint. Source-order deduplication and fixed random sampling happen before model scoring. Wiki source/target pairs come from human successful paths, have shortest distance 2–4, and retain every outgoing link. These are title-only observations, not full Wikipedia article reading. Most tool requests are short relative to their schemas; this suite does not replace the earlier RACE context-heavy experiment.</p><pre>{
+  &quot;n&quot;: 18,
+  &quot;all_same_choice&quot;: true,
+  &quot;max_probability_error&quot;: 0.0
+}</pre><details><summary>Prompt and cache token counts</summary><pre>[
+  {
+    &quot;family&quot;: &quot;bfcl&quot;,
+    &quot;variant&quot;: &quot;clm_base&quot;,
+    &quot;input_tokens&quot;: {
+      &quot;median&quot;: 33.0,
+      &quot;max&quot;: 406
+    },
+    &quot;prefix_tokens&quot;: {
+      &quot;median&quot;: 0.0,
+      &quot;max&quot;: 0
+    },
+    &quot;processed_tokens&quot;: {
+      &quot;median&quot;: 33.0,
+      &quot;max&quot;: 406
+    },
+    &quot;choice_count&quot;: {
+      &quot;median&quot;: 4.0,
+      &quot;max&quot;: 11
+    }
+  },
+  {
+    &quot;family&quot;: &quot;bfcl&quot;,
+    &quot;variant&quot;: &quot;qwen_raw_base&quot;,
+    &quot;input_tokens&quot;: {
+      &quot;median&quot;: 487.0,
+      &quot;max&quot;: 1450
+    },
+    &quot;prefix_tokens&quot;: {
+      &quot;median&quot;: 437.5,
+      &quot;max&quot;: 1419
+    },
+    &quot;processed_tokens&quot;: {
+      &quot;median&quot;: 36.0,
+      &quot;max&quot;: 409
+    },
+    &quot;choice_count&quot;: {
+      &quot;median&quot;: 4.0,
+      &quot;max&quot;: 11
+    }
+  },
+  {
+    &quot;family&quot;: &quot;bfcl&quot;,
+    &quot;variant&quot;: &quot;qwen_raw_tuned&quot;,
+    &quot;input_tokens&quot;: {
+      &quot;median&quot;: 610.0,
+      &quot;max&quot;: 1573
+    },
+    &quot;prefix_tokens&quot;: {
+      &quot;median&quot;: 560.5,
+      &quot;max&quot;: 1542
+    },
+    &quot;processed_tokens&quot;: {
+      &quot;median&quot;: 36.0,
+      &quot;max&quot;: 409
+    },
+    &quot;choice_count&quot;: {
+      &quot;median&quot;: 4.0,
+      &quot;max&quot;: 11
+    }
+  },
+  {
+    &quot;family&quot;: &quot;wiki&quot;,
+    &quot;variant&quot;: &quot;clm_base&quot;,
+    &quot;input_tokens&quot;: {
+      &quot;median&quot;: 33.0,
+      &quot;max&quot;: 45
+    },
+    &quot;prefix_tokens&quot;: {
+      &quot;median&quot;: 0.0,
+      &quot;max&quot;: 0
+    },
+    &quot;processed_tokens&quot;: {
+      &quot;median&quot;: 33.0,
+      &quot;max&quot;: 45
+    },
+    &quot;choice_count&quot;: {
+      &quot;median&quot;: 17.5,
+      &quot;max&quot;: 236
+    }
+  },
+  {
+    &quot;family&quot;: &quot;wiki&quot;,
+    &quot;variant&quot;: &quot;qwen_raw_base&quot;,
+    &quot;input_tokens&quot;: {
+      &quot;median&quot;: 153.0,
+      &quot;max&quot;: 1243
+    },
+    &quot;prefix_tokens&quot;: {
+      &quot;median&quot;: 117.5,
+      &quot;max&quot;: 1206
+    },
+    &quot;processed_tokens&quot;: {
+      &quot;median&quot;: 36.0,
+      &quot;max&quot;: 48
+    },
+    &quot;choice_count&quot;: {
+      &quot;median&quot;: 17.5,
+      &quot;max&quot;: 236
+    }
+  },
+  {
+    &quot;family&quot;: &quot;wiki&quot;,
+    &quot;variant&quot;: &quot;qwen_raw_tuned&quot;,
+    &quot;input_tokens&quot;: {
+      &quot;median&quot;: 283.0,
+      &quot;max&quot;: 1373
+    },
+    &quot;prefix_tokens&quot;: {
+      &quot;median&quot;: 247.5,
+      &quot;max&quot;: 1336
+    },
+    &quot;processed_tokens&quot;: {
+      &quot;median&quot;: 36.0,
+      &quot;max&quot;: 48
+    },
+    &quot;choice_count&quot;: {
+      &quot;median&quot;: 17.5,
+      &quot;max&quot;: 236
+    }
+  }
+]</pre></details><h2>Exact inputs and reproducibility</h2><p><a href="exact_prompts.json">Exact text, token IDs, and choices</a> · <a href="prompt_rules.json">All prompt rules</a> · <a href="frozen.json">Prespecified primary selection</a> · <a href="diagnostic_plan.json">Diagnostic rationale</a> · <a href="cases.json">Frozen cases and scoring labels</a> · <a href="summary.json">Machine-readable results</a></p><p>Scoring labels, graph distances, and expected answers in the saved case files are evaluation metadata only; input construction accesses state, question, and actions, never the gold field.</p><p>Held-out means excluded from this prompt-development sample; it does not establish that these public examples were absent from either model’s pretraining.</p><p>Raw outputs: <a href="dev.jsonl">dev.jsonl</a> · <a href="test.jsonl">test.jsonl</a> · <a href="diagnostics.jsonl">diagnostics.jsonl</a> · <a href="latency.jsonl">latency.jsonl</a> · <a href="repeated.jsonl">repeated.jsonl</a> · <a href="navigation.jsonl">navigation.jsonl</a> · <a href="decoder_audit.jsonl">decoder_audit.jsonl</a> · <a href="sampling.json">sampling.json</a> · <a href="model_metadata.json">model_metadata.json</a></p><p>Scripts: prepare.py, run.py, diagnostics.py, supplement.py, analyze.py under experiments/benchmarks. Re-run with .venv/bin/python; run model stages sequentially to avoid GPU contention. The earlier numeric-label development pilot stopped when a two-digit label was not a single token; it is retained for audit but excluded from all reported results.</p></body></html>

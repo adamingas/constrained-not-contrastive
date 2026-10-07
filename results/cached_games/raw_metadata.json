@@ -1,0 +1,29 @@
+{
+  "exploratory": true,
+  "description": "Same rules/actions in raw prefix, same state/question, final Answer:; one bare letter; no chat template",
+  "setup": {
+    "trex": {
+      "setup_prefix_ms": 312.20812513493,
+      "labels": [
+        32,
+        33,
+        34
+      ]
+    },
+    "mario": {
+      "setup_prefix_ms": 344.3686671089381,
+      "labels": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    }
+  },
+  "prompts": {
+    "trex": "You control the Chrome T-Rex runner. Survive as long as possible. The dinosaur runs right automatically, while obstacles move left. A decision lasts 6 frames (100 ms) at 60 frames per second. All distances are pixels. The dinosaur left edge is x=50 and its standing width is 44, height 47; ground standing top y=93. Larger y means lower. Cacti must be jumped over; low birds can be jumped, head-height birds can be ducked under, and high birds can pass overhead. Jump only when an obstacle is sufficiently near; an early jump can land on the obstacle. A jump begins with about -10.6 pixels/frame vertical velocity and gravity adds 0.6 each frame. A new jump can start only on the ground. Duck in the air accelerates descent. The state contains observable geometry, not a recommended action.\n\nChoose exactly one action letter.\nA: run: Run forward on the ground without jumping or ducking. Release duck if held.\nB: jump: Jump over an obstacle. If already airborne, continue the current jump without starting another.\nC: duck: Duck under a bird; if airborne, drop rapidly toward the ground.\n\nCurrent state:\nDinosaur top_y=15.0, vertical velocity=4.6, airborne=True, ducking=False, rapid descent=False. Running speed=7.14 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=22, top_y=105, width=51, height=35, leftward speed=7.14, gap from dinosaur front=-72.\nFrame 1140; score=182.\n\nWhich action should the dinosaur take now to survive?\n\nAnswer:",
+    "mario": "You control Super Mario Bros. Reach the flag to the right without dying. Each decision holds its buttons for 12 frames (200 ms) at 60 frames per second. Observations use world pixel coordinates; x increases right, y increases downward. Mario is about 16 pixels wide. Feet_y is the bottom of his body. Grounded means standing on a solid surface. Solid terrain rectangles can be floor, pipes, bricks, or blocks. Missing floor is a pit: falling into it is fatal. Jump over enemies, pits, and tall obstacles. Enemies can be stomped by landing on them from above; side contact is dangerous. Walk right on clear floor; use jumps when needed for progress or safety. Holding jump while rising increases jump height; releasing jump shortens the jump. Jump must be released between separate jumps: continuing to hold it after landing does not start a new jump. Horizontal momentum persists briefly after release. Negative vertical velocity means rising. The state gives only currently visible geometry and current motion.\n\nChoose exactly one action letter.\nA: wait: Release all buttons; remain still or coast with current momentum.\nB: right: Walk right with jump released.\nC: left: Walk left with jump released.\nD: jump: Hold jump without a horizontal direction.\nE: jump_right: Hold jump and right to jump forward or continue an airborne jump to the right.\nF: jump_left: Hold jump and left to jump backward or continue an airborne jump to the left.\n\nCurrent state:\nMario x=163, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=144..304, y=208..240; x=256..272, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 84; furthest x reached=163.\n\nWhich action should Mario take now to reach the flag safely?\n\nAnswer:"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "original": {
+    "input_tokens": 365,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer the multiple-choice reading comprehension question using the passage. Reply with exactly one option letter and nothing else."
+      },
+      {
+        "role": "user",
+        "content": "Passage:\nDo you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn't mean \"no rules\". Every school has its own rules.\nThere are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.\nAmerican schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn't be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (<<>> )\n\nQuestion: Which is the same rule in Japanese schools and at Morton High School?\n\nOptions:\nA: The students must get to school on time.\nB: The students should keep their hair black.\nC: The students can have part-time jobs.\nD: The students are allowed to wear their own clothes."
+      }
+    ],
+    "rendered_input": "<|im_start|>system\nAnswer the multiple-choice reading comprehension question using the passage. Reply with exactly one option letter and nothing else.<|im_end|>\n<|im_start|>user\nPassage:\nDo you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn't mean \"no rules\". Every school has its own rules.\nThere are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.\nAmerican schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn't be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (<<>> )\n\nQuestion: Which is the same rule in Japanese schools and at Morton High School?\n\nOptions:\nA: The students must get to school on time.\nB: The students should keep their hair black.\nC: The students can have part-time jobs.\nD: The students are allowed to wear their own clothes.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "option_keys": [
+      "2",
+      "3",
+      "0",
+      "1"
+    ]
+  },
+  "short_system": {
+    "input_tokens": 355,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Reply with A, B, C, or D."
+      },
+      {
+        "role": "user",
+        "content": "Passage:\nDo you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn't mean \"no rules\". Every school has its own rules.\nThere are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.\nAmerican schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn't be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (<<>> )\n\nQuestion: Which is the same rule in Japanese schools and at Morton High School?\n\nOptions:\nA: The students must get to school on time.\nB: The students should keep their hair black.\nC: The students can have part-time jobs.\nD: The students are allowed to wear their own clothes."
+      }
+    ],
+    "rendered_input": "<|im_start|>system\nReply with A, B, C, or D.<|im_end|>\n<|im_start|>user\nPassage:\nDo you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn't mean \"no rules\". Every school has its own rules.\nThere are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.\nAmerican schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn't be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (<<>> )\n\nQuestion: Which is the same rule in Japanese schools and at Morton High School?\n\nOptions:\nA: The students must get to school on time.\nB: The students should keep their hair black.\nC: The students can have part-time jobs.\nD: The students are allowed to wear their own clothes.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "option_keys": [
+      "2",
+      "3",
+      "0",
+      "1"
+    ]
+  },
+  "no_system": {
+    "input_tokens": 339,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Passage:\nDo you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn't mean \"no rules\". Every school has its own rules.\nThere are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.\nAmerican schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn't be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (<<>> )\n\nQuestion: Which is the same rule in Japanese schools and at Morton High School?\n\nOptions:\nA: The students must get to school on time.\nB: The students should keep their hair black.\nC: The students can have part-time jobs.\nD: The students are allowed to wear their own clothes."
+      }
+    ],
+    "rendered_input": "<|im_start|>user\nPassage:\nDo you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn't mean \"no rules\". Every school has its own rules.\nThere are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.\nAmerican schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn't be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (<<>> )\n\nQuestion: Which is the same rule in Japanese schools and at Morton High School?\n\nOptions:\nA: The students must get to school on time.\nB: The students should keep their hair black.\nC: The students can have part-time jobs.\nD: The students are allowed to wear their own clothes.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "option_keys": [
+      "2",
+      "3",
+      "0",
+      "1"
+    ]
+  },
+  "no_template": {
+    "input_tokens": 350,
+    "messages": null,
+    "rendered_input": "Answer the multiple-choice reading comprehension question using the passage. Reply with exactly one option letter and nothing else.\n\nPassage:\nDo you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn't mean \"no rules\". Every school has its own rules.\nThere are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.\nAmerican schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn't be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (<<>> )\n\nQuestion: Which is the same rule in Japanese schools and at Morton High School?\n\nOptions:\nA: The students must get to school on time.\nB: The students should keep their hair black.\nC: The students can have part-time jobs.\nD: The students are allowed to wear their own clothes.\n\nAnswer:",
+    "option_keys": [
+      "2",
+      "3",
+      "0",
+      "1"
+    ]
+  },
+  "neither": {
+    "input_tokens": 329,
+    "messages": null,
+    "rendered_input": "Passage:\nDo you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn't mean \"no rules\". Every school has its own rules.\nThere are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.\nAmerican schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn't be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (<<>> )\n\nQuestion: Which is the same rule in Japanese schools and at Morton High School?\n\nOptions:\nA: The students must get to school on time.\nB: The students should keep their hair black.\nC: The students can have part-time jobs.\nD: The students are allowed to wear their own clothes.\n\nAnswer:",
+    "option_keys": [
+      "2",
+      "3",
+      "0",
+      "1"
+    ]
+  },
+  "no_template_literal": {
+    "input_tokens": 348,
+    "messages": null,
+    "rendered_input": "Answer the multiple-choice reading comprehension question using the passage. Reply with exactly one option letter and nothing else.\n\nPassage:\nDo you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn't mean \"no rules\". Every school has its own rules.\nThere are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.\nAmerican schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn't be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (<<>> )\n\nQuestion: Which is the same rule in Japanese schools and at Morton High School?\n\nOptions:\nA: The students must get to school on time.\nB: The students should keep their hair black.\nC: The students can have part-time jobs.\nD: The students are allowed to wear their own clothes.",
+    "option_keys": [
+      "2",
+      "3",
+      "0",
+      "1"
+    ]
+  },
+  "neither_literal": {
+    "input_tokens": 327,
+    "messages": null,
+    "rendered_input": "Passage:\nDo you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn't mean \"no rules\". Every school has its own rules.\nThere are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.\nAmerican schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn't be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (<<>> )\n\nQuestion: Which is the same rule in Japanese schools and at Morton High School?\n\nOptions:\nA: The students must get to school on time.\nB: The students should keep their hair black.\nC: The students can have part-time jobs.\nD: The students are allowed to wear their own clothes.",
+    "option_keys": [
+      "2",
+      "3",
+      "0",
+      "1"
+    ]
+  }
+}

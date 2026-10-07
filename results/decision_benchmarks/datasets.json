@@ -1,0 +1,60 @@
+[
+  {
+    "_id": "6ab47a089a77eecdfbe9f453",
+    "id": "Contrastive-LM/CLM-v0.1-Pretrain-Nemotron",
+    "author": "Contrastive-LM",
+    "disabled": false,
+    "gated": false,
+    "lastModified": "2026-09-24T01:24:49.000Z",
+    "likes": 9,
+    "trendingScore": 4,
+    "private": false,
+    "sha": "05ca7d05c043350326c5e86c589b9542962747b4",
+    "downloads": 3924,
+    "tags": [
+      "size_categories:10M<n<100M",
+      "format:parquet",
+      "modality:text",
+      "library:datasets",
+      "library:dask",
+      "library:polars",
+      "library:mlcroissant",
+      "region:us"
+    ],
+    "createdAt": "2026-09-24T01:16:56.000Z",
+    "key": ""
+  },
+  {
+    "_id": "6ab259bcba63fa5324d5e87e",
+    "id": "Contrastive-LM/deepswe-clm-train-embeddings-8k",
+    "author": "Contrastive-LM",
+    "disabled": false,
+    "gated": false,
+    "lastModified": "2026-09-22T10:34:36.000Z",
+    "likes": 4,
+    "trendingScore": 2,
+    "private": false,
+    "sha": "4e42267114a2b28dc1d4fab85a2fe2790abc16d2",
+    "description": "\n\t\n\t\t\n\t\n\t\n\t\tDeepSWE PRM training embeddings (Qwen3-8B, 8k)\n\t\n\nFrozen Qwen3-8B last-token-pooled embeddings (4096-d, float16) of every step of the\nDeepSWE training-pool rollouts: 405,919 steps \u00b7 4,701 trajectories \u00b7 113 tasks.\nThis is the data the released DeepSWE PRM heads\n(tarsur385/deepswe-prm-heads-8k) were fine-tuned on.\nEmbedded with preprocessing/deepswe/embed_shard.py at max_model_len 8192: the state is the\nchat-templated step context truncated to its last 8191 tokens; the action is the\u2026 See the full description on the dataset page: https://huggingface.co/datasets/Contrastive-LM/deepswe-clm-train-embeddings-8k.",
+    "downloads": 763,
+    "tags": [
+      "task_categories:feature-extraction",
+      "license:mit",
+      "size_categories:100K<n<1M",
+      "format:parquet",
+      "modality:tabular",
+      "modality:text",
+      "library:datasets",
+      "library:dask",
+      "library:polars",
+      "library:mlcroissant",
+      "region:us",
+      "deepswe",
+      "swe-agent",
+      "embeddings",
+      "process-reward-model"
+    ],
+    "createdAt": "2026-09-22T10:34:36.000Z",
+    "key": ""
+  }
+]

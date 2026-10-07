@@ -1,0 +1,23 @@
+{
+  "platform": "macOS-15.7.3-arm64-arm-64bit",
+  "machine": "arm64",
+  "packages": {
+    "mlx": "0.32.3",
+    "mlx-lm": "0.32.0",
+    "torch": "2.14.1",
+    "transformers": "5.18.0"
+  },
+  "head_config": {
+    "model": "Qwen/Qwen3-8B",
+    "hidden_size": 4096,
+    "projection_dim": 512,
+    "width": 1536,
+    "depth": 3,
+    "activation": "gelu",
+    "layernorm": true,
+    "residual": false
+  },
+  "head_scale": 100.0,
+  "backbone_dtype": "mlx.core.bfloat16",
+  "torch_threads": 4
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "RACE/test/middle/6208.txt/q2",
+    "unrestricted_top_token": "A",
+    "top_token_is_allowed": true,
+    "allowed_probability_mass": 1.0,
+    "restricted_choice": "2",
+    "primary_choice": "2",
+    "matches_primary": true
+  },
+  {
+    "id": "RACE/test/middle/700.txt/q4",
+    "unrestricted_top_token": "D",
+    "top_token_is_allowed": true,
+    "allowed_probability_mass": 1.0,
+    "restricted_choice": "2",
+    "primary_choice": "2",
+    "matches_primary": true
+  },
+  {
+    "id": "RACE/test/middle/7429.txt/q4",
+    "unrestricted_top_token": "B",
+    "top_token_is_allowed": true,
+    "allowed_probability_mass": 1.0,
+    "restricted_choice": "2",
+    "primary_choice": "2",
+    "matches_primary": true
+  },
+  {
+    "id": "RACE/test/middle/7854.txt/q1",
+    "unrestricted_top_token": "B",
+    "top_token_is_allowed": true,
+    "allowed_probability_mass": 1.0,
+    "restricted_choice": "1",
+    "primary_choice": "1",
+    "matches_primary": true
+  },
+  {
+    "id": "RACE/test/middle/1724.txt/q3",
+    "unrestricted_top_token": "B",
+    "top_token_is_allowed": true,
+    "allowed_probability_mass": 1.0,
+    "restricted_choice": "3",
+    "primary_choice": "3",
+    "matches_primary": true
+  },
+  {
+    "id": "RACE/test/middle/7896.txt/q0",
+    "unrestricted_top_token": "A",
+    "top_token_is_allowed": true,
+    "allowed_probability_mass": 1.0,
+    "restricted_choice": "0",
+    "primary_choice": "0",
+    "matches_primary": true
+  },
+  {
+    "id": "RACE/test/middle/2550.txt/q4",
+    "unrestricted_top_token": "A",
+    "top_token_is_allowed": true,
+    "allowed_probability_mass": 1.0,
+    "restricted_choice": "3",
+    "primary_choice": "3",
+    "matches_primary": true
+  },
+  {
+    "id": "RACE/test/middle/7549.txt/q0",
+    "unrestricted_top_token": "A",
+    "top_token_is_allowed": true,
+    "allowed_probability_mass": 1.0,
+    "restricted_choice": "1",
+    "primary_choice": "1",
+    "matches_primary": true
+  },
+  {
+    "id": "RACE/test/middle/6523.txt/q2",
+    "unrestricted_top_token": "A",
+    "top_token_is_allowed": true,
+    "allowed_probability_mass": 1.0,
+    "restricted_choice": "1",
+    "primary_choice": "1",
+    "matches_primary": true
+  },
+  {
+    "id": "RACE/test/middle/2491.txt/q3",
+    "unrestricted_top_token": "B",
+    "top_token_is_allowed": true,
+    "allowed_probability_mass": 1.0,
+    "restricted_choice": "0",
+    "primary_choice": "0",
+    "matches_primary": true
+  }
+]

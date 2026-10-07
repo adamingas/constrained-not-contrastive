@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Constrained not Contrastive Language Models</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%23087f8c%22%2F%3E%3Cpath%20d%3D%22m8%2016%205%205L24%2010%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+<meta name="description" content="A 500-request BFCL comparison: constrained Qwen achieves 95.4% function-selection accuracy versus CLM’s 72.4%, with prompt reuse measured across successive requests.">
+<style>
+:root{--paper:#fafaf7;--ink:#233747;--muted:#5e707c;--line:#d6dfdf;--teal:#087f8c;--wash:#e9f3f2}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:17px;line-height:1.65}
+main{max-width:1000px;margin:auto;padding:58px 28px 64px}.copy{max-width:760px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}h1{font-family:Georgia,serif;font-weight:400;letter-spacing:-.035em;font-size:clamp(38px,6vw,62px);line-height:1.08;margin:16px 0 22px}h2{font-family:Georgia,serif;font-size:30px;line-height:1.25;font-weight:400;letter-spacing:-.015em;margin:42px 0 16px}p{margin:0 0 17px}.dek{font-size:23px;line-height:1.45;color:var(--muted);max-width:830px}.meta{font-size:13px;color:var(--muted);padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:28px}strong{font-weight:650}a{color:var(--teal);text-underline-offset:3px}a:hover{color:#034c58}.takeaway{margin:28px 0;padding:22px 26px;background:var(--wash);border-left:4px solid var(--teal);max-width:850px;font-size:20px;line-height:1.5}.takeaway p:last-child{margin:0}
+.prompt{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;margin:24px 0;max-width:850px}.prompt>div{border:1px solid var(--line);border-radius:8px;padding:20px}.prompt>div:first-child{background:var(--wash)}.tag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--teal);display:block;margin-bottom:8px}.prompt p{margin:0;font-size:16px}.example{border-left:2px solid var(--line);padding:4px 0 4px 20px;font-size:16px;margin:21px 0}.example p{margin:3px 0}figure{margin:26px 0}figure img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:8px}figcaption{font-size:13px;line-height:1.55;color:var(--muted);margin-top:10px;max-width:900px}.table-wrap{overflow-x:auto;margin:22px 0;max-width:850px}table{width:100%;border-collapse:collapse;font-size:16px;font-variant-numeric:tabular-nums}th,td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{font-size:13px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);background:#f0f3f1}td:first-child,th:first-child{padding-left:12px}td.best-value{font-weight:650;color:var(--teal)}.note{font-size:14px;color:var(--muted)}details{margin-top:34px;border-top:1px solid var(--line);padding-top:18px;max-width:850px}summary{cursor:pointer;font-weight:650}details p{margin:16px 0;font-size:15px}footer{border-top:1px solid var(--line);margin-top:36px;padding-top:18px;font-size:13px;color:var(--muted)}.links{display:flex;flex-wrap:wrap;gap:10px 22px;margin:16px 0}code{font-size:.88em}button{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:7px 12px;border-radius:5px;cursor:pointer;font:inherit;font-size:13px}.animation-controls{display:flex;gap:8px;margin-top:10px}
+@media(max-width:640px){main{padding:32px 18px 40px}.prompt{grid-template-columns:1fr}.dek{font-size:20px}th,td{padding:10px 8px;font-size:14px}h2{font-size:27px}.takeaway{padding:18px;font-size:18px}}
+@media print{body{background:white}main{padding:0}details{display:block}button{display:none}a{color:inherit}.animation-controls{display:none}figure{break-inside:avoid}}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf2f0;border:1px solid var(--line);border-radius:8px;padding:20px;font:14px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;margin:20px 0}.prompt-expander{margin:24px 0 28px}.prompt-expander pre{max-height:560px;overflow:auto}
+h3{font-family:Georgia,serif;font-size:26px;line-height:1.3;font-weight:400;margin:30px 0 16px}.explanation{margin:24px 0 28px}.explanation p{font-size:16px}.results-heading{border-top:1px solid var(--line);padding-top:30px;margin-top:40px}
+</style></head><body><main>
+<h1>Constrained not Contrastive Language Models</h1>
+<div class="copy">
+<p>A new wave of “decision models”—classifiers, in plain terms—has landed on the scene. <a href="https://typesafe.ai/">TypeSafe AI’s Jev</a> offers a commercial implementation, while open-source releases such as <a href="https://github.com/Contrastive-LM/CLM">Contrastive Language Model (CLM)</a> position themselves as competitors. Their promise is to make decisions faster than conventional language models.</p>
+<p>This prompted our investigation: does a new decision model offer enough to justify the added machinery? In our 500-request function-selection experiment, CLM performed worse than a language model restricted to the same choices. When successive requests reused the same instructions and choices, the difference in median latency was small. In this setting, the extra trained component did not earn its place.</p>
+<p>We compare CLM with constrained decoding using the same Qwen3-8B backbone. We use the released CLM scoring heads, its T-Rex simulator, and public BFCL data, following the repository’s implementation where possible. The authors’ exact BFCL test setup was not released. We are testing CLM against constrained Qwen, not reproducing the published comparison with Jev.</p>
+<details class="explanation"><summary>What is a decision model?</summary>
+<p>A decision model takes an input and selects from a fixed set of choices. The choices might be true or false, named categories, or ordered labels such as low, medium, and high. In a game, they are the available actions.</p>
+<p>CLM uses an existing language model to encode the question and each possible answer—the “actions” in the paper—separately as vectors. It then passes them through two trained projection networks, one for the question and one for the answers. These are small multilayer perceptrons, or MLPs. A dot product scores each question–answer pair in their shared space, and the highest score selects the answer.</p>
+</details>
+<h2>Constrain the language model instead</h2>
+<p>Our approach needs no additional trained component. We put the choices in the prompt and restrict the model’s output to one of them. To avoid generating a multi-word answer over several forward passes, we assign each choice a letter that is a single token. The model then chooses one permitted letter, such as A, B, C, or D.</p>
+<p>For a request about a triangle, the choice mapping might be:</p>
+<pre aria-label="Abbreviated function-selection prompt">[System prompt: choose the function that fulfills the request]
+
+A = triangle_properties.get — triangle dimensions and properties
+B = circle_properties.get — circle dimensions and properties
+
+…</pre>
+<p>We choose the output token among the allowed choices with the highest probability mass. Thinking is not enabled.</p>
+</div>
+<div class="copy">
+<details class="explanation"><summary>Caching the actions</summary>
+<p>Qwen receives the instructions and available functions before the changing request. If a later request starts with the same tokens, it can reuse the model’s saved work for that prefix, called the KV cache. CLM can save each function’s action vector and reuse it whenever that function appears again.</p>
+<p>Both caches start empty in the BFCL experiment below. For T-Rex, we prepare both fixed prompts before play, then time decisions with warm caches. Each model answers each request once. A first encounter pays the cost of processing new choices; later requests can reuse them. We report both the overall timings and the requests where both models reused all their fixed inputs.</p>
+</details>
+<h2 class="results-heading">Results</h2>
+<section id="trex">
+<h3>T-Rex</h3>
+<p>We use the T-Rex simulator from the CLM repository to compare the two approaches on repeated game decisions. Both receive the dinosaur’s position and motion and the nearest obstacle as text. Each chooses run, jump, or duck for the next six frames.</p>
+<p>We use different prompts for each model because both needed extensive prompt tuning to play for 30 seconds without crashing. CLM needed many more worked examples and had much higher latency, even with cached input.</p>
+<figure><img id="replay" src="trex_comparison.gif" width="1224" height="262" alt="Side-by-side replay of CLM and constrained Qwen on the first measured T-Rex course.">
+<div class="animation-controls"><button type="button" id="restart">Replay from start</button><button type="button" id="pause">Show still image</button></div>
+<figcaption>Course 1, reconstructed from the recorded actions. Playback follows game time and omits model waiting time. During the experiment, the game paused for each decision.</figcaption></figure>
+<h3>Decision time with warm caches</h3>
+<p>Across three tries with different seeds, median decision time was <strong>182.5 ms for CLM</strong> and <strong>113.4 ms for constrained Qwen</strong>. These timings compare the two working prompts, including CLM’s longer prompt and distance diagram.</p>
+<div class="table-wrap"><table aria-label="T-Rex warm-cache decision latency"><thead><tr><th>900 decisions per model</th><th>CLM</th><th>Constrained Qwen</th></tr></thead><tbody><tr><td>Median decision</td><td>182.5 ms</td><td class="best-value">113.4 ms</td></tr>
+<tr><td>Mean decision</td><td>182.1 ms</td><td class="best-value">124.7 ms</td></tr>
+<tr><td>95th percentile</td><td>229.7 ms</td><td class="best-value">192.3 ms</td></tr>
+</tbody></table></div>
+<p class="note">Measured on an Apple M4 Max with the same BF16 Qwen3-8B backbone. CLM’s released scoring heads ran on the CPU. Timings include prompt construction, tokenization, cache copying, processing the new state, and selecting the action. One-time cache preparation and model loading are excluded. The game paused during inference, so this is not a test of uninterrupted real-time play.</p>
+<details class="prompt-expander" id="qwen-trex-prompt"><summary>Exact constrained Qwen prompt</summary>
+<p>The fixed system message is below. Qwen’s chat template used thinking disabled, and code restricted its output to the single-token letters A, B, and C.</p>
+<p><strong>System message</strong></p><pre>You are playing T-Rex runner. Stay alive by avoiding collisions. At each turn, choose A, B, or C for the next 6 frames, then you will receive a new state and choose again. The game pauses while you decide.
+
+A continues automatic running, or lets an existing jump continue.
+B starts a jump from the ground. It does nothing extra in the air.
+C crouches on the ground, or rapidly descends in the air.
+
+Obstacles move left. The state gives distances, sizes, and heights above ground. The dinosaur is 44 pixels wide and 47 pixels tall when standing. Feet height zero means grounded. Contact ends the game. A jump rises, reaches its peak, falls, and ends; it cannot be extended by repeatedly selecting B. Duck does not stop horizontal motion.
+
+Output only the chosen letter.
+
+Controls:
+A = run: Release duck. Running is automatic; an existing jump continues.
+B = jump: Release duck and start a jump if grounded. No second jump while airborne.
+C = duck: Crouch if grounded; start a rapid descent if airborne.
+
+State: The dinosaur is on the ground. A cactus is 500 pixels beyond its front, moving toward it at 6 pixels per frame.
+Answer: A (run).
+Explanation: A jump now would finish before the cactus arrived. Continue running for this turn and reconsider at the next observation.
+State: The dinosaur is on the ground. A cactus is 60 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.
+Answer: B (jump).
+Explanation: Begin rising now so the dinosaur can pass above the approaching cactus. Continuing on the ground would bring it into the cactus.
+State: The dinosaur is on the ground. A cactus is 180 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame.
+Answer: A (run).
+Explanation: This is still too early to start the jump. The dinosaur would descend while the cactus was passing. Keep running for this six-frame turn, then reassess the smaller distance.
+State: The dinosaur is in the air, with its feet 80 pixels above the ground, falling at 2 pixels per frame. A cactus is 20 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.
+Answer: A (run).
+Explanation: Let the current jump carry the dinosaur over the cactus. Ducking would accelerate its descent into the obstacle; another jump command cannot add height while airborne.</pre>
+<p><strong>User message at frame 300, course 1</strong></p><pre>State: The dinosaur is on the ground. A cactus is 192 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame. 
+Answer:</pre>
+</details>
+<details class="prompt-expander" id="clm-trex-prompt"><summary>Exact CLM inputs</summary>
+<p>CLM used no chat template or system-message role. This is its complete state encoder input at the same point in course 1. The text before “Current observation” stayed fixed. The distance diagram represents the observed gap; it does not label an action safe or unsafe.</p>
+<pre>T-Rex runner: avoid collisions. Choose the next control for six frames. Run continues forward motion and any existing jump. Jump starts a jump from the ground. Duck crouches on the ground or accelerates descent in the air. Cacti are ground obstacles; birds may leave room underneath. The game pauses while the model decides. Obstacles move left. The dinosaur is 44 pixels wide and 47 pixels tall when standing. Feet height zero means grounded. Contact ends the game. A jump rises, reaches its peak, falls, and ends; it cannot be extended by repeatedly choosing jump. Duck does not stop horizontal motion. The examples below describe other situations. Choose for the current observation at the end, using the examples to understand timing.
+
+Example state: The dinosaur is on the ground. A cactus is 60 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame. Answer: jump. Explanation: Start rising to clear the approaching cactus; staying on the ground would cause a collision.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |------| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 500 pixels beyond its front, moving toward it at 6 pixels per frame. Answer: run. Explanation: A jump now would finish before the cactus arrived.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |--------------------------------------------------| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 180 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame. Answer: run. Explanation: Wait for this six-frame turn. Jumping now would put the descent too early, while the cactus is still passing.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |------------------| obstacle.
+
+Example state: The dinosaur is in the air with its feet 80 pixels above the ground, falling at 2 pixels per frame. A cactus is 20 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame. Answer: run. Explanation: Let the current jump continue over the cactus. Ducking would force the dinosaur down into it.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |--| obstacle.
+
+Compare two cases with the same grounded dinosaur, cactus size, and speed of 6 pixels per frame. At a distance of 180 pixels, choose run: the cactus arrives too late for a jump started now. At a distance of 60 pixels, choose jump: the cactus will arrive soon enough for this jump to clear it. The distance changes the answer even though both observations mention a cactus.
+
+Example state: The dinosaur is on the ground. A cactus is 40 pixels beyond its front, approaching at 6 pixels per frame. Answer: jump. Explanation: Waiting another six frames would leave almost no clearance; begin rising now.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |----| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 300 pixels beyond its front, approaching at 6 pixels per frame. Answer: run. Explanation: An obstacle being visible does not mean it is time to jump. It will still be far ahead after this six-frame turn.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |------------------------------| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 120 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: Keep running for this six-frame turn. There is time to get closer before starting a jump, so it will not land too early.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |------------| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 200 pixels beyond its front, 34 pixels wide and 35 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: This shorter cactus is still too far away. Continue running for six frames and look again before jumping.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |--------------------| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 150 pixels beyond its front, 17 pixels wide and 35 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: This small cactus is still too far away. A jump started now would finish while the cactus was passing the dinosaur. Wait for the next observation before starting the jump.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |---------------| obstacle.
+
+Current observation:
+State: The dinosaur is on the ground. A cactus is 192 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame. 
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |-------------------| obstacle.
+
+What should the dinosaur do for the next six frames only? It will get another observation afterward. Decide whether to keep running, jump now, or duck now.</pre>
+<p><strong>Separately encoded action inputs</strong></p><pre>Run.</pre><pre>Jump.</pre><pre>Duck.</pre>
+</details>
+</section>
+
+<h3 id="bfcl">BFCL: choosing a software function</h3>
+<p>We tested 500 examples from the Berkeley Function Calling Leaderboard (BFCL), giving each model a question and a set of tools and asking it to select the right tool. Both models received the tool names and descriptions, without parameter schemas.</p>
+<p class="note">This is a function-selection adaptation of BFCL. We check the selected function’s name; we do not generate or score its arguments, execute it, or report an official full-BFCL score.</p>
+</div>
+<div class="table-wrap"><table aria-label="Accuracy on 500 BFCL requests"><thead><tr><th>500 requests</th><th>CLM</th><th>Constrained Qwen</th></tr></thead><tbody>
+<tr><td>Correct function choices</td><td>362/500 · 72.4%</td><td class="best-value">477/500 · 95.4%</td></tr>
+</tbody></table></div>
+<div class="copy">
+<p>We could not reproduce the CLM repository’s reported <a href="https://github.com/Contrastive-LM/CLM/blob/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7/assets/zero-shot.png">95.2% BFCL accuracy</a> in this experiment.</p>
+<h3>Latency with reuse across requests</h3>
+<p>Both caches started empty and warmed gradually as we worked through the benchmark, reusing instructions and tools from earlier requests. The table shows timings for the whole run and for the 264 requests where both models could reuse all fixed inputs. For these cached requests, median latency was similar: 83.0 ms for CLM and 86.7 ms for Qwen.</p>
+</div>
+<div class="table-wrap"><table aria-label="BFCL latency including first-use costs"><thead><tr><th>Decision time</th><th>CLM</th><th>Constrained Qwen</th></tr></thead><tbody>
+<tr><td>Median · all 500 requests</td><td class="best-value">92.9 ms</td><td>134.3 ms</td></tr>
+<tr><td>Mean · all 500 requests</td><td>202.9 ms</td><td class="best-value">148.8 ms</td></tr>
+<tr><td>Median · 264 requests with both fixed inputs cached</td><td class="best-value">83.0 ms</td><td>86.7 ms</td></tr>
+</tbody></table></div>
+<div class="copy">
+<p>CLM’s mean was higher because encoding new tools one at a time made its first encounters slower.</p>
+<p class="note">Measured locally on an Apple M4 Max. CLM’s new actions were encoded sequentially, and its released scoring heads ran on the CPU. Its first-use timings should not be treated as an optimized batched server result.</p>
+
+<details class="prompt-expander" id="qwen-bfcl-prompt"><summary>Exact constrained Qwen prompt</summary>
+<p>This is <code>multiple_0</code>, the first request in the 500-request run. The instructions stayed fixed. The listed functions changed when the dataset supplied a different set; an unchanged prefix could be reused from an earlier request.</p>
+<p><strong>System message</strong></p>
+<pre>Choose the available function that best fulfills the request. Reply with exactly one option letter, without explanation.
+
+Available functions:
+
+A:
+triangle_properties.get: Retrieve the dimensions, such as area and perimeter, of a triangle if lengths of three sides are given.
+
+B:
+circle_properties.get: Retrieve the dimensions, such as area and circumference, of a circle if radius is given.</pre>
+<p><strong>User message</strong></p>
+<pre>User: Can I find the dimensions and properties of a triangle, if I know its three sides are 5 units, 4 units and 3 units long?
+
+Which function should be called to fulfill this request?</pre>
+<p>The standard Qwen chat template wrapped these messages. Thinking was disabled; the template supplied an empty thinking block before the answer. For this request, the code chose the highest-scoring output token from <code>A</code> and <code>B</code> only, then mapped it to the function name. The model generated no explanation.</p>
+<p><a href="bfcl_qwen_exact_prompt.txt">Download the exact input, including chat-template markers</a></p>
+</details>
+
+<details class="prompt-expander" id="clm-bfcl-prompt"><summary>Exact CLM inputs</summary>
+<p>The same request, <code>multiple_0</code>. CLM used no system message or chat template. It encoded the state below and each action separately. It received no A/B labels or letter-output instruction.</p>
+<p><strong>State encoder input</strong></p>
+<pre>User: Can I find the dimensions and properties of a triangle, if I know its three sides are 5 units, 4 units and 3 units long?
+
+Which function should be called to fulfill this request?</pre>
+<p><strong>Action input 1</strong></p>
+<pre>triangle_properties.get: Retrieve the dimensions, such as area and perimeter, of a triangle if lengths of three sides are given.</pre><p><strong>Action input 2</strong></p>
+<pre>circle_properties.get: Retrieve the dimensions, such as area and circumference, of a circle if radius is given.</pre>
+<p>The released state and action heads transformed these vectors, and their scores selected a function name.</p>
+<p><a href="bfcl_clm_exact_inputs.txt">Download these exact inputs</a> · <a href="bfcl_500_inputs.jsonl">Read both models’ inputs for all 500 requests</a></p>
+</details>
+
+<details class="explanation"><summary>Experiment details and saved results</summary>
+<p>We kept the original choices and their order, added no “no tool” option, and supplied no examples or answer hints. The accuracy difference included 131 requests where only Qwen was correct and 16 where only CLM was correct.</p>
+<p>Each model answered each request once. We selected the requests randomly, then kept their order in the dataset. We did not group similar requests to create more cache hits, or answer a question twice to warm its cache. Both caches began empty, and the reported timings include the cost of processing new choices.</p>
+<p>Qwen reused its entire fixed preamble on <strong>264 requests</strong>. It reused only part of an earlier preamble on another 235; the first request had no cached tokens. CLM reused all its action vectors on 268 requests. On the 264 requests where Qwen’s whole preamble was cached, CLM’s actions were also cached.</p>
+<p>The small difference in median latency on cached requests is not a test of statistical equivalence.</p>
+<p>We used two categories, both asking the model to choose one function:</p>
+<ul>
+<li><strong>Multiple:</strong> examples created by the benchmark authors. <a href="https://github.com/ShishirPatil/gorilla/blob/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data/README.md#python">Category definition</a>.</li>
+<li><strong>Live multiple:</strong> examples collected from users’ actual requests and function descriptions. <a href="https://gorilla.cs.berkeley.edu/blogs/12_bfcl_v2_live.html">About the Live dataset</a>.</li>
+</ul>
+<div class="table-wrap"><table aria-label="Accuracy by BFCL category"><thead><tr><th>BFCL category</th><th>Requests</th><th>CLM</th><th>Constrained Qwen</th></tr></thead><tbody>
+<tr><td>Multiple</td><td>78</td><td>63/78 · 80.8%</td><td class="best-value">77/78 · 98.7%</td></tr>
+<tr><td>Live multiple</td><td>422</td><td>299/422 · 70.9%</td><td class="best-value">400/422 · 94.8%</td></tr>
+<tr><td>Combined</td><td>500</td><td>362/500 · 72.4%</td><td class="best-value">477/500 · 95.4%</td></tr>
+</tbody></table></div>
+
+<p>Both approaches used the same original BF16 Qwen3-8B weights through MLX. CLM used its released PyTorch scoring heads on the CPU with four threads. Qwen selected among the permitted single-token labels using its native output weights. We alternated which model ran first for each request.</p>
+<p>The sample used a fixed random seed of 20261004 and excluded the 20 requests in the preceding Qwen pilot. The 500 requests were drawn from the two categories combined, giving 78 Multiple and 422 Live multiple cases. These public data had been used in earlier CLM checks; this was not a newly held-out benchmark. The prompt was fixed before this run and was not tuned on its results.</p>
+<p>Qwen retained up to 16 fixed preambles, discarding the least recently used when full. It could reuse any identical opening tokens from a retained preamble. It never cached the changing question for reuse. CLM retained projected action vectors in a 32 MiB cache and recomputed each request’s state. Four request texts occurred under different dataset IDs; no completed state-vector cache was used.</p>
+<p>Each timing includes tokenization, cache lookup and maintenance, previously unseen inputs, and the final choice. Model loading, file writing, and a single unrelated runtime warmup are excluded. No benchmark request was repeated for timing. Cache-source records were checked against an independent simulation of the request order.</p>
+<p>The saved data come from the pinned <a href="https://github.com/ShishirPatil/gorilla/tree/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data">BFCL repository snapshot</a>. The authors’ exact CLM-versus-Jev evaluation setup is unavailable, so this is not a reproduction of their published score. This 500-request run replaces the earlier 60-request BFCL comparison in this report.</p>
+<div class="links"><a href="bfcl_500_summary.json">Results</a><a href="bfcl_500_protocol.json">Fixed setup</a><a href="bfcl_500_scored_details.json">Every prediction and timing</a><a href="bfcl_500_validation.json">Cache verification</a></div>
+</details>
+
+<h3>Wikipedia: both struggled</h3>
+<p>In the earlier Wikispeedia experiment, we asked the models to reach a target Wikipedia article by following links. Across five test routes, with at most eight clicks each, Qwen finished one and CLM finished none. Both results were poor. They do not establish a useful navigation system or a reliable advantage for Qwen.</p>
+<h2>What this supports</h2>
+<p>In T-Rex, both models completed our short courses with their own prompts. Constrained Qwen made faster warm-cache decisions in this implementation. The result shows that both approaches can play these courses; it does not establish performance on longer games or other hardware.</p>
+<p>For repeated function-selection tasks, constrained decoding is worth testing before adding a trained decision network. In this 500-request sample, it selected the correct function more often. When earlier requests had already populated both models’ caches, the difference between median decision times was 3.7 milliseconds. That conclusion is specific to this setup; it does not establish an advantage on every task or deployment.</p>
+</div>
+<footer>Updated 3 October 2026. Sources: <a href="https://typesafe.ai/">TypeSafe AI and Jev</a> · <a href="https://github.com/Contrastive-LM/CLM">CLM release</a> · <a href="https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard">Berkeley Function Calling Leaderboard</a> · <a href="https://snap.stanford.edu/data/wikispeedia.html">Wikispeedia</a>.</footer>
+</main><script>
+const replay=document.getElementById('replay');
+document.getElementById('restart').onclick=()=>{replay.src='trex_comparison.gif?replay='+Date.now()};
+document.getElementById('pause').onclick=()=>{replay.src='trex_preview.png'};
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)replay.src='trex_preview.png';
+</script></body></html>

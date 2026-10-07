@@ -1,0 +1,135 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RACE-M prompt ablations</title>
+<style>body{font:17px/1.55 system-ui;color:#24323d;background:#f3f6f8;margin:0}main{max-width:1250px;margin:30px auto;padding:36px;background:white;border-radius:14px}h1{font-size:34px}h2{margin-top:34px}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:11px;text-align:left;border-bottom:1px solid #dbe2e8}th{background:#edf4f6}img{max-width:100%}a{color:#076b90}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f6f8;padding:18px;font-size:13px}details{margin:14px 0}.note{background:#eaf5f5;padding:18px;border-left:4px solid #087c8b}@media(max-width:700px){main{margin:0;padding:18px}}</style><main>
+<p>2 October 2026 · matched prompt ablations</p><h1>What do the system prompt and chat template contribute?</h1>
+<p class="note">Seven Qwen prompt variants on the same 200 RACE-M test questions, with no-passage controls and 20 option-reversal audits per variant. The original Qwen prompt and CLM are rerun in the same process, interleaved randomly. Total: 3,340 predictions.</p>
+<p>Removing both the system instruction and chat template, while retaining a two-token <code>Answer:</code> cue, scored 90.5% versus 87.0% for the original. Its median paired latency ratio was 0.920, a 8.0% reduction relative to the original on matched questions. Literal stripping without the cue scored 59.0%. The small apparent improvement over original accuracy needs fresh-data validation; the exact paired McNemar p-value is 0.065, before multiple-comparison adjustment.</p>
+<div class="scroll"><table><thead><tr><th>Method</th><th>Full-passage accuracy</th><th>No passage</th><th>Context gain</th><th>Median input tokens</th><th>Median latency</th><th>Paired latency / CLM</th></tr></thead><tbody><tr><td>Original: full system + chat</td><td>174/200 (87.0%)</td><td>54.5%</td><td>+32.5 pp</td><td>345.0</td><td>450.0 ms</td><td>1.196×</td></tr><tr><td>Short system + chat</td><td>175/200 (87.5%)</td><td>50.5%</td><td>+37.0 pp</td><td>335.0</td><td>427.0 ms</td><td>1.189×</td></tr><tr><td>No system + chat</td><td>144/200 (72.0%)</td><td>30.5%</td><td>+41.5 pp</td><td>319.0</td><td>409.9 ms</td><td>1.158×</td></tr><tr><td>Full instruction + raw + Answer:</td><td>177/200 (88.5%)</td><td>54.0%</td><td>+34.5 pp</td><td>330.5</td><td>426.1 ms</td><td>1.190×</td></tr><tr><td>No instruction + raw + Answer:</td><td>181/200 (90.5%)</td><td>60.0%</td><td>+30.5 pp</td><td>309.5</td><td>402.4 ms</td><td>1.132×</td></tr><tr><td>Full instruction + raw, literal</td><td>149/200 (74.5%)</td><td>33.5%</td><td>+41.0 pp</td><td>328.0</td><td>422.2 ms</td><td>1.182×</td></tr><tr><td>No instruction + raw, literal</td><td>118/200 (59.0%)</td><td>33.5%</td><td>+25.5 pp</td><td>307.0</td><td>398.6 ms</td><td>1.114×</td></tr><tr><td>CLM (cached actions)</td><td>67/200 (33.5%)</td><td>25.0%</td><td>+8.5 pp</td><td>269.5</td><td>361.3 ms</td><td>1.000×</td></tr></tbody></table></div>
+<img src="results.png" alt="Prompt ablation accuracy, no-passage controls and latency">
+<h2>Exact interventions</h2><ul><li><strong>Original:</strong> the prior 21-token system instruction, Qwen's normal chat template and non-thinking assistant prefix.</li><li><strong>Short system:</strong> replace the instruction with <code>Reply with A, B, C, or D.</code>, retaining the template.</li><li><strong>No system:</strong> remove the system message entirely; retain the user message and non-thinking assistant prefix. The tokenizer inserts no replacement system instruction.</li><li><strong>No template:</strong> retain the full instruction as plain text before the unchanged user body, remove role delimiters and the assistant/thinking prefix, then append <code>
+
+Answer:</code> as a conventional completion cue.</li><li><strong>Neither:</strong> remove the instruction and template; retain the unchanged user body plus <code>
+
+Answer:</code>.</li><li><strong>Literal raw controls:</strong> repeat both raw versions without adding the answer cue. These end immediately after the final option's text.</li></ul>
+<p>The answer cue costs two tokens on the first example. It is reported explicitly because deleting a chat template also deletes its assistant answer boundary. Testing both raw endings avoids hiding that choice inside a template ablation. The passage, question, four choices, labels and original option order are identical across primary conditions. CLM retains the released head and canonical raw state/action inputs.</p>
+<h2>Paired accuracy changes versus the original prompt</h2><div class="scroll"><table><thead><tr><th>Variant</th><th>Difference</th><th>Paired bootstrap 95% interval</th></tr></thead><tbody><tr><td>Original: full system + chat</td><td>+0.0 pp</td><td>+0.0 to +0.0 pp</td></tr><tr><td>Short system + chat</td><td>+0.5 pp</td><td>-2.5 to +4.0 pp</td></tr><tr><td>No system + chat</td><td>-15.0 pp</td><td>-21.0 to -9.5 pp</td></tr><tr><td>Full instruction + raw + Answer:</td><td>+1.5 pp</td><td>-2.0 to +5.0 pp</td></tr><tr><td>No instruction + raw + Answer:</td><td>+3.5 pp</td><td>+0.5 to +7.0 pp</td></tr><tr><td>Full instruction + raw, literal</td><td>-12.5 pp</td><td>-18.0 to -7.0 pp</td></tr><tr><td>No instruction + raw, literal</td><td>-28.0 pp</td><td>-35.0 to -21.0 pp</td></tr></tbody></table></div>
+<p>Intervals use 10,000 paired resamples of the same questions. They are exploratory and not adjusted for multiple comparisons. The dataset and variants were fixed before this run; no test cases were filtered based on any outputs. These ablations reuse a previously evaluated test subset, so the best observed variant has not been independently validated on fresh data. The sample is the prior ratio-filtered RACE-M test subset: complete passage plus question has more than five times the token count of all four formatted choices combined. This is not an official full RACE leaderboard score.</p>
+<h2>Output-format diagnostics</h2><div class="scroll"><table><thead><tr><th>Variant</th><th>Accuracy allowing space aliases</th><th>Median mass: bare A–D</th><th>Median mass: bare or spaced A–D</th><th>Unrestricted top tokens (10 cases)</th></tr></thead><tbody><tr><td>Original: full system + chat</td><td>174/200</td><td>1</td><td>1</td><td>[&#x27;A&#x27;, &#x27;D&#x27;, &#x27;B&#x27;, &#x27;B&#x27;, &#x27;B&#x27;, &#x27;A&#x27;, &#x27;A&#x27;, &#x27;A&#x27;, &#x27;A&#x27;, &#x27;B&#x27;]</td></tr><tr><td>Short system + chat</td><td>175/200</td><td>1</td><td>1</td><td>[&#x27;A&#x27;, &#x27;D&#x27;, &#x27;B&#x27;, &#x27;B&#x27;, &#x27;B&#x27;, &#x27;A&#x27;, &#x27;A&#x27;, &#x27;A&#x27;, &#x27;A&#x27;, &#x27;**&#x27;]</td></tr><tr><td>No system + chat</td><td>144/200</td><td>6.15e-12</td><td>6.15e-12</td><td>[&#x27;The&#x27;, &#x27;The&#x27;, &#x27;The&#x27;, &#x27;The&#x27;, &#x27;The&#x27;, &#x27;The&#x27;, &#x27;The&#x27;, &#x27;The&#x27;, &#x27;The&#x27;, &#x27;The&#x27;]</td></tr><tr><td>Full instruction + raw + Answer:</td><td>172/200</td><td>5.06e-08</td><td>0.965</td><td>[&#x27; A&#x27;, &#x27; D&#x27;, &#x27; B&#x27;, &#x27; B&#x27;, &#x27; B&#x27;, &#x27; A&#x27;, &#x27; A&#x27;, &#x27; A&#x27;, &#x27; A&#x27;, &#x27; B&#x27;]</td></tr><tr><td>No instruction + raw + Answer:</td><td>180/200</td><td>2.79e-11</td><td>0.994</td><td>[&#x27; A&#x27;, &#x27; D&#x27;, &#x27; B&#x27;, &#x27; B&#x27;, &#x27; B&#x27;, &#x27; A&#x27;, &#x27; A&#x27;, &#x27; A&#x27;, &#x27; A&#x27;, &#x27; B&#x27;]</td></tr><tr><td>Full instruction + raw, literal</td><td>152/200</td><td>1.21e-06</td><td>0.00329</td><td>[&#x27; The&#x27;, &#x27;\n&#x27;, &#x27;\n&#x27;, &#x27;\n&#x27;, &#x27; B&#x27;, &#x27; The&#x27;, &#x27;\n&#x27;, &#x27;\n&#x27;, &#x27;\n&#x27;, &#x27;\n&#x27;]</td></tr><tr><td>No instruction + raw, literal</td><td>126/200</td><td>8.41e-08</td><td>1.8e-05</td><td>[&#x27; Passage&#x27;, &#x27;\n&#x27;, &#x27;\n&#x27;, &#x27;\n&#x27;, &#x27; The&#x27;, &#x27; Passage&#x27;, &#x27;\n&#x27;, &#x27;\n\n&#x27;, &#x27;\n&#x27;, &#x27;\n&#x27;]</td></tr></tbody></table></div>
+<p>The primary experiment always restricts the next token to exactly the bare letters A/B/C/D, matching the original benchmark. Removing the chat template can change the model's preferred continuation format. For a secondary diagnostic, the same hidden state is scored with either a bare letter or a single-leading-space letter token allowed; token-alias probabilities are summed per answer. This requires no additional backbone pass and does not replace primary scores. Full-vocabulary diagnostics use the first ten frozen test cases, independent of correctness. All diagnostics run after the primary decision timer stops.</p>
+<h2>Option-order sensitivity</h2><div class="scroll"><table><thead><tr><th>Variant</th><th>Original correct /20</th><th>Reversed correct /20</th><th>Changed answers /20</th></tr></thead><tbody><tr><td>Original: full system + chat</td><td>16</td><td>17</td><td>3</td></tr><tr><td>Short system + chat</td><td>16</td><td>16</td><td>3</td></tr><tr><td>No system + chat</td><td>15</td><td>13</td><td>6</td></tr><tr><td>Full instruction + raw + Answer:</td><td>16</td><td>17</td><td>4</td></tr><tr><td>No instruction + raw + Answer:</td><td>16</td><td>16</td><td>4</td></tr><tr><td>Full instruction + raw, literal</td><td>15</td><td>15</td><td>9</td></tr><tr><td>No instruction + raw, literal</td><td>14</td><td>11</td><td>11</td></tr></tbody></table></div>
+<h2>Timing and reproducibility</h2><p>BF16 Qwen3-8B on the same M4 Max/MLX setup; thinking disabled, one output-token decision, no generation loop. Each full state is recomputed. No Qwen prefix, document or whole-request cache is reused. CLM action embeddings are cached outside timed decisions. Methods and no-passage controls are randomly interleaved within each question. Latencies include prompt construction, tokenization, prefill and selecting the allowed label; GPU outputs are materialized before stopping the timer. Model loading, CLM action setup and secondary output diagnostics are excluded. There is one timed call per condition on each of 200 different questions, not repeated identical-prompt microbenchmarks.</p>
+<p>The new original-prompt run agrees with 200/200 prior Qwen choices; CLM agrees with 200/200 prior choices. Small BF16 differences can affect close decisions. Compare latency within this new interleaved run rather than attributing differences between separate sessions entirely to prompt changes.</p>
+<h2>Literal first-example prompts</h2><details><summary>Original: full system + chat — first example, 365 tokens</summary><pre>&lt;|im_start|&gt;system
+Answer the multiple-choice reading comprehension question using the passage. Reply with exactly one option letter and nothing else.&lt;|im_end|&gt;
+&lt;|im_start|&gt;user
+Passage:
+Do you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn&#x27;t mean &quot;no rules&quot;. Every school has its own rules.
+There are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.
+American schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn&#x27;t be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (&lt;&lt;&gt;&gt; )
+
+Question: Which is the same rule in Japanese schools and at Morton High School?
+
+Options:
+A: The students must get to school on time.
+B: The students should keep their hair black.
+C: The students can have part-time jobs.
+D: The students are allowed to wear their own clothes.&lt;|im_end|&gt;
+&lt;|im_start|&gt;assistant
+&lt;think&gt;
+
+&lt;/think&gt;
+
+</pre></details><details><summary>Short system + chat — first example, 355 tokens</summary><pre>&lt;|im_start|&gt;system
+Reply with A, B, C, or D.&lt;|im_end|&gt;
+&lt;|im_start|&gt;user
+Passage:
+Do you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn&#x27;t mean &quot;no rules&quot;. Every school has its own rules.
+There are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.
+American schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn&#x27;t be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (&lt;&lt;&gt;&gt; )
+
+Question: Which is the same rule in Japanese schools and at Morton High School?
+
+Options:
+A: The students must get to school on time.
+B: The students should keep their hair black.
+C: The students can have part-time jobs.
+D: The students are allowed to wear their own clothes.&lt;|im_end|&gt;
+&lt;|im_start|&gt;assistant
+&lt;think&gt;
+
+&lt;/think&gt;
+
+</pre></details><details><summary>No system + chat — first example, 339 tokens</summary><pre>&lt;|im_start|&gt;user
+Passage:
+Do you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn&#x27;t mean &quot;no rules&quot;. Every school has its own rules.
+There are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.
+American schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn&#x27;t be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (&lt;&lt;&gt;&gt; )
+
+Question: Which is the same rule in Japanese schools and at Morton High School?
+
+Options:
+A: The students must get to school on time.
+B: The students should keep their hair black.
+C: The students can have part-time jobs.
+D: The students are allowed to wear their own clothes.&lt;|im_end|&gt;
+&lt;|im_start|&gt;assistant
+&lt;think&gt;
+
+&lt;/think&gt;
+
+</pre></details><details><summary>Full instruction + raw + Answer: — first example, 350 tokens</summary><pre>Answer the multiple-choice reading comprehension question using the passage. Reply with exactly one option letter and nothing else.
+
+Passage:
+Do you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn&#x27;t mean &quot;no rules&quot;. Every school has its own rules.
+There are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.
+American schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn&#x27;t be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (&lt;&lt;&gt;&gt; )
+
+Question: Which is the same rule in Japanese schools and at Morton High School?
+
+Options:
+A: The students must get to school on time.
+B: The students should keep their hair black.
+C: The students can have part-time jobs.
+D: The students are allowed to wear their own clothes.
+
+Answer:</pre></details><details><summary>No instruction + raw + Answer: — first example, 329 tokens</summary><pre>Passage:
+Do you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn&#x27;t mean &quot;no rules&quot;. Every school has its own rules.
+There are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.
+American schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn&#x27;t be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (&lt;&lt;&gt;&gt; )
+
+Question: Which is the same rule in Japanese schools and at Morton High School?
+
+Options:
+A: The students must get to school on time.
+B: The students should keep their hair black.
+C: The students can have part-time jobs.
+D: The students are allowed to wear their own clothes.
+
+Answer:</pre></details><details><summary>Full instruction + raw, literal — first example, 348 tokens</summary><pre>Answer the multiple-choice reading comprehension question using the passage. Reply with exactly one option letter and nothing else.
+
+Passage:
+Do you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn&#x27;t mean &quot;no rules&quot;. Every school has its own rules.
+There are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.
+American schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn&#x27;t be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (&lt;&lt;&gt;&gt; )
+
+Question: Which is the same rule in Japanese schools and at Morton High School?
+
+Options:
+A: The students must get to school on time.
+B: The students should keep their hair black.
+C: The students can have part-time jobs.
+D: The students are allowed to wear their own clothes.</pre></details><details><summary>No instruction + raw, literal — first example, 327 tokens</summary><pre>Passage:
+Do you obey the rules in your school? What do you think of your school rules? Are you allowed to dye   hair? A lot of school rules are similar around the world, but some are different. Some students may enjoy more freedom in some countries. But freedom doesn&#x27;t mean &quot;no rules&quot;. Every school has its own rules.
+There are some rules in Japanese schools. The students are not allowed to dye their hair and are supposed to keep their hair black. They are not allowed to wear earrings either. Almost all schools used to require students to wear school uniforms but now half of the schools require uniforms. The students feel happy to wear all kinds of clothes. The students must get to school on time. If they are late, they cannot get into the school because the school gate is closed. In Japan, students are not allowed to have part-time jobs.
+American schools have their own rules too. For example, at Morton High School, students are not allowed to choose their own clothes. They must get to school or leave school on time. Food, drinks or snacks shouldn&#x27;t be taken into the classroom. They must wear sports shoes in PE class. They are supposed to keep quiet on the school bus. In America, the students can have part-time jobs in their free time. (&lt;&lt;&gt;&gt; )
+
+Question: Which is the same rule in Japanese schools and at Morton High School?
+
+Options:
+A: The students must get to school on time.
+B: The students should keep their hair black.
+C: The students can have part-time jobs.
+D: The students are allowed to wear their own clothes.</pre></details>
+<h2>Files</h2><p><a href="summary.json">Statistics</a> · <a href="answers.jsonl">All predictions and timings</a> · <a href="manifest.json">Conditions and fixed sample hash</a> · <a href="prompt_examples.json">Exact prompt examples</a> · <a href="runtime.json">Runtime metadata</a> · <a href="../race_context/report.html">Original RACE-M report</a></p>
+<pre>.venv/bin/python -u experiments/bench_race_ablations.py
+.venv/bin/python experiments/analyze_race_ablations.py</pre>
+<p>The runner resumes its append-only log. Preserve this results directory before running a fresh replication. Public-data training contamination is not audited. These zero-shot results compare existing released models and do not measure what task-specific CLM training could achieve.</p></main></html>

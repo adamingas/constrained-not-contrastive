@@ -1,0 +1,46 @@
+{
+  "frozen_at": "2026-10-03T00:47:13.007143+00:00",
+  "variants": {
+    "bfcl": [
+      "clm_base",
+      "clm_prose_base",
+      "qwen_raw_base",
+      "qwen_raw_tuned"
+    ],
+    "wiki": [
+      "clm_base",
+      "qwen_raw_base",
+      "qwen_raw_tuned"
+    ]
+  },
+  "primary": {
+    "bfcl": {
+      "clm": "clm_base",
+      "qwen": "qwen_raw_base"
+    },
+    "wiki": {
+      "clm": "clm_base",
+      "qwen": "qwen_raw_base"
+    }
+  },
+  "selection": "Highest development accuracy; ties use shorter base instructions and raw format. CLM prose baseline retained on BFCL to audit canonical action serialization. Longer Qwen prompt retained as a prespecified intervention, not selected retrospectively on test outcomes.",
+  "latency_interpretation": "Report actual ratios and 95% bootstrap intervals. Treat <=10% median cached-decision overhead as near latency for this report; this is not a user-required threshold or a per-call guarantee. Report cold setup separately.",
+  "navigation": {
+    "pairs": "First five Wikispeedia test cases in frozen order",
+    "max_clicks": 8,
+    "variants": [
+      "clm_base",
+      "qwen_raw_base",
+      "qwen_raw_tuned"
+    ]
+  },
+  "matched_latency": {
+    "cases": "First 10 held-out cases per family, BFCL stratified 4 multiple, 3 live_multiple, 3 live_irrelevance",
+    "repetitions": 5
+  },
+  "sha256": {
+    "cases.json": "cf22ca066d15fb8bad84028c907dfa5a94b03582ebf9c7b8462124c5e872f0e3",
+    "dev.jsonl": "f4a223bb0b39e78e2c84913e8033aaa929d88890c969dfd72519c738bc9d6e8d",
+    "prompt_rules.json": "cf033d8ab2627ea5a899aa9984ccede1d97a1ea22c739a7b266fa5b7873dfdda"
+  }
+}

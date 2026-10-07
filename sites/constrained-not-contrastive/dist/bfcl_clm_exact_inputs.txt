@@ -1,0 +1,13 @@
+STATE ENCODER INPUT
+
+User: Can I find the dimensions and properties of a triangle, if I know its three sides are 5 units, 4 units and 3 units long?
+
+Which function should be called to fulfill this request?
+
+SEPARATELY ENCODED ACTIONS
+
+triangle_properties.get
+triangle_properties.get: Retrieve the dimensions, such as area and perimeter, of a triangle if lengths of three sides are given.
+
+circle_properties.get
+circle_properties.get: Retrieve the dimensions, such as area and circumference, of a circle if radius is given.

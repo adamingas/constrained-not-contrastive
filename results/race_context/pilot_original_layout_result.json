@@ -1,0 +1,14 @@
+{
+  "n": 40,
+  "correct": {
+    "qwen_full": 24,
+    "qwen_no_context": 26
+  },
+  "full_accuracy": 0.6,
+  "context_gain": -0.05,
+  "rule": {
+    "minimum_full_accuracy": 0.7,
+    "minimum_context_gain": 0.15
+  },
+  "qualified": false
+}

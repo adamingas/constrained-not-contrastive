@@ -1,0 +1,11 @@
+{
+  "time": "2026-10-03T00:52:01.903992+00:00",
+  "reason": "Primary test results through BFCL case 69 exposed CLM selecting NO_TOOL on every 60 positive test cases with JSON actions. Canonical prose improved this only partly. Diagnose none-option competition separately from closed-set tool ranking.",
+  "contrasts": {
+    "forced_tool": "All 60 positive BFCL test cases, original tools only, no NO_TOOL candidate; original CLM JSON, canonical CLM prose, and Qwen raw base. Same frozen rules, except remove abstention instruction.",
+    "menu_context": "All 90 BFCL test cases, CLM sees full available tool menu in state prefix; test JSON and canonical prose serialization. No prompt search."
+  },
+  "status": "Post-primary-design diagnostic; does not replace or change frozen primary outcomes.",
+  "script_sha256": "92966772f3a4234ce1160d3599124448afc1a8ccc469d1638dd4129bdcd17a6b",
+  "matched_timing": "Also time the forced-tool contrast on the first 5 positive multiple cases and first 5 positive live_multiple cases, five interleaved repetitions, no selection by outcome."
+}

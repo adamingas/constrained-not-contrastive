@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6ab18ee0d3c13d51f890f360",
+    "id": "Contrastive-LM/CLM-v0.1-8B",
+    "likes": 666,
+    "trendingScore": 399,
+    "private": false,
+    "downloads": 2951,
+    "tags": [
+      "contrastive-lm",
+      "clm",
+      "contrastive-learning",
+      "verifier",
+      "reranker",
+      "agents",
+      "text-ranking",
+      "en",
+      "base_model:Qwen/Qwen3-8B",
+      "base_model:finetune:Qwen/Qwen3-8B",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "pipeline_tag": "text-ranking",
+    "library_name": "contrastive-lm",
+    "createdAt": "2026-09-21T20:09:04.000Z",
+    "modelId": "Contrastive-LM/CLM-v0.1-8B"
+  },
+  {
+    "_id": "6ab2599eebfb214faec979c5",
+    "id": "Contrastive-LM/deepswe-clm-heads-8k",
+    "likes": 8,
+    "trendingScore": 2,
+    "private": false,
+    "downloads": 323,
+    "tags": [
+      "contrastive-lm",
+      "clm",
+      "contrastive-learning",
+      "verifier",
+      "best-of-n",
+      "swe-agent",
+      "deepswe",
+      "license:mit",
+      "region:us"
+    ],
+    "library_name": "contrastive-lm",
+    "createdAt": "2026-09-22T10:34:06.000Z",
+    "modelId": "Contrastive-LM/deepswe-clm-heads-8k"
+  }
+]

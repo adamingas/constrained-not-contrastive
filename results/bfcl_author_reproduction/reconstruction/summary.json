@@ -1,0 +1,46 @@
+{
+  "complete": true,
+  "interpretation": "Function selection reconstruction only; not the authors exact run or full BFCL scoring.",
+  "results": [
+    {
+      "category": "live_multiple",
+      "variant": "full_schema",
+      "n": 1053,
+      "correct": 385,
+      "accuracy": 0.36562203228869894,
+      "median_total_decision_ms": 104.09212508238852
+    },
+    {
+      "category": "live_multiple",
+      "variant": "name_description",
+      "n": 1053,
+      "correct": 744,
+      "accuracy": 0.7065527065527065,
+      "median_total_decision_ms": 102.43195807561278
+    },
+    {
+      "category": "multiple",
+      "variant": "full_schema",
+      "n": 200,
+      "correct": 140,
+      "accuracy": 0.7,
+      "median_total_decision_ms": 481.14645841997117
+    },
+    {
+      "category": "multiple",
+      "variant": "name_description",
+      "n": 200,
+      "correct": 167,
+      "accuracy": 0.835,
+      "median_total_decision_ms": 229.88685395102948
+    }
+  ],
+  "inputs_sha256": "eb6c018a1b061c3108311715f6d9b4fdbf336e74dd14bed7cbb8f8f1b6083172",
+  "predictions_sha256": "e70dc688cd24bc8e91d75d6afd1e2a36a0e71670d9611ef34ca14ad1bfea61f9",
+  "warm_actions_latency": {
+    "n_states": 10,
+    "repetitions": 5,
+    "median_ms": 102.04318747855723,
+    "hardware_scope": "Local Mac + MLX backbone + upstream CPU heads, not authors hardware."
+  }
+}

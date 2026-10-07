@@ -1,0 +1,2512 @@
+{
+  "metadata": {
+    "backbone": "Qwen/Qwen3-8B",
+    "dtype": "mlx.core.bfloat16",
+    "head_parameters_total": 18887680,
+    "head_config": {
+      "model": "Qwen/Qwen3-8B",
+      "hidden_size": 4096,
+      "projection_dim": 512,
+      "width": 1536,
+      "depth": 3,
+      "activation": "gelu",
+      "layernorm": true,
+      "residual": false
+    },
+    "head_scale": 100.0,
+    "head_port_max_abs_error": {
+      "state": 3.8743019104003906e-07,
+      "action": 3.8743019104003906e-07
+    },
+    "upstream_commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7",
+    "packages": {
+      "mlx": "0.32.3",
+      "mlx-lm": "0.32.0",
+      "torch": "2.14.1",
+      "transformers": "5.18.0"
+    }
+  },
+  "quality": [
+    {
+      "group": "routing",
+      "state": "Customer: my invoice was charged twice and nobody answers the phone!",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "billing",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9879662394523621,
+          "technical": 0.012033809907734394
+        },
+        "ms": 2049.128541024402,
+        "input_tokens": 19
+      },
+      "qwen": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical": 4.847367646165779e-11
+        },
+        "ms": 314.6812501363456,
+        "input_tokens": 75,
+        "prefix_tokens": 47,
+        "processed_tokens": 75
+      },
+      "qwen_reversed": {
+        "choice": "billing",
+        "probabilities": {
+          "technical": 1.3887952420021943e-11,
+          "billing": 1.0
+        },
+        "ms": 137.783250072971,
+        "input_tokens": 75,
+        "prefix_tokens": 47,
+        "processed_tokens": 75
+      }
+    },
+    {
+      "group": "routing",
+      "state": "The app crashes immediately after I log in.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "technical",
+      "clm": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 0.06105998903512955,
+          "technical": 0.9389399886131287
+        },
+        "ms": 66.14537490531802,
+        "input_tokens": 15
+      },
+      "qwen": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 1.7482356166019508e-13,
+          "technical": 1.0
+        },
+        "ms": 136.42741600051522,
+        "input_tokens": 71,
+        "prefix_tokens": 47,
+        "processed_tokens": 71
+      },
+      "qwen_reversed": {
+        "choice": "technical",
+        "probabilities": {
+          "technical": 1.0,
+          "billing": 1.4637800520300726e-12
+        },
+        "ms": 136.32854097522795,
+        "input_tokens": 71,
+        "prefix_tokens": 47,
+        "processed_tokens": 71
+      }
+    },
+    {
+      "group": "routing",
+      "state": "Please refund the subscription I cancelled last month.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "billing",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.992226243019104,
+          "technical": 0.007773804944008589
+        },
+        "ms": 43.59108302742243,
+        "input_tokens": 15
+      },
+      "qwen": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical": 2.5436697561644073e-13
+        },
+        "ms": 136.18358317762613,
+        "input_tokens": 71,
+        "prefix_tokens": 47,
+        "processed_tokens": 71
+      },
+      "qwen_reversed": {
+        "choice": "billing",
+        "probabilities": {
+          "technical": 5.384943792957619e-13,
+          "billing": 1.0
+        },
+        "ms": 136.47899986244738,
+        "input_tokens": 71,
+        "prefix_tokens": 47,
+        "processed_tokens": 71
+      }
+    },
+    {
+      "group": "routing",
+      "state": "The server is unreachable and all API requests time out.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "technical",
+      "clm": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 0.11820128560066223,
+          "technical": 0.8817987442016602
+        },
+        "ms": 73.41979187913239,
+        "input_tokens": 17
+      },
+      "qwen": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 1.3615253672757954e-13,
+          "technical": 1.0
+        },
+        "ms": 136.90020819194615,
+        "input_tokens": 73,
+        "prefix_tokens": 47,
+        "processed_tokens": 73
+      },
+      "qwen_reversed": {
+        "choice": "technical",
+        "probabilities": {
+          "technical": 1.0,
+          "billing": 1.3887952420021943e-11
+        },
+        "ms": 137.00029184110463,
+        "input_tokens": 73,
+        "prefix_tokens": 47,
+        "processed_tokens": 73
+      }
+    },
+    {
+      "group": "routing",
+      "state": "Why was I charged tax twice on the same purchase?",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "billing",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9999397993087769,
+          "technical": 6.0168589698150754e-05
+        },
+        "ms": 73.03800014778972,
+        "input_tokens": 17
+      },
+      "qwen": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical": 2.789469488728713e-10
+        },
+        "ms": 136.91529096104205,
+        "input_tokens": 73,
+        "prefix_tokens": 47,
+        "processed_tokens": 73
+      },
+      "qwen_reversed": {
+        "choice": "billing",
+        "probabilities": {
+          "technical": 1.2501525370467448e-09,
+          "billing": 1.0
+        },
+        "ms": 136.3835409283638,
+        "input_tokens": 73,
+        "prefix_tokens": 47,
+        "processed_tokens": 73
+      }
+    },
+    {
+      "group": "routing",
+      "state": "The upload button does nothing when clicked.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "technical",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.7661579847335815,
+          "technical": 0.23384200036525726
+        },
+        "ms": 42.588874930515885,
+        "input_tokens": 14
+      },
+      "qwen": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 7.835053135799019e-13,
+          "technical": 1.0
+        },
+        "ms": 137.20174995251,
+        "input_tokens": 70,
+        "prefix_tokens": 47,
+        "processed_tokens": 70
+      },
+      "qwen_reversed": {
+        "choice": "technical",
+        "probabilities": {
+          "technical": 1.0,
+          "billing": 6.224152443445874e-11
+        },
+        "ms": 136.32975006476045,
+        "input_tokens": 70,
+        "prefix_tokens": 47,
+        "processed_tokens": 70
+      }
+    },
+    {
+      "group": "routing",
+      "state": "I need a corrected invoice with my company's address.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "billing",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9997535347938538,
+          "technical": 0.00024646721431054175
+        },
+        "ms": 73.4158749692142,
+        "input_tokens": 17
+      },
+      "qwen": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical": 6.914395813718832e-13
+        },
+        "ms": 136.28520793281496,
+        "input_tokens": 73,
+        "prefix_tokens": 47,
+        "processed_tokens": 73
+      },
+      "qwen_reversed": {
+        "choice": "billing",
+        "probabilities": {
+          "technical": 1.542813457284381e-13,
+          "billing": 1.0
+        },
+        "ms": 137.36054208129644,
+        "input_tokens": 73,
+        "prefix_tokens": 47,
+        "processed_tokens": 73
+      }
+    },
+    {
+      "group": "routing",
+      "state": "I cannot reset my password because the reset link errors.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "technical",
+      "clm": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 0.4943573474884033,
+          "technical": 0.5056426525115967
+        },
+        "ms": 73.21170903742313,
+        "input_tokens": 17
+      },
+      "qwen": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 1.5229991490173234e-08,
+          "technical": 1.0
+        },
+        "ms": 136.96779194287956,
+        "input_tokens": 73,
+        "prefix_tokens": 47,
+        "processed_tokens": 73
+      },
+      "qwen_reversed": {
+        "choice": "technical",
+        "probabilities": {
+          "technical": 1.0,
+          "billing": 1.3887952420021943e-11
+        },
+        "ms": 137.19658320769668,
+        "input_tokens": 73,
+        "prefix_tokens": 47,
+        "processed_tokens": 73
+      }
+    },
+    {
+      "group": "routing",
+      "state": "Payment succeeded, but the invoice page crashes with error 500. I need the page fixed, not a refund.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "technical",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9830838441848755,
+          "technical": 0.01691618375480175
+        },
+        "ms": 74.97804099693894,
+        "input_tokens": 31
+      },
+      "qwen": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 3.7010111230036113e-13,
+          "technical": 1.0
+        },
+        "ms": 137.84970808774233,
+        "input_tokens": 87,
+        "prefix_tokens": 47,
+        "processed_tokens": 87
+      },
+      "qwen_reversed": {
+        "choice": "technical",
+        "probabilities": {
+          "technical": 1.0,
+          "billing": 1.2501525370467448e-09
+        },
+        "ms": 137.24595797248185,
+        "input_tokens": 87,
+        "prefix_tokens": 47,
+        "processed_tokens": 87
+      }
+    },
+    {
+      "group": "routing",
+      "state": "The technical outage is over. I am requesting the promised service credit.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "billing",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9328043460845947,
+          "technical": 0.06719567626714706
+        },
+        "ms": 73.90041695907712,
+        "input_tokens": 20
+      },
+      "qwen": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 4.363463368406428e-09,
+          "technical": 1.0
+        },
+        "ms": 137.67099985852838,
+        "input_tokens": 76,
+        "prefix_tokens": 47,
+        "processed_tokens": 76
+      },
+      "qwen_reversed": {
+        "choice": "technical",
+        "probabilities": {
+          "technical": 0.9997387528419495,
+          "billing": 0.0002611903182696551
+        },
+        "ms": 137.01683306135237,
+        "input_tokens": 76,
+        "prefix_tokens": 47,
+        "processed_tokens": 76
+      }
+    },
+    {
+      "group": "routing",
+      "state": "No charge is wrong. The billing dashboard renders a blank screen.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "technical",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9122672080993652,
+          "technical": 0.08773284405469894
+        },
+        "ms": 73.78220814280212,
+        "input_tokens": 19
+      },
+      "qwen": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9998766183853149,
+          "technical": 0.00012339463864918798
+        },
+        "ms": 136.82787492871284,
+        "input_tokens": 75,
+        "prefix_tokens": 47,
+        "processed_tokens": 75
+      },
+      "qwen_reversed": {
+        "choice": "billing",
+        "probabilities": {
+          "technical": 5.602798669457343e-09,
+          "billing": 1.0
+        },
+        "ms": 137.18650001101196,
+        "input_tokens": 75,
+        "prefix_tokens": 47,
+        "processed_tokens": 75
+      }
+    },
+    {
+      "group": "routing",
+      "state": "The application works perfectly. The subscription price on my bill is wrong.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "billing",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9862034320831299,
+          "technical": 0.013796613551676273
+        },
+        "ms": 73.6408750526607,
+        "input_tokens": 20
+      },
+      "qwen": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical": 1.02618941122401e-10
+        },
+        "ms": 136.88833313062787,
+        "input_tokens": 76,
+        "prefix_tokens": 47,
+        "processed_tokens": 76
+      },
+      "qwen_reversed": {
+        "choice": "billing",
+        "probabilities": {
+          "technical": 1.3887952420021943e-11,
+          "billing": 1.0
+        },
+        "ms": 137.0625840499997,
+        "input_tokens": 76,
+        "prefix_tokens": 47,
+        "processed_tokens": 76
+      }
+    },
+    {
+      "group": "routing",
+      "state": "Please stop charging my expired subscription.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "billing",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9647749066352844,
+          "technical": 0.035225071012973785
+        },
+        "ms": 41.835624957457185,
+        "input_tokens": 13
+      },
+      "qwen": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical": 2.2897366294682975e-11
+        },
+        "ms": 136.5812080912292,
+        "input_tokens": 69,
+        "prefix_tokens": 47,
+        "processed_tokens": 69
+      },
+      "qwen_reversed": {
+        "choice": "billing",
+        "probabilities": {
+          "technical": 3.978968196594046e-12,
+          "billing": 1.0
+        },
+        "ms": 136.56041701324284,
+        "input_tokens": 69,
+        "prefix_tokens": 47,
+        "processed_tokens": 69
+      }
+    },
+    {
+      "group": "routing",
+      "state": "The video freezes every few seconds on all devices.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "technical",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.5533077716827393,
+          "technical": 0.44669222831726074
+        },
+        "ms": 119.18370798230171,
+        "input_tokens": 16
+      },
+      "qwen": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 1.3615253672757954e-13,
+          "technical": 1.0
+        },
+        "ms": 137.60662521235645,
+        "input_tokens": 72,
+        "prefix_tokens": 47,
+        "processed_tokens": 72
+      },
+      "qwen_reversed": {
+        "choice": "technical",
+        "probabilities": {
+          "technical": 1.0,
+          "billing": 8.423467652562966e-12
+        },
+        "ms": 136.72929210588336,
+        "input_tokens": 72,
+        "prefix_tokens": 47,
+        "processed_tokens": 72
+      }
+    },
+    {
+      "group": "routing",
+      "state": "I want an explanation of this unexpected card charge.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "billing",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9991257786750793,
+          "technical": 0.0008742167265154421
+        },
+        "ms": 62.69020796753466,
+        "input_tokens": 16
+      },
+      "qwen": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical": 8.423467652562966e-12
+        },
+        "ms": 136.78112509660423,
+        "input_tokens": 72,
+        "prefix_tokens": 47,
+        "processed_tokens": 72
+      },
+      "qwen_reversed": {
+        "choice": "billing",
+        "probabilities": {
+          "technical": 2.1724406995549117e-10,
+          "billing": 1.0
+        },
+        "ms": 136.473499936983,
+        "input_tokens": 72,
+        "prefix_tokens": 47,
+        "processed_tokens": 72
+      }
+    },
+    {
+      "group": "routing",
+      "state": "My data export always fails with a software exception.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "technical",
+      "clm": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 0.2243981957435608,
+          "technical": 0.7756018042564392
+        },
+        "ms": 63.10562486760318,
+        "input_tokens": 16
+      },
+      "qwen": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 3.581750174230791e-10,
+          "technical": 1.0
+        },
+        "ms": 137.30029202997684,
+        "input_tokens": 72,
+        "prefix_tokens": 47,
+        "processed_tokens": 72
+      },
+      "qwen_reversed": {
+        "choice": "technical",
+        "probabilities": {
+          "technical": 1.0,
+          "billing": 1.691900647360356e-10
+        },
+        "ms": 136.93783292546868,
+        "input_tokens": 72,
+        "prefix_tokens": 47,
+        "processed_tokens": 72
+      }
+    },
+    {
+      "group": "routing",
+      "state": "I was promised a refund but have not received it.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "billing",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9952032566070557,
+          "technical": 0.0047967215068638325
+        },
+        "ms": 73.43075005337596,
+        "input_tokens": 17
+      },
+      "qwen": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical": 2.5436697561644073e-13
+        },
+        "ms": 136.72275003045797,
+        "input_tokens": 73,
+        "prefix_tokens": 47,
+        "processed_tokens": 73
+      },
+      "qwen_reversed": {
+        "choice": "billing",
+        "probabilities": {
+          "technical": 1.7832462936850924e-11,
+          "billing": 1.0
+        },
+        "ms": 137.01370800845325,
+        "input_tokens": 73,
+        "prefix_tokens": 47,
+        "processed_tokens": 73
+      }
+    },
+    {
+      "group": "routing",
+      "state": "My account is paid up; however the login service is down.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "technical",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.5654159188270569,
+          "technical": 0.4345840811729431
+        },
+        "ms": 73.90420790761709,
+        "input_tokens": 19
+      },
+      "qwen": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 9.35763443186792e-14,
+          "technical": 1.0
+        },
+        "ms": 136.7781248409301,
+        "input_tokens": 75,
+        "prefix_tokens": 47,
+        "processed_tokens": 75
+      },
+      "qwen_reversed": {
+        "choice": "technical",
+        "probabilities": {
+          "technical": 1.0,
+          "billing": 3.7751385351114664e-11
+        },
+        "ms": 136.90058304928243,
+        "input_tokens": 75,
+        "prefix_tokens": 47,
+        "processed_tokens": 75
+      }
+    },
+    {
+      "group": "routing",
+      "state": "The phone app works, but I paid for the same order twice.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "billing",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9675174951553345,
+          "technical": 0.032482463866472244
+        },
+        "ms": 73.73020797967911,
+        "input_tokens": 20
+      },
+      "qwen": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical": 2.789469488728713e-10
+        },
+        "ms": 137.31287489645183,
+        "input_tokens": 76,
+        "prefix_tokens": 47,
+        "processed_tokens": 76
+      },
+      "qwen_reversed": {
+        "choice": "billing",
+        "probabilities": {
+          "technical": 6.224152443445874e-11,
+          "billing": 1.0
+        },
+        "ms": 136.67437504045665,
+        "input_tokens": 76,
+        "prefix_tokens": 47,
+        "processed_tokens": 76
+      }
+    },
+    {
+      "group": "routing",
+      "state": "The credit card input widget is broken and refuses all typing.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds",
+          "technical": "Bugs and outages"
+        }
+      },
+      "gold": "technical",
+      "clm": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.7342252731323242,
+          "technical": 0.26577475666999817
+        },
+        "ms": 73.64941691048443,
+        "input_tokens": 18
+      },
+      "qwen": {
+        "choice": "technical",
+        "probabilities": {
+          "billing": 8.878273008265658e-13,
+          "technical": 1.0
+        },
+        "ms": 137.8865831065923,
+        "input_tokens": 74,
+        "prefix_tokens": 47,
+        "processed_tokens": 74
+      },
+      "qwen_reversed": {
+        "choice": "technical",
+        "probabilities": {
+          "technical": 1.0,
+          "billing": 6.560210707995395e-12
+        },
+        "ms": 138.12120910733938,
+        "input_tokens": 74,
+        "prefix_tokens": 47,
+        "processed_tokens": 74
+      }
+    },
+    {
+      "group": "mario_text",
+      "state": "Mario is on flat safe ground. The goal is to his right with no obstacles. Walking is preferred to jumping when safe.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which action should Mario take to reach the goal safely?",
+        "criteria": {
+          "jump": "Jump straight up",
+          "right": "Walk right",
+          "left": "Walk left",
+          "jump_right": "Jump up and move right",
+          "jump_left": "Jump up and move left"
+        }
+      },
+      "gold": "right",
+      "clm": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 0.12724372744560242,
+          "right": 0.06695445626974106,
+          "left": 0.13886165618896484,
+          "jump_right": 0.24248477816581726,
+          "jump_left": 0.42445534467697144
+        },
+        "ms": 281.95404214784503,
+        "input_tokens": 36
+      },
+      "qwen": {
+        "choice": "right",
+        "probabilities": {
+          "jump": 2.8987286529447154e-11,
+          "right": 0.9859364032745361,
+          "left": 0.014063626527786255,
+          "jump_right": 2.141888333362374e-10,
+          "jump_left": 3.722046629239806e-11
+        },
+        "ms": 176.30991688929498,
+        "input_tokens": 117,
+        "prefix_tokens": 72,
+        "processed_tokens": 117
+      },
+      "qwen_reversed": {
+        "choice": "right",
+        "probabilities": {
+          "jump_left": 2.78946754583842e-10,
+          "jump_right": 5.043477244726091e-07,
+          "left": 4.5990553032559944e-10,
+          "right": 0.9999992847442627,
+          "jump": 1.8553909342244879e-07
+        },
+        "ms": 154.63924990035594,
+        "input_tokens": 117,
+        "prefix_tokens": 72,
+        "processed_tokens": 117
+      }
+    },
+    {
+      "group": "mario_text",
+      "state": "Mario is on flat safe ground. The goal is to his left with no obstacles. Walking is preferred to jumping when safe.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which action should Mario take to reach the goal safely?",
+        "criteria": {
+          "jump": "Jump straight up",
+          "right": "Walk right",
+          "left": "Walk left",
+          "jump_right": "Jump up and move right",
+          "jump_left": "Jump up and move left"
+        }
+      },
+      "gold": "left",
+      "clm": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 0.05627975985407829,
+          "right": 0.06728922575712204,
+          "left": 0.26943501830101013,
+          "jump_right": 0.20236408710479736,
+          "jump_left": 0.4046318829059601
+        },
+        "ms": 81.48262510076165,
+        "input_tokens": 36
+      },
+      "qwen": {
+        "choice": "left",
+        "probabilities": {
+          "jump": 6.560210707995395e-12,
+          "right": 5.602798669457343e-09,
+          "left": 1.0,
+          "jump_right": 1.3887952420021943e-11,
+          "jump_left": 7.99195987166712e-11
+        },
+        "ms": 154.20037508010864,
+        "input_tokens": 117,
+        "prefix_tokens": 72,
+        "processed_tokens": 117
+      },
+      "qwen_reversed": {
+        "choice": "left",
+        "probabilities": {
+          "jump_left": 9.237433928888095e-09,
+          "jump_right": 6.224138565658066e-11,
+          "left": 0.9999977350234985,
+          "right": 2.2603244360652752e-06,
+          "jump": 2.0611488071864414e-09
+        },
+        "ms": 154.87591712735593,
+        "input_tokens": 117,
+        "prefix_tokens": 72,
+        "processed_tokens": 117
+      }
+    },
+    {
+      "group": "mario_text",
+      "state": "Mario stands at the left edge of a pit. The goal platform is across the pit to the right. Walking falls in; a jump right reaches it.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which action should Mario take to reach the goal safely?",
+        "criteria": {
+          "jump": "Jump straight up",
+          "right": "Walk right",
+          "left": "Walk left",
+          "jump_right": "Jump up and move right",
+          "jump_left": "Jump up and move left"
+        }
+      },
+      "gold": "jump_right",
+      "clm": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 0.01265336200594902,
+          "right": 0.03754859417676926,
+          "left": 0.02227194420993328,
+          "jump_right": 0.3229067325592041,
+          "jump_left": 0.6046193242073059
+        },
+        "ms": 83.88466597534716,
+        "input_tokens": 42
+      },
+      "qwen": {
+        "choice": "jump_right",
+        "probabilities": {
+          "jump": 8.718498634152638e-08,
+          "right": 4.11832594693351e-08,
+          "left": 9.189234262407808e-09,
+          "jump_right": 0.9947798252105713,
+          "jump_left": 0.005220126826316118
+        },
+        "ms": 154.75200000219047,
+        "input_tokens": 123,
+        "prefix_tokens": 72,
+        "processed_tokens": 123
+      },
+      "qwen_reversed": {
+        "choice": "jump_right",
+        "probabilities": {
+          "jump_left": 9.237455245170167e-09,
+          "jump_right": 1.0,
+          "left": 7.99195987166712e-11,
+          "right": 1.2501525370467448e-09,
+          "jump": 7.99195987166712e-11
+        },
+        "ms": 155.53162503056228,
+        "input_tokens": 123,
+        "prefix_tokens": 72,
+        "processed_tokens": 123
+      }
+    },
+    {
+      "group": "mario_text",
+      "state": "Mario stands at the right edge of a pit. The goal platform is across the pit to the left. Walking falls in; a jump left reaches it.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which action should Mario take to reach the goal safely?",
+        "criteria": {
+          "jump": "Jump straight up",
+          "right": "Walk right",
+          "left": "Walk left",
+          "jump_right": "Jump up and move right",
+          "jump_left": "Jump up and move left"
+        }
+      },
+      "gold": "jump_left",
+      "clm": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 0.021591534838080406,
+          "right": 0.07989335805177689,
+          "left": 0.024106167256832123,
+          "jump_right": 0.38829246163368225,
+          "jump_left": 0.486116498708725
+        },
+        "ms": 82.88233284838498,
+        "input_tokens": 42
+      },
+      "qwen": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 7.582561245556008e-10,
+          "right": 2.6465716285173357e-09,
+          "left": 8.315278137160931e-07,
+          "jump_right": 5.3157805268710945e-08,
+          "jump_left": 0.9999991655349731
+        },
+        "ms": 154.18287506327033,
+        "input_tokens": 123,
+        "prefix_tokens": 72,
+        "processed_tokens": 123
+      },
+      "qwen_reversed": {
+        "choice": "jump_right",
+        "probabilities": {
+          "jump_left": 0.022977374494075775,
+          "jump_right": 0.977022647857666,
+          "left": 2.013793576338685e-09,
+          "right": 2.013793576338685e-09,
+          "jump": 1.2214272926414083e-09
+        },
+        "ms": 155.3577920421958,
+        "input_tokens": 123,
+        "prefix_tokens": 72,
+        "processed_tokens": 123
+      }
+    },
+    {
+      "group": "mario_text",
+      "state": "Mario must hit a block directly above his head. There are pits immediately on both sides, so he must keep his horizontal position.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which action should Mario take to reach the goal safely?",
+        "criteria": {
+          "jump": "Jump straight up",
+          "right": "Walk right",
+          "left": "Walk left",
+          "jump_right": "Jump up and move right",
+          "jump_left": "Jump up and move left"
+        }
+      },
+      "gold": "jump",
+      "clm": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 0.06085042282938957,
+          "right": 0.04040413349866867,
+          "left": 0.14410555362701416,
+          "jump_right": 0.35852667689323425,
+          "jump_left": 0.39611324667930603
+        },
+        "ms": 82.48674985952675,
+        "input_tokens": 37
+      },
+      "qwen": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 4.539785732049495e-05,
+          "right": 9.23703336042081e-09,
+          "left": 4.363263972351206e-09,
+          "jump_right": 2.3822622097213753e-07,
+          "jump_left": 0.999954342842102
+        },
+        "ms": 154.15579196996987,
+        "input_tokens": 118,
+        "prefix_tokens": 72,
+        "processed_tokens": 118
+      },
+      "qwen_reversed": {
+        "choice": "jump",
+        "probabilities": {
+          "jump_left": 2.1724406995549117e-10,
+          "jump_right": 1.0815932351138091e-11,
+          "left": 4.193792394521084e-13,
+          "right": 2.5436697561644073e-13,
+          "jump": 1.0
+        },
+        "ms": 153.4386659041047,
+        "input_tokens": 118,
+        "prefix_tokens": 72,
+        "processed_tokens": 118
+      }
+    },
+    {
+      "group": "mario_text",
+      "state": "A low obstacle blocks the path to the goal on the right. Mario can clear it only by jumping forward to the right.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which action should Mario take to reach the goal safely?",
+        "criteria": {
+          "jump": "Jump straight up",
+          "right": "Walk right",
+          "left": "Walk left",
+          "jump_right": "Jump up and move right",
+          "jump_left": "Jump up and move left"
+        }
+      },
+      "gold": "jump_right",
+      "clm": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 0.011481125839054585,
+          "right": 0.01068908255547285,
+          "left": 0.06707137078046799,
+          "jump_right": 0.14062148332595825,
+          "jump_left": 0.7701369524002075
+        },
+        "ms": 81.13845903426409,
+        "input_tokens": 36
+      },
+      "qwen": {
+        "choice": "jump_right",
+        "probabilities": {
+          "jump": 2.2897067922245107e-11,
+          "right": 5.109023881039176e-12,
+          "left": 2.4133342893528642e-12,
+          "jump_right": 0.999987006187439,
+          "jump_left": 1.3007139386900235e-05
+        },
+        "ms": 153.95191684365273,
+        "input_tokens": 117,
+        "prefix_tokens": 72,
+        "processed_tokens": 117
+      },
+      "qwen_reversed": {
+        "choice": "jump_right",
+        "probabilities": {
+          "jump_left": 3.7751385351114664e-11,
+          "jump_right": 1.0,
+          "left": 2.4133657312158663e-12,
+          "right": 3.7751385351114664e-11,
+          "jump": 1.691900647360356e-10
+        },
+        "ms": 154.05204193666577,
+        "input_tokens": 117,
+        "prefix_tokens": 72,
+        "processed_tokens": 117
+      }
+    },
+    {
+      "group": "mario_text",
+      "state": "A low obstacle blocks the path to the goal on the left. Mario can clear it only by jumping forward to the left.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which action should Mario take to reach the goal safely?",
+        "criteria": {
+          "jump": "Jump straight up",
+          "right": "Walk right",
+          "left": "Walk left",
+          "jump_right": "Jump up and move right",
+          "jump_left": "Jump up and move left"
+        }
+      },
+      "gold": "jump_left",
+      "clm": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 0.009254747070372105,
+          "right": 0.011067993007600307,
+          "left": 0.07611487060785294,
+          "jump_right": 0.14415934681892395,
+          "jump_left": 0.7594031095504761
+        },
+        "ms": 81.80295792408288,
+        "input_tokens": 36
+      },
+      "qwen": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 1.3887952420021943e-11,
+          "right": 1.0815932351138091e-11,
+          "left": 7.99195987166712e-11,
+          "jump_right": 9.237455245170167e-09,
+          "jump_left": 1.0
+        },
+        "ms": 153.38079095818102,
+        "input_tokens": 117,
+        "prefix_tokens": 72,
+        "processed_tokens": 117
+      },
+      "qwen_reversed": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump_left": 0.9999898672103882,
+          "jump_right": 1.0129998372576665e-05,
+          "left": 2.1724186338722973e-10,
+          "right": 1.4637651984603095e-12,
+          "jump": 3.098787719479912e-12
+        },
+        "ms": 153.19949993863702,
+        "input_tokens": 117,
+        "prefix_tokens": 72,
+        "processed_tokens": 117
+      }
+    },
+    {
+      "group": "mario_text",
+      "state": "Mario is under a low ceiling with a safe corridor to his right leading to the exit. Jumping hits spikes on the ceiling.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which action should Mario take to reach the goal safely?",
+        "criteria": {
+          "jump": "Jump straight up",
+          "right": "Walk right",
+          "left": "Walk left",
+          "jump_right": "Jump up and move right",
+          "jump_left": "Jump up and move left"
+        }
+      },
+      "gold": "right",
+      "clm": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 0.035412631928920746,
+          "right": 0.025751175358891487,
+          "left": 0.05824008211493492,
+          "jump_right": 0.2145642191171646,
+          "jump_left": 0.6660318970680237
+        },
+        "ms": 81.8950419779867,
+        "input_tokens": 37
+      },
+      "qwen": {
+        "choice": "left",
+        "probabilities": {
+          "jump": 1.942475158500656e-08,
+          "right": 0.006692829541862011,
+          "left": 0.9933039546012878,
+          "jump_right": 1.3617790273201535e-06,
+          "jump_left": 1.748558929648425e-06
+        },
+        "ms": 154.8180840909481,
+        "input_tokens": 118,
+        "prefix_tokens": 72,
+        "processed_tokens": 118
+      },
+      "qwen_reversed": {
+        "choice": "right",
+        "probabilities": {
+          "jump_left": 1.0646657528923242e-06,
+          "jump_right": 0.0009092871914617717,
+          "left": 0.0019249615725129843,
+          "right": 0.9971545934677124,
+          "jump": 1.0101276529894676e-05
+        },
+        "ms": 154.0257919114083,
+        "input_tokens": 118,
+        "prefix_tokens": 72,
+        "processed_tokens": 118
+      }
+    },
+    {
+      "group": "mario_text",
+      "state": "Mario is under a low ceiling with a safe corridor to his left leading to the exit. Jumping hits spikes on the ceiling.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which action should Mario take to reach the goal safely?",
+        "criteria": {
+          "jump": "Jump straight up",
+          "right": "Walk right",
+          "left": "Walk left",
+          "jump_right": "Jump up and move right",
+          "jump_left": "Jump up and move left"
+        }
+      },
+      "gold": "left",
+      "clm": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 0.050995659083127975,
+          "right": 0.02952399104833603,
+          "left": 0.05264325067400932,
+          "jump_right": 0.23132188618183136,
+          "jump_left": 0.6355152130126953
+        },
+        "ms": 81.92229084670544,
+        "input_tokens": 37
+      },
+      "qwen": {
+        "choice": "left",
+        "probabilities": {
+          "jump": 1.1860873172508946e-08,
+          "right": 4.785016699315747e-06,
+          "left": 0.9999785423278809,
+          "jump_right": 1.955527828556569e-08,
+          "jump_left": 1.670134770392906e-05
+        },
+        "ms": 154.11629201844335,
+        "input_tokens": 118,
+        "prefix_tokens": 72,
+        "processed_tokens": 118
+      },
+      "qwen_reversed": {
+        "choice": "left",
+        "probabilities": {
+          "jump_left": 2.2602200715482468e-06,
+          "jump_right": 5.602526886860915e-09,
+          "left": 0.9999514818191528,
+          "right": 4.53977299912367e-05,
+          "jump": 8.314881370097282e-07
+        },
+        "ms": 153.75837520696223,
+        "input_tokens": 118,
+        "prefix_tokens": 72,
+        "processed_tokens": 118
+      }
+    },
+    {
+      "group": "mario_text",
+      "state": "Mario must jump vertically to collect a coin directly above him without moving left or right.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which action should Mario take to reach the goal safely?",
+        "criteria": {
+          "jump": "Jump straight up",
+          "right": "Walk right",
+          "left": "Walk left",
+          "jump_right": "Jump up and move right",
+          "jump_left": "Jump up and move left"
+        }
+      },
+      "gold": "jump",
+      "clm": {
+        "choice": "jump_left",
+        "probabilities": {
+          "jump": 0.12294013798236847,
+          "right": 0.004738903138786554,
+          "left": 0.026600241661071777,
+          "jump_right": 0.30022066831588745,
+          "jump_left": 0.5455000400543213
+        },
+        "ms": 73.83999996818602,
+        "input_tokens": 28
+      },
+      "qwen": {
+        "choice": "jump",
+        "probabilities": {
+          "jump": 1.0,
+          "right": 4.847367646165779e-11,
+          "left": 1.9810092151753556e-13,
+          "jump_right": 3.900838460297977e-14,
+          "jump_left": 1.4637800520300726e-12
+        },
+        "ms": 152.7384591754526,
+        "input_tokens": 109,
+        "prefix_tokens": 72,
+        "processed_tokens": 109
+      },
+      "qwen_reversed": {
+        "choice": "jump",
+        "probabilities": {
+          "jump_left": 3.2661327527098993e-13,
+          "jump_right": 1.2015426631081794e-13,
+          "left": 4.658886615388361e-15,
+          "right": 2.493723230231784e-15,
+          "jump": 1.0
+        },
+        "ms": 153.11045804992318,
+        "input_tokens": 109,
+        "prefix_tokens": 72,
+        "processed_tokens": 109
+      }
+    },
+    {
+      "group": "relative_numbers",
+      "state": "Compare the candidate numbers numerically.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which of the offered numbers is larger?",
+        "criteria": {
+          "7": "7",
+          "9": "9"
+        }
+      },
+      "gold": "9",
+      "clm": {
+        "choice": "9",
+        "probabilities": {
+          "7": 0.23907652497291565,
+          "9": 0.7609235048294067
+        },
+        "ms": 124.3431658949703,
+        "input_tokens": 15
+      },
+      "qwen": {
+        "choice": "7",
+        "probabilities": {
+          "7": 0.9890130758285522,
+          "9": 0.01098694559186697
+        },
+        "ms": 136.86429196968675,
+        "input_tokens": 68,
+        "prefix_tokens": 44,
+        "processed_tokens": 68
+      },
+      "qwen_reversed": {
+        "choice": "9",
+        "probabilities": {
+          "9": 0.9999417066574097,
+          "7": 5.8291272580390796e-05
+        },
+        "ms": 136.9142080657184,
+        "input_tokens": 68,
+        "prefix_tokens": 44,
+        "processed_tokens": 68
+      }
+    },
+    {
+      "group": "relative_numbers",
+      "state": "Compare the candidate numbers numerically.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which of the offered numbers is larger?",
+        "criteria": {
+          "12": "12",
+          "4": "4"
+        }
+      },
+      "gold": "12",
+      "clm": {
+        "choice": "12",
+        "probabilities": {
+          "12": 0.8280685544013977,
+          "4": 0.17193137109279633
+        },
+        "ms": 111.43849999643862,
+        "input_tokens": 15
+      },
+      "qwen": {
+        "choice": "12",
+        "probabilities": {
+          "12": 0.9999039173126221,
+          "4": 9.610244887880981e-05
+        },
+        "ms": 136.7595000192523,
+        "input_tokens": 70,
+        "prefix_tokens": 46,
+        "processed_tokens": 70
+      },
+      "qwen_reversed": {
+        "choice": "4",
+        "probabilities": {
+          "4": 0.9046505093574524,
+          "12": 0.09534947574138641
+        },
+        "ms": 136.38433418236673,
+        "input_tokens": 70,
+        "prefix_tokens": 46,
+        "processed_tokens": 70
+      }
+    },
+    {
+      "group": "relative_numbers",
+      "state": "Compare the candidate numbers numerically.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which of the offered numbers is larger?",
+        "criteria": {
+          "21": "21",
+          "19": "19"
+        }
+      },
+      "gold": "21",
+      "clm": {
+        "choice": "21",
+        "probabilities": {
+          "21": 0.6708424687385559,
+          "19": 0.3291575014591217
+        },
+        "ms": 108.57695806771517,
+        "input_tokens": 15
+      },
+      "qwen": {
+        "choice": "21",
+        "probabilities": {
+          "21": 0.999841570854187,
+          "19": 0.00015843620349187404
+        },
+        "ms": 136.13149989396334,
+        "input_tokens": 72,
+        "prefix_tokens": 48,
+        "processed_tokens": 72
+      },
+      "qwen_reversed": {
+        "choice": "19",
+        "probabilities": {
+          "19": 0.562176525592804,
+          "21": 0.4378235340118408
+        },
+        "ms": 136.46445889025927,
+        "input_tokens": 72,
+        "prefix_tokens": 48,
+        "processed_tokens": 72
+      }
+    },
+    {
+      "group": "relative_numbers",
+      "state": "Compare the candidate numbers numerically.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which of the offered numbers is larger?",
+        "criteria": {
+          "-3": "-3",
+          "-8": "-8"
+        }
+      },
+      "gold": "-3",
+      "clm": {
+        "choice": "-8",
+        "probabilities": {
+          "-3": 0.27282261848449707,
+          "-8": 0.7271773815155029
+        },
+        "ms": 108.02504210732877,
+        "input_tokens": 15
+      },
+      "qwen": {
+        "choice": "-3",
+        "probabilities": {
+          "-3": 0.9997387528419495,
+          "-8": 0.0002611903182696551
+        },
+        "ms": 135.2799169253558,
+        "input_tokens": 68,
+        "prefix_tokens": 44,
+        "processed_tokens": 68
+      },
+      "qwen_reversed": {
+        "choice": "-8",
+        "probabilities": {
+          "-8": 0.9046505093574524,
+          "-3": 0.09534947574138641
+        },
+        "ms": 136.4678330719471,
+        "input_tokens": 68,
+        "prefix_tokens": 44,
+        "processed_tokens": 68
+      }
+    },
+    {
+      "group": "relative_numbers",
+      "state": "Compare the candidate numbers numerically.",
+      "q": {
+        "type": "choice",
+        "instructions": "Which of the offered numbers is larger?",
+        "criteria": {
+          "0.9": "0.9",
+          "0.11": "0.11"
+        }
+      },
+      "gold": "0.9",
+      "clm": {
+        "choice": "0.9",
+        "probabilities": {
+          "0.9": 0.9143340587615967,
+          "0.11": 0.08566594868898392
+        },
+        "ms": 129.18229191564023,
+        "input_tokens": 15
+      },
+      "qwen": {
+        "choice": "0.9",
+        "probabilities": {
+          "0.9": 0.9999985694885254,
+          "0.11": 1.3709570794162573e-06
+        },
+        "ms": 138.41866608709097,
+        "input_tokens": 78,
+        "prefix_tokens": 54,
+        "processed_tokens": 78
+      },
+      "qwen_reversed": {
+        "choice": "0.11",
+        "probabilities": {
+          "0.11": 0.8807970285415649,
+          "0.9": 0.11920292675495148
+        },
+        "ms": 137.19004206359386,
+        "input_tokens": 78,
+        "prefix_tokens": 54,
+        "processed_tokens": 78
+      }
+    }
+  ],
+  "latency": {
+    "billing_2": {
+      "clm_cached_actions": {
+        "n": 25,
+        "p50_ms": 73.57283309102058,
+        "p95_ms": 74.1701165214181,
+        "min_ms": 72.9685421101749,
+        "samples_ms": [
+          74.03883407823741,
+          72.9685421101749,
+          73.96833295933902,
+          73.55154189281166,
+          73.5764168202877,
+          74.1736248601228,
+          73.39375000447035,
+          73.51458305492997,
+          73.19112494587898,
+          73.54762498289347,
+          73.72154202312231,
+          73.67262500338256,
+          73.30891606397927,
+          73.45670904032886,
+          73.7313749268651,
+          73.34616594016552,
+          73.35995812900364,
+          73.89029185287654,
+          73.57283309102058,
+          73.01545818336308,
+          74.15608316659927,
+          73.13416688703,
+          74.25554213114083,
+          73.63266590982676,
+          73.79641686566174
+        ],
+        "example": {
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.9879662394523621,
+            "technical": 0.012033809907734394
+          },
+          "ms": 73.79641686566174,
+          "input_tokens": 19
+        }
+      },
+      "qwen_uncached_selected": {
+        "n": 25,
+        "p50_ms": 137.23341701552272,
+        "p95_ms": 138.17274123430252,
+        "min_ms": 136.58008398488164,
+        "samples_ms": [
+          138.37337493896484,
+          137.23341701552272,
+          137.6302088610828,
+          137.27854192256927,
+          137.33591698110104,
+          137.07370799966156,
+          138.0685418844223,
+          138.19879107177258,
+          137.0980420615524,
+          136.58008398488164,
+          137.1076249051839,
+          137.69116601906717,
+          136.77466590888798,
+          136.60395797342062,
+          137.05145893618464,
+          137.11604196578264,
+          137.12791702710092,
+          136.82504114694893,
+          137.17762497253716,
+          137.68295804038644,
+          137.3526668176055,
+          137.19383301213384,
+          137.97970907762647,
+          137.3761249706149,
+          137.3267089948058
+        ],
+        "example": {
+          "choice": "billing",
+          "probabilities": {
+            "billing": 1.0,
+            "technical": 4.847367646165779e-11
+          },
+          "ms": 137.3267089948058,
+          "input_tokens": 75,
+          "prefix_tokens": 47,
+          "processed_tokens": 75
+        }
+      },
+      "qwen_prefix_cached_selected": {
+        "n": 25,
+        "p50_ms": 76.6762918792665,
+        "p95_ms": 77.06883307546377,
+        "min_ms": 75.93933306634426,
+        "samples_ms": [
+          77.07145810127258,
+          76.50312501937151,
+          76.93079207092524,
+          76.6762918792665,
+          76.59679208882153,
+          76.69379096478224,
+          77.05833297222853,
+          76.32633415050805,
+          76.96662493981421,
+          76.72041608020663,
+          76.4379168394953,
+          76.84708293527365,
+          76.8109590280801,
+          77.03941687941551,
+          76.52587490156293,
+          76.41662494279444,
+          77.1059999242425,
+          76.84749993495643,
+          76.63170900195837,
+          76.35308313183486,
+          75.93933306634426,
+          76.38570806011558,
+          76.67591609060764,
+          76.51816681027412,
+          76.93524984642863
+        ],
+        "example": {
+          "choice": "billing",
+          "probabilities": {
+            "billing": 1.0,
+            "technical": 1.02618941122401e-10
+          },
+          "ms": 76.93524984642863,
+          "input_tokens": 75,
+          "prefix_tokens": 47,
+          "processed_tokens": 28
+        }
+      },
+      "qwen_uncached_full_vocab": {
+        "n": 25,
+        "p50_ms": 139.77754209190607,
+        "p95_ms": 140.32518318854272,
+        "min_ms": 139.04437515884638,
+        "samples_ms": [
+          140.3600829653442,
+          139.81758314184844,
+          139.04437515884638,
+          139.9224998895079,
+          139.05208301730454,
+          139.71425010822713,
+          139.1076250001788,
+          139.26129112951458,
+          140.1504590176046,
+          140.07791597396135,
+          139.77754209190607,
+          140.66129201091826,
+          139.5896659232676,
+          139.97204205952585,
+          139.51866701245308,
+          140.1136671192944,
+          139.21891618520021,
+          139.57979204133153,
+          139.958709012717,
+          140.08504198864102,
+          139.63233307003975,
+          140.18558408133686,
+          139.98316694051027,
+          139.57420806400478,
+          139.7680421359837
+        ],
+        "example": {
+          "choice": "billing",
+          "probabilities": {
+            "billing": 1.0,
+            "technical": 4.847367646165779e-11
+          },
+          "ms": 139.7680421359837,
+          "input_tokens": 75,
+          "prefix_tokens": 47,
+          "processed_tokens": 75
+        }
+      }
+    },
+    "mario_5": {
+      "clm_cached_actions": {
+        "n": 25,
+        "p50_ms": 88.0194588098675,
+        "p95_ms": 89.3124746158719,
+        "min_ms": 84.198541007936,
+        "samples_ms": [
+          84.198541007936,
+          84.4708748627454,
+          84.95366689749062,
+          85.80708294175565,
+          84.67833301983774,
+          85.19266708754003,
+          86.61754196509719,
+          87.08479208871722,
+          87.00183313339949,
+          86.75612509250641,
+          87.55608391948044,
+          87.63895789161325,
+          88.0194588098675,
+          88.4314167778939,
+          88.22508295997977,
+          89.35058303177357,
+          88.566750055179,
+          88.13266595825553,
+          89.13416601717472,
+          89.05991585925221,
+          88.4561249986291,
+          88.77666597254574,
+          89.16004095226526,
+          89.00754200294614,
+          89.76083295419812
+        ],
+        "example": {
+          "choice": "jump_left",
+          "probabilities": {
+            "jump": 0.01265336200594902,
+            "right": 0.03754859417676926,
+            "left": 0.02227194420993328,
+            "jump_right": 0.3229067325592041,
+            "jump_left": 0.6046193242073059
+          },
+          "ms": 89.76083295419812,
+          "input_tokens": 42
+        }
+      },
+      "qwen_uncached_selected": {
+        "n": 25,
+        "p50_ms": 165.4697919730097,
+        "p95_ms": 171.27214181236923,
+        "min_ms": 158.001417061314,
+        "samples_ms": [
+          158.001417061314,
+          158.62479200586677,
+          159.20066693797708,
+          160.81904200837016,
+          160.51112487912178,
+          162.55037486553192,
+          163.18216687068343,
+          162.56062500178814,
+          164.37741601839662,
+          164.4996670074761,
+          164.90391711704433,
+          165.4697919730097,
+          165.31066689640284,
+          168.0589998140931,
+          168.08770783245564,
+          168.21429203264415,
+          167.79395891353488,
+          169.59433304145932,
+          169.59758382290602,
+          171.23520909808576,
+          170.64279201440513,
+          170.32991698943079,
+          169.17620785534382,
+          171.2813749909401,
+          171.40429210849106
+        ],
+        "example": {
+          "choice": "jump_right",
+          "probabilities": {
+            "jump": 8.718498634152638e-08,
+            "right": 4.11832594693351e-08,
+            "left": 9.189234262407808e-09,
+            "jump_right": 0.9947798252105713,
+            "jump_left": 0.005220126826316118
+          },
+          "ms": 171.40429210849106,
+          "input_tokens": 123,
+          "prefix_tokens": 72,
+          "processed_tokens": 123
+        }
+      },
+      "qwen_prefix_cached_selected": {
+        "n": 25,
+        "p50_ms": 89.59529199637473,
+        "p95_ms": 92.04533291049302,
+        "min_ms": 85.27562487870455,
+        "samples_ms": [
+          85.27562487870455,
+          85.62404080294073,
+          86.07187517918646,
+          86.0200000461191,
+          87.75845798663795,
+          86.20929205790162,
+          88.40587502345443,
+          89.48508300818503,
+          88.96783320233226,
+          89.93645780719817,
+          89.6276249550283,
+          88.85270799510181,
+          89.38033389858902,
+          90.33691696822643,
+          90.26679210364819,
+          88.74241705052555,
+          89.59529199637473,
+          90.64783295616508,
+          89.82754102908075,
+          90.34724999219179,
+          90.27595818042755,
+          90.72091593407094,
+          91.88083303160965,
+          92.3479578923434,
+          92.08645788021386
+        ],
+        "example": {
+          "choice": "jump_right",
+          "probabilities": {
+            "jump": 8.718498634152638e-08,
+            "right": 3.20735509262704e-08,
+            "left": 5.573550954096618e-09,
+            "jump_right": 0.9947798252105713,
+            "jump_left": 0.005220126826316118
+          },
+          "ms": 92.08645788021386,
+          "input_tokens": 123,
+          "prefix_tokens": 72,
+          "processed_tokens": 51
+        }
+      },
+      "qwen_uncached_full_vocab": {
+        "n": 25,
+        "p50_ms": 168.61579101532698,
+        "p95_ms": 174.5725088287145,
+        "min_ms": 161.18920897133648,
+        "samples_ms": [
+          161.79970791563392,
+          161.18920897133648,
+          162.26220899261534,
+          162.9921670537442,
+          164.62024999782443,
+          164.70191604457796,
+          164.7725000511855,
+          166.50529205799103,
+          167.69333300180733,
+          166.67625005356967,
+          167.31770895421505,
+          168.59108302742243,
+          170.61141692101955,
+          169.26441714167595,
+          169.58783310838044,
+          168.61579101532698,
+          171.57649993896484,
+          172.7194159757346,
+          171.46683298051357,
+          171.34579201228917,
+          172.41758317686617,
+          174.8467090073973,
+          171.16712499409914,
+          173.47570811398327,
+          175.13058288022876
+        ],
+        "example": {
+          "choice": "jump_right",
+          "probabilities": {
+            "jump": 8.718498634152638e-08,
+            "right": 4.11832594693351e-08,
+            "left": 9.189234262407808e-09,
+            "jump_right": 0.9947798252105713,
+            "jump_left": 0.005220126826316118
+          },
+          "ms": 175.13058288022876,
+          "input_tokens": 123,
+          "prefix_tokens": 72,
+          "processed_tokens": 123
+        }
+      }
+    },
+    "routing_26_long_options": {
+      "clm_cached_actions": {
+        "n": 25,
+        "p50_ms": 77.21479097381234,
+        "p95_ms": 81.28460855223238,
+        "min_ms": 74.26549983210862,
+        "samples_ms": [
+          74.81408398598433,
+          74.90262505598366,
+          74.26549983210862,
+          76.57566689886153,
+          75.3573749680072,
+          77.116624917835,
+          77.21479097381234,
+          78.42079177498817,
+          77.72637507878244,
+          81.09337487258017,
+          78.21458391845226,
+          76.24783297069371,
+          78.43524985946715,
+          76.11820800229907,
+          76.69970905408263,
+          77.01954199001193,
+          76.58199989236891,
+          81.33241697214544,
+          79.99054109677672,
+          78.6371249705553,
+          85.97995806485415,
+          77.38779089413583,
+          77.59233308024704,
+          76.7483338713646,
+          77.77954102493823
+        ],
+        "example": {
+          "choice": "A",
+          "probabilities": {
+            "A": 0.3738805949687958,
+            "B": 0.03559388592839241,
+            "C": 0.04073113203048706,
+            "D": 0.05306882783770561,
+            "E": 0.015758519992232323,
+            "F": 0.029910976067185402,
+            "G": 0.021202130243182182,
+            "H": 0.02739293873310089,
+            "I": 0.01795828528702259,
+            "J": 0.01773177832365036,
+            "K": 0.027808237820863724,
+            "L": 0.03256573900580406,
+            "M": 0.022366805002093315,
+            "N": 0.023514771834015846,
+            "O": 0.01599261350929737,
+            "P": 0.02260776236653328,
+            "Q": 0.016353951767086983,
+            "R": 0.01875082589685917,
+            "S": 0.02038607932627201,
+            "T": 0.01899811066687107,
+            "U": 0.025673571974039078,
+            "V": 0.02568856067955494,
+            "W": 0.022680239751935005,
+            "X": 0.022969527170062065,
+            "Y": 0.023640915751457214,
+            "Z": 0.026773186400532722
+          },
+          "ms": 77.77954102493823,
+          "input_tokens": 17
+        }
+      },
+      "qwen_uncached_selected": {
+        "n": 25,
+        "p50_ms": 870.1895419508219,
+        "p95_ms": 899.2559253238142,
+        "min_ms": 828.7238329648972,
+        "samples_ms": [
+          875.9250829461962,
+          869.3929580040276,
+          866.0164170432836,
+          862.9151661880314,
+          883.6426250636578,
+          893.5049581341445,
+          847.3269171081483,
+          870.1895419508219,
+          864.6943748462945,
+          867.9189172107726,
+          892.8959579207003,
+          860.8312499709427,
+          881.9718749728054,
+          861.5546249784529,
+          838.5540419258177,
+          869.7857919614762,
+          885.620707878843,
+          880.1052919588983,
+          918.8249171711504,
+          888.4174160193652,
+          828.7238329648972,
+          892.4355001654476,
+          862.7179579343647,
+          900.6936671212316,
+          872.4541668780148
+        ],
+        "example": {
+          "choice": "A",
+          "probabilities": {
+            "A": 1.0,
+            "B": 5.175559574031192e-17,
+            "C": 6.181323435032682e-18,
+            "D": 1.379238885419387e-18,
+            "E": 4.8140124940463096e-18,
+            "F": 2.396759185293636e-19,
+            "G": 3.2436669568568025e-20,
+            "H": 1.9673778395647717e-20,
+            "I": 6.866835977699838e-20,
+            "J": 4.974317256556905e-21,
+            "K": 4.719498695084333e-20,
+            "L": 9.991168883381368e-20,
+            "M": 3.749161384810871e-18,
+            "N": 7.781139388270013e-20,
+            "O": 1.7709802497910783e-18,
+            "P": 7.781139388270013e-20,
+            "Q": 1.8665953492657898e-19,
+            "R": 5.3478893887475416e-20,
+            "S": 5.3478893887475416e-20,
+            "T": 9.991168883381368e-20,
+            "U": 1.7362058999567758e-20,
+            "V": 7.237575904865404e-21,
+            "W": 9.293219893461979e-21,
+            "X": 9.293219893461979e-21,
+            "Y": 2.073601845434967e-21,
+            "Z": 1.7362058999567758e-20
+          },
+          "ms": 872.4541668780148,
+          "input_tokens": 760,
+          "prefix_tokens": 734,
+          "processed_tokens": 760
+        }
+      },
+      "qwen_prefix_cached_selected": {
+        "n": 25,
+        "p50_ms": 85.16875002533197,
+        "p95_ms": 90.77025819569826,
+        "min_ms": 82.14362501166761,
+        "samples_ms": [
+          83.87379115447402,
+          83.77691707573831,
+          82.7646660618484,
+          84.57320788875222,
+          82.14362501166761,
+          89.63995892554522,
+          84.51383281499147,
+          85.7156659476459,
+          84.30733298882842,
+          84.84999998472631,
+          86.15020802244544,
+          85.16875002533197,
+          85.77616605907679,
+          87.5435417983681,
+          84.3735421076417,
+          84.75687517784536,
+          86.18158311583102,
+          91.05283301323652,
+          91.05579205788672,
+          85.980833042413,
+          88.11595803126693,
+          84.14291706867516,
+          83.22600019164383,
+          85.73829219676554,
+          85.9582091215998
+        ],
+        "example": {
+          "choice": "A",
+          "probabilities": {
+            "A": 1.0,
+            "B": 6.645541909726933e-17,
+            "C": 8.993780117514522e-18,
+            "D": 1.7709802497910783e-18,
+            "E": 7.004352841681612e-18,
+            "F": 3.4872668004922675e-19,
+            "G": 4.719498695084333e-20,
+            "H": 2.862527656869083e-20,
+            "I": 1.1321500844330528e-19,
+            "J": 7.237575904865404e-21,
+            "K": 6.866835977699838e-20,
+            "L": 1.647265566413999e-19,
+            "M": 5.455002195339164e-18,
+            "N": 1.2828932820662145e-19,
+            "O": 3.3086252564901357e-18,
+            "P": 1.2828932820662145e-19,
+            "Q": 2.715882363689297e-19,
+            "R": 7.781139388270013e-20,
+            "S": 8.81718116678812e-20,
+            "T": 1.647265566413999e-19,
+            "U": 2.526159992211936e-20,
+            "V": 1.1932779077512833e-20,
+            "W": 1.532197311507057e-20,
+            "X": 1.532197311507057e-20,
+            "Y": 2.662554239624331e-21,
+            "Z": 2.862527656869083e-20
+          },
+          "ms": 85.9582091215998,
+          "input_tokens": 760,
+          "prefix_tokens": 734,
+          "processed_tokens": 26
+        }
+      },
+      "qwen_uncached_full_vocab": {
+        "n": 25,
+        "p50_ms": 879.743792116642,
+        "p95_ms": 919.6381664369255,
+        "min_ms": 848.8461249507964,
+        "samples_ms": [
+          877.8846249915659,
+          874.0932499058545,
+          868.6625000555068,
+          867.9278749041259,
+          863.4472079575062,
+          886.68491714634,
+          853.4267500508577,
+          897.0939589198679,
+          875.3409590572119,
+          891.2929170764983,
+          848.8461249507964,
+          922.9266669135541,
+          877.0395829342306,
+          898.5467499587685,
+          891.2028749473393,
+          879.743792116642,
+          880.589707987383,
+          922.5119580514729,
+          865.8767081797123,
+          908.142999978736,
+          890.0806668680161,
+          889.3107499461621,
+          870.8495828323066,
+          865.2980420738459,
+          881.013958947733
+        ],
+        "example": {
+          "choice": "A",
+          "probabilities": {
+            "A": 1.0,
+            "B": 5.175559574031192e-17,
+            "C": 6.181323435032682e-18,
+            "D": 1.379238885419387e-18,
+            "E": 4.8140124940463096e-18,
+            "F": 2.396759185293636e-19,
+            "G": 3.2436669568568025e-20,
+            "H": 1.9673778395647717e-20,
+            "I": 6.866835977699838e-20,
+            "J": 4.974317256556905e-21,
+            "K": 4.719498695084333e-20,
+            "L": 9.991168883381368e-20,
+            "M": 3.749161384810871e-18,
+            "N": 7.781139388270013e-20,
+            "O": 1.7709802497910783e-18,
+            "P": 7.781139388270013e-20,
+            "Q": 1.8665953492657898e-19,
+            "R": 5.3478893887475416e-20,
+            "S": 5.3478893887475416e-20,
+            "T": 9.991168883381368e-20,
+            "U": 1.7362058999567758e-20,
+            "V": 7.237575904865404e-21,
+            "W": 9.293219893461979e-21,
+            "X": 9.293219893461979e-21,
+            "Y": 2.073601845434967e-21,
+            "Z": 1.7362058999567758e-20
+          },
+          "ms": 881.013958947733,
+          "input_tokens": 760,
+          "prefix_tokens": 734,
+          "processed_tokens": 760
+        }
+      }
+    },
+    "billing_long_state": {
+      "clm_cached_actions": {
+        "n": 25,
+        "p50_ms": 637.4891248997301,
+        "p95_ms": 682.1144836954772,
+        "min_ms": 569.6359998546541,
+        "samples_ms": [
+          585.655459202826,
+          599.5305839460343,
+          573.0125000700355,
+          569.6359998546541,
+          589.5779589191079,
+          591.0661250818521,
+          598.0948330834508,
+          585.0092910695821,
+          640.4716251417994,
+          616.6876249480993,
+          635.4164581280202,
+          624.920291826129,
+          616.7253749445081,
+          638.0174579098821,
+          647.6585830096155,
+          638.2789590861648,
+          637.4891248997301,
+          652.2541251033545,
+          683.632958913222,
+          663.0315829534084,
+          644.8873749468476,
+          710.2656250353903,
+          658.8307919446379,
+          649.4766250252724,
+          676.0405828244984
+        ],
+        "example": {
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.9887086749076843,
+            "technical": 0.011291289702057838
+          },
+          "ms": 676.0405828244984,
+          "input_tokens": 475
+        }
+      },
+      "qwen_uncached_selected": {
+        "n": 25,
+        "p50_ms": 722.9472501203418,
+        "p95_ms": 782.0339670870453,
+        "min_ms": 641.0070420242846,
+        "samples_ms": [
+          683.3464161027223,
+          641.0070420242846,
+          663.3253751788288,
+          655.2623750176281,
+          669.216999784112,
+          700.4548748955131,
+          737.5270000193268,
+          678.8498340174556,
+          696.9064169097692,
+          682.993832975626,
+          729.2024169582874,
+          704.7261660918593,
+          696.3456659577787,
+          731.5762091893703,
+          722.9472501203418,
+          733.7876248639077,
+          706.1154169496149,
+          740.5697091016918,
+          787.862665951252,
+          771.8344589229673,
+          755.832458846271,
+          753.9188750088215,
+          728.2212499994785,
+          782.7183338813484,
+          779.2964999098331
+        ],
+        "example": {
+          "choice": "billing",
+          "probabilities": {
+            "billing": 1.0,
+            "technical": 2.789469488728713e-10
+          },
+          "ms": 779.2964999098331,
+          "input_tokens": 531,
+          "prefix_tokens": 47,
+          "processed_tokens": 531
+        }
+      },
+      "qwen_prefix_cached_selected": {
+        "n": 25,
+        "p50_ms": 638.0208330228925,
+        "p95_ms": 675.328091531992,
+        "min_ms": 572.378666838631,
+        "samples_ms": [
+          572.378666838631,
+          586.5825000219047,
+          615.0107500143349,
+          582.1910840459168,
+          595.1128751039505,
+          599.6477499138564,
+          641.9700840488076,
+          609.3439999967813,
+          624.9838748481125,
+          638.0208330228925,
+          612.1596249286085,
+          634.0008331462741,
+          642.7657501772046,
+          644.8297922033817,
+          633.1230830401182,
+          651.2520830146968,
+          635.4024999309331,
+          677.6768749114126,
+          638.8852088712156,
+          665.9329580143094,
+          650.2351670060307,
+          745.5832080449909,
+          654.4735408388078,
+          659.4702089205384,
+          665.6923331320286
+        ],
+        "example": {
+          "choice": "billing",
+          "probabilities": {
+            "billing": 1.0,
+            "technical": 1.691900647360356e-10
+          },
+          "ms": 665.6923331320286,
+          "input_tokens": 531,
+          "prefix_tokens": 47,
+          "processed_tokens": 484
+        }
+      },
+      "qwen_uncached_full_vocab": {
+        "n": 25,
+        "p50_ms": 717.6353328395635,
+        "p95_ms": 791.9803245924412,
+        "min_ms": 638.3988750167191,
+        "samples_ms": [
+          638.3988750167191,
+          643.3608750812709,
+          673.172292066738,
+          662.6603330951184,
+          701.0706670116633,
+          686.8516670074314,
+          683.8288749568164,
+          674.671458080411,
+          693.1237089447677,
+          718.4404579456896,
+          735.8996670227498,
+          718.1425830349326,
+          729.1165417991579,
+          705.4165420122445,
+          702.5558748282492,
+          717.6353328395635,
+          766.7614158708602,
+          773.1374590657651,
+          797.1919998526573,
+          715.0525839533657,
+          771.7814580537379,
+          772.0119168516248,
+          761.1760839354247,
+          796.6910409741104,
+          767.6920001395047
+        ],
+        "example": {
+          "choice": "billing",
+          "probabilities": {
+            "billing": 1.0,
+            "technical": 2.789469488728713e-10
+          },
+          "ms": 767.6920001395047,
+          "input_tokens": 531,
+          "prefix_tokens": 47,
+          "processed_tokens": 531
+        }
+      }
+    }
+  },
+  "head_only": {
+    "n": 100,
+    "p50_ms": 0.3084170166403055,
+    "p95_ms": 0.4189996630884707,
+    "min_ms": 0.28395908884704113
+  },
+  "peak_memory_gb": 16.938438716
+}

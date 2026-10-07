@@ -1,0 +1,49 @@
+{
+  "cases_file": "/Users/ext-adamos.spanashis/projects/clm/results/race_context/test_cases.json",
+  "cases_sha256": "5cc0316779cdae31ca99f3f885a341cda16e1f2027de4c1ee81d8da914a29c31",
+  "n": 200,
+  "variants": {
+    "original": {
+      "system": "Answer the multiple-choice reading comprehension question using the passage. Reply with exactly one option letter and nothing else.",
+      "chat": true,
+      "answer_cue": false
+    },
+    "short_system": {
+      "system": "Reply with A, B, C, or D.",
+      "chat": true,
+      "answer_cue": false
+    },
+    "no_system": {
+      "system": null,
+      "chat": true,
+      "answer_cue": false
+    },
+    "no_template": {
+      "system": "Answer the multiple-choice reading comprehension question using the passage. Reply with exactly one option letter and nothing else.",
+      "chat": false,
+      "answer_cue": true
+    },
+    "neither": {
+      "system": null,
+      "chat": false,
+      "answer_cue": true
+    },
+    "no_template_literal": {
+      "system": "Answer the multiple-choice reading comprehension question using the passage. Reply with exactly one option letter and nothing else.",
+      "chat": false,
+      "answer_cue": false
+    },
+    "neither_literal": {
+      "system": null,
+      "chat": false,
+      "answer_cue": false
+    }
+  },
+  "primary_output_tokens": "bare A/B/C/D; one token; no thinking or generation loop",
+  "secondary_output_grammar": "Also score bare or single-leading-space letter tokens from the same hidden state; aggregate aliases by probability sum.",
+  "seed": 20261004,
+  "no_context_controls": true,
+  "order_audit_per_variant": 20,
+  "diagnostic_sample": "First 10 frozen cases, each variant, full context; full-vocabulary diagnostics outside timed region.",
+  "latency": "One decision per method and condition per case; randomized interleaving. No prefix or whole-state reuse. CLM actions cached."
+}

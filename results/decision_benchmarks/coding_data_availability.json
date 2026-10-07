@@ -1,0 +1,13 @@
+{
+  "Contrastive-LM/deepswe-clm-embeddings-8k": {
+    "status": 401
+  },
+  "tarsur385/deepswe-prm-embeddings-8k": {
+    "status": 200,
+    "files": [
+      ".gitattributes",
+      "README.md",
+      "deepswe_eval_opus5max.parquet"
+    ]
+  }
+}

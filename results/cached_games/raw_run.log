@@ -1,0 +1,25 @@
+{"backbone": "Qwen/Qwen3-8B", "dtype": "mlx.core.bfloat16", "head_parameters_total": 18887680, "head_config": {"model": "Qwen/Qwen3-8B", "hidden_size": 4096, "projection_dim": 512, "width": 1536, "depth": 3, "activation": "gelu", "layernorm": true, "residual": false}, "head_scale": 100.0, "head_port_max_abs_error": {"state": 3.8743019104003906e-07, "action": 3.8743019104003906e-07}, "upstream_commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7", "packages": {"mlx": "0.32.3", "mlx-lm": "0.32.0", "torch": "2.14.1", "transformers": "5.18.0"}}
+raw matched 0
+raw matched 30
+raw matched 60
+raw matched 90
+raw matched 120
+raw trex 0 300
+{'game': 'trex', 'seed': 0, 'method': 'qwen_raw', 'frames': 333, 'score': 46, 'survived': False}
+raw trex 1 300
+{'game': 'trex', 'seed': 1, 'method': 'qwen_raw', 'frames': 333, 'score': 46, 'survived': False}
+raw trex 2 300
+{'game': 'trex', 'seed': 2, 'method': 'qwen_raw', 'frames': 333, 'score': 46, 'survived': False}
+raw trex 3 300
+{'game': 'trex', 'seed': 3, 'method': 'qwen_raw', 'frames': 333, 'score': 46, 'survived': False}
+raw trex 4 300
+{'game': 'trex', 'seed': 4, 'method': 'qwen_raw', 'frames': 333, 'score': 46, 'survived': False}
+/Users/ext-adamos.spanashis/projects/clm/.venv-games/lib/python3.13/site-packages/gymnasium/envs/registration.py:513: DeprecationWarning: [33mWARN: The environment SuperMarioBros-1-1-v0 is out of date. You should consider upgrading to version `v3`.[0m
+  logger.deprecation(
+{'game': 'mario', 'level': '1-1', 'method': 'qwen_raw', 'frames': 300, 'max_x': 40, 'flag_get': False, 'died': False, 'stalled': True}
+/Users/ext-adamos.spanashis/projects/clm/.venv-games/lib/python3.13/site-packages/gymnasium/envs/registration.py:513: DeprecationWarning: [33mWARN: The environment SuperMarioBros-1-2-v0 is out of date. You should consider upgrading to version `v3`.[0m
+  logger.deprecation(
+{'game': 'mario', 'level': '1-2', 'method': 'qwen_raw', 'frames': 300, 'max_x': 40, 'flag_get': False, 'died': False, 'stalled': True}
+/Users/ext-adamos.spanashis/projects/clm/.venv-games/lib/python3.13/site-packages/gymnasium/envs/registration.py:513: DeprecationWarning: [33mWARN: The environment SuperMarioBros-2-1-v0 is out of date. You should consider upgrading to version `v3`.[0m
+  logger.deprecation(
+{'game': 'mario', 'level': '2-1', 'method': 'qwen_raw', 'frames': 300, 'max_x': 40, 'flag_get': False, 'died': False, 'stalled': True}

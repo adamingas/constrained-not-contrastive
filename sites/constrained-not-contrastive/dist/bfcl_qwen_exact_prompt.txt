@@ -1,0 +1,19 @@
+<|im_start|>system
+Choose the available function that best fulfills the request. Reply with exactly one option letter, without explanation.
+
+Available functions:
+
+A:
+triangle_properties.get: Retrieve the dimensions, such as area and perimeter, of a triangle if lengths of three sides are given.
+
+B:
+circle_properties.get: Retrieve the dimensions, such as area and circumference, of a circle if radius is given.<|im_end|>
+<|im_start|>user
+User: Can I find the dimensions and properties of a triangle, if I know its three sides are 5 units, 4 units and 3 units long?
+
+Which function should be called to fulfill this request?<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

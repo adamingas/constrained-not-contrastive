@@ -1,0 +1,15 @@
+{
+  "validated_requests": 500,
+  "one_prediction_per_model_per_request": true,
+  "all_cache_hits_match_independent_simulation": true,
+  "frozen_script_unchanged": true,
+  "cached_subset_accuracy": {
+    "n": 264,
+    "qwen": 248,
+    "clm": 185
+  },
+  "cached_subset_paired_latency_difference_ms": {
+    "median": 3.5549169406294823,
+    "mean": 6.605098593740188
+  }
+}

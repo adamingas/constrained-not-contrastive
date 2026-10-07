@@ -1,0 +1,726 @@
+{
+  "current_bfcl_run": {
+    "accuracy": {
+      "all": {
+        "n": 500,
+        "qwen": 477,
+        "clm": 362,
+        "qwen_only_correct": 131,
+        "clm_only_correct": 16
+      },
+      "multiple": {
+        "n": 78,
+        "qwen": 77,
+        "clm": 63,
+        "qwen_only_correct": 15,
+        "clm_only_correct": 1
+      },
+      "live_multiple": {
+        "n": 422,
+        "qwen": 400,
+        "clm": 299,
+        "qwen_only_correct": 116,
+        "clm_only_correct": 15
+      }
+    },
+    "latency": {
+      "all": {
+        "qwen": {
+          "n": 500,
+          "median_ms": 134.32018749881536,
+          "mean_ms": 148.82374675991014,
+          "p95_ms": 306.8325410131365,
+          "total_seconds": 74.41187337995507
+        },
+        "clm": {
+          "n": 500,
+          "median_ms": 92.91943744756281,
+          "mean_ms": 202.91648074891418,
+          "p95_ms": 477.87616681307554,
+          "total_seconds": 101.45824037445709
+        }
+      },
+      "multiple": {
+        "qwen": {
+          "n": 78,
+          "median_ms": 150.15710436273366,
+          "mean_ms": 159.83147918581008,
+          "p95_ms": 229.93995784781873,
+          "total_seconds": 12.466855376493186
+        },
+        "clm": {
+          "n": 78,
+          "median_ms": 238.4171454468742,
+          "mean_ms": 243.09397008246145,
+          "p95_ms": 316.9437500182539,
+          "total_seconds": 18.961329666431993
+        }
+      },
+      "live_multiple": {
+        "qwen": {
+          "n": 422,
+          "median_ms": 89.87014601007104,
+          "mean_ms": 146.7891421882983,
+          "p95_ms": 310.19000010564923,
+          "total_seconds": 61.94501800346188
+        },
+        "clm": {
+          "n": 422,
+          "median_ms": 87.15533302165568,
+          "mean_ms": 195.49030973465662,
+          "p95_ms": 507.6604578644037,
+          "total_seconds": 82.4969107080251
+        }
+      },
+      "both_reusable_parts_cached": {
+        "qwen": {
+          "n": 264,
+          "median_ms": 86.70945838093758,
+          "mean_ms": 91.0300125992349,
+          "p95_ms": 141.07666700147092,
+          "total_seconds": 24.03192332619801
+        },
+        "clm": {
+          "n": 264,
+          "median_ms": 83.00229196902364,
+          "mean_ms": 84.4249140054947,
+          "p95_ms": 95.10083310306072,
+          "total_seconds": 22.288177297450602
+        }
+      },
+      "qwen_preamble_not_fully_cached": {
+        "qwen": {
+          "n": 236,
+          "median_ms": 166.17464646697044,
+          "mean_ms": 213.4743646345638,
+          "p95_ms": 353.72649994678795,
+          "total_seconds": 50.37995005375706
+        },
+        "clm": {
+          "n": 236,
+          "median_ms": 297.13850002735853,
+          "mean_ms": 335.4663689703665,
+          "p95_ms": 588.4908339940012,
+          "total_seconds": 79.17006307700649
+        }
+      }
+    },
+    "cache": {
+      "qwen_full_preamble_hits": 264,
+      "qwen_partial_preamble_hits": 235,
+      "qwen_zero_cached_tokens": 1,
+      "qwen_cached_tokens": 46947,
+      "qwen_total_tokens": 93845,
+      "clm_all_actions_cached": 268,
+      "clm_new_action_encodings": 779
+    },
+    "inputs_sha256": "c760751694cf6832c7e359d42f63e61f07ba306b34547ed8cc5d83354cf8f78c",
+    "predictions_sha256": "a08d67c710610ee21e92e405ccf6744c600c87a8534d63f9a3d4c8d59e5d6525",
+    "validated_requests": 500
+  },
+  "current_bfcl_validation": {
+    "validated_requests": 500,
+    "one_prediction_per_model_per_request": true,
+    "all_cache_hits_match_independent_simulation": true,
+    "frozen_script_unchanged": true,
+    "cached_subset_accuracy": {
+      "n": 264,
+      "qwen": 248,
+      "clm": 185
+    },
+    "cached_subset_paired_latency_difference_ms": {
+      "median": 3.5549169406294823,
+      "mean": 6.605098593740188
+    }
+  },
+  "superseded_results_note": "Earlier BFCL figures are superseded by the 500-request experiment. Earlier T-Rex comparison is excluded from conclusions because of prompt design.",
+  "historical_evidence": {
+    "trex": {
+      "gameplay": [
+        {
+          "prompt": "clm:timing_v4",
+          "seed": 17,
+          "tag": "holdout",
+          "seconds_target": 30,
+          "frames": 333,
+          "score": 46,
+          "survived": false
+        },
+        {
+          "prompt": "timing_v4",
+          "seed": 17,
+          "tag": "holdout",
+          "seconds_target": 30,
+          "frames": 1800,
+          "score": 305,
+          "survived": true
+        }
+      ],
+      "fair_timing": {
+        "same_instructions_and_examples": true,
+        "system_sha256": "9a1883f918293c897ecab15707c74651515b3fab54d2558ae270a455ad097e9f",
+        "states": 10,
+        "repetitions": 5,
+        "state_source": "Every 180 frames from the previously frozen Qwen holdout run; same states for all methods.",
+        "median_ms": {
+          "clm": 152.70102059002966,
+          "clm:timing_v4": 158.11512502841651,
+          "timing_v4": 158.60570850782096
+        },
+        "paired_median_qwen_over_clm_same_examples": 1.006765253217472,
+        "paired_state_bootstrap95": [
+          1.0038325325075792,
+          1.0268704703843587
+        ],
+        "cache_setup_excluded": true,
+        "qwen_prefix_tokens": 747,
+        "clm_prefix_tokens": 741,
+        "qwen_prefix_setup_ms": 776.9303750246763,
+        "qwen_format": "System message contains full frozen prompt, user message contains current state and question; chat template, thinking disabled.",
+        "clm_format": "The identical full frozen prompt precedes current state and question in raw state-encoder text. Fixed action descriptions are embedded separately.",
+        "remaining_asymmetry": "Prompt was developed for Qwen on seed 0, then supplied unchanged to CLM. This is an equal-information control, not an equal prompt-search budget or proof of optimal CLM prompting."
+      },
+      "replay_audit": {
+        "artwork": "Schematic game rendering from original engine geometry; not a screen capture.",
+        "frame_rate": 20,
+        "playback": "1x simulation time; CLM freezes on collision while Qwen continues. One-second end hold.",
+        "runs": [
+          {
+            "trace": "episode_holdout_17_clm:timing_v4.json",
+            "seed": 17,
+            "frames": 333,
+            "score": 46,
+            "states_verified": 56,
+            "all_recorded_states_exact_match": true,
+            "simulation_seconds": 5.55
+          },
+          {
+            "trace": "episode_holdout_17_timing_v4.json",
+            "seed": 17,
+            "frames": 1800,
+            "score": 305,
+            "states_verified": 300,
+            "all_recorded_states_exact_match": true,
+            "simulation_seconds": 30.0
+          }
+        ]
+      }
+    },
+    "bfcl": {
+      "tool_selection": [
+        {
+          "group": [
+            "forced_tool",
+            "clm_base"
+          ],
+          "n": 60,
+          "correct": 40,
+          "accuracy": 0.6666666666666666,
+          "wilson95": [
+            0.5405686645212004,
+            0.7727073847647705
+          ],
+          "median_ms": 76.32845849730074,
+          "p95_ms": 137.0459325495176,
+          "median_setup_ms": 526.4019375899807,
+          "median_first_query_total_ms": 601.1113960994408
+        },
+        {
+          "group": [
+            "forced_tool",
+            "clm_prose_base"
+          ],
+          "n": 60,
+          "correct": 35,
+          "accuracy": 0.5833333333333334,
+          "wilson95": [
+            0.45728081022640465,
+            0.699357214416581
+          ],
+          "median_ms": 77.25418754853308,
+          "p95_ms": 135.89074991177768,
+          "median_setup_ms": 545.8900210214779,
+          "median_first_query_total_ms": 626.0519586503506
+        },
+        {
+          "group": [
+            "forced_tool",
+            "qwen_raw_base"
+          ],
+          "n": 60,
+          "correct": 55,
+          "accuracy": 0.9166666666666666,
+          "wilson95": [
+            0.8193105798166592,
+            0.9638795433982684
+          ],
+          "median_ms": 84.33068753220141,
+          "p95_ms": 144.6868253289722,
+          "median_setup_ms": 435.24149991571903,
+          "median_first_query_total_ms": 534.2297714669257
+        }
+      ],
+      "timing": {
+        "family": "bfcl_forced_tool",
+        "a": "clm_base",
+        "b": "qwen_raw_base",
+        "states": 10,
+        "repetitions_per_state": 5,
+        "a_median_ms": 79.00135405361652,
+        "b_median_ms": 80.8626664802432,
+        "paired_median_overhead_percent": 2.901051631011109,
+        "state_bootstrap95_overhead_percent": [
+          -0.18278129015057987,
+          6.443949493117351
+        ],
+        "ratios_by_state": {
+          "live_multiple_145-57-0": 0.9981721870984942,
+          "live_multiple_441-144-1": 1.0820888039229468,
+          "live_multiple_475-146-0": 1.0394740721683875,
+          "live_multiple_538-152-0": 1.0662636903118008,
+          "live_multiple_76-35-0": 1.0644394949311735,
+          "multiple_100": 1.023531458321379,
+          "multiple_178": 1.0112804288101815,
+          "multiple_187": 1.0344895742988431,
+          "multiple_28": 0.9892367403575055,
+          "multiple_96": 0.9975103743425269
+        }
+      },
+      "genuine_reuse": [
+        {
+          "group": [
+            "clm_base"
+          ],
+          "n": 24,
+          "correct": 12,
+          "accuracy": 0.5,
+          "wilson95": [
+            0.31427425819573795,
+            0.685725741804262
+          ],
+          "median_ms": 81.36056212242693,
+          "p95_ms": 92.71819103742018,
+          "median_setup_ms": 0.0,
+          "median_first_query_total_ms": 81.36056212242693
+        },
+        {
+          "group": [
+            "qwen_raw_base"
+          ],
+          "n": 24,
+          "correct": 21,
+          "accuracy": 0.875,
+          "wilson95": [
+            0.6899611872950053,
+            0.9565566591987644
+          ],
+          "median_ms": 87.76037557981908,
+          "p95_ms": 99.95861705392599,
+          "median_setup_ms": 0.0,
+          "median_first_query_total_ms": 87.76037557981908
+        },
+        {
+          "group": [
+            "qwen_raw_tuned"
+          ],
+          "n": 24,
+          "correct": 20,
+          "accuracy": 0.8333333333333334,
+          "wilson95": [
+            0.6414692935030154,
+            0.9332132367136688
+          ],
+          "median_ms": 87.8987085307017,
+          "p95_ms": 99.11914364201948,
+          "median_setup_ms": 0.0,
+          "median_first_query_total_ms": 87.8987085307017
+        }
+      ]
+    },
+    "wiki": {
+      "episodes": [
+        {
+          "variant": "clm_base",
+          "n": 5,
+          "success": 0,
+          "total_clicks": 40,
+          "total_setup_ms": 15849.3913768325,
+          "total_decision_ms": 3970.7965350244194
+        },
+        {
+          "variant": "qwen_raw_base",
+          "n": 5,
+          "success": 1,
+          "total_clicks": 38,
+          "total_setup_ms": 12274.822623468935,
+          "total_decision_ms": 3623.705542180687
+        },
+        {
+          "variant": "qwen_raw_tuned",
+          "n": 5,
+          "success": 1,
+          "total_clicks": 38,
+          "total_setup_ms": 20634.137583430856,
+          "total_decision_ms": 3515.364959836006
+        }
+      ],
+      "first_step": [
+        {
+          "group": [
+            "wiki",
+            "clm_base"
+          ],
+          "n": 40,
+          "correct": 14,
+          "accuracy": 0.35,
+          "wilson95": [
+            0.22134528873176587,
+            0.5049411916274189
+          ],
+          "median_ms": 85.17710445448756,
+          "p95_ms": 112.65088523505244,
+          "median_setup_ms": 563.3586664916947,
+          "median_first_query_total_ms": 651.411104016006
+        },
+        {
+          "group": [
+            "wiki",
+            "qwen_raw_base"
+          ],
+          "n": 40,
+          "correct": 15,
+          "accuracy": 0.375,
+          "wilson95": [
+            0.24222979167233583,
+            0.5296756086269848
+          ],
+          "median_ms": 96.12654149532318,
+          "p95_ms": 108.99504408007486,
+          "median_setup_ms": 180.78760453499854,
+          "median_first_query_total_ms": 277.3369380738586
+        },
+        {
+          "group": [
+            "wiki",
+            "qwen_raw_tuned"
+          ],
+          "n": 40,
+          "correct": 16,
+          "accuracy": 0.4,
+          "wilson95": [
+            0.2634832568429225,
+            0.554041063396534
+          ],
+          "median_ms": 99.76685408037156,
+          "p95_ms": 115.31033109640701,
+          "median_setup_ms": 392.43381237611175,
+          "median_first_query_total_ms": 494.4855209905654
+        }
+      ]
+    },
+    "sources": {
+      "clm": "https://github.com/Contrastive-LM/CLM",
+      "bfcl": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard",
+      "wikispeedia": "https://snap.stanford.edu/data/wikispeedia.html"
+    },
+    "scope": "These are local public-data adaptations, not reproductions of the authors\u2019 Jev comparison. Timing excludes one-time cache setup and model loading."
+  },
+  "trex": {
+    "protocol": {
+      "type": "trex_warm_cache_protocol",
+      "run_id": "2026-10-03T21:48:05.621356+00:00",
+      "seeds": [
+        42,
+        314159,
+        271828
+      ],
+      "max_frames": 1800,
+      "frames_per_decision": 6,
+      "system": {
+        "qwen": "You are playing T-Rex runner. Stay alive by avoiding collisions. At each turn, choose A, B, or C for the next 6 frames, then you will receive a new state and choose again. The game pauses while you decide.\n\nA continues automatic running, or lets an existing jump continue.\nB starts a jump from the ground. It does nothing extra in the air.\nC crouches on the ground, or rapidly descends in the air.\n\nObstacles move left. The state gives distances, sizes, and heights above ground. The dinosaur is 44 pixels wide and 47 pixels tall when standing. Feet height zero means grounded. Contact ends the game. A jump rises, reaches its peak, falls, and ends; it cannot be extended by repeatedly selecting B. Duck does not stop horizontal motion.\n\nOutput only the chosen letter.\n\nControls:\nA = run: Release duck. Running is automatic; an existing jump continues.\nB = jump: Release duck and start a jump if grounded. No second jump while airborne.\nC = duck: Crouch if grounded; start a rapid descent if airborne.\n\nState: The dinosaur is on the ground. A cactus is 500 pixels beyond its front, moving toward it at 6 pixels per frame.\nAnswer: A (run).\nExplanation: A jump now would finish before the cactus arrived. Continue running for this turn and reconsider at the next observation.\nState: The dinosaur is on the ground. A cactus is 60 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.\nAnswer: B (jump).\nExplanation: Begin rising now so the dinosaur can pass above the approaching cactus. Continuing on the ground would bring it into the cactus.\nState: The dinosaur is on the ground. A cactus is 180 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame.\nAnswer: A (run).\nExplanation: This is still too early to start the jump. The dinosaur would descend while the cactus was passing. Keep running for this six-frame turn, then reassess the smaller distance.\nState: The dinosaur is in the air, with its feet 80 pixels above the ground, falling at 2 pixels per frame. A cactus is 20 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.\nAnswer: A (run).\nExplanation: Let the current jump carry the dinosaur over the cactus. Ducking would accelerate its descent into the obstacle; another jump command cannot add height while airborne.",
+        "clm": "T-Rex runner: avoid collisions. Choose the next control for six frames. Run continues forward motion and any existing jump. Jump starts a jump from the ground. Duck crouches on the ground or accelerates descent in the air. Cacti are ground obstacles; birds may leave room underneath. The game pauses while the model decides. Obstacles move left. The dinosaur is 44 pixels wide and 47 pixels tall when standing. Feet height zero means grounded. Contact ends the game. A jump rises, reaches its peak, falls, and ends; it cannot be extended by repeatedly choosing jump. Duck does not stop horizontal motion. The examples below describe other situations. Choose for the current observation at the end, using the examples to understand timing.\n\nExample state: The dinosaur is on the ground. A cactus is 60 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame. Answer: jump. Explanation: Start rising to clear the approaching cactus; staying on the ground would cause a collision.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |------| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 500 pixels beyond its front, moving toward it at 6 pixels per frame. Answer: run. Explanation: A jump now would finish before the cactus arrived.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |--------------------------------------------------| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 180 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame. Answer: run. Explanation: Wait for this six-frame turn. Jumping now would put the descent too early, while the cactus is still passing.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |------------------| obstacle.\n\nExample state: The dinosaur is in the air with its feet 80 pixels above the ground, falling at 2 pixels per frame. A cactus is 20 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame. Answer: run. Explanation: Let the current jump continue over the cactus. Ducking would force the dinosaur down into it.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |--| obstacle.\n\nCompare two cases with the same grounded dinosaur, cactus size, and speed of 6 pixels per frame. At a distance of 180 pixels, choose run: the cactus arrives too late for a jump started now. At a distance of 60 pixels, choose jump: the cactus will arrive soon enough for this jump to clear it. The distance changes the answer even though both observations mention a cactus.\n\nExample state: The dinosaur is on the ground. A cactus is 40 pixels beyond its front, approaching at 6 pixels per frame. Answer: jump. Explanation: Waiting another six frames would leave almost no clearance; begin rising now.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |----| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 300 pixels beyond its front, approaching at 6 pixels per frame. Answer: run. Explanation: An obstacle being visible does not mean it is time to jump. It will still be far ahead after this six-frame turn.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |------------------------------| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 120 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: Keep running for this six-frame turn. There is time to get closer before starting a jump, so it will not land too early.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |------------| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 200 pixels beyond its front, 34 pixels wide and 35 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: This shorter cactus is still too far away. Continue running for six frames and look again before jumping.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |--------------------| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 150 pixels beyond its front, 17 pixels wide and 35 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: This small cactus is still too far away. A jump started now would finish while the cactus was passing the dinosaur. Wait for the next observation before starting the jump.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |---------------| obstacle."
+      },
+      "questions": {
+        "action": {
+          "type": "choice",
+          "instructions": "What should the dinosaur do for the next six frames only? It will get another observation afterward. Decide whether to keep running, jump now, or duck now.",
+          "criteria": {
+            "run": "Run.",
+            "jump": "Jump.",
+            "duck": "Duck."
+          }
+        }
+      },
+      "exact_action_inputs": [
+        "Run.",
+        "Jump.",
+        "Duck."
+      ],
+      "setup": {
+        "qwen": {
+          "prefix_ms": 652.4290419183671,
+          "prefix_tokens": 562
+        },
+        "clm": {
+          "prefix_ms": 1166.8940000236034,
+          "prefix_tokens": 1059,
+          "actions_ms": 101.91558301448822
+        }
+      },
+      "validation": [
+        {
+          "method": "clm",
+          "frame": 0,
+          "cold_choice": "run",
+          "warm_choice": "run",
+          "max_probability_delta": 0.0021407527279533323
+        },
+        {
+          "method": "clm",
+          "frame": 300,
+          "cold_choice": "run",
+          "warm_choice": "run",
+          "max_probability_delta": 0.0013496650737386817
+        },
+        {
+          "method": "clm",
+          "frame": 324,
+          "cold_choice": "jump",
+          "warm_choice": "jump",
+          "max_probability_delta": 0.0027284357041281737
+        },
+        {
+          "method": "clm",
+          "frame": 348,
+          "cold_choice": "run",
+          "warm_choice": "run",
+          "max_probability_delta": 0.010922745867061212
+        },
+        {
+          "method": "clm",
+          "frame": 390,
+          "cold_choice": "jump",
+          "warm_choice": "jump",
+          "max_probability_delta": 0.027349453315296812
+        },
+        {
+          "method": "qwen",
+          "frame": 0,
+          "cold_choice": "run",
+          "warm_choice": "run",
+          "max_probability_delta": 1.2036322516451037e-07
+        },
+        {
+          "method": "qwen",
+          "frame": 300,
+          "cold_choice": "run",
+          "warm_choice": "run",
+          "max_probability_delta": 1.938646221333329e-08
+        },
+        {
+          "method": "qwen",
+          "frame": 324,
+          "cold_choice": "jump",
+          "warm_choice": "jump",
+          "max_probability_delta": 1.1920928955078125e-07
+        },
+        {
+          "method": "qwen",
+          "frame": 348,
+          "cold_choice": "run",
+          "warm_choice": "run",
+          "max_probability_delta": 0.003074551932513714
+        },
+        {
+          "method": "qwen",
+          "frame": 390,
+          "cold_choice": "jump",
+          "warm_choice": "jump",
+          "max_probability_delta": 0.0
+        }
+      ],
+      "device": {
+        "device_name": "Apple M4 Max",
+        "max_recommended_working_set_size": 51539607552,
+        "memory_size": 68719476736,
+        "architecture": "applegpu_g16s",
+        "max_buffer_length": 38654705664,
+        "resource_limit": 499000
+      },
+      "dtype": "mlx.core.bfloat16",
+      "script_sha256": "6a061134ffcd8532e321564f5b9d68cb195880cba10a5b36fbecea985fccd41d",
+      "timing": "Fixed prefixes and CLM projected actions prepared once, before gameplay. Each live state evaluated once. Identical timer scope: prompt construction, tokenization, fixed KV copy, suffix inference, final scoring and selection. Excludes model load, one-time setup, simulator observation and step, file output. Both models use shared BF16 Qwen3-8B via MLX; CLM original heads on CPU, four threads. Alternate model execution order at each decision.",
+      "scope": "Three 30-second capped courses, both prompts frozen from latest successful saved pilots. Seeds 42 and 314159 were development courses; 271828 was already checked once with final CLM, never with Qwen. No planner, live hints, history or action corrections. Different prompts: Qwen four examples, CLM ten blocks plus distance diagram. Game pauses for inference."
+    },
+    "summary": {
+      "type": "trex_warm_cache_summary",
+      "run_id": "2026-10-03T21:48:05.621356+00:00",
+      "courses": [
+        {
+          "game": "trex",
+          "method": "clm_warm_cache_final",
+          "run_id": "2026-10-03T21:48:05.621356+00:00",
+          "seed": 42,
+          "frames": 1800,
+          "game_seconds": 30.0,
+          "crashed": false,
+          "score": 305,
+          "obstacles_passed": 21,
+          "decisions": 300,
+          "median_ms": 168.72049996163696,
+          "mean_ms": 159.6796403033659,
+          "p95_ms": 176.43029196187854
+        },
+        {
+          "game": "trex",
+          "method": "qwen_warm_cache_final",
+          "run_id": "2026-10-03T21:48:05.621356+00:00",
+          "seed": 42,
+          "frames": 1800,
+          "game_seconds": 30.0,
+          "crashed": false,
+          "score": 305,
+          "obstacles_passed": 21,
+          "decisions": 300,
+          "median_ms": 93.05785445030779,
+          "mean_ms": 107.7942341635935,
+          "p95_ms": 149.5033330284059
+        },
+        {
+          "game": "trex",
+          "method": "clm_warm_cache_final",
+          "run_id": "2026-10-03T21:48:05.621356+00:00",
+          "seed": 314159,
+          "frames": 1800,
+          "game_seconds": 30.0,
+          "crashed": false,
+          "score": 305,
+          "obstacles_passed": 22,
+          "decisions": 300,
+          "median_ms": 186.57812557648867,
+          "mean_ms": 180.0254564988427,
+          "p95_ms": 216.49145800620317
+        },
+        {
+          "game": "trex",
+          "method": "qwen_warm_cache_final",
+          "run_id": "2026-10-03T21:48:05.621356+00:00",
+          "seed": 314159,
+          "frames": 1800,
+          "game_seconds": 30.0,
+          "crashed": false,
+          "score": 305,
+          "obstacles_passed": 22,
+          "decisions": 300,
+          "median_ms": 108.57408307492733,
+          "mean_ms": 123.13193830040593,
+          "p95_ms": 177.6785000693053
+        },
+        {
+          "game": "trex",
+          "method": "clm_warm_cache_final",
+          "run_id": "2026-10-03T21:48:05.621356+00:00",
+          "seed": 271828,
+          "frames": 1800,
+          "game_seconds": 30.0,
+          "crashed": false,
+          "score": 305,
+          "obstacles_passed": 23,
+          "decisions": 300,
+          "median_ms": 214.68547894619405,
+          "mean_ms": 206.74442593784383,
+          "p95_ms": 242.06654191948473
+        },
+        {
+          "game": "trex",
+          "method": "qwen_warm_cache_final",
+          "run_id": "2026-10-03T21:48:05.621356+00:00",
+          "seed": 271828,
+          "frames": 1800,
+          "game_seconds": 30.0,
+          "crashed": false,
+          "score": 305,
+          "obstacles_passed": 23,
+          "decisions": 300,
+          "median_ms": 122.95122910290956,
+          "mean_ms": 143.03532152436674,
+          "p95_ms": 197.60666694492102
+        }
+      ],
+      "clm": {
+        "decisions": 900,
+        "median_ms": 182.54902097396553,
+        "mean_ms": 182.1498409133508,
+        "p95_ms": 229.66395900584757
+      },
+      "qwen": {
+        "decisions": 900,
+        "median_ms": 113.42972901184112,
+        "mean_ms": 124.65383132945539,
+        "p95_ms": 192.32354103587568
+      }
+    },
+    "replay_checks": [
+      {
+        "method": "clm",
+        "seed": 42,
+        "decisions_verified": 300,
+        "frames": 1800,
+        "obstacles_passed": 21,
+        "all_observations_match": true,
+        "all_choices_are_argmax": true,
+        "all_fixed_prefixes_cached": true
+      },
+      {
+        "method": "qwen",
+        "seed": 42,
+        "decisions_verified": 300,
+        "frames": 1800,
+        "obstacles_passed": 21,
+        "all_observations_match": true,
+        "all_choices_are_argmax": true,
+        "all_fixed_prefixes_cached": true
+      },
+      {
+        "method": "clm",
+        "seed": 314159,
+        "decisions_verified": 300,
+        "frames": 1800,
+        "obstacles_passed": 22,
+        "all_observations_match": true,
+        "all_choices_are_argmax": true,
+        "all_fixed_prefixes_cached": true
+      },
+      {
+        "method": "qwen",
+        "seed": 314159,
+        "decisions_verified": 300,
+        "frames": 1800,
+        "obstacles_passed": 22,
+        "all_observations_match": true,
+        "all_choices_are_argmax": true,
+        "all_fixed_prefixes_cached": true
+      },
+      {
+        "method": "clm",
+        "seed": 271828,
+        "decisions_verified": 300,
+        "frames": 1800,
+        "obstacles_passed": 23,
+        "all_observations_match": true,
+        "all_choices_are_argmax": true,
+        "all_fixed_prefixes_cached": true
+      },
+      {
+        "method": "qwen",
+        "seed": 271828,
+        "decisions_verified": 300,
+        "frames": 1800,
+        "obstacles_passed": 23,
+        "all_observations_match": true,
+        "all_choices_are_argmax": true,
+        "all_fixed_prefixes_cached": true
+      }
+    ]
+  }
+}

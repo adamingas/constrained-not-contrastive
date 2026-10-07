@@ -1,0 +1,236 @@
+{
+  "protocol": {
+    "type": "trex_warm_cache_protocol",
+    "run_id": "2026-10-03T21:48:05.621356+00:00",
+    "seeds": [
+      42,
+      314159,
+      271828
+    ],
+    "max_frames": 1800,
+    "frames_per_decision": 6,
+    "system": {
+      "qwen": "You are playing T-Rex runner. Stay alive by avoiding collisions. At each turn, choose A, B, or C for the next 6 frames, then you will receive a new state and choose again. The game pauses while you decide.\n\nA continues automatic running, or lets an existing jump continue.\nB starts a jump from the ground. It does nothing extra in the air.\nC crouches on the ground, or rapidly descends in the air.\n\nObstacles move left. The state gives distances, sizes, and heights above ground. The dinosaur is 44 pixels wide and 47 pixels tall when standing. Feet height zero means grounded. Contact ends the game. A jump rises, reaches its peak, falls, and ends; it cannot be extended by repeatedly selecting B. Duck does not stop horizontal motion.\n\nOutput only the chosen letter.\n\nControls:\nA = run: Release duck. Running is automatic; an existing jump continues.\nB = jump: Release duck and start a jump if grounded. No second jump while airborne.\nC = duck: Crouch if grounded; start a rapid descent if airborne.\n\nState: The dinosaur is on the ground. A cactus is 500 pixels beyond its front, moving toward it at 6 pixels per frame.\nAnswer: A (run).\nExplanation: A jump now would finish before the cactus arrived. Continue running for this turn and reconsider at the next observation.\nState: The dinosaur is on the ground. A cactus is 60 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.\nAnswer: B (jump).\nExplanation: Begin rising now so the dinosaur can pass above the approaching cactus. Continuing on the ground would bring it into the cactus.\nState: The dinosaur is on the ground. A cactus is 180 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame.\nAnswer: A (run).\nExplanation: This is still too early to start the jump. The dinosaur would descend while the cactus was passing. Keep running for this six-frame turn, then reassess the smaller distance.\nState: The dinosaur is in the air, with its feet 80 pixels above the ground, falling at 2 pixels per frame. A cactus is 20 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.\nAnswer: A (run).\nExplanation: Let the current jump carry the dinosaur over the cactus. Ducking would accelerate its descent into the obstacle; another jump command cannot add height while airborne.",
+      "clm": "T-Rex runner: avoid collisions. Choose the next control for six frames. Run continues forward motion and any existing jump. Jump starts a jump from the ground. Duck crouches on the ground or accelerates descent in the air. Cacti are ground obstacles; birds may leave room underneath. The game pauses while the model decides. Obstacles move left. The dinosaur is 44 pixels wide and 47 pixels tall when standing. Feet height zero means grounded. Contact ends the game. A jump rises, reaches its peak, falls, and ends; it cannot be extended by repeatedly choosing jump. Duck does not stop horizontal motion. The examples below describe other situations. Choose for the current observation at the end, using the examples to understand timing.\n\nExample state: The dinosaur is on the ground. A cactus is 60 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame. Answer: jump. Explanation: Start rising to clear the approaching cactus; staying on the ground would cause a collision.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |------| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 500 pixels beyond its front, moving toward it at 6 pixels per frame. Answer: run. Explanation: A jump now would finish before the cactus arrived.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |--------------------------------------------------| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 180 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame. Answer: run. Explanation: Wait for this six-frame turn. Jumping now would put the descent too early, while the cactus is still passing.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |------------------| obstacle.\n\nExample state: The dinosaur is in the air with its feet 80 pixels above the ground, falling at 2 pixels per frame. A cactus is 20 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame. Answer: run. Explanation: Let the current jump continue over the cactus. Ducking would force the dinosaur down into it.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |--| obstacle.\n\nCompare two cases with the same grounded dinosaur, cactus size, and speed of 6 pixels per frame. At a distance of 180 pixels, choose run: the cactus arrives too late for a jump started now. At a distance of 60 pixels, choose jump: the cactus will arrive soon enough for this jump to clear it. The distance changes the answer even though both observations mention a cactus.\n\nExample state: The dinosaur is on the ground. A cactus is 40 pixels beyond its front, approaching at 6 pixels per frame. Answer: jump. Explanation: Waiting another six frames would leave almost no clearance; begin rising now.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |----| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 300 pixels beyond its front, approaching at 6 pixels per frame. Answer: run. Explanation: An obstacle being visible does not mean it is time to jump. It will still be far ahead after this six-frame turn.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |------------------------------| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 120 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: Keep running for this six-frame turn. There is time to get closer before starting a jump, so it will not land too early.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |------------| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 200 pixels beyond its front, 34 pixels wide and 35 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: This shorter cactus is still too far away. Continue running for six frames and look again before jumping.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |--------------------| obstacle.\n\nExample state: The dinosaur is on the ground. A cactus is 150 pixels beyond its front, 17 pixels wide and 35 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: This small cactus is still too far away. A jump started now would finish while the cactus was passing the dinosaur. Wait for the next observation before starting the jump.\nSide view of the gap, each dash is approximately 10 pixels: dinosaur |---------------| obstacle."
+    },
+    "questions": {
+      "action": {
+        "type": "choice",
+        "instructions": "What should the dinosaur do for the next six frames only? It will get another observation afterward. Decide whether to keep running, jump now, or duck now.",
+        "criteria": {
+          "run": "Run.",
+          "jump": "Jump.",
+          "duck": "Duck."
+        }
+      }
+    },
+    "exact_action_inputs": [
+      "Run.",
+      "Jump.",
+      "Duck."
+    ],
+    "setup": {
+      "qwen": {
+        "prefix_ms": 652.4290419183671,
+        "prefix_tokens": 562
+      },
+      "clm": {
+        "prefix_ms": 1166.8940000236034,
+        "prefix_tokens": 1059,
+        "actions_ms": 101.91558301448822
+      }
+    },
+    "validation": [
+      {
+        "method": "clm",
+        "frame": 0,
+        "cold_choice": "run",
+        "warm_choice": "run",
+        "max_probability_delta": 0.0021407527279533323
+      },
+      {
+        "method": "clm",
+        "frame": 300,
+        "cold_choice": "run",
+        "warm_choice": "run",
+        "max_probability_delta": 0.0013496650737386817
+      },
+      {
+        "method": "clm",
+        "frame": 324,
+        "cold_choice": "jump",
+        "warm_choice": "jump",
+        "max_probability_delta": 0.0027284357041281737
+      },
+      {
+        "method": "clm",
+        "frame": 348,
+        "cold_choice": "run",
+        "warm_choice": "run",
+        "max_probability_delta": 0.010922745867061212
+      },
+      {
+        "method": "clm",
+        "frame": 390,
+        "cold_choice": "jump",
+        "warm_choice": "jump",
+        "max_probability_delta": 0.027349453315296812
+      },
+      {
+        "method": "qwen",
+        "frame": 0,
+        "cold_choice": "run",
+        "warm_choice": "run",
+        "max_probability_delta": 1.2036322516451037e-07
+      },
+      {
+        "method": "qwen",
+        "frame": 300,
+        "cold_choice": "run",
+        "warm_choice": "run",
+        "max_probability_delta": 1.938646221333329e-08
+      },
+      {
+        "method": "qwen",
+        "frame": 324,
+        "cold_choice": "jump",
+        "warm_choice": "jump",
+        "max_probability_delta": 1.1920928955078125e-07
+      },
+      {
+        "method": "qwen",
+        "frame": 348,
+        "cold_choice": "run",
+        "warm_choice": "run",
+        "max_probability_delta": 0.003074551932513714
+      },
+      {
+        "method": "qwen",
+        "frame": 390,
+        "cold_choice": "jump",
+        "warm_choice": "jump",
+        "max_probability_delta": 0.0
+      }
+    ],
+    "device": {
+      "device_name": "Apple M4 Max",
+      "max_recommended_working_set_size": 51539607552,
+      "memory_size": 68719476736,
+      "architecture": "applegpu_g16s",
+      "max_buffer_length": 38654705664,
+      "resource_limit": 499000
+    },
+    "dtype": "mlx.core.bfloat16",
+    "script_sha256": "6a061134ffcd8532e321564f5b9d68cb195880cba10a5b36fbecea985fccd41d",
+    "timing": "Fixed prefixes and CLM projected actions prepared once, before gameplay. Each live state evaluated once. Identical timer scope: prompt construction, tokenization, fixed KV copy, suffix inference, final scoring and selection. Excludes model load, one-time setup, simulator observation and step, file output. Both models use shared BF16 Qwen3-8B via MLX; CLM original heads on CPU, four threads. Alternate model execution order at each decision.",
+    "scope": "Three 30-second capped courses, both prompts frozen from latest successful saved pilots. Seeds 42 and 314159 were development courses; 271828 was already checked once with final CLM, never with Qwen. No planner, live hints, history or action corrections. Different prompts: Qwen four examples, CLM ten blocks plus distance diagram. Game pauses for inference."
+  },
+  "summary": {
+    "type": "trex_warm_cache_summary",
+    "run_id": "2026-10-03T21:48:05.621356+00:00",
+    "courses": [
+      {
+        "game": "trex",
+        "method": "clm_warm_cache_final",
+        "run_id": "2026-10-03T21:48:05.621356+00:00",
+        "seed": 42,
+        "frames": 1800,
+        "game_seconds": 30.0,
+        "crashed": false,
+        "score": 305,
+        "obstacles_passed": 21,
+        "decisions": 300,
+        "median_ms": 168.72049996163696,
+        "mean_ms": 159.6796403033659,
+        "p95_ms": 176.43029196187854
+      },
+      {
+        "game": "trex",
+        "method": "qwen_warm_cache_final",
+        "run_id": "2026-10-03T21:48:05.621356+00:00",
+        "seed": 42,
+        "frames": 1800,
+        "game_seconds": 30.0,
+        "crashed": false,
+        "score": 305,
+        "obstacles_passed": 21,
+        "decisions": 300,
+        "median_ms": 93.05785445030779,
+        "mean_ms": 107.7942341635935,
+        "p95_ms": 149.5033330284059
+      },
+      {
+        "game": "trex",
+        "method": "clm_warm_cache_final",
+        "run_id": "2026-10-03T21:48:05.621356+00:00",
+        "seed": 314159,
+        "frames": 1800,
+        "game_seconds": 30.0,
+        "crashed": false,
+        "score": 305,
+        "obstacles_passed": 22,
+        "decisions": 300,
+        "median_ms": 186.57812557648867,
+        "mean_ms": 180.0254564988427,
+        "p95_ms": 216.49145800620317
+      },
+      {
+        "game": "trex",
+        "method": "qwen_warm_cache_final",
+        "run_id": "2026-10-03T21:48:05.621356+00:00",
+        "seed": 314159,
+        "frames": 1800,
+        "game_seconds": 30.0,
+        "crashed": false,
+        "score": 305,
+        "obstacles_passed": 22,
+        "decisions": 300,
+        "median_ms": 108.57408307492733,
+        "mean_ms": 123.13193830040593,
+        "p95_ms": 177.6785000693053
+      },
+      {
+        "game": "trex",
+        "method": "clm_warm_cache_final",
+        "run_id": "2026-10-03T21:48:05.621356+00:00",
+        "seed": 271828,
+        "frames": 1800,
+        "game_seconds": 30.0,
+        "crashed": false,
+        "score": 305,
+        "obstacles_passed": 23,
+        "decisions": 300,
+        "median_ms": 214.68547894619405,
+        "mean_ms": 206.74442593784383,
+        "p95_ms": 242.06654191948473
+      },
+      {
+        "game": "trex",
+        "method": "qwen_warm_cache_final",
+        "run_id": "2026-10-03T21:48:05.621356+00:00",
+        "seed": 271828,
+        "frames": 1800,
+        "game_seconds": 30.0,
+        "crashed": false,
+        "score": 305,
+        "obstacles_passed": 23,
+        "decisions": 300,
+        "median_ms": 122.95122910290956,
+        "mean_ms": 143.03532152436674,
+        "p95_ms": 197.60666694492102
+      }
+    ],
+    "clm": {
+      "decisions": 900,
+      "median_ms": 182.54902097396553,
+      "mean_ms": 182.1498409133508,
+      "p95_ms": 229.66395900584757
+    },
+    "qwen": {
+      "decisions": 900,
+      "median_ms": 113.42972901184112,
+      "mean_ms": 124.65383132945539,
+      "p95_ms": 192.32354103587568
+    }
+  }
+}

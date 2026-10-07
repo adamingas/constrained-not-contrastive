@@ -1,0 +1,487 @@
+[
+  {
+    "group": "routing",
+    "state": "Customer: my invoice was charged twice and nobody answers the phone!",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "billing"
+  },
+  {
+    "group": "routing",
+    "state": "The app crashes immediately after I log in.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "technical"
+  },
+  {
+    "group": "routing",
+    "state": "Please refund the subscription I cancelled last month.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "billing"
+  },
+  {
+    "group": "routing",
+    "state": "The server is unreachable and all API requests time out.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "technical"
+  },
+  {
+    "group": "routing",
+    "state": "Why was I charged tax twice on the same purchase?",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "billing"
+  },
+  {
+    "group": "routing",
+    "state": "The upload button does nothing when clicked.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "technical"
+  },
+  {
+    "group": "routing",
+    "state": "I need a corrected invoice with my company's address.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "billing"
+  },
+  {
+    "group": "routing",
+    "state": "I cannot reset my password because the reset link errors.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "technical"
+  },
+  {
+    "group": "routing",
+    "state": "Payment succeeded, but the invoice page crashes with error 500. I need the page fixed, not a refund.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "technical"
+  },
+  {
+    "group": "routing",
+    "state": "The technical outage is over. I am requesting the promised service credit.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "billing"
+  },
+  {
+    "group": "routing",
+    "state": "No charge is wrong. The billing dashboard renders a blank screen.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "technical"
+  },
+  {
+    "group": "routing",
+    "state": "The application works perfectly. The subscription price on my bill is wrong.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "billing"
+  },
+  {
+    "group": "routing",
+    "state": "Please stop charging my expired subscription.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "billing"
+  },
+  {
+    "group": "routing",
+    "state": "The video freezes every few seconds on all devices.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "technical"
+  },
+  {
+    "group": "routing",
+    "state": "I want an explanation of this unexpected card charge.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "billing"
+  },
+  {
+    "group": "routing",
+    "state": "My data export always fails with a software exception.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "technical"
+  },
+  {
+    "group": "routing",
+    "state": "I was promised a refund but have not received it.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "billing"
+  },
+  {
+    "group": "routing",
+    "state": "My account is paid up; however the login service is down.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "technical"
+  },
+  {
+    "group": "routing",
+    "state": "The phone app works, but I paid for the same order twice.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "billing"
+  },
+  {
+    "group": "routing",
+    "state": "The credit card input widget is broken and refuses all typing.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds",
+        "technical": "Bugs and outages"
+      }
+    },
+    "gold": "technical"
+  },
+  {
+    "group": "mario_text",
+    "state": "Mario is on flat safe ground. The goal is to his right with no obstacles. Walking is preferred to jumping when safe.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which action should Mario take to reach the goal safely?",
+      "criteria": {
+        "jump": "Jump straight up",
+        "right": "Walk right",
+        "left": "Walk left",
+        "jump_right": "Jump up and move right",
+        "jump_left": "Jump up and move left"
+      }
+    },
+    "gold": "right"
+  },
+  {
+    "group": "mario_text",
+    "state": "Mario is on flat safe ground. The goal is to his left with no obstacles. Walking is preferred to jumping when safe.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which action should Mario take to reach the goal safely?",
+      "criteria": {
+        "jump": "Jump straight up",
+        "right": "Walk right",
+        "left": "Walk left",
+        "jump_right": "Jump up and move right",
+        "jump_left": "Jump up and move left"
+      }
+    },
+    "gold": "left"
+  },
+  {
+    "group": "mario_text",
+    "state": "Mario stands at the left edge of a pit. The goal platform is across the pit to the right. Walking falls in; a jump right reaches it.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which action should Mario take to reach the goal safely?",
+      "criteria": {
+        "jump": "Jump straight up",
+        "right": "Walk right",
+        "left": "Walk left",
+        "jump_right": "Jump up and move right",
+        "jump_left": "Jump up and move left"
+      }
+    },
+    "gold": "jump_right"
+  },
+  {
+    "group": "mario_text",
+    "state": "Mario stands at the right edge of a pit. The goal platform is across the pit to the left. Walking falls in; a jump left reaches it.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which action should Mario take to reach the goal safely?",
+      "criteria": {
+        "jump": "Jump straight up",
+        "right": "Walk right",
+        "left": "Walk left",
+        "jump_right": "Jump up and move right",
+        "jump_left": "Jump up and move left"
+      }
+    },
+    "gold": "jump_left"
+  },
+  {
+    "group": "mario_text",
+    "state": "Mario must hit a block directly above his head. There are pits immediately on both sides, so he must keep his horizontal position.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which action should Mario take to reach the goal safely?",
+      "criteria": {
+        "jump": "Jump straight up",
+        "right": "Walk right",
+        "left": "Walk left",
+        "jump_right": "Jump up and move right",
+        "jump_left": "Jump up and move left"
+      }
+    },
+    "gold": "jump"
+  },
+  {
+    "group": "mario_text",
+    "state": "A low obstacle blocks the path to the goal on the right. Mario can clear it only by jumping forward to the right.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which action should Mario take to reach the goal safely?",
+      "criteria": {
+        "jump": "Jump straight up",
+        "right": "Walk right",
+        "left": "Walk left",
+        "jump_right": "Jump up and move right",
+        "jump_left": "Jump up and move left"
+      }
+    },
+    "gold": "jump_right"
+  },
+  {
+    "group": "mario_text",
+    "state": "A low obstacle blocks the path to the goal on the left. Mario can clear it only by jumping forward to the left.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which action should Mario take to reach the goal safely?",
+      "criteria": {
+        "jump": "Jump straight up",
+        "right": "Walk right",
+        "left": "Walk left",
+        "jump_right": "Jump up and move right",
+        "jump_left": "Jump up and move left"
+      }
+    },
+    "gold": "jump_left"
+  },
+  {
+    "group": "mario_text",
+    "state": "Mario is under a low ceiling with a safe corridor to his right leading to the exit. Jumping hits spikes on the ceiling.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which action should Mario take to reach the goal safely?",
+      "criteria": {
+        "jump": "Jump straight up",
+        "right": "Walk right",
+        "left": "Walk left",
+        "jump_right": "Jump up and move right",
+        "jump_left": "Jump up and move left"
+      }
+    },
+    "gold": "right"
+  },
+  {
+    "group": "mario_text",
+    "state": "Mario is under a low ceiling with a safe corridor to his left leading to the exit. Jumping hits spikes on the ceiling.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which action should Mario take to reach the goal safely?",
+      "criteria": {
+        "jump": "Jump straight up",
+        "right": "Walk right",
+        "left": "Walk left",
+        "jump_right": "Jump up and move right",
+        "jump_left": "Jump up and move left"
+      }
+    },
+    "gold": "left"
+  },
+  {
+    "group": "mario_text",
+    "state": "Mario must jump vertically to collect a coin directly above him without moving left or right.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which action should Mario take to reach the goal safely?",
+      "criteria": {
+        "jump": "Jump straight up",
+        "right": "Walk right",
+        "left": "Walk left",
+        "jump_right": "Jump up and move right",
+        "jump_left": "Jump up and move left"
+      }
+    },
+    "gold": "jump"
+  },
+  {
+    "group": "relative_numbers",
+    "state": "Compare the candidate numbers numerically.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which of the offered numbers is larger?",
+      "criteria": {
+        "7": "7",
+        "9": "9"
+      }
+    },
+    "gold": "9"
+  },
+  {
+    "group": "relative_numbers",
+    "state": "Compare the candidate numbers numerically.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which of the offered numbers is larger?",
+      "criteria": {
+        "12": "12",
+        "4": "4"
+      }
+    },
+    "gold": "12"
+  },
+  {
+    "group": "relative_numbers",
+    "state": "Compare the candidate numbers numerically.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which of the offered numbers is larger?",
+      "criteria": {
+        "21": "21",
+        "19": "19"
+      }
+    },
+    "gold": "21"
+  },
+  {
+    "group": "relative_numbers",
+    "state": "Compare the candidate numbers numerically.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which of the offered numbers is larger?",
+      "criteria": {
+        "-3": "-3",
+        "-8": "-8"
+      }
+    },
+    "gold": "-3"
+  },
+  {
+    "group": "relative_numbers",
+    "state": "Compare the candidate numbers numerically.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which of the offered numbers is larger?",
+      "criteria": {
+        "0.9": "0.9",
+        "0.11": "0.11"
+      }
+    },
+    "gold": "0.9"
+  }
+]

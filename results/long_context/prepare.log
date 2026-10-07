@@ -1,0 +1,74 @@
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (806300 > 131072). Running this sequence through the model will result in indexing errors
+{
+  "seed": 20261002,
+  "max_prompt_tokens": 16384,
+  "min_context_tokens": 1024,
+  "truncation": false,
+  "sampling": "Sample without model outputs. One question per source document within each dataset. QuALITY balanced hard/easy, contracts balanced labels; LongBench length-filtered random sample.",
+  "sources": {
+    "quality": {
+      "url": "https://github.com/nyu-mll/quality",
+      "revision": "f84977c40dbfef70c9cab48037b7becfc8e45f73",
+      "split": "dev"
+    },
+    "contract_nli": {
+      "url": "https://stanfordnlp.github.io/contract-nli/",
+      "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+      "split": "test"
+    },
+    "longbench_v2": {
+      "url": "https://huggingface.co/datasets/zai-org/LongBench-v2",
+      "revision": "2b48e494f2c7a2f0af81aae178e05c7e1dde0fe9",
+      "split": "train (official evaluation questions; no model training performed)"
+    }
+  },
+  "pools": {
+    "quality": {
+      "0": 222,
+      "1": 274
+    },
+    "contract_nli": {
+      "NotMentioned": 705,
+      "Entailment": 859,
+      "Contradiction": 187
+    },
+    "longbench_v2": {
+      "all": 503,
+      "eligible": 27,
+      "domains": {
+        "Multi-Document QA": 13,
+        "Single-Document QA": 12,
+        "Long In-context Learning": 2
+      }
+    }
+  },
+  "longbench_sampling_note": "Publisher short category only; all eligible unique documents if fewer than 30.",
+  "selected": {
+    "quality": 80,
+    "contract_nli": 90,
+    "longbench_v2": 27
+  },
+  "context_tokens": {
+    "quality": {
+      "min": 2412,
+      "median": 6576.5,
+      "max": 8204
+    },
+    "contract_nli": {
+      "min": 1038,
+      "median": 1955.5,
+      "max": 7908
+    },
+    "longbench_v2": {
+      "min": 9975,
+      "median": 13754,
+      "max": 16116
+    }
+  },
+  "source_sha256": {
+    "quality.dev.jsonl": "99852d874994078e4b4112b71ceca4dd35aa3a24ff6d3a35c051be25295b4fef",
+    "longbench_v2.json": "15d61c22d92c96900b3c4948b6aeea218d3214b676a65df48e7b8555604c7fe2",
+    "contract_test.json": "460267b56052a2dc5aead98eb35eadef9e6734d5723d37b4a9790e410f812387"
+  },
+  "cases_sha256": "475fa49053e5a5e0dcb5396db7e1e31145789f6ce5d97a8a968faf89c8de5d67"
+}

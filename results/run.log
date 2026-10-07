@@ -1,0 +1,41 @@
+{"backbone": "Qwen/Qwen3-8B", "dtype": "mlx.core.bfloat16", "head_parameters_total": 18887680, "head_config": {"model": "Qwen/Qwen3-8B", "hidden_size": 4096, "projection_dim": 512, "width": 1536, "depth": 3, "activation": "gelu", "layernorm": true, "residual": false}, "head_scale": 100.0, "head_port_max_abs_error": {"state": 3.8743019104003906e-07, "action": 3.8743019104003906e-07}, "upstream_commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7", "packages": {"mlx": "0.32.3", "mlx-lm": "0.32.0", "torch": "2.14.1", "transformers": "5.18.0"}}
+quality 0 routing gold billing clm billing qwen billing reverse billing
+quality 1 routing gold technical clm technical qwen technical reverse technical
+quality 2 routing gold billing clm billing qwen billing reverse billing
+quality 3 routing gold technical clm technical qwen technical reverse technical
+quality 4 routing gold billing clm billing qwen billing reverse billing
+quality 5 routing gold technical clm billing qwen technical reverse technical
+quality 6 routing gold billing clm billing qwen billing reverse billing
+quality 7 routing gold technical clm technical qwen technical reverse technical
+quality 8 routing gold technical clm billing qwen technical reverse technical
+quality 9 routing gold billing clm billing qwen technical reverse technical
+quality 10 routing gold technical clm billing qwen billing reverse billing
+quality 11 routing gold billing clm billing qwen billing reverse billing
+quality 12 routing gold billing clm billing qwen billing reverse billing
+quality 13 routing gold technical clm billing qwen technical reverse technical
+quality 14 routing gold billing clm billing qwen billing reverse billing
+quality 15 routing gold technical clm technical qwen technical reverse technical
+quality 16 routing gold billing clm billing qwen billing reverse billing
+quality 17 routing gold technical clm billing qwen technical reverse technical
+quality 18 routing gold billing clm billing qwen billing reverse billing
+quality 19 routing gold technical clm billing qwen technical reverse technical
+quality 20 mario_text gold right clm jump_left qwen right reverse right
+quality 21 mario_text gold left clm jump_left qwen left reverse left
+quality 22 mario_text gold jump_right clm jump_left qwen jump_right reverse jump_right
+quality 23 mario_text gold jump_left clm jump_left qwen jump_left reverse jump_right
+quality 24 mario_text gold jump clm jump_left qwen jump_left reverse jump
+quality 25 mario_text gold jump_right clm jump_left qwen jump_right reverse jump_right
+quality 26 mario_text gold jump_left clm jump_left qwen jump_left reverse jump_left
+quality 27 mario_text gold right clm jump_left qwen left reverse right
+quality 28 mario_text gold left clm jump_left qwen left reverse left
+quality 29 mario_text gold jump clm jump_left qwen jump reverse jump
+quality 30 relative_numbers gold 9 clm 9 qwen 7 reverse 9
+quality 31 relative_numbers gold 12 clm 12 qwen 12 reverse 4
+quality 32 relative_numbers gold 21 clm 21 qwen 21 reverse 19
+quality 33 relative_numbers gold -3 clm -8 qwen -3 reverse -8
+quality 34 relative_numbers gold 0.9 clm 0.9 qwen 0.9 reverse 0.11
+latency billing_2 {"clm_cached_actions": {"n": 25, "p50_ms": 73.57283309102058, "p95_ms": 74.1701165214181, "min_ms": 72.9685421101749}, "qwen_uncached_selected": {"n": 25, "p50_ms": 137.23341701552272, "p95_ms": 138.17274123430252, "min_ms": 136.58008398488164}, "qwen_prefix_cached_selected": {"n": 25, "p50_ms": 76.6762918792665, "p95_ms": 77.06883307546377, "min_ms": 75.93933306634426}, "qwen_uncached_full_vocab": {"n": 25, "p50_ms": 139.77754209190607, "p95_ms": 140.32518318854272, "min_ms": 139.04437515884638}}
+latency mario_5 {"clm_cached_actions": {"n": 25, "p50_ms": 88.0194588098675, "p95_ms": 89.3124746158719, "min_ms": 84.198541007936}, "qwen_uncached_selected": {"n": 25, "p50_ms": 165.4697919730097, "p95_ms": 171.27214181236923, "min_ms": 158.001417061314}, "qwen_prefix_cached_selected": {"n": 25, "p50_ms": 89.59529199637473, "p95_ms": 92.04533291049302, "min_ms": 85.27562487870455}, "qwen_uncached_full_vocab": {"n": 25, "p50_ms": 168.61579101532698, "p95_ms": 174.5725088287145, "min_ms": 161.18920897133648}}
+latency routing_26_long_options {"clm_cached_actions": {"n": 25, "p50_ms": 77.21479097381234, "p95_ms": 81.28460855223238, "min_ms": 74.26549983210862}, "qwen_uncached_selected": {"n": 25, "p50_ms": 870.1895419508219, "p95_ms": 899.2559253238142, "min_ms": 828.7238329648972}, "qwen_prefix_cached_selected": {"n": 25, "p50_ms": 85.16875002533197, "p95_ms": 90.77025819569826, "min_ms": 82.14362501166761}, "qwen_uncached_full_vocab": {"n": 25, "p50_ms": 879.743792116642, "p95_ms": 919.6381664369255, "min_ms": 848.8461249507964}}
+latency billing_long_state {"clm_cached_actions": {"n": 25, "p50_ms": 637.4891248997301, "p95_ms": 682.1144836954772, "min_ms": 569.6359998546541}, "qwen_uncached_selected": {"n": 25, "p50_ms": 722.9472501203418, "p95_ms": 782.0339670870453, "min_ms": 641.0070420242846}, "qwen_prefix_cached_selected": {"n": 25, "p50_ms": 638.0208330228925, "p95_ms": 675.328091531992, "min_ms": 572.378666838631}, "qwen_uncached_full_vocab": {"n": 25, "p50_ms": 717.6353328395635, "p95_ms": 791.9803245924412, "min_ms": 638.3988750167191}}
+DONE

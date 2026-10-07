@@ -1,0 +1,1042 @@
+[
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/511.txt/q0",
+    "doc_id": "RACE/dev/middle/511.txt",
+    "article_sha256": "29d2cd84dd7313c5c2801b4ffe91c18c8ced9fa2e3263e1acd9a55ced3a885f2",
+    "state": "APRIL 5 marks the 100thanniversary of the sinking of the Titanic. In 1997, the movieTitanicwas a huge hit all around the world. Now, the 3-D version of the movie will come to Chinese theaters on April 10.\nAs anyone who has seen the movie knows, the Titanic struck an iceberg  and sank on its first _ in 1912, killing 1,517 people. A century after the accident, scientists have found something new to blame  for the sinking: the moon. Donald Olson, a Texas State University physicist, led a team of astronomers  to examine the moon's role, according to Reuters.\nNormally, icebergs stay in place and cannot move until they melt enough or a high tide  frees them. A single iceberg can become stuck many times on its journey southward. The process can take several years.\nAccording to Olson, a hundred years ago the moon made its closest approach to the Earth in more than 1,400 years. This caused the moon to have a much stronger pull on the Earth's oceans than usual, which created a super-high tide. The tide pushed icebergs from shallow waters off the coasts of Canada's provinces, Newfoundland and Labrador, into the Titanic's way.\n\"Of course, the final cause of the accident was that the ship struck an iceberg,\" Olson told Reuters. \"It went full speed into a region with icebergs, but thelunar connection  may explain how an unusually large number of icebergs got into the path of the Titanic.\"\nThe research team will publish their research in the April issue of Sky & Telescope magazine.\n,,.",
+    "q": {
+      "type": "choice",
+      "instructions": "How many people lost their lives in this accident?",
+      "criteria": {
+        "0": "Over 2,000 people.",
+        "2": "More than 1,500 people.",
+        "3": "We don't know.",
+        "1": "About 100 people."
+      }
+    },
+    "gold": "2",
+    "context_tokens": 350,
+    "evidence_question_tokens": 360,
+    "raw_choices_tokens": 31,
+    "formatted_choices_tokens": 39,
+    "ratio_denominator_tokens": 39,
+    "evidence_to_choices_ratio": 9.23076923076923,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/163.txt/q0",
+    "doc_id": "RACE/dev/middle/163.txt",
+    "article_sha256": "30de455986e18e37cedf3ae2f5fc914581c6b22e74d268765fbc25f1a4df54f5",
+    "state": "When you are reading something in English, you may often meet with a new word. What's the best way to know it?\nYou may look it up in the English-Chinese dictionary. It will tell you a lot about the word: the pronunciation, the Chinese meaning and how to use the word. But how can you know where the word is thousands of English words? How to find it in the dictionary both quickly and correctly?\nFirst, all the English words are arranged  in the letter order. In the dictionary you can first see the words beginning with letter A, then B, C, D.... That means, if there are two words \"desert\" and \"pull\", \"desert\" will be certainly before \"pull\". Then if there are two words both beginning with the same letter, you may look at the second letter. Then the third, the fourth... For example, \"pardon\" is before \"plough\", \"judge\" before \"just\", etc.\nDo you understand how to look up in the dictionary?\nThe dictionary will be your good friend. I hope you'll use it as often as possible in your English study.",
+    "q": {
+      "type": "choice",
+      "instructions": "This passage is about  _  .",
+      "criteria": {
+        "0": "new words in writing",
+        "3": "using an English-Chinese dictionary",
+        "2": "the best way of reading",
+        "1": "different dictionaries"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 233,
+    "evidence_question_tokens": 241,
+    "raw_choices_tokens": 17,
+    "formatted_choices_tokens": 28,
+    "ratio_denominator_tokens": 28,
+    "evidence_to_choices_ratio": 8.607142857142858,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/1978.txt/q1",
+    "doc_id": "RACE/dev/middle/1978.txt",
+    "article_sha256": "7a51e5cfa2d296121d5345cae7af3bf3953740473640e83e221707fda11d88d3",
+    "state": "A big company wanted a clerk,so John went there. In the interview,the director asked him a question. \"Who paid for your school?\" \"My mother paid for it by washing clothes.\"\nHearing this,the director asked John to show his hands. _ . The director said,\"When you go back today,go and clean your mother's hands,and then see me tomorrow morning.\"\nWhen John went back,he happily asked his mother to let him clean her hands.\nHowever,his tears fell as he cleaned his mother's hands. It was the first time he noticed that there were too many bruises in his mother's hands. After finishing the cleaning of his mother's hands,John quietly washed all the remaining clothes for his mother.\nNext morning,John went to the director's office. The director noticed the tears in John's eyes and asked,\" Please tell me your feeling.\"John said,\"Number 1,I know now what appreciation  is. I would not be successful if my mother didn't do these things. Number 2,by helping my mother,now I realize how difficult it is to get something done.\"The director said,\"This is what I want to be my clerk. You can get the job.\"",
+    "q": {
+      "type": "choice",
+      "instructions": "John's mother was a(n)  _  .",
+      "criteria": {
+        "1": "director",
+        "2": "farmer",
+        "0": "office clerk",
+        "3": "clothes cleaner"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 245,
+    "evidence_question_tokens": 256,
+    "raw_choices_tokens": 8,
+    "formatted_choices_tokens": 17,
+    "ratio_denominator_tokens": 17,
+    "evidence_to_choices_ratio": 15.058823529411764,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/897.txt/q0",
+    "doc_id": "RACE/dev/middle/897.txt",
+    "article_sha256": "7c377b51804b540da53e02c536eafda2c019b98a0182784e058d9fb49a4e1b5a",
+    "state": "Lily: Hello! This is Lily speaking. Is that Kate?\nKate: Yes, it is. Hi! Lily!\nLily: Hi! There's a meeting this afternoon in our classroom. Can you come, Kate?\nKate: I'm afraid I can't. My mother isn't feeling well today. I must help her with the housework and look after my little brother.\nLily: I'm sorry to hear that. But it doesn't matter. I think you'd better stay at home.\nKate: Thank you. By the way, what's the meeting about?\nLily: it's about the basketball game. We're going to play against Class Three.\nKate: That's great!\nLily: I got a letter from Uncle Wu yesterday. And a color photo, too.\nKate: Er... but who's Uncle Wu?\nLily: A farmer on the Jinxing Farm. Don't you remember?\nKate: Oh, yes. He was very friendly to us when we worked there last September.\nLily: it's a very nice photo. We're carrying rice in the photo.\nKate: Please bring it to school tomorrow morning.\nLily: OK! Bye!\nKate: Bye!",
+    "q": {
+      "type": "choice",
+      "instructions": "Kate can't go to the meeting because   _  .",
+      "criteria": {
+        "0": "she isn't feeling well",
+        "2": "her mother isn't at home",
+        "1": "she has a lot of homework to do",
+        "3": "her mother is ill"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 247,
+    "evidence_question_tokens": 259,
+    "raw_choices_tokens": 23,
+    "formatted_choices_tokens": 34,
+    "ratio_denominator_tokens": 34,
+    "evidence_to_choices_ratio": 7.617647058823529,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/7169.txt/q1",
+    "doc_id": "RACE/dev/middle/7169.txt",
+    "article_sha256": "2c5b1a9f629fff9159c159da173a99f852409057b580b2831ea1c3289d6c9aca",
+    "state": "Getting electricity has always been a problem for the 173 people living in Nuevo Saposoa, a small village in Peru, South America. However, things went from bad to worse in March 2015 after heavy rains damaged the only power cables in the area. The villagers were forced to use oil lamps, which are not only expensive but also dangerous because of the harmful gases they produce.\nLuckily, researchers at the University of Technology (UT) in Lima, Peru heard about their problem and found a wonderful solution. They made a lamp that can be powered by plants and soil, both of which can be easily found in the Amazonian rainforest where the village lies. The lamp takes energy from a plant growing in a wooden box and uses it to light up an LED light bulb.\nWhile that may sound amazing and even impossible, the science behind the ides is quite simple. As plants create their food (using the sun's energy, water and chemicals from the soil), they also produce waste which they return to the soil. Tiny animals in the soil eat this waste and they produce electrons - the building blocks of electrical energy. The UT team put special sticks inside the soil to capture the energy and keep it in the lamp's batteries for later use. The researchers say a single charge can power a 50-watt Led light for two hours - enough time for local villagers to get their evening work done.\nThe university gave ten Plant Lamps to the villagers of Nuevo Saposoa in October 2015. So far, they have been a huge success! Elmer Ramirez, the UT professor who invented the lamp, believes the Plant Lamp could help improve the lives of many people, especially small rainforest communities, 42% of whom have no electricity.",
+    "q": {
+      "type": "choice",
+      "instructions": "What is true about the Plant Lamp?",
+      "criteria": {
+        "2": "It can produce all the electricity the village need",
+        "1": "It is much easier to use than oil lamps",
+        "0": "It can be made by local people",
+        "3": "The things it needs to make electricity are easy to find"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 361,
+    "evidence_question_tokens": 369,
+    "raw_choices_tokens": 36,
+    "formatted_choices_tokens": 47,
+    "ratio_denominator_tokens": 47,
+    "evidence_to_choices_ratio": 7.851063829787234,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/7798.txt/q0",
+    "doc_id": "RACE/dev/middle/7798.txt",
+    "article_sha256": "a04d33c1c2700430f5731a4638e13db7b5f8befdaa72d1b129cc1450b2697b44",
+    "state": "Known as the Forbidden City , two new areas in the Palace Museum has been open -- the Broken Rainbow Bridge and the Eighteen Ancient Pagoda Trees -- to the public since Sept 29, 2016. According to the the Palace Museum curator  Shan Jixiang, 76 percent of the Forbidden City will be open by the end of 2016.\nIn Chinese, the palace is called zijincheng, which means \"the purple forbidden city\". However, purple is not seen a lot in the palace. The palace has mainly been painted in two colors, yellow and red. Red, the color of fire, shows happiness and success, while yellow stands for the earth and the Yellow River, the place where Chinese civilization came from. In ancient China, only emperor  used yellow.\nThen where did purple come from? Ancient Chinese astronomers  believed that Polaris , the purple star, was in the center of heaven  and the heavenly emperor lived in the Purple Palace. So the palace for the emperor on Earth was called \"the purple city\". Entering was not allowed unless the emperor _ .\nIn most people's eyes, for the first time visitors to Beijing, no trip is complete without a visit to the Palace Museum.",
+    "q": {
+      "type": "choice",
+      "instructions": "If a visitor wants to see \"the Broken Rainbow Bridge\", when must he/she go to the Palace Museum?",
+      "criteria": {
+        "1": "From Sept 29, 2016.",
+        "3": "Only on Sept 29, 2016.",
+        "0": "Anytime in the year.",
+        "2": "The end of 2016."
+      }
+    },
+    "gold": "1",
+    "context_tokens": 253,
+    "evidence_question_tokens": 275,
+    "raw_choices_tokens": 40,
+    "formatted_choices_tokens": 48,
+    "ratio_denominator_tokens": 48,
+    "evidence_to_choices_ratio": 5.729166666666667,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/3088.txt/q0",
+    "doc_id": "RACE/dev/middle/3088.txt",
+    "article_sha256": "61591abb58a81601597bdf94d1efbe0b825a053966d9a2e602dc1c32a13fe321",
+    "state": "MANY 15-year-olds don't know what they want to be when they grow up. Abby Harris knows she wants to become an astronaut and isn't letting anything stop her.\nAccording to Harris' Internet blog, Astronaut Abby, she has wanted to be the first astronaut to walk on Mars since she was 5 years old.\nHarris wrote that at the beginning, most people didn't take her dream seriously. But she stuck with   it.\n\"I made plans, I worked hard and I focused on   my goal. As I got older and continued to stay focused on science, people in my life began to notice and encouraged me to dream big,\" she wrote.\nIn the 7th grade, Harris was doing a project on the International Space Station. She set up a Twitter account to get in touch with NASA. But soon she found that it was a great place for her to write about her dreams and talk with others who are interested in space. Her friends on Twitter then helped her create her website and blog, Astronaut Abby.\nWhat's more, Harris has a real astronaut as her _ . Several years ago, Harris ran into Italian astronaut Luca Parmitano at an airport. They talked for an hour and Parmitano agreed to become her mentor. Now Parmitano is in the International Space Station. Harris e-mails him every day to learn about his experiences.\nIt's not easy to become an astronaut, but Harris is confident about herself.\n\"If you work really hard at something, it can happen. And it will happen,\" she said.",
+    "q": {
+      "type": "choice",
+      "instructions": "Abby Harris set up a Twitter account in order to   _  .",
+      "criteria": {
+        "1": "make more friends online",
+        "0": "learn more about space",
+        "3": "introduce her website and blog",
+        "2": "tell others about her dream"
+      }
+    },
+    "gold": "0",
+    "context_tokens": 315,
+    "evidence_question_tokens": 330,
+    "raw_choices_tokens": 19,
+    "formatted_choices_tokens": 29,
+    "ratio_denominator_tokens": 29,
+    "evidence_to_choices_ratio": 11.379310344827585,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/2414.txt/q3",
+    "doc_id": "RACE/dev/middle/2414.txt",
+    "article_sha256": "ae04d602f0d75143619f67b9dd539b4187eb2a97cd74b8f68e6f349b15059f4f",
+    "state": "Jess really felt very happy. When he arrived at his seat in the classroom that morning, he found an invitation on his desk. It was from some of his classmates asking him to join their camping trip. This was the first time he was asked to join in an out-of-school activity. Why were they asking him now? Nobody seemed to like him. In fact, he had been so lonely   that he ate a lot to make himself feel less lonely. As a result, he had put on a lot of weight, and this gave the children something more to make fun of him.\nCindy, who was standing near Jess when he read the invitation, went out quickly to tell the others that the trick had worked. Everyone was happy that Jess thought that was true. But there was no camping trip. The whole thing was made up.\nAt first, Cindy thought it was fun. But later, when Jess told her that he was going to buy a sleeping bag with his pocket money, Cindy had a second idea. She knew that Jess's family had little money, and she hated to see him spend his pocket money on something he would never use. Cindy also hated to tell Jess the truth  . Her close friends would be unhappy with her.\nWhat could she do now?",
+    "q": {
+      "type": "choice",
+      "instructions": "Which is the best title for this passage?",
+      "criteria": {
+        "2": "An Invitation for Jess",
+        "3": "Jess and His Camping Trip",
+        "1": "Jess and His Friends",
+        "0": "Jess and His School"
+      }
+    },
+    "gold": "2",
+    "context_tokens": 257,
+    "evidence_question_tokens": 266,
+    "raw_choices_tokens": 17,
+    "formatted_choices_tokens": 28,
+    "ratio_denominator_tokens": 28,
+    "evidence_to_choices_ratio": 9.5,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/6261.txt/q1",
+    "doc_id": "RACE/dev/middle/6261.txt",
+    "article_sha256": "4de2fc7b6b688f359b6d13ceb3d7de7b924046d5fc8c0e8c8ef01e5fc31864fb",
+    "state": "The population of the world is increasing rapidly. By 2020, there could be 7.5 billion people on the earth. Will there be enough food for all these people? Some scientists think fish farming might solve this problem. However, other scientists worry that fish farming could bring serious environmental problems.\nFish farming is not a new thing. There were fish farms in China 3,000 years ago. Today, about one third of the fish we eat comes from fish farms.\nMost fish farms raise plant-eating fish. Popular kinds of plant-eating fish are carp, tilapia, and catfish. However, many fish farms are starting to raise meat-eating fish. A popular type of meat-eating fish is salmon. However, it takes up to 5 tons of wild fish to produce just 1 ton of farm-raised salmon. So if this continued, many types of wild fish could become _ .\nCritics   of fish farming also say that farm-raised fish is unhealthy. They say there are dangerous chemicals   in the fish. They also say fish farming pollutes the water. Some people say that the ways of farming being used now won't produce enough fish anyway. Instead of building fish farms in lakes or near the coast, they say that the fish farms could be moved far out into the ocean. In the future, fish farms might be large cages that move to the ocean.",
+    "q": {
+      "type": "choice",
+      "instructions": "_   is not a kind of plant-eating fish.",
+      "criteria": {
+        "0": "Carp",
+        "2": "Tilapia",
+        "3": "Salmon",
+        "1": "Catfish"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 288,
+    "evidence_question_tokens": 300,
+    "raw_choices_tokens": 9,
+    "formatted_choices_tokens": 17,
+    "ratio_denominator_tokens": 17,
+    "evidence_to_choices_ratio": 17.647058823529413,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/2774.txt/q3",
+    "doc_id": "RACE/dev/middle/2774.txt",
+    "article_sha256": "2bc984de6a346dc0c29e6abd0327ea1add84a505db26c1f003d247aafa267315",
+    "state": "The first teacher-parent meeting would be held in the school. To the little boy's disappointment , his mother said she would go. He felt sorry for her face. She was very beautiful, but there was a big scar   on her right face. The boy never talked about it with his mother.\nAt the meeting, the people noticed the mother's kindness and beauty though she had the scar. But the little boy hid himself. After the meeting, the teacher asked his mother carefully. \"How did you get the scat on your face?\" The mother answered. \"When my son was a baby, he was once in a room that caught fire. Everyone was too afraid to go in because the fire was out of control. At that time, I rushed in As I was running towards his bed. I saw a piece of wood coming towards his bed. I threw myself over him to protect him. I was knocked down. Luckily, a fireman came in and saved both of us. But I got the scar.\" She touched her face.\" This scar will be here for ever, but I have never felt sorry for what I did.\"\nAt that moment, the little boy came out with his eyes wet. He held his mother's hand for the rest of the day.",
+    "q": {
+      "type": "choice",
+      "instructions": ".The mother got the scar when she  _  .",
+      "criteria": {
+        "0": "slept in a room on fire",
+        "3": "protected her son",
+        "2": "rushed out of the room",
+        "1": "put out the fire"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 256,
+    "evidence_question_tokens": 267,
+    "raw_choices_tokens": 21,
+    "formatted_choices_tokens": 29,
+    "ratio_denominator_tokens": 29,
+    "evidence_to_choices_ratio": 9.206896551724139,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/4717.txt/q0",
+    "doc_id": "RACE/dev/middle/4717.txt",
+    "article_sha256": "18967bd016f870af3a1f123bfe9625020930dd29545881198a4228c78b5b36d3",
+    "state": "The Red Cross Society of China(RCSC) has so far received 150 million yuan (18 million U.S. dollars) as donation   for tsunami-hit   countries, reports from the RCSC said on January 14, 2005.\n2.66 million U.S. dollars of the money were sent to Indonesia, Sri Lanka, Thailand and Maldives soon after they were hit by the killer disaster late last month. The rest of the money will be sent for rebuilding villages, schools and orphanages (homes for children who lost their parents) in the disaster areas, the reports said.\nAccording to the reports, two RCSC's rescue   teams have arrived in Indonesia and Sri Lanka on Friday. A third team will go to Thailand early next week.\nThe RCSC will report how much money has been collected and the uses of the money on its website on time, the reports said.\n,.",
+    "q": {
+      "type": "choice",
+      "instructions": "The passage is probably from   _  .",
+      "criteria": {
+        "3": "a storybook",
+        "1": "an advertisement",
+        "2": "an instruction   book",
+        "0": "a newspaper"
+      }
+    },
+    "gold": "0",
+    "context_tokens": 188,
+    "evidence_question_tokens": 197,
+    "raw_choices_tokens": 11,
+    "formatted_choices_tokens": 22,
+    "ratio_denominator_tokens": 22,
+    "evidence_to_choices_ratio": 8.954545454545455,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/4307.txt/q2",
+    "doc_id": "RACE/dev/middle/4307.txt",
+    "article_sha256": "b7d5d55e0a3dd9ec023b811f97cd206ff8fc91be97488898c770bb600ba09326",
+    "state": "The Biggest Tree\nDo you know the biggest tree in the world? Its name is \" General Sherman\". General Sherman is growing on the slopes  of the Rocky Mountains in the United States. General Sherman is about 11 meters across and about 35 meters round, this will give you an idea of General Sherman's size. General Sherman is also very tall. It is over 80 meters high. It began as a tiny seed  many years ago. Imagine!  It has been growing since about 2000 BC. It has been growing for almost 4,000 years and it still growing! General Sherman is as old as the Pyramids.  It may live for another 2000 years. What will the world be like in 4000 AD ?",
+    "q": {
+      "type": "choice",
+      "instructions": "It's as old as   _  .",
+      "criteria": {
+        "0": "a little seed",
+        "2": "the Tai Mountain",
+        "3": "the Pyramids",
+        "1": "the Rocky Mountain"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 165,
+    "evidence_question_tokens": 174,
+    "raw_choices_tokens": 12,
+    "formatted_choices_tokens": 23,
+    "ratio_denominator_tokens": 23,
+    "evidence_to_choices_ratio": 7.565217391304348,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/8160.txt/q1",
+    "doc_id": "RACE/dev/middle/8160.txt",
+    "article_sha256": "baca04450c1c795776008fa730a89315269c142fcfb56a647bdb000d6ae1d2a6",
+    "state": "By the time Rihanna was seventeen ,she had released   her first album and had an international hit with her first single   Pon de Replay.\nRihanna was born in Saint Michael , Barbados in 1988 . She grew up there with her two younger brothers . As a child , she loved singing . She formed her first group with friends from secondary school when she was just fifteen . In 2004 friends introduced the group to American record producer Evan Rogers ,who was on holiday in Barbados . Rogers thought Rihanna could be a star in America,so she moved there aged sixteen to take up music after she finished school. Rihhanna  lived with Rogers and his wife . Then she worked for Def Jam Recordings and started working on her first album , Music of the Sun .It came out at in 2005 and got into the top ten . Over 69,000 copies of the album were sold in the first week alone . It went on to sell over two million copies worldwide and Rihanna quickly became a big star . Her second album , A Girl Like Me ,came out a year later and included the song SOS , which was her first number one hit in America. In 2007 Rihanna brought out her third album , Good Girl Gone Bad ,which had more dance music than the first two albums.\nRihanna sold more than fifteen million album and forty - five million singles worldwide between 2005 and 2010 ,the most of any artist at the same time . However ,she manages to find time for her charity work ,too . She has performed in several concerts to raise money for charity and in 2006 she created her Believe Foundation to help sick children . She also took part in Gucci's activities to raise money for children in Africa.",
+    "q": {
+      "type": "choice",
+      "instructions": "Why did Rihanna move to America ?",
+      "criteria": {
+        "0": "To try to become a famous singer.",
+        "1": "To form her first music group.",
+        "2": "To meet the record producer Evan Rogers.",
+        "3": "To record her album ,A Girl Like Me ,with the help of Rogers."
+      }
+    },
+    "gold": "0",
+    "context_tokens": 373,
+    "evidence_question_tokens": 380,
+    "raw_choices_tokens": 39,
+    "formatted_choices_tokens": 47,
+    "ratio_denominator_tokens": 47,
+    "evidence_to_choices_ratio": 8.085106382978724,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/4240.txt/q0",
+    "doc_id": "RACE/dev/middle/4240.txt",
+    "article_sha256": "767c2d06c7ef6b77c6cac2f44e321abfb280090a70df4b188e81d7b5c8c23f8d",
+    "state": "Fire can help people in many ways. But can also be very harmful. Fire can heat water warm your houses, give light, and cook food. But fire can burn things too. It can burn trees, houses, animals, or people. Sometimes big fires can burn forests.\nNobody knows for sure how people began to use fire. But there are many interesting, old stories about the first time a man or woman started a fire. One story from Australia tells about a man very, very long time ago. He went up to the sun by a rope and brought fire down.\nToday people know how to make a fire with matches. Children sometimes like to play with them. But matches can be very dangerous. One match can burn a piece of paper, and then it might burn a house. A small fire can become a big fire very fast.\nFires kill many people every year. So you must be careful with matches. You should also learn to put out fires. Fires need oxygen. Without oxygen they die. There is oxygen in the air. Cover a fire with water, sand, or in an emergency, with your coat or something else. This keeps the air away from a fire and kills it.\nBe careful with fire, and it will help you. Be careless with fire, and it will burn you.\n,.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which is true?",
+      "criteria": {
+        "1": "It is an Australian who started a fire.",
+        "2": "We know how people began to use fire.",
+        "3": "Nobody knows how to make a fire",
+        "0": "We are not sure how people started to use fire"
+      }
+    },
+    "gold": "0",
+    "context_tokens": 266,
+    "evidence_question_tokens": 270,
+    "raw_choices_tokens": 35,
+    "formatted_choices_tokens": 44,
+    "ratio_denominator_tokens": 44,
+    "evidence_to_choices_ratio": 6.136363636363637,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/4896.txt/q2",
+    "doc_id": "RACE/dev/middle/4896.txt",
+    "article_sha256": "ac3a6e12a8f1f941e9e0966bc5db856e468a9656f8966635320a2cece82bacf8",
+    "state": "Jack was a carpenter . He was living in a village. His mother died a long time ago. His aged father, Ken, lived with him. Ken could not even walk well. He was so weak. It was because Jack did not give him enough food. He only gave his father a small bowl made from earth. Even a little rice in the bowl appeared to be much.\nJack had a son. His name is Mike. He was a very good boy. He loved his grandfather. He had great respect for the old man. He did not like his father's _ to his grandfather.\nOne day Ken was eating his food out of the earthen  bowl. The bowl fell down and broke into pieces. The food also fell on the floor. Jack saw the broken bowl. He was very angry with his father. The old man felt bad about what happened. He was sorry for his mistake.\nMike saw this. He did not like what his father did, but he was afraid to speak against his father. The next day, Mike took some of his father's tools and a piece of wood. He worked with the tools to make a wooden bowl. His father saw him working.\n\"What are you making, Mike?\"he asked.\n\"I am making a wooden bowl! \"replied Mike. \"I am making it for you, father. When you grow old, like my grandfather, you will need a bowl for food. A bowl made from earth may break very easily. So I want to give you a wooden bowl\"\nAfter hearing this, Jack felt sorry and regretted having treated his father badly.",
+    "q": {
+      "type": "choice",
+      "instructions": "What's the true reason of Mike's making a wooden bowl?",
+      "criteria": {
+        "3": "To teach his father a lesson.",
+        "2": "To prepare a bowl for his father.",
+        "0": "To make a better bowl for his grandfather.",
+        "1": "To learn the skills of a carpenter."
+      }
+    },
+    "gold": "3",
+    "context_tokens": 326,
+    "evidence_question_tokens": 339,
+    "raw_choices_tokens": 33,
+    "formatted_choices_tokens": 41,
+    "ratio_denominator_tokens": 41,
+    "evidence_to_choices_ratio": 8.268292682926829,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/5162.txt/q2",
+    "doc_id": "RACE/dev/middle/5162.txt",
+    "article_sha256": "dc870e22966d67cee47b44c3aca9baa3b51bbc48480c1eca844cda1cdb558c40",
+    "state": "A crow is sitting in a big tree. She has a big piece of meat in her mouth. \"My babies will have a nice breakfast,\" she thinks. An old fox is looking for his breakfast. He sees the crow and the meat. \"How can I get that piece of meat?\" he thinks.\n\"Good morning, Mrs. Crow.\" says the fox, \"How are you?\" But the crow doesn't say a word. \"You have very nice babies, Mrs. Crow.\" says the fox, \"How are they? May I see them ?\" Still the crow doesn't say a word.\n\"You are very beautiful, Mrs. Crow, and you have a beautiful voice ,too.\" says the fox, \"Would you please sing a song for me? \"Mrs. Crow thinks \"How nice Mr. Fox is! I must sing him a song.\" So she opens her mouth and begins to sing. At that time, the meat drops down from her mouth.",
+    "q": {
+      "type": "choice",
+      "instructions": "The crow doesn't say a word to the fox because  _  .",
+      "criteria": {
+        "3": "she can't hear the fox",
+        "2": "she has a piece of meat in her mouth",
+        "1": "her babies are not well",
+        "0": "she doesn't like the fox at all"
+      }
+    },
+    "gold": "2",
+    "context_tokens": 197,
+    "evidence_question_tokens": 212,
+    "raw_choices_tokens": 28,
+    "formatted_choices_tokens": 39,
+    "ratio_denominator_tokens": 39,
+    "evidence_to_choices_ratio": 5.435897435897436,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/1137.txt/q1",
+    "doc_id": "RACE/dev/middle/1137.txt",
+    "article_sha256": "cd53b74123bb42ac81478a3e377c978e757587ae4262354b93230293e7664aba",
+    "state": "One day Jack met his good friend Sue in the park.A dog was looking up at the woman beside her.\nJack walked up to Sue and said, \"Hello, how are you? May I sit and talk with you for a moment?\" \"Of course, please sit down,\" Sue said.Jack sat down next to Sue on the bench, and they talked quietly together.The dog continued to look up at Sue, as if( ) waiting to be given some food.\n\"That's a nice dog, isn't he?\" Jack said, pointing at the animal.\n\"Yes, he is.He's handsome.He's strong and healthy.\"\n\"And hungry,\" Jack said.\"He hasn't taken his eyes off you.He thinks you've got some food for him.\"\n\"That's true,\" Sue said.\"But I haven't.\"\nThey both laughed and then Jack said, \"Does your dog bite ?\"\n\"No, \"Sue said, \" He's never bitten anyone.He's always gentle and friendly.\"\nHearing this, Jack decided to hold out his hand and touched the animal's head.Suddenly it jumped up and bit him.\n\"Hey!\" Jack shouted.\"You said your dog didn't bite.\"\nSue answered in surprise, \"Yeah, I did.But this is not my dog.My dog is at home.\"",
+    "q": {
+      "type": "choice",
+      "instructions": "The dog looked at the woman because   _  .",
+      "criteria": {
+        "1": "the woman was friendly",
+        "0": "the woman wanted to feed him",
+        "3": "he was hungry",
+        "2": "he was strong and healthy"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 259,
+    "evidence_question_tokens": 270,
+    "raw_choices_tokens": 18,
+    "formatted_choices_tokens": 29,
+    "ratio_denominator_tokens": 29,
+    "evidence_to_choices_ratio": 9.310344827586206,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/3647.txt/q1",
+    "doc_id": "RACE/dev/middle/3647.txt",
+    "article_sha256": "77abe9e485b67167f431721d1e6ef3c1f73b6c932edb333bf34f9634850885fc",
+    "state": "My cousin and I have very different living habits. I think I have a good habit. I take an active part in sports. After school, I often play ball games with my classmates. I don't like indoor activities. I'm hardly ill, and I haven't caught colds for years. I get up at the same time every morning and go to bed at the same time every night. I always sleep for nine hours each night, and I always feel refreshed   in the morning.\nMy cousin, however, has a very bad living habit. She never does exercise. She even hates walking to the bus stop from her home. She prefers indoor activities. She likes to play computer games and watch TV. She is overweight and often falls ill. She always goes to bed late and gets up at the last minute. She often feels tired in the morning.",
+    "q": {
+      "type": "choice",
+      "instructions": "The writer likes   _  .",
+      "criteria": {
+        "2": "computer games",
+        "3": "watching TV",
+        "1": "ball games",
+        "0": "indoor activities"
+      }
+    },
+    "gold": "1",
+    "context_tokens": 173,
+    "evidence_question_tokens": 180,
+    "raw_choices_tokens": 10,
+    "formatted_choices_tokens": 19,
+    "ratio_denominator_tokens": 19,
+    "evidence_to_choices_ratio": 9.473684210526315,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/5869.txt/q0",
+    "doc_id": "RACE/dev/middle/5869.txt",
+    "article_sha256": "6c9779f88b7a09d198fdfb608423cfce09935cc142546f95731f5128969e5f13",
+    "state": "Why do you think people in some hot countries eat very spicy food? Is it because the spices make the food taste better? Is it just because their parents and grandparents and great-grandparents liked hot food,or is there any connection  between spices and healthy food?\nScientists think that it is because spice plants have some important chemicals .These chemicals can kill bacteria .\n\"Most common spices can kill 75 to 100 percent of the bacteria in food,\"explains one of the scientists.The bacteria grow more easily and spoil(...) food more quickly at higher temperatures.For this reason,it is more difficult to keep food from spoiling in hot climates,\nDo you like your food spicy? Your answer probably tells something about the country you are from.If you like spicy food,it is possible that hundreds of years ago,when there were no fridges,people in your country started using spices to keep the food from spoiling.The traditional spicy dishes helped those people to live longer,healthier lives.Today,in a time of fridges,the spices just make the food taste better.",
+    "q": {
+      "type": "choice",
+      "instructions": "The chemicals in spices keep food fresh by  _  .",
+      "criteria": {
+        "1": "making food hotter",
+        "2": "preventing bacteria getting into food",
+        "3": "killing bacteria in food",
+        "0": "making food taste better"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 213,
+    "evidence_question_tokens": 225,
+    "raw_choices_tokens": 18,
+    "formatted_choices_tokens": 27,
+    "ratio_denominator_tokens": 27,
+    "evidence_to_choices_ratio": 8.333333333333334,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/13.txt/q0",
+    "doc_id": "RACE/dev/middle/13.txt",
+    "article_sha256": "392a7f665d3e3fad9be27ad9059631fe579aea74b2eb70f09d8bf4d3458fc006",
+    "state": "What is color? Why do some of the things around us look red, some green, others blue?\nColors are really made by deflected   light. We see color because most of the things reflect light. In the same way, if something is green, it reflects most of the green light. If something reflects all light, it is white. If it doesn't reflect any light, it is black.\nSome of the light is reflected and some is taken in   and turned into   heat  .The darker the color is, the less light is reflected, the more light is taken in. So dark-colored clothes are warmer in the sun than light-colored clothes.",
+    "q": {
+      "type": "choice",
+      "instructions": "When something reflects light, we can   _  .",
+      "criteria": {
+        "2": "not see its color",
+        "1": "see its heat",
+        "3": "see nothing",
+        "0": "see its color"
+      }
+    },
+    "gold": "0",
+    "context_tokens": 134,
+    "evidence_question_tokens": 145,
+    "raw_choices_tokens": 12,
+    "formatted_choices_tokens": 23,
+    "ratio_denominator_tokens": 23,
+    "evidence_to_choices_ratio": 6.304347826086956,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/3720.txt/q2",
+    "doc_id": "RACE/dev/middle/3720.txt",
+    "article_sha256": "1551aacbba47d0f5b287d817481888c782333a968a85dc3f3edc9ea6e66c0b11",
+    "state": "This is Liu Fei's room. It's a small but nice room. On the wall, there are two maps. One is a map of China, the other is of the world. There's a desk in front of the window and on the desk there is a clock. Near the clock there is a glass. There's some water in it. And there are two pencils, one pen and some books on the desk too. There is a chair on the floor and under the chair there's a ball. Liu Fei often studies   in his room and he likes his room very much.",
+    "q": {
+      "type": "choice",
+      "instructions": "There are some books   _   .",
+      "criteria": {
+        "3": "on the wall",
+        "1": "on the desk",
+        "2": "on the floor",
+        "0": "on the chair"
+      }
+    },
+    "gold": "1",
+    "context_tokens": 121,
+    "evidence_question_tokens": 129,
+    "raw_choices_tokens": 12,
+    "formatted_choices_tokens": 23,
+    "ratio_denominator_tokens": 23,
+    "evidence_to_choices_ratio": 5.608695652173913,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/1011.txt/q2",
+    "doc_id": "RACE/dev/middle/1011.txt",
+    "article_sha256": "1e7604dadb865180407bfa7b40e50c875aa2f760b8351ae1f1192f1f5341b71f",
+    "state": "Many Chinese people like American country music( ),such as  the songs of John Denver. But still some people don't know when country music began.\nCountry music is from the folk music  of the Appalachian Mountains in the east of America. There, people sang while playing the violin and guitar. They sang about everyday life, love and their problems. So the songs were sometimes a little sad.\nOne of the most popular country music singers is John Denver, who is also quite famous to the Chinese. For Denver, music was a language that could bring the world together. He says music can bring people together. We will understand  each other better through  music. People are different in colour and they may speak different languages, but people are the same in mind and body . All of them love music and can understand music.\nThe world lost a great man when John Denver died in 1997. But his music and words will live on.",
+    "q": {
+      "type": "choice",
+      "instructions": ".\"Music was a language that could bring the world together\" means  people  _  .",
+      "criteria": {
+        "1": "from all over the world sing the same songs",
+        "0": "can sing songs together",
+        "2": "show their feeling through music and so they understand each other better",
+        "3": "know language and music"
+      }
+    },
+    "gold": "2",
+    "context_tokens": 191,
+    "evidence_question_tokens": 210,
+    "raw_choices_tokens": 29,
+    "formatted_choices_tokens": 40,
+    "ratio_denominator_tokens": 40,
+    "evidence_to_choices_ratio": 5.25,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/3028.txt/q4",
+    "doc_id": "RACE/dev/middle/3028.txt",
+    "article_sha256": "53cc5495c44dcde68020fc843371ff5f822aa37acefdc0267dbdd1182eecbecb",
+    "state": "Many people like to travel by plane, but I don't. An airport is usually far from the city. You have to get there early and wait for hours for the plane to take off and it's often late. You can't open the windows. You can't choose the food. Planes are fast, but it still takes hours to get out of the airport and into the city.\nI like traveling by train I think trains are safe. Railway stations are usually in cities. When you are late for a train, you can catch another one. You can walk around in the train and open the windows.  You can see many interesting things on your way. I know it takes a little more time.\nI also like cars. You can start your journey when you want to, and you don't need to get to a railway station or a bus stop. Also you can carry many things with you in a car. But sometimes there are too many cars on the roads.",
+    "q": {
+      "type": "choice",
+      "instructions": "If you take a car, you don't need to   _",
+      "criteria": {
+        "3": "take money",
+        "1": "get up early",
+        "0": "get to a railway station",
+        "2": "carry many things"
+      }
+    },
+    "gold": "0",
+    "context_tokens": 197,
+    "evidence_question_tokens": 210,
+    "raw_choices_tokens": 13,
+    "formatted_choices_tokens": 24,
+    "ratio_denominator_tokens": 24,
+    "evidence_to_choices_ratio": 8.75,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/5761.txt/q2",
+    "doc_id": "RACE/dev/middle/5761.txt",
+    "article_sha256": "5cb20f754b3e835da9445f290cbb4f04f3707685affd8f043c86a00c8859118e",
+    "state": "Studying makes you tired? What do you do with the worries and relax  yourself? Here is some advice. It may bring happiness to you.\n1. Rest at weekends\nWeekends are time for a rest. After a week's hard work, weekends are the best time for you to relax yourself. Having a good sleep is a good idea. Besides, good sleep makes sure of your study.\n2. Cry out\nIf you feel sad, don't try to hide your feelings. Crying out may help reduce  your sadness.\n3. Keep a diary\nYou can write down all that you want to say. That's a great way to think about and remember life. You can do it on paper or on computers.\n4. Enjoy a big meal\nIt's not a good idea for a student to lose weight, so you don't need to eat less food. When you feel sad, enjoy a big meal. Eating delicious food will make you feel good.\n5. Join in activities\nHaving a party is great fun. Going out with friends for a trip will make you happy. And it will also bring you a good sleep.",
+    "q": {
+      "type": "choice",
+      "instructions": "The passage is mainly for   _  .",
+      "criteria": {
+        "1": "parents",
+        "3": "Workers",
+        "0": "students",
+        "2": "teachers"
+      }
+    },
+    "gold": "0",
+    "context_tokens": 233,
+    "evidence_question_tokens": 242,
+    "raw_choices_tokens": 4,
+    "formatted_choices_tokens": 15,
+    "ratio_denominator_tokens": 15,
+    "evidence_to_choices_ratio": 16.133333333333333,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/676.txt/q0",
+    "doc_id": "RACE/dev/middle/676.txt",
+    "article_sha256": "9213b983cd434a4ecd2bd5a8d6cdf5127ced763bfebfc59bcf70c21d50fbc984",
+    "state": "Is your schoolbag too heavy to carry? The e-schoolbag will help you. It is said that e-schoolbags are going to be brought into use in Chinese middle schools soon.\nHeavy schoolbags have been a serious problem for a long time. But the e-schoolbag will work it out. An e-schoolbag is much lighter than a usual schoolbag. Perhaps, the e-schoolbag should be called an e-textbook. It is as small as a usual book, but it can still have all the things for study, such as a textbook, an exercise book and so on. They can be made into chips  like stamps. The students can read the text page by page on the screen, take notes, or even send e-mails to their teachers. They only need to put the right chip into the e-schoolbag and then the students can use it.\nSome people say that e-textbooks can be easily broken, while others say it is not good to student's eyes. But only time will tell.",
+    "q": {
+      "type": "choice",
+      "instructions": "What is the e-schoolbag used for ? It can't help students   _  .",
+      "criteria": {
+        "2": "lighten  the schoolbag",
+        "0": "take notes",
+        "3": "read the text in the paper book",
+        "1": "send e-mails"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 205,
+    "evidence_question_tokens": 223,
+    "raw_choices_tokens": 18,
+    "formatted_choices_tokens": 28,
+    "ratio_denominator_tokens": 28,
+    "evidence_to_choices_ratio": 7.964285714285714,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/5325.txt/q4",
+    "doc_id": "RACE/dev/middle/5325.txt",
+    "article_sha256": "1bab5504be2138f927c1b27bd5fe1c0200f327d4525f4833c4ce8f15daac9deb",
+    "state": "Different weather makes people feel different.It influences health,intelligence and feelings.\nIn August,it is very hot and wet in the southern part of the United States.People there have heart trouble and other kinds of health problems during this month.In the Northeast and the Middle West.it is very hot at some times and very cold at other times.People in these states have more heart trouble after the weather changes in February or March.\nThe weather can also influence intelligence.For example,in a 1983 report by scientists,IQ of a group of students was very high when a very strong wind came,but after the strong wind,their IQ was 10% lower.The wind can help people have more intelligence.Very hot weather,on the other hand,can make it lower.Students in many schools of the United States often get worse on exams in the hot months of the year(July and August).\nWeather also has a strong influence on people's feelings.Winter may be a bad time for thin people.They usually feel cold during these months.They might feel unhappy during cold weather.But fat people may have a hard time in hot summer.At about 18degC,people become stronger.\nLow air pressure may make people forgetful.People leave more bags on buses and in shops on low-pressure days.People feel best at a temperature of about 18degC.\nAre you feeling sad,tired,forgetful,or unhappy today?It may be the weather's problem.",
+    "q": {
+      "type": "choice",
+      "instructions": "The best title for this passage is\"  _  \".",
+      "criteria": {
+        "1": "Different Weather Makes People Feel Bad",
+        "3": "Weather Influences Health,Intelligence and Feelings",
+        "0": "Hot Weather Causes Health Problems",
+        "2": "Weather Influences Feelings"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 294,
+    "evidence_question_tokens": 306,
+    "raw_choices_tokens": 26,
+    "formatted_choices_tokens": 37,
+    "ratio_denominator_tokens": 37,
+    "evidence_to_choices_ratio": 8.27027027027027,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/205.txt/q0",
+    "doc_id": "RACE/dev/middle/205.txt",
+    "article_sha256": "f42b41471422a22c2f30cb450260a58b51778f08832b7cb3956e017c3dde41fe",
+    "state": "Looking for a children's book? Internet users can find hundreds of them. These books are from around the world. And they are free to readers. The United States has started a project called the International Children's Digital Library. It is supported by the National Science Foundation, the Library of Congress and the institute of Museum and Library Services.\nThe goal of the project is to offer more than 10,000 children's electronic books in at least 100 languages. Some of the books show the similarities and differences in ways of life around the world. They will enable children to have a better understanding of other people's cultures. People working for this project have tried to design easy ways to search the collection and read the books. A picture of each page appears on the computer. Users can also print the pages on paper if they want to.\nThe project is for two main groups of users. The first group is children between the ages of three and thirteen, along with their teachers and parents. The second group is researchers of children's literature . The books can help children understand more about the world.",
+    "q": {
+      "type": "choice",
+      "instructions": "The books in the project can make children better understand   _  .",
+      "criteria": {
+        "1": "their own culture",
+        "2": "their teachers and parents",
+        "3": "researchers of children's literature",
+        "0": "other people's cultures"
+      }
+    },
+    "gold": "0",
+    "context_tokens": 223,
+    "evidence_question_tokens": 237,
+    "raw_choices_tokens": 17,
+    "formatted_choices_tokens": 27,
+    "ratio_denominator_tokens": 27,
+    "evidence_to_choices_ratio": 8.777777777777779,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/2624.txt/q0",
+    "doc_id": "RACE/dev/middle/2624.txt",
+    "article_sha256": "01ea689efb4521efe85d74cb918e103d347a7d8dc79939f8660dcdf587a7f04e",
+    "state": "Some people have a very poor sense  of direction. Unlucky, I am one of them. I have visited a place many times but I may still get lost there the next time.\nWhen I was a little girl, I never dared ask strangers the way. And so I used to walk round in circle and hope that by chance I would get to the place I was going to.\nNow, I am no longer too shy to ask people for directions, but I often receive helpless or even wrong information. So I try to avoid giving people wrong directions. If anyone asks me the way somewhere, I would say, \"sorry, I am a stranger here.\"\nOnce on my way to work I was stopped by a man. He asked me if I could tell him the way to the Friendship Building. I gave him my usual reply. But just as I walked on only a few steps. I realized that he had asked the way to my office building. However, I had no time to turn back and look for him. I was rushing to meet with someone at my office and I didn't want to keep him waiting.\nWhen I just got to my office, the secretary showed in the man who had asked me for directions. Imagine how _ I was and how surprised he was when we saw each other at the first sight!",
+    "q": {
+      "type": "choice",
+      "instructions": "The writer always refuses to give people directions because  _  .",
+      "criteria": {
+        "3": "she's afraid of giving wrong directions.",
+        "0": "she's a strange to the city",
+        "1": "she doesn't know the people",
+        "2": "she has no time to help others"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 268,
+    "evidence_question_tokens": 281,
+    "raw_choices_tokens": 28,
+    "formatted_choices_tokens": 38,
+    "ratio_denominator_tokens": 38,
+    "evidence_to_choices_ratio": 7.394736842105263,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/4394.txt/q2",
+    "doc_id": "RACE/dev/middle/4394.txt",
+    "article_sha256": "c38e39e2c9fc0f50ae31b8ae6cbba43515e91f96d635498bce7b1e8a9ff28bb1",
+    "state": "In July, my daughter Becky graduated from Washington High School. During the graduation party, one of her classmates gave a simple speech that I will remember. She talked about the \"givers\" of this world. She said, \"You are a success if you make another person smile. If you are a friend to someone who needs a little help, you get an 'A'!\"\nAfter the party, when all the students were outside the hall trying to find their parents and friends, a man and his wife came to me and asked if I was Becky's mom. I said yes and the man handed me a gift and told me how much they would like thank Becky for her kindness to their daughter, Jessica, during the school sports meeting the week before.\nJessica's left leg was hurt and she was not able to finish the up-hill race. Becky was worried about her and kept going back to check on her. Jessica's dad told me that Becky had shown more kindness for her daughter than even the coach, and that he and his wife would never forget her kindness. Of course, by this time I had tears in my eyes, I was so proud of her.\nI asked her, \"So, does Becky get an 'A'?\"\nHe just smiled and said, \"She gets an 'A'!\"",
+    "q": {
+      "type": "choice",
+      "instructions": "Jessica   _   during the sports meeting.",
+      "criteria": {
+        "1": "fell from the hill",
+        "0": "hurt Becky's leg",
+        "2": "hurt her left leg",
+        "3": "lost the race"
+      }
+    },
+    "gold": "2",
+    "context_tokens": 265,
+    "evidence_question_tokens": 274,
+    "raw_choices_tokens": 17,
+    "formatted_choices_tokens": 26,
+    "ratio_denominator_tokens": 26,
+    "evidence_to_choices_ratio": 10.538461538461538,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/3554.txt/q4",
+    "doc_id": "RACE/dev/middle/3554.txt",
+    "article_sha256": "c663bdf8f63317f26e9a50a9c666ef447e968e0436119af64d5ccc169ec16382",
+    "state": "TV   Programs\nChannel  1                  Channel  2\n18:00 Around China                17:45 computer today\n18:30 Children's programs          18:10 Foreign arts\n19:00 News                      18:30 English classroom\n19:30 Weather report              19:00 Animal world\n19:40 Around the world            19:25 China 99\n20:10 TV play: sisters              20:20 Sports\n21:00 English for today            21:00 TV play: Guo Lanying\n21:15 Popular music               21:45 English news\n21:55 Talk show                  22:05 On TV next week",
+    "q": {
+      "type": "choice",
+      "instructions": "At 21:00 , we can watch  _  at  Channel 1 .",
+      "criteria": {
+        "2": "English news",
+        "1": "English for today",
+        "0": "Around China",
+        "3": "Foreign arts"
+      }
+    },
+    "gold": "1",
+    "context_tokens": 179,
+    "evidence_question_tokens": 200,
+    "raw_choices_tokens": 9,
+    "formatted_choices_tokens": 20,
+    "ratio_denominator_tokens": 20,
+    "evidence_to_choices_ratio": 10.0,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/4167.txt/q0",
+    "doc_id": "RACE/dev/middle/4167.txt",
+    "article_sha256": "046dd9c37b37348560b0c0d84bdf38823d6d5e8d69137f7404a44d5fe4501385",
+    "state": "Lucy Li is only an 11-year-old girl, but she's the youngest person to qualify for   a US Women's Open Golf Tournament  .\nShe qualified for the US Women's Open in May 2014. And today she is playing with some of the best female golfers in the world. Earlier this week Li said that she wasn't nervous  . \"I just want to have fun and play the best I can and I really don't care about the result. I can learn a lot from these great players.\"\nLi doesn't spend all her time golfing. Her favourite subjects are Maths, History, and Science and she loves to read. She also loves medicine, diving, badminton, dancing and table tennis. But golf is her favourite sport. \"I like golf because it's different from other sports. Anybody can play it,\" she said.\nSome golfers are worried that Li isn't quite ready. \"When I found out she qualified, I said, where does she go from here? You qualify for an Open at 11, and what do you do next? If it was my daughter, I wouldn't let her play in the US Open at 11, but that's just me,\" said world champion Stacy Lewis.",
+    "q": {
+      "type": "choice",
+      "instructions": "Lucy Li qualified for a US Women's Open Golf Tournament  _  .",
+      "criteria": {
+        "2": "this week",
+        "1": "in June 2014",
+        "0": "in May 2014",
+        "3": "last May"
+      }
+    },
+    "gold": "0",
+    "context_tokens": 260,
+    "evidence_question_tokens": 276,
+    "raw_choices_tokens": 18,
+    "formatted_choices_tokens": 29,
+    "ratio_denominator_tokens": 29,
+    "evidence_to_choices_ratio": 9.517241379310345,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/4527.txt/q3",
+    "doc_id": "RACE/dev/middle/4527.txt",
+    "article_sha256": "349b4b0081f5726f354f8220dd6ce88b35a7364a5a6853fbdc01470acea05e74",
+    "state": "Sometimes...\nSometimes I feel lonely,\nLike I'm by myself with no one here.\nWhen I'm that way, I call a friend.\nMy lonely mood  soon disappears .\nSometimes I feel excited,\nLike I have some news I have to share!\nMy friends open their ears to me.\nThey always listen, talk, and _ .\nSometimes I feel so sad,\nLike my world is cold and darkest blue.\nAt those times my friends let me know\nThey're with me, standing strong and true.\nSometimes I feel mixed-up,\nLike I just don't know how I should feel.\nMy friends then help me _ \nWhat's right and wrong, what's false and real!",
+    "q": {
+      "type": "choice",
+      "instructions": "What does \"figure out\" mean?",
+      "criteria": {
+        "1": "Feel better.",
+        "3": "Find out.",
+        "0": "Look out.",
+        "2": "Say something true."
+      }
+    },
+    "gold": "3",
+    "context_tokens": 137,
+    "evidence_question_tokens": 145,
+    "raw_choices_tokens": 13,
+    "formatted_choices_tokens": 21,
+    "ratio_denominator_tokens": 21,
+    "evidence_to_choices_ratio": 6.904761904761905,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/1386.txt/q3",
+    "doc_id": "RACE/dev/middle/1386.txt",
+    "article_sha256": "dbb3571e9da981f4c7c5e4cf6b1155003c32528bfe48b2d940ac7f16a4ca4cba",
+    "state": "Good health needs a good sleep. Going to bed before you're tired. Not eating or reading in bed. Go to bed at the same time before midnight and get up at the same time. Your body likes routine   for a good night's sleep.\nSTAY FREE OF FLU\nStudies show that a cold or flu virus   can live on our hands for long. So wash all parts of your hands often with soap and water. For more ways to prevent  the spread of flu, please call HealthLine at 1800 848 1313.\nORAL   HEALTH\nBrush your teeth twice daily and visit the dentist at least once a year. The mouth is a mirror  of disease . The oral examination  is not only for the health of teeth, but the whole body. For more of it, please visit www. mydr. com. au.\nFIT FOR LIFE\nStudies have shown that many diseases have something to do with less or no physical   activity. Try to do it for 30 minutes a day, 5 days or more a week. For more information, please call HealthLine at 1800 438 2000.",
+    "q": {
+      "type": "choice",
+      "instructions": "Studies have shown that many diseases have something to do with   _  .",
+      "criteria": {
+        "3": "doing little physical activity",
+        "0": "having no oral examination",
+        "2": "sleeping too late sometimes",
+        "1": "washing hands with cold water"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 248,
+    "evidence_question_tokens": 263,
+    "raw_choices_tokens": 18,
+    "formatted_choices_tokens": 28,
+    "ratio_denominator_tokens": 28,
+    "evidence_to_choices_ratio": 9.392857142857142,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/1916.txt/q1",
+    "doc_id": "RACE/dev/middle/1916.txt",
+    "article_sha256": "e2817866a2b426a1a38de3a4b473bd94e2a6760084a854e16f8da2d4d50f810d",
+    "state": "The final exam comes in June. When the exam ends  , the summer vacation begins. Boys and girls have about two months to relax. The summer vacation is the best time of the year for most children. The weather is usually fine. They can swim, go to summer camps or visit other places with their parents.\nOf course, the beaches  are  good places for relaxing.  Some children are lucky   to live near the beach. They can often play in the water. But for the children far from the sea, they go to the beaches for one or two weeks with their parents.\nWhy do children like spending their summer vacation on the beaches? It is because they like the sand  , the sun, the cool wind and the sea water. There are lots of new things to see, nice things to eat, and exciting things to do.",
+    "q": {
+      "type": "choice",
+      "instructions": "The summer vacation is about  _  .",
+      "criteria": {
+        "1": "two months",
+        "2": "three months",
+        "0": "two weeks",
+        "3": "Two days"
+      }
+    },
+    "gold": "1",
+    "context_tokens": 172,
+    "evidence_question_tokens": 181,
+    "raw_choices_tokens": 8,
+    "formatted_choices_tokens": 19,
+    "ratio_denominator_tokens": 19,
+    "evidence_to_choices_ratio": 9.526315789473685,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/849.txt/q4",
+    "doc_id": "RACE/dev/middle/849.txt",
+    "article_sha256": "ee683d656491dbe6cf907571bca3296595216343bf7a18f9b3646b6cd9e622aa",
+    "state": "How I study English\nI often hear some students say English is difficult, and it gives them a headache. So they can't learn it well. But English is very easy for me. I'm good at it. I'm very glad to tell you something about how I study English.\nFirst, I think an interest in English is very important. When I was in Grade One, we had a new subject - English. It was fresh for me . I was interested in it, so I worked hard at it. Soon we had an English exam and I got a very good mark. How happy I was! After that, I learned English harder and harder. Our English teacher often teaches us English songs, the songs sound nice. I often think how interesting English is!\nSecond, I think English is a foreign language. I should learn it well in the following ways: Listen to the teacher carefully, speak bravely, read aloud and have a good vocabulary . Then practice again and again, never be tired. And I also have a good habit: Asking whenever I have a question, I must make it clear by asking our English teacher. How happy I am when I understand!\nBesides this, I often read English stories, jokes and easy novels. From these I know English is not only interesting, but also useful. They help me understand a lot of things. So to do more reading is an important way to learn English well.\nAnd I also do some exercises from our class magazines, and I often write English diaries. English has become a close friend of mine.\nNow I have learned English for more than two years. I always keep the first position in our school. From these words, I hope every student can learn English well.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which of the following is not the way the writer studies by?",
+      "criteria": {
+        "1": "Writing to foreign friends",
+        "3": "Writing English diaries",
+        "2": "Reading aloud",
+        "0": "speaking bravely"
+      }
+    },
+    "gold": "1",
+    "context_tokens": 350,
+    "evidence_question_tokens": 363,
+    "raw_choices_tokens": 14,
+    "formatted_choices_tokens": 24,
+    "ratio_denominator_tokens": 24,
+    "evidence_to_choices_ratio": 15.125,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/7160.txt/q0",
+    "doc_id": "RACE/dev/middle/7160.txt",
+    "article_sha256": "37f58e790d058010a4bea6c94de3951f41813fb9df4ff9470f17077455dab5e9",
+    "state": "My favourite great book is The adventure of Tom Sawyer by Mark Twain. Tom lives with his aunt Polly in a quiet street of St. Petersburg, Missouri. He's a lively and clever young boy, and he finds himself in many exciting adventures . He runs away with his friends, Huck Finn and Joe, to an island in the middle of the Mississippi River for several days. With Huck he goes looking for treasure, with Becky he gets lost in a cave and finally they find a box of gold.\nMy favourite scene in the book is when everyone thinks Tom is dead. He decides to go to his town funeral. He hides and watches for a time and then suddenly he appears. Everyone is surprised to see him but they're also pleased to see him alive.\nTom is the hero of the story, but there are another important characters. Huck is an outsider and everyone is afraid of him . Becky is pretty with fair hair, Joe is Tom's best friend and Injun Joe is the bad man of the story.\nThe theme of the story is about children growing up. It describes how strangers are seen in small towns of America. Finally, it talks about freedom, social rules and how people are punished for bad behavior.\nWhy do I think The Adventure of Tom Sawyer is a great book? Mark Twain wrote the story in 1876, but it's still read and loved by people all over the world today. And although it's only a story. Twain wrote it in the everyday English of the southern states of America in the 19thcentury, so it sounds very real. Today it's thought to be one of the greatest books in American literature. Go on--read it! I know you'll enjoy it, too.",
+    "q": {
+      "type": "choice",
+      "instructions": "Where does Tom run away with his friends?",
+      "criteria": {
+        "1": "To a small town.",
+        "3": "To a forest.",
+        "0": "To a quiet street.",
+        "2": "To an island."
+      }
+    },
+    "gold": "2",
+    "context_tokens": 354,
+    "evidence_question_tokens": 363,
+    "raw_choices_tokens": 18,
+    "formatted_choices_tokens": 26,
+    "ratio_denominator_tokens": 26,
+    "evidence_to_choices_ratio": 13.961538461538462,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/5390.txt/q0",
+    "doc_id": "RACE/dev/middle/5390.txt",
+    "article_sha256": "d493218bc0cf64e79f17c582751bcc112d9195cf9106e91537ee59acfac9ede4",
+    "state": "Many rules govern drivers on American streets and highways. The most common _ are the speed limits . The speed limits control how fast a car may go.\nOn streets in the city,  the speed limitis usually 25 or 35 miles per hour.On the highways between cities, the speedlimit is usually 55 miles per hour. When people drive faster than the speedlimit, a policeman can stop them. The policemen give them pieces of paper which people call traffic tickets. Traffic tickets tell the drivers how much money they must pay. When drivers receive too many tickets, they probably cannot drive for a while.\nThe rush hour is when people are going to work or going home from work. At rush hour there are many cars on the streets and traffic moves very slowly. Nearly all American cities have rush hours. Drivers do not get tickets very often for speeding during the rush hours because they cannot drive fast.",
+    "q": {
+      "type": "choice",
+      "instructions": "On the highways, the police will stop you if your speed is over  _  .",
+      "criteria": {
+        "2": "55 miles per hour",
+        "0": "25 miles per hour",
+        "1": "35 miles per hour",
+        "3": "45 miles per hour"
+      }
+    },
+    "gold": "2",
+    "context_tokens": 184,
+    "evidence_question_tokens": 202,
+    "raw_choices_tokens": 20,
+    "formatted_choices_tokens": 35,
+    "ratio_denominator_tokens": 35,
+    "evidence_to_choices_ratio": 5.771428571428571,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/1793.txt/q0",
+    "doc_id": "RACE/dev/middle/1793.txt",
+    "article_sha256": "df97e967512dcd89ad056bf5f9cbdd7359da73c8144e592c714ab36afc5850ad",
+    "state": "At present, more and more people are crazy about travelling. Why do people travel?  \"To see more of the world,\" many people would say. But travelling abroad now means much more than that for the growing number of Chinese tourists. Of course it offers us good opportunities to meet people from other countries, learn about their culture and customs.\nAccording to the United Nations World Tourism Organization (UNWTO), more than 1 billion people travelled to another country in 2012. In 2012, Chinese people travelled abroad 30 percent more than in 2011. The prosperity   of the tourism industry can also bring both our country and foreign countries great economic benefits  . Chinese people usually join large tourist groups and visit several countries in one trip.\nChinese people don't just travel for sightseeing. The China International Travel Service Company said that all their tour trips sold out a month before Christmas Day. Stores offered discounts   during that time, so shopping in Europe and the United States is popular among Chinese travellers.\nIn December, China is going through a very cold winter. So many people like to go to some countries in Southeast Asia because the weather there is quite pleasant.\nThe improvement of living standards means more Chinese can travel abroad. But many of them don't have a sense of public manners. A report by Living Social website in March 2012 even listed Chinese as the world's second worst tourists.\nIf you want to change that bad name, remember to avoid the following: littering, spitting, snatching bus seats, line-jumping, taking off shoes in public, talking loudly and smoking in non-smoking areas. Besides, we should learn some necessary manners of foreign countries.",
+    "q": {
+      "type": "choice",
+      "instructions": "Chinese people travel abroad not to   _  .",
+      "criteria": {
+        "2": "go sightseeing",
+        "1": "see more of the world",
+        "0": "go shopping",
+        "3": "make money"
+      }
+    },
+    "gold": "3",
+    "context_tokens": 350,
+    "evidence_question_tokens": 360,
+    "raw_choices_tokens": 12,
+    "formatted_choices_tokens": 23,
+    "ratio_denominator_tokens": 23,
+    "evidence_to_choices_ratio": 15.652173913043478,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/1700.txt/q0",
+    "doc_id": "RACE/dev/middle/1700.txt",
+    "article_sha256": "17a4a8a7e3d92d1cc85b7d7670f10e6c87e57c65e13421c39097fe0e73cf290d",
+    "state": "Good morning. The program today is about music. The word \"music\" comes from the Greek word \"muse\". The Muses are the goddesses of the arts. The Music is only one of the arts. It is like the spoken language, but it uses sounds. Today's program brings together music from different concerts of the world. Who invented music? Who sang the first song? No one knows exactly the answers to these questions. But we know that music plays an important part in almost everyone's life. Babies and young children love to hear people singing to them. When they are a little older, they like to sing the songs they have heard. When children go to school, their world of music grows. In the middle grades, students take music lessons. When they reach high school, they become interested in listening to pop music.\nThe records we have chosen for you today are from American country music, Indian music, pop music and so on. Music has meaning for everyone. It can make people happy or it can make them sad. In this program we shall study the language of music. We shall be trying to find out more about how music works. We shall try to find out how music says what people feel.\nNow, here comes the music today , I shall explain why they are all good music.",
+    "q": {
+      "type": "choice",
+      "instructions": "Which is NOT the purpose of this music program?",
+      "criteria": {
+        "1": "To learn more about the music.",
+        "0": "To study the language of music .",
+        "3": "To give people some music to listen to.",
+        "2": "To give a complete background to the music."
+      }
+    },
+    "gold": "2",
+    "context_tokens": 266,
+    "evidence_question_tokens": 276,
+    "raw_choices_tokens": 32,
+    "formatted_choices_tokens": 40,
+    "ratio_denominator_tokens": 40,
+    "evidence_to_choices_ratio": 6.9,
+    "order_audit": false
+  },
+  {
+    "dataset": "race_middle",
+    "split": "dev",
+    "id": "RACE/dev/middle/4520.txt/q3",
+    "doc_id": "RACE/dev/middle/4520.txt",
+    "article_sha256": "aad74730000698e152f4ed3a89c1a16f45d8e0b5f8b6a029ad1ddb415d83fe2b",
+    "state": "Have you ever tried scuba-diving ? It is a very wonderful experience. _ is a kind of machine which can help people breathe under the water for a long time. The machine is invented by Jacques Cousteau and his friend.\nCousteau, a French man, is full of new ideas. Since he was a child, he has dreamed of diving   deep to see the wonderful world under the sea. Later with the help of the scuba machine, his dream was realized. Cousteau took lots of pictures and videos of many strange things that people had never seen before. He spent eight years making a TV show named The Undersea World of Jacques Cousteau. People were surprised at so many beautiful things under the water.\nCousteau loved the coral reels  and the colorful fish very much. However, he was sad to see that the beautiful coral reels were dead and grey when he returned some years later. He tried his best to encourage people not to pollute our seas and oceans any more.\n,.",
+    "q": {
+      "type": "choice",
+      "instructions": "What's the best title for the passage?",
+      "criteria": {
+        "3": "The Wonderful World Under the Sea",
+        "1": "Scuba-diving",
+        "0": "Jacques Cousteau and the Scuba Machine",
+        "2": "The Beautiful Coral Reels"
+      }
+    },
+    "gold": "0",
+    "context_tokens": 207,
+    "evidence_question_tokens": 216,
+    "raw_choices_tokens": 25,
+    "formatted_choices_tokens": 35,
+    "ratio_denominator_tokens": 35,
+    "evidence_to_choices_ratio": 6.171428571428572,
+    "order_audit": false
+  }
+]

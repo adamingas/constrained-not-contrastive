@@ -1,0 +1,49 @@
+{
+  "multiple": {
+    "raw_rows": 200,
+    "eligible_unique_schemas": 200,
+    "dev": 2,
+    "test": 30
+  },
+  "live_multiple": {
+    "raw_rows": 1053,
+    "eligible_unique_schemas": 350,
+    "dev": 4,
+    "test": 30
+  },
+  "live_irrelevance": {
+    "raw_rows": 884,
+    "eligible_unique_schemas": 394,
+    "dev": 4,
+    "test": 30
+  },
+  "wiki": {
+    "nodes": 4592,
+    "links": 119882,
+    "dev": 10,
+    "test": 40,
+    "target_disjoint": true,
+    "shortest_distance_range": [
+      2,
+      4
+    ],
+    "all_outgoing_links_retained": true
+  },
+  "file_sha256": {
+    "BFCL_v4_live_irrelevance.json": "6559fda2beaceb609a2cd2e504c65b4a56cb448e1ef88fddfd199e163d163349",
+    "possible_answer__BFCL_v4_live_multiple.json": "97e90d59c5bd76c55a2920ce93e5566e9046307d3f558578f085f9d3a56c3084",
+    "BFCL_v4_live_multiple.json": "fd8ccfad4d911420d0e3341dbe2fff77d1d341da934248b9bb2bda24ab3a10c8",
+    "BFCL_v4_multiple.json": "aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a",
+    "possible_answer__BFCL_v4_multiple.json": "244e00ce9395df948bcafc7bee64e8f9c87ef70887587d83cae45b13699f3047",
+    "wikispeedia_paths-and-graph/paths_finished.tsv": "7a42f1765998737047d990cb131241450027ed76d7f2de004b36f356352c6d8b",
+    "wikispeedia_paths-and-graph/articles.tsv": "a70d592a51542cf8bcf69fd166ba9c4045765d5a0e321ad4673766b1c62344be",
+    "wikispeedia_paths-and-graph/paths_unfinished.tsv": "499cf277fc4031034b3d47af775b32b4caf500c7c321c92357ba8688c755ff39",
+    "wikispeedia_paths-and-graph/links.tsv": "fc2352342a87b993c077e34233e4ca0a980968ba4587c491f24e1f11e823a24d",
+    "wikispeedia_paths-and-graph/categories.tsv": "659412a49a7cba380d63ab98a714ebde7211d3d90cec9cf7b80a8dd4d5a12e9a"
+  },
+  "limitations": [
+    "BFCL measures function selection/abstention only, not argument generation or the full BFCL v4 score.",
+    "Wikispeedia is a public WikiRacing-style adaptation, not the authors undisclosed 30 races.",
+    "Repeated-menu latency assumes full schema/link list is cached for Qwen and action vectors for CLM. Cold setup will be reported too."
+  ]
+}

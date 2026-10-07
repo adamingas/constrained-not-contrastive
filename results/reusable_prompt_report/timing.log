@@ -1,0 +1,30 @@
+{"backbone": "Qwen/Qwen3-8B", "dtype": "mlx.core.bfloat16", "head_parameters_total": 18887680, "head_config": {"model": "Qwen/Qwen3-8B", "hidden_size": 4096, "projection_dim": 512, "width": 1536, "depth": 3, "activation": "gelu", "layernorm": true, "residual": false}, "head_scale": 100.0, "head_port_max_abs_error": {"state": 3.8743019104003906e-07, "action": 3.8743019104003906e-07}, "upstream_commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7", "packages": {"mlx": "0.32.3", "mlx-lm": "0.32.0", "torch": "2.14.1", "transformers": "5.18.0"}}
+timing repetition 1
+timing repetition 2
+timing repetition 3
+timing repetition 4
+timing repetition 5
+{
+  "same_instructions_and_examples": true,
+  "system_sha256": "9a1883f918293c897ecab15707c74651515b3fab54d2558ae270a455ad097e9f",
+  "states": 10,
+  "repetitions": 5,
+  "state_source": "Every 180 frames from the previously frozen Qwen holdout run; same states for all methods.",
+  "median_ms": {
+    "clm": 152.70102059002966,
+    "clm:timing_v4": 158.11512502841651,
+    "timing_v4": 158.60570850782096
+  },
+  "paired_median_qwen_over_clm_same_examples": 1.006765253217472,
+  "paired_state_bootstrap95": [
+    1.0038325325075792,
+    1.0268704703843587
+  ],
+  "cache_setup_excluded": true,
+  "qwen_prefix_tokens": 747,
+  "clm_prefix_tokens": 741,
+  "qwen_prefix_setup_ms": 776.9303750246763,
+  "qwen_format": "System message contains full frozen prompt, user message contains current state and question; chat template, thinking disabled.",
+  "clm_format": "The identical full frozen prompt precedes current state and question in raw state-encoder text. Fixed action descriptions are embedded separately.",
+  "remaining_asymmetry": "Prompt was developed for Qwen on seed 0, then supplied unchanged to CLM. This is an equal-information control, not an equal prompt-search budget or proof of optimal CLM prompting."
+}

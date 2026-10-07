@@ -1,0 +1,97 @@
+{
+  "backbone": "Qwen/Qwen3-8B",
+  "dtype": "mlx.core.bfloat16",
+  "head_parameters_total": 18887680,
+  "head_config": {
+    "model": "Qwen/Qwen3-8B",
+    "hidden_size": 4096,
+    "projection_dim": 512,
+    "width": 1536,
+    "depth": 3,
+    "activation": "gelu",
+    "layernorm": true,
+    "residual": false
+  },
+  "head_scale": 100.0,
+  "head_port_max_abs_error": {
+    "state": 3.8743019104003906e-07,
+    "action": 3.8743019104003906e-07
+  },
+  "upstream_commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7",
+  "packages": {
+    "mlx": "0.32.3",
+    "mlx-lm": "0.32.0",
+    "torch": "2.14.1",
+    "transformers": "5.18.0"
+  },
+  "wired_memory_limit_bytes": 25769803776,
+  "specs": {
+    "trex": {
+      "rules": "You control the Chrome T-Rex runner. Survive as long as possible. The dinosaur runs right automatically, while obstacles move left. A decision lasts 6 frames (100 ms) at 60 frames per second. All distances are pixels. The dinosaur left edge is x=50 and its standing width is 44, height 47; ground standing top y=93. Larger y means lower. Cacti must be jumped over; low birds can be jumped, head-height birds can be ducked under, and high birds can pass overhead. Jump only when an obstacle is sufficiently near; an early jump can land on the obstacle. A jump begins with about -10.6 pixels/frame vertical velocity and gravity adds 0.6 each frame. A new jump can start only on the ground. Duck in the air accelerates descent. The state contains observable geometry, not a recommended action.",
+      "actions": {
+        "run": "Run forward on the ground without jumping or ducking. Release duck if held.",
+        "jump": "Jump over an obstacle. If already airborne, continue the current jump without starting another.",
+        "duck": "Duck under a bird; if airborne, drop rapidly toward the ground."
+      },
+      "question": "Which action should the dinosaur take now to survive?"
+    },
+    "mario": {
+      "rules": "You control Super Mario Bros. Reach the flag to the right without dying. Each decision holds its buttons for 12 frames (200 ms) at 60 frames per second. Observations use world pixel coordinates; x increases right, y increases downward. Mario is about 16 pixels wide. Feet_y is the bottom of his body. Grounded means standing on a solid surface. Solid terrain rectangles can be floor, pipes, bricks, or blocks. Missing floor is a pit: falling into it is fatal. Jump over enemies, pits, and tall obstacles. Enemies can be stomped by landing on them from above; side contact is dangerous. Walk right on clear floor; use jumps when needed for progress or safety. Holding jump while rising increases jump height; releasing jump shortens the jump. Jump must be released between separate jumps: continuing to hold it after landing does not start a new jump. Horizontal momentum persists briefly after release. Negative vertical velocity means rising. The state gives only currently visible geometry and current motion.",
+      "actions": {
+        "wait": "Release all buttons; remain still or coast with current momentum.",
+        "right": "Walk right with jump released.",
+        "left": "Walk left with jump released.",
+        "jump": "Hold jump without a horizontal direction.",
+        "jump_right": "Hold jump and right to jump forward or continue an airborne jump to the right.",
+        "jump_left": "Hold jump and left to jump backward or continue an airborne jump to the left."
+      },
+      "question": "Which action should Mario take now to reach the flag safely?"
+    }
+  },
+  "seed": 20261003,
+  "mode": "lockstep; no request memoization; no planner in model inputs",
+  "cached": {
+    "trex": {
+      "qwen": {
+        "setup_prefix_ms": 358.10695798136294,
+        "labels": [
+          32,
+          33,
+          34
+        ]
+      },
+      "clm": {
+        "setup_prefix_ms": 250.76283304952085,
+        "setup_actions_ms": 179.78379200212657
+      }
+    },
+    "mario": {
+      "qwen": {
+        "setup_prefix_ms": 339.85195797868073,
+        "labels": [
+          32,
+          33,
+          34,
+          35,
+          36,
+          37
+        ]
+      },
+      "clm": {
+        "setup_prefix_ms": 298.171125119552,
+        "setup_actions_ms": 260.35562506876886
+      }
+    }
+  },
+  "hardware": {
+    "model": "Apple M4 Max",
+    "memory_bytes": 68719476736
+  },
+  "artifact_sha256": {
+    "experiments/games/bench.py": "63c353a502e7aa68c1da9d6cf9743cdc3b4166d76d4efe722a986ab07b05a16c",
+    "experiments/games/mario_worker.py": "8b336893b58e281c6fa66270ab326750d856ec95248e7022eb30439205984758",
+    "experiments/games/specs.py": "6ed5ffec5f4a5b5a42b46c1cd6313c520ee51100ecd6db7fc820e4fc59da2d93",
+    "results/cached_games/cases.json": "77ce58f215cd7433bf4f77b85cd52f33f605d9f91d6fc5783d9da98c389bb975"
+  },
+  "game_packages": "cloudpickle==3.1.2\nfarama-notifications==0.0.6\ngym-super-mario-bros==8.0.0\ngymnasium==1.3.0\nnes-py==9.0.1\nnumpy==2.5.3\npillow==12.3.0\npyglet==1.5.21\ntqdm==4.70.1\ntyping-extensions==4.16.0\n"
+}

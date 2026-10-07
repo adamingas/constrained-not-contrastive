@@ -1,0 +1,402 @@
+[
+  {
+    "name": "BFCL_v4_format_sensitivity.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_format_sensitivity.json",
+    "sha": "bef74e1ddf98377158e6f71a6f560ff4c12298ae",
+    "size": 4963,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_format_sensitivity.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_format_sensitivity.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/bef74e1ddf98377158e6f71a6f560ff4c12298ae",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_format_sensitivity.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_format_sensitivity.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/bef74e1ddf98377158e6f71a6f560ff4c12298ae",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_format_sensitivity.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_irrelevance.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_irrelevance.json",
+    "sha": "0077629949f2d52734cef2f110b0d040d8c47554",
+    "size": 159940,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_irrelevance.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_irrelevance.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/0077629949f2d52734cef2f110b0d040d8c47554",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_irrelevance.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_irrelevance.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/0077629949f2d52734cef2f110b0d040d8c47554",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_irrelevance.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_live_irrelevance.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_irrelevance.json",
+    "sha": "547f60220b546ea5c864815dbb310b2f46ec0f43",
+    "size": 2209534,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_irrelevance.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_irrelevance.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/547f60220b546ea5c864815dbb310b2f46ec0f43",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_irrelevance.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_irrelevance.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/547f60220b546ea5c864815dbb310b2f46ec0f43",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_irrelevance.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_live_multiple.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_multiple.json",
+    "sha": "b7c108f2edc86563fd3e1363e5f6fd961452d142",
+    "size": 3891277,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_multiple.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_multiple.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/b7c108f2edc86563fd3e1363e5f6fd961452d142",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_multiple.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_multiple.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/b7c108f2edc86563fd3e1363e5f6fd961452d142",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_multiple.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_live_parallel.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel.json",
+    "sha": "fb88e7e7f12cb0e557750a043833bab87c6f98b1",
+    "size": 15649,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/fb88e7e7f12cb0e557750a043833bab87c6f98b1",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/fb88e7e7f12cb0e557750a043833bab87c6f98b1",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_live_parallel_multiple.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel_multiple.json",
+    "sha": "54997d2e1fa4061d5701f6f42079c95102f8c09e",
+    "size": 82332,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel_multiple.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel_multiple.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/54997d2e1fa4061d5701f6f42079c95102f8c09e",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel_multiple.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel_multiple.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/54997d2e1fa4061d5701f6f42079c95102f8c09e",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_parallel_multiple.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_live_relevance.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_relevance.json",
+    "sha": "1b0190995f4554b980da2dd7ab15195f4e047e62",
+    "size": 47327,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_relevance.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_relevance.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/1b0190995f4554b980da2dd7ab15195f4e047e62",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_relevance.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_relevance.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/1b0190995f4554b980da2dd7ab15195f4e047e62",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_relevance.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_live_simple.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_simple.json",
+    "sha": "e8f4b8d33c07753affc77bfc4a646f94109de5af",
+    "size": 260140,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_simple.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_simple.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/e8f4b8d33c07753affc77bfc4a646f94109de5af",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_simple.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_simple.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/e8f4b8d33c07753affc77bfc4a646f94109de5af",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_simple.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_memory.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_memory.json",
+    "sha": "e0496f35cc59a35f6932d3f3656ac7cfe3d8d1ae",
+    "size": 33237,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_memory.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_memory.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/e0496f35cc59a35f6932d3f3656ac7cfe3d8d1ae",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_memory.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_memory.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/e0496f35cc59a35f6932d3f3656ac7cfe3d8d1ae",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_memory.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_multi_turn_base.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_base.json",
+    "sha": "656fbd5e56969373353cd58b880234a6cc4edc99",
+    "size": 390425,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_base.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_base.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/656fbd5e56969373353cd58b880234a6cc4edc99",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_base.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_base.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/656fbd5e56969373353cd58b880234a6cc4edc99",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_base.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_multi_turn_long_context.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_long_context.json",
+    "sha": "bc6584c32771f9f14168a2802e6b454e480ace4e",
+    "size": 392016,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_long_context.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_long_context.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/bc6584c32771f9f14168a2802e6b454e480ace4e",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_long_context.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_long_context.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/bc6584c32771f9f14168a2802e6b454e480ace4e",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_long_context.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_multi_turn_miss_func.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_func.json",
+    "sha": "28e7987841719aec4e4f3f3f4b6c2f1915c831f3",
+    "size": 401159,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_func.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_func.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/28e7987841719aec4e4f3f3f4b6c2f1915c831f3",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_func.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_func.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/28e7987841719aec4e4f3f3f4b6c2f1915c831f3",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_func.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_multi_turn_miss_param.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_param.json",
+    "sha": "2e87caf87fb48f7807a18610311bdfa1138d0599",
+    "size": 402974,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_param.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_param.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/2e87caf87fb48f7807a18610311bdfa1138d0599",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_param.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_param.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/2e87caf87fb48f7807a18610311bdfa1138d0599",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_miss_param.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_multiple.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multiple.json",
+    "sha": "83643fa853e7a29a50e7303b0279284c37dd63c8",
+    "size": 316583,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multiple.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multiple.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/83643fa853e7a29a50e7303b0279284c37dd63c8",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multiple.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multiple.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/83643fa853e7a29a50e7303b0279284c37dd63c8",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multiple.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_parallel.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel.json",
+    "sha": "04040475c8c77facf4f3e75e7079607c25c557d2",
+    "size": 171896,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/04040475c8c77facf4f3e75e7079607c25c557d2",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/04040475c8c77facf4f3e75e7079607c25c557d2",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_parallel_multiple.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel_multiple.json",
+    "sha": "832039d6758e2569d65342b3fc9524924a03832a",
+    "size": 347080,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel_multiple.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel_multiple.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/832039d6758e2569d65342b3fc9524924a03832a",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel_multiple.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel_multiple.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/832039d6758e2569d65342b3fc9524924a03832a",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_parallel_multiple.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_simple_java.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_java.json",
+    "sha": "eff995f128c757f635154dfc4e63678d23dbe5b2",
+    "size": 86619,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_java.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_java.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/eff995f128c757f635154dfc4e63678d23dbe5b2",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_java.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_java.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/eff995f128c757f635154dfc4e63678d23dbe5b2",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_java.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_simple_javascript.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_javascript.json",
+    "sha": "0cf350ff1f6d61b05f1cb1b8105fa6b29edd4a27",
+    "size": 47063,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_javascript.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_javascript.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/0cf350ff1f6d61b05f1cb1b8105fa6b29edd4a27",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_javascript.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_javascript.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/0cf350ff1f6d61b05f1cb1b8105fa6b29edd4a27",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_javascript.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_simple_python.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_python.json",
+    "sha": "356a0db61e54eb1d92d8e10d014463cf2eb513cc",
+    "size": 283274,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_python.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_python.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/356a0db61e54eb1d92d8e10d014463cf2eb513cc",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_python.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_python.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/356a0db61e54eb1d92d8e10d014463cf2eb513cc",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_simple_python.json"
+    }
+  },
+  {
+    "name": "BFCL_v4_web_search.json",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_web_search.json",
+    "sha": "e4fd5c6543a8ba69823b6df9a9a3332daafe3c0a",
+    "size": 36984,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_web_search.json?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_web_search.json",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/e4fd5c6543a8ba69823b6df9a9a3332daafe3c0a",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_web_search.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_web_search.json?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/e4fd5c6543a8ba69823b6df9a9a3332daafe3c0a",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_web_search.json"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/README.md",
+    "sha": "460ddf62835f5cc5c2ec86e254749ce86414e2c3",
+    "size": 20277,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/README.md?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/README.md",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/460ddf62835f5cc5c2ec86e254749ce86414e2c3",
+    "download_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/bfcl_eval/data/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/README.md?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/blobs/460ddf62835f5cc5c2ec86e254749ce86414e2c3",
+      "html": "https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/bfcl_eval/data/README.md"
+    }
+  },
+  {
+    "name": "memory_prereq_conversation",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/memory_prereq_conversation",
+    "sha": "1f6be8b06bbec9fa1070e3e9f363657e40d05314",
+    "size": 0,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/memory_prereq_conversation?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard/bfcl_eval/data/memory_prereq_conversation",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/trees/1f6be8b06bbec9fa1070e3e9f363657e40d05314",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/memory_prereq_conversation?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/trees/1f6be8b06bbec9fa1070e3e9f363657e40d05314",
+      "html": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard/bfcl_eval/data/memory_prereq_conversation"
+    }
+  },
+  {
+    "name": "multi_turn_func_doc",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc",
+    "sha": "0ecf6d2304c6754597efbc2fb1e0135bd20fdcb5",
+    "size": 0,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/trees/0ecf6d2304c6754597efbc2fb1e0135bd20fdcb5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/trees/0ecf6d2304c6754597efbc2fb1e0135bd20fdcb5",
+      "html": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc"
+    }
+  },
+  {
+    "name": "possible_answer",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer",
+    "sha": "c9eaae092ac0854b73a67439ff094a46a5b02d7b",
+    "size": 0,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/trees/c9eaae092ac0854b73a67439ff094a46a5b02d7b",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/trees/c9eaae092ac0854b73a67439ff094a46a5b02d7b",
+      "html": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer"
+    }
+  },
+  {
+    "name": "unused_datasets",
+    "path": "berkeley-function-call-leaderboard/bfcl_eval/data/unused_datasets",
+    "sha": "cc3d6b0b9402e199895d002555cbe7577b52c174",
+    "size": 0,
+    "url": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/unused_datasets?ref=main",
+    "html_url": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard/bfcl_eval/data/unused_datasets",
+    "git_url": "https://api.github.com/repos/ShishirPatil/gorilla/git/trees/cc3d6b0b9402e199895d002555cbe7577b52c174",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/ShishirPatil/gorilla/contents/berkeley-function-call-leaderboard/bfcl_eval/data/unused_datasets?ref=main",
+      "git": "https://api.github.com/repos/ShishirPatil/gorilla/git/trees/cc3d6b0b9402e199895d002555cbe7577b52c174",
+      "html": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard/bfcl_eval/data/unused_datasets"
+    }
+  }
+]

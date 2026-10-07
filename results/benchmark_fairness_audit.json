@@ -1,0 +1,91 @@
+{
+  "scope": "Source inspection and recomputation of saved prediction scores. No new model inference or independent reproduction. No changes to published report in this audit.",
+  "findings": [
+    {
+      "experiment": "T-Rex tuned prompt",
+      "status": "Not a validated fair comparison",
+      "issue": "Explicit decision policy, Qwen-specific letter instructions copied into CLM state, Qwen-directed development, one held-out course. Same information did not ensure appropriate interfaces or equal development."
+    },
+    {
+      "experiment": "BFCL 60-request result",
+      "status": "Exploratory follow-up",
+      "issue": "Designed after observing the primary test. Removed the synthetic NO_TOOL choice for both models on all 60 positive requests. All eligible positive requests included; not selected individually by model correctness. CLM prose also tested (35/60 versus JSON 40/60); Qwen 55/60. Report should identify post-result design next to headline."
+    },
+    {
+      "experiment": "BFCL repeated requests",
+      "status": "Incomplete CLM robustness control",
+      "issue": "All 24 CLM choices were NO_TOOL; 12 abstentions happened to be correct. Qwen 21/24. Prose CLM variant omitted despite improving primary 90-request result from 30 to 40 correct. Six shared function sets, 24 distinct requests, no request-ID overlap with development/test cases."
+    },
+    {
+      "experiment": "BFCL prompt-engineering claim",
+      "status": "Not supported as a general improvement",
+      "issue": "Longer Qwen prompt scored 78/90 versus short prompt 79/90; repeated requests 20/24 versus 21/24."
+    },
+    {
+      "experiment": "RACE-M",
+      "status": "No analogous letter-output instruction mismatch found in inspected CLM path",
+      "issue": "CLM uses repository build_pairs: passage plus question, separate plain answer texts. Qwen baseline 174/200 and CLM 67/200. Qwen layout selected on separate development data; later seven-layout ablations reuse test set, so best 181/200 is exploratory, not fresh-test validation. Does not establish optimal CLM prompting or absence of public-data training contamination."
+    },
+    {
+      "experiment": "Long-context reading tasks",
+      "status": "No evaluation-key insertion found in inspected prompt constructors",
+      "issue": "Same source passage/question/options with native CLM serialization. Limited filtered samples, not full leaderboard scores. Weak results and no-document controls preclude broad comprehension claims."
+    },
+    {
+      "experiment": "Wikipedia",
+      "status": "Small title-only navigation adaptation",
+      "issue": "No graph-distance or preferred-link labels passed to model inputs in inspected code. Five route trials, at most eight clicks; not full-article reading or a reproduction of authors benchmark."
+    },
+    {
+      "experiment": "Early hand-written Mario questions",
+      "status": "Sanity checks, not independent game-decision evidence",
+      "issue": "Several observations explicitly state the successful move, such as a jump right reaches the goal. Separate from actual emulator experiments."
+    },
+    {
+      "experiment": "Latency",
+      "status": "Conditional local measurements",
+      "issue": "BFCL headline uses five warm repetitions on ten same requests, excluding both methods cache setup. Separate repeated-request test demonstrates cache reuse on changing questions. CLM cold action embeddings computed sequentially; not optimized batched serving. RACE ablations cache CLM action vectors while Qwen reads full prompt. No general end-to-end or serving-latency equivalence established."
+    }
+  ],
+  "scoring_rechecks": {
+    "test.jsonl": {
+      "rows": 480,
+      "mismatches": 0
+    },
+    "diagnostics.jsonl": {
+      "rows": 360,
+      "mismatches": 0
+    },
+    "repeated.jsonl": {
+      "rows": 72,
+      "mismatches": 0
+    },
+    "race_context": {
+      "rows": 1020,
+      "mismatches": 0
+    },
+    "long_context": {
+      "rows": 818,
+      "mismatches": 0
+    }
+  },
+  "reviewed_source_sha256": {
+    "experiments/compare.py": "8aee9fd39b2b927789d5eaf1754a9167bf2e9443c58420748587c403775abfcc",
+    "experiments/long_context_bench.py": "061919d92a4d78c528bfacecf47dc03033ad20422dbd999e298c119488883674",
+    "experiments/prepare_long_context.py": "39539ab193f8b2ae80317851502fa0ba0c0586e0d3922c34d3129e7ac2040399",
+    "experiments/prepare_race_context.py": "82bf988fd1b8b58aeca639af85df1c6b86476ecdab25f057c06bb8bbe94c3fd4",
+    "experiments/bench_race_context.py": "b459637132a7543e166c3005426db852274e13e1de6909558ef50d0be2bc7c28",
+    "experiments/pilot_race_layout.py": "5d00dbba8dbe1266ee95981dc28c297e19e32678c4ca7ebfa6dbdd0f9777ecf0",
+    "experiments/bench_race_ablations.py": "a726622252d9381803cb9377721c5d58ed70f2c1cc5ae1577f25b44905fe680c",
+    "experiments/benchmarks/prepare.py": "65da9af0b5005224c98400279cc6bea43d22909797c6a1fcb50898ab6847e53e",
+    "experiments/benchmarks/run.py": "6da9666b4e086baa2d64a9256ed6e668ea18d93254b47b924103dee56436629b",
+    "experiments/benchmarks/diagnostics.py": "92966772f3a4234ce1160d3599124448afc1a8ccc469d1638dd4129bdcd17a6b",
+    "experiments/benchmarks/supplement.py": "76dcc786e07203ae0362171c545a405e9a355222c9990942667cf109f48a3c3c",
+    "experiments/benchmarks/analyze.py": "22cd00ae39a978d45b042a831d8cc892111dda90255446cc0934851e59220866",
+    "experiments/games/bench.py": "63c353a502e7aa68c1da9d6cf9743cdc3b4166d76d4efe722a986ab07b05a16c",
+    "experiments/games/specs.py": "6ed5ffec5f4a5b5a42b46c1cd6313c520ee51100ecd6db7fc820e4fc59da2d93",
+    "experiments/games/tune_prompt.py": "59ecf4f513e1d609b3c43b58741e8399bfb98cde724f36add8255276b6c29fc8",
+    "experiments/report/build_report.py": "7d55327003288ee7ff8eecb68736e09007435f4d4d1187d613f50d3f05ccc37d",
+    "upstream/src/clm/schema.py": "52cec58afbf49ad7b7aa6bdb7e7476ee42bf3fd7a2703d44319dc4b565987335"
+  }
+}

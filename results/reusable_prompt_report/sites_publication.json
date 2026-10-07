@@ -1,0 +1,11 @@
+{
+  "project_id": "appgprj_6ac0dd6da1c48191ad60a7a7ad6bfc1a",
+  "deployment_id": "appgdep_6ac0ddc1829481919844ec3aa5a6766a",
+  "version_id": "appgprj_6ac0dd6da1c48191ad60a7a7ad6bfc1a~appgver_ea128235d8208191bb7054c6802d36d6",
+  "commit_sha": "0051b8fdca785c65b5a82f90c672f6d7ded8a13f",
+  "url": "https://constrained-not-contrastive.deploy.chatgpt.site",
+  "audience": "private",
+  "status": "succeeded",
+  "checkout": "/Users/ext-adamos.spanashis/projects/clm/sites/constrained-not-contrastive",
+  "source_report": "/Users/ext-adamos.spanashis/projects/clm/results/reusable_prompt_report/report.html"
+}

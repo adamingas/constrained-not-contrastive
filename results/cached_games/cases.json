@@ -1,0 +1,1514 @@
+[
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=15.0, vertical velocity=4.6, airborne=True, ducking=False, rapid descent=False. Running speed=7.14 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=22, top_y=105, width=51, height=35, leftward speed=7.14, gap from dinosaur front=-72.\nFrame 1140; score=182.",
+    "seed": 0,
+    "frame": 1140,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 0
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=0.0, vertical velocity=1.0, airborne=True, ducking=False, rapid descent=False. Running speed=7.56 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=51, top_y=90, width=75, height=50, leftward speed=7.56, gap from dinosaur front=-43.\nFrame 1554; score=258.",
+    "seed": 0,
+    "frame": 1554,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 1
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.54 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=193, top_y=90, width=25, height=50, leftward speed=6.54, gap from dinosaur front=99; cactusSmall, left_x=515, top_y=105, width=17, height=35, leftward speed=6.54, gap from dinosaur front=421.\nFrame 540; score=80.",
+    "seed": 0,
+    "frame": 540,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "jump",
+    "robust": true,
+    "id": 2
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=0.0, vertical velocity=1.0, airborne=True, ducking=False, rapid descent=False. Running speed=7.66 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=37, top_y=90, width=75, height=50, leftward speed=7.66, gap from dinosaur front=-57.\nFrame 1656; score=278.",
+    "seed": 0,
+    "frame": 1656,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 3
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=15.0, vertical velocity=4.6, airborne=True, ducking=False, rapid descent=False. Running speed=7.75 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=57, top_y=105, width=34, height=35, leftward speed=7.75, gap from dinosaur front=-37.\nFrame 1752; score=296.",
+    "seed": 0,
+    "frame": 1752,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 4
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.08 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=442, top_y=105, width=51, height=35, leftward speed=7.08, gap from dinosaur front=348.\nFrame 1080; score=172.",
+    "seed": 0,
+    "frame": 1080,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 5
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.69 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=519, top_y=105, width=34, height=35, leftward speed=7.69, gap from dinosaur front=425.\nFrame 1686; score=283.",
+    "seed": 0,
+    "frame": 1686,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 6
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=2.0, vertical velocity=1.0, airborne=True, ducking=False, rapid descent=False. Running speed=6.79 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=61, top_y=90, width=25, height=50, leftward speed=6.79, gap from dinosaur front=-33; cactusSmall, left_x=443, top_y=105, width=34, height=35, leftward speed=6.79, gap from dinosaur front=349.\nFrame 792; score=122.",
+    "seed": 0,
+    "frame": 792,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 7
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.96 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=253, top_y=90, width=25, height=50, leftward speed=6.96, gap from dinosaur front=159; cactusSmall, left_x=575, top_y=105, width=51, height=35, leftward speed=6.96, gap from dinosaur front=481.\nFrame 960; score=150.",
+    "seed": 0,
+    "frame": 960,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 8
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=38.0, vertical velocity=-7.0, airborne=True, ducking=False, rapid descent=False. Running speed=6.32 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=151, top_y=90, width=25, height=50, leftward speed=6.32, gap from dinosaur front=57; cactusLarge, left_x=457, top_y=90, width=25, height=50, leftward speed=6.32, gap from dinosaur front=363.\nFrame 318; score=44.",
+    "seed": 0,
+    "frame": 318,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 9
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.27 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=401, top_y=90, width=50, height=50, leftward speed=7.27, gap from dinosaur front=307.\nFrame 1272; score=206.",
+    "seed": 0,
+    "frame": 1272,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 10
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.02 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=236, top_y=105, width=51, height=35, leftward speed=7.02, gap from dinosaur front=142.\nFrame 1014; score=160.",
+    "seed": 0,
+    "frame": 1014,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 11
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.08 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 78; score=7.",
+    "seed": 0,
+    "frame": 78,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 12
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.23 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 228; score=30.",
+    "seed": 0,
+    "frame": 228,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 13
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.09 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 84; score=8.",
+    "seed": 0,
+    "frame": 84,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 14
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.11 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 108; score=11.",
+    "seed": 0,
+    "frame": 108,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 15
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.70 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=181, top_y=90, width=25, height=50, leftward speed=6.70, gap from dinosaur front=87; cactusSmall, left_x=485, top_y=105, width=51, height=35, leftward speed=6.70, gap from dinosaur front=391.\nFrame 696; score=105.",
+    "seed": 1,
+    "frame": 696,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "jump",
+    "robust": true,
+    "id": 16
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.35 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=177, top_y=90, width=75, height=50, leftward speed=7.35, gap from dinosaur front=83.\nFrame 1344; score=219.",
+    "seed": 1,
+    "frame": 1344,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "jump",
+    "robust": true,
+    "id": 17
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=9.0, vertical velocity=-2.6, airborne=True, ducking=False, rapid descent=False. Running speed=6.76 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=89, top_y=105, width=51, height=35, leftward speed=6.76, gap from dinosaur front=-5.\nFrame 762; score=116.",
+    "seed": 1,
+    "frame": 762,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 18
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.81 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=379, top_y=90, width=25, height=50, leftward speed=6.81, gap from dinosaur front=285.\nFrame 804; score=124.",
+    "seed": 1,
+    "frame": 804,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 19
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.43 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=281, top_y=105, width=34, height=35, leftward speed=7.43, gap from dinosaur front=187.\nFrame 1428; score=235.",
+    "seed": 1,
+    "frame": 1428,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 20
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=7.0, vertical velocity=-2.6, airborne=True, ducking=False, rapid descent=False. Running speed=7.14 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=162, top_y=105, width=17, height=35, leftward speed=7.14, gap from dinosaur front=68; cactusLarge, left_x=457, top_y=90, width=50, height=50, leftward speed=7.14, gap from dinosaur front=363.\nFrame 1140; score=182.",
+    "seed": 1,
+    "frame": 1140,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 21
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.57 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=463, top_y=105, width=34, height=35, leftward speed=7.57, gap from dinosaur front=369.\nFrame 1566; score=260.",
+    "seed": 1,
+    "frame": 1566,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 22
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=38.0, vertical velocity=-7.0, airborne=True, ducking=False, rapid descent=False. Running speed=6.38 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=155, top_y=105, width=17, height=35, leftward speed=6.38, gap from dinosaur front=61; cactusSmall, left_x=437, top_y=105, width=17, height=35, leftward speed=6.38, gap from dinosaur front=343.\nFrame 378; score=53.",
+    "seed": 1,
+    "frame": 378,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 23
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.81 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=343, top_y=90, width=25, height=50, leftward speed=6.81, gap from dinosaur front=249.\nFrame 810; score=125.",
+    "seed": 1,
+    "frame": 810,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 24
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.41 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=407, top_y=105, width=34, height=35, leftward speed=7.41, gap from dinosaur front=313.\nFrame 1410; score=231.",
+    "seed": 1,
+    "frame": 1410,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 25
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=37.0, vertical velocity=-7.2, airborne=True, ducking=False, rapid descent=False. Running speed=7.61 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=169, top_y=105, width=34, height=35, leftward speed=7.61, gap from dinosaur front=75.\nFrame 1608; score=268.",
+    "seed": 1,
+    "frame": 1608,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 26
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.94 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=263, top_y=105, width=17, height=35, leftward speed=6.94, gap from dinosaur front=169; cactusLarge, left_x=547, top_y=90, width=25, height=50, leftward speed=6.94, gap from dinosaur front=453.\nFrame 942; score=147.",
+    "seed": 1,
+    "frame": 942,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 27
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.19 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 192; score=24.",
+    "seed": 1,
+    "frame": 192,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 28
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.05 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 48; score=2.",
+    "seed": 1,
+    "frame": 48,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 29
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=54.0, vertical velocity=8.2, airborne=True, ducking=False, rapid descent=False. Running speed=6.03 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 30; score=0.",
+    "seed": 1,
+    "frame": 30,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 30
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=2.0, vertical velocity=1.0, airborne=True, ducking=False, rapid descent=False. Running speed=6.02 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 18; score=0.",
+    "seed": 1,
+    "frame": 18,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 31
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=15.0, vertical velocity=4.6, airborne=True, ducking=False, rapid descent=False. Running speed=7.65 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=78, top_y=105, width=17, height=35, leftward speed=7.65, gap from dinosaur front=-16; cactusLarge, left_x=387, top_y=90, width=25, height=50, leftward speed=7.65, gap from dinosaur front=293.\nFrame 1650; score=276.",
+    "seed": 2,
+    "frame": 1650,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 32
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=2.0, vertical velocity=1.0, airborne=True, ducking=False, rapid descent=False. Running speed=6.91 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=41, top_y=105, width=51, height=35, leftward speed=6.91, gap from dinosaur front=-53.\nFrame 906; score=141.",
+    "seed": 2,
+    "frame": 906,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 33
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.48 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=421, top_y=90, width=25, height=50, leftward speed=6.48, gap from dinosaur front=327.\nFrame 480; score=70.",
+    "seed": 2,
+    "frame": 480,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 34
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.62 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=239, top_y=105, width=51, height=35, leftward speed=6.62, gap from dinosaur front=145.\nFrame 618; score=92.",
+    "seed": 2,
+    "frame": 618,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 35
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.42 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=302, top_y=105, width=34, height=35, leftward speed=7.42, gap from dinosaur front=208.\nFrame 1422; score=234.",
+    "seed": 2,
+    "frame": 1422,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 36
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.67 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=261, top_y=90, width=25, height=50, leftward speed=7.67, gap from dinosaur front=167.\nFrame 1668; score=280.",
+    "seed": 2,
+    "frame": 1668,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 37
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=7.0, vertical velocity=-2.6, airborne=True, ducking=False, rapid descent=False. Running speed=7.29 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=141, top_y=105, width=34, height=35, leftward speed=7.29, gap from dinosaur front=47; cactusLarge, left_x=534, top_y=90, width=75, height=50, leftward speed=7.29, gap from dinosaur front=440.\nFrame 1290; score=209.",
+    "seed": 2,
+    "frame": 1290,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 38
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.61 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=311, top_y=105, width=51, height=35, leftward speed=6.61, gap from dinosaur front=217.\nFrame 606; score=90.",
+    "seed": 2,
+    "frame": 606,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 39
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=0.0, vertical velocity=1.0, airborne=True, ducking=False, rapid descent=False. Running speed=7.75 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=99, top_y=105, width=34, height=35, leftward speed=7.75, gap from dinosaur front=5; cactusLarge, left_x=520, top_y=90, width=75, height=50, leftward speed=7.75, gap from dinosaur front=426.\nFrame 1752; score=296.",
+    "seed": 2,
+    "frame": 1752,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 40
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.50 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=313, top_y=90, width=25, height=50, leftward speed=6.50, gap from dinosaur front=219.\nFrame 498; score=73.",
+    "seed": 2,
+    "frame": 498,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 41
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=2.0, vertical velocity=1.0, airborne=True, ducking=False, rapid descent=False. Running speed=6.65 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=59, top_y=105, width=51, height=35, leftward speed=6.65, gap from dinosaur front=-35.\nFrame 648; score=97.",
+    "seed": 2,
+    "frame": 648,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 42
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.93 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=547, top_y=90, width=25, height=50, leftward speed=6.93, gap from dinosaur front=453.\nFrame 924; score=144.",
+    "seed": 2,
+    "frame": 924,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 43
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.22 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 222; score=29.",
+    "seed": 2,
+    "frame": 222,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 44
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=38.0, vertical velocity=-7.0, airborne=True, ducking=False, rapid descent=False. Running speed=6.01 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 6; score=0.",
+    "seed": 2,
+    "frame": 6,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 45
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=9.0, vertical velocity=-2.6, airborne=True, ducking=False, rapid descent=False. Running speed=6.01 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 12; score=0.",
+    "seed": 2,
+    "frame": 12,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 46
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.09 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 84; score=8.",
+    "seed": 2,
+    "frame": 84,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 47
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.31 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=215, top_y=105, width=34, height=35, leftward speed=6.31, gap from dinosaur front=121.\nFrame 306; score=42.",
+    "seed": 3,
+    "frame": 306,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 48
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.85 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=359, top_y=105, width=17, height=35, leftward speed=6.85, gap from dinosaur front=265.\nFrame 852; score=132.",
+    "seed": 3,
+    "frame": 852,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 49
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=38.0, vertical velocity=-7.1, airborne=True, ducking=False, rapid descent=False. Running speed=6.94 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=127, top_y=90, width=25, height=50, leftward speed=6.94, gap from dinosaur front=33; cactusSmall, left_x=503, top_y=105, width=17, height=35, leftward speed=6.94, gap from dinosaur front=409.\nFrame 942; score=147.",
+    "seed": 3,
+    "frame": 942,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 50
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.45 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=449, top_y=105, width=34, height=35, leftward speed=7.45, gap from dinosaur front=355.\nFrame 1452; score=239.",
+    "seed": 3,
+    "frame": 1452,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 51
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.26 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=422, top_y=90, width=50, height=50, leftward speed=7.26, gap from dinosaur front=328.\nFrame 1260; score=204.",
+    "seed": 3,
+    "frame": 1260,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 52
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.27 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=467, top_y=105, width=34, height=35, leftward speed=6.27, gap from dinosaur front=373.\nFrame 264; score=35.",
+    "seed": 3,
+    "frame": 264,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 53
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=54.0, vertical velocity=8.2, airborne=True, ducking=False, rapid descent=False. Running speed=6.63 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=17, top_y=105, width=34, height=35, leftward speed=6.63, gap from dinosaur front=-77; cactusSmall, left_x=437, top_y=105, width=51, height=35, leftward speed=6.63, gap from dinosaur front=343.\nFrame 630; score=94.",
+    "seed": 3,
+    "frame": 630,
+    "safe": {
+      "jump": false,
+      "duck": true,
+      "run": false
+    },
+    "best": "duck",
+    "robust": true,
+    "id": 54
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.30 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=287, top_y=105, width=34, height=35, leftward speed=6.30, gap from dinosaur front=193.\nFrame 294; score=40.",
+    "seed": 3,
+    "frame": 294,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 55
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.76 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=187, top_y=90, width=25, height=50, leftward speed=6.76, gap from dinosaur front=93; cactusLarge, left_x=535, top_y=90, width=25, height=50, leftward speed=6.76, gap from dinosaur front=441.\nFrame 756; score=115.",
+    "seed": 3,
+    "frame": 756,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "jump",
+    "robust": true,
+    "id": 56
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=9.0, vertical velocity=-2.6, airborne=True, ducking=False, rapid descent=False. Running speed=6.57 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=97, top_y=90, width=25, height=50, leftward speed=6.57, gap from dinosaur front=3; cactusSmall, left_x=413, top_y=105, width=34, height=35, leftward speed=6.57, gap from dinosaur front=319.\nFrame 564; score=83.",
+    "seed": 3,
+    "frame": 564,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 57
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=2.0, vertical velocity=1.0, airborne=True, ducking=False, rapid descent=False. Running speed=6.70 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=41, top_y=105, width=51, height=35, leftward speed=6.70, gap from dinosaur front=-53; cactusLarge, left_x=547, top_y=90, width=25, height=50, leftward speed=6.70, gap from dinosaur front=453.\nFrame 696; score=105.",
+    "seed": 3,
+    "frame": 696,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 58
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=38.0, vertical velocity=-7.1, airborne=True, ducking=False, rapid descent=False. Running speed=6.61 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=161, top_y=105, width=34, height=35, leftward speed=6.61, gap from dinosaur front=67; cactusSmall, left_x=581, top_y=105, width=51, height=35, leftward speed=6.61, gap from dinosaur front=487.\nFrame 606; score=90.",
+    "seed": 3,
+    "frame": 606,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 59
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=17.0, vertical velocity=4.6, airborne=True, ducking=False, rapid descent=False. Running speed=6.03 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 24; score=0.",
+    "seed": 3,
+    "frame": 24,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 60
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=True, rapid descent=False. Running speed=7.43 pixels/frame. Previous held action=duck.\nVisible obstacles: none.\nFrame 1428; score=235.",
+    "seed": 3,
+    "frame": 1428,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 61
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.13 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 126; score=14.",
+    "seed": 3,
+    "frame": 126,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 62
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.14 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 138; score=16.",
+    "seed": 3,
+    "frame": 138,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 63
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=0.0, vertical velocity=1.0, airborne=True, ducking=False, rapid descent=False. Running speed=7.32 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=65, top_y=90, width=25, height=50, leftward speed=7.32, gap from dinosaur front=-29; cactusSmall, left_x=477, top_y=105, width=17, height=35, leftward speed=7.32, gap from dinosaur front=383.\nFrame 1320; score=215.",
+    "seed": 4,
+    "frame": 1320,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 64
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=54.0, vertical velocity=8.2, airborne=True, ducking=False, rapid descent=False. Running speed=6.58 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=-13, top_y=105, width=51, height=35, leftward speed=6.58, gap from dinosaur front=-107; cactusLarge, left_x=469, top_y=90, width=25, height=50, leftward speed=6.58, gap from dinosaur front=375.\nFrame 576; score=85.",
+    "seed": 4,
+    "frame": 576,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 65
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.25 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=539, top_y=105, width=17, height=35, leftward speed=6.25, gap from dinosaur front=445.\nFrame 252; score=34.",
+    "seed": 4,
+    "frame": 252,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 66
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=52.0, vertical velocity=8.2, airborne=True, ducking=False, rapid descent=False. Running speed=7.21 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=-13, top_y=105, width=34, height=35, leftward speed=7.21, gap from dinosaur front=-107; cactusLarge, left_x=506, top_y=90, width=25, height=50, leftward speed=7.21, gap from dinosaur front=412.\nFrame 1206; score=194.",
+    "seed": 4,
+    "frame": 1206,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 67
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=52.0, vertical velocity=8.2, airborne=True, ducking=False, rapid descent=False. Running speed=7.28 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=2, top_y=90, width=25, height=50, leftward speed=7.28, gap from dinosaur front=-92; cactusLarge, left_x=359, top_y=90, width=25, height=50, leftward speed=7.28, gap from dinosaur front=265.\nFrame 1278; score=207.",
+    "seed": 4,
+    "frame": 1278,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 68
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=7.15 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=407, top_y=105, width=34, height=35, leftward speed=7.15, gap from dinosaur front=313.\nFrame 1146; score=183.",
+    "seed": 4,
+    "frame": 1146,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 69
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.75 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=221, top_y=105, width=17, height=35, leftward speed=6.75, gap from dinosaur front=127; cactusSmall, left_x=539, top_y=105, width=34, height=35, leftward speed=6.75, gap from dinosaur front=445.\nFrame 744; score=113.",
+    "seed": 4,
+    "frame": 744,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 70
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.75 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=185, top_y=105, width=17, height=35, leftward speed=6.75, gap from dinosaur front=91; cactusSmall, left_x=503, top_y=105, width=34, height=35, leftward speed=6.75, gap from dinosaur front=409.\nFrame 750; score=114.",
+    "seed": 4,
+    "frame": 750,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "jump",
+    "robust": true,
+    "id": 71
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=38.0, vertical velocity=-7.1, airborne=True, ducking=False, rapid descent=False. Running speed=6.70 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=127, top_y=90, width=25, height=50, leftward speed=6.70, gap from dinosaur front=33; cactusSmall, left_x=509, top_y=105, width=17, height=35, leftward speed=6.70, gap from dinosaur front=415.\nFrame 696; score=105.",
+    "seed": 4,
+    "frame": 696,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 72
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=38.0, vertical velocity=-7.1, airborne=True, ducking=False, rapid descent=False. Running speed=6.55 pixels/frame. Previous held action=run.\nVisible obstacles: cactusSmall, left_x=131, top_y=105, width=51, height=35, leftward speed=6.55, gap from dinosaur front=37.\nFrame 552; score=82.",
+    "seed": 4,
+    "frame": 552,
+    "safe": {
+      "jump": true,
+      "duck": false,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 73
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=15.0, vertical velocity=4.6, airborne=True, ducking=False, rapid descent=False. Running speed=7.47 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=16, top_y=90, width=50, height=50, leftward speed=7.47, gap from dinosaur front=-78; cactusLarge, left_x=555, top_y=90, width=50, height=50, leftward speed=7.47, gap from dinosaur front=461.\nFrame 1464; score=241.",
+    "seed": 4,
+    "frame": 1464,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 74
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=15.0, vertical velocity=4.6, airborne=True, ducking=False, rapid descent=False. Running speed=7.33 pixels/frame. Previous held action=run.\nVisible obstacles: cactusLarge, left_x=23, top_y=90, width=25, height=50, leftward speed=7.33, gap from dinosaur front=-71; cactusSmall, left_x=435, top_y=105, width=17, height=35, leftward speed=7.33, gap from dinosaur front=341.\nFrame 1326; score=216.",
+    "seed": 4,
+    "frame": 1326,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 75
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.06 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 60; score=4.",
+    "seed": 4,
+    "frame": 60,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 76
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.16 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 162; score=20.",
+    "seed": 4,
+    "frame": 162,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 77
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.24 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 234; score=31.",
+    "seed": 4,
+    "frame": 234,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 78
+  },
+  {
+    "game": "trex",
+    "state": "Dinosaur top_y=93.0, vertical velocity=0.0, airborne=False, ducking=False, rapid descent=False. Running speed=6.15 pixels/frame. Previous held action=run.\nVisible obstacles: none.\nFrame 144; score=17.",
+    "seed": 4,
+    "frame": 144,
+    "safe": {
+      "jump": true,
+      "duck": true,
+      "run": true
+    },
+    "best": "run",
+    "robust": true,
+    "id": 79
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=163, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=144..304, y=208..240; x=256..272, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 84; furthest x reached=163.",
+    "level": "1-1",
+    "frame": 84,
+    "id": 80
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=436, feet_y=147, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=5 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=416..448, y=208..240; x=448..480, y=176..240; x=480..576, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 240; furthest x reached=436.",
+    "level": "1-1",
+    "frame": 240,
+    "id": 81
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=688, feet_y=164, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-3 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=672..736, y=208..240; x=736..768, y=144..240; x=768..816, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=716, collision_top_y=196, horizontal offset=28; goomba at x=812, collision_top_y=196, horizontal offset=124.\nFrame 384; furthest x reached=688.",
+    "level": "1-1",
+    "frame": 384,
+    "id": 82
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=1163, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=1136..1296, y=208..240; x=1232..1280, y=144..160; x=1280..1296, y=80..96. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=1255, collision_top_y=132, horizontal offset=92; goomba at x=1299, collision_top_y=68, horizontal offset=136.\nFrame 672; furthest x reached=1163.",
+    "level": "1-1",
+    "frame": 672,
+    "id": 83
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=877, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=848..912, y=208..240; x=912..944, y=144..240; x=944..1008, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=775, collision_top_y=196, horizontal offset=-102; goomba at x=800, collision_top_y=196, horizontal offset=-77.\nFrame 492; furthest x reached=877.",
+    "level": "1-1",
+    "frame": 492,
+    "id": 84
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=142, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=112..288, y=208..240; x=256..272, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 72; furthest x reached=142.",
+    "level": "1-1",
+    "frame": 72,
+    "id": 85
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=310, feet_y=142, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=288..448, y=208..240; x=320..400, y=144..160; x=352..368, y=80..96. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=298, collision_top_y=196, horizontal offset=-12.\nFrame 168; furthest x reached=310.",
+    "level": "1-1",
+    "frame": 168,
+    "id": 86
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=814, feet_y=88, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=4 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=784..912, y=208..240; x=912..944, y=144..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=768, collision_top_y=196, horizontal offset=-46; goomba at x=790, collision_top_y=196, horizontal offset=-24.\nFrame 456; furthest x reached=814.",
+    "level": "1-1",
+    "frame": 456,
+    "id": 87
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=835, feet_y=147, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=5 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=816..912, y=208..240; x=912..944, y=144..240; x=944..976, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=774, collision_top_y=196, horizontal offset=-61; goomba at x=785, collision_top_y=196, horizontal offset=-50.\nFrame 468; furthest x reached=835.",
+    "level": "1-1",
+    "frame": 468,
+    "id": 88
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=751, feet_y=144, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=720..736, y=208..240; x=736..768, y=144..240; x=768..880, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=694, collision_top_y=196, horizontal offset=-57; goomba at x=789, collision_top_y=196, horizontal offset=38; goomba at x=812, collision_top_y=196, horizontal offset=61.\nFrame 420; furthest x reached=751.",
+    "level": "1-1",
+    "frame": 420,
+    "id": 89
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=562, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=544..608, y=208..240; x=608..640, y=160..240; x=640..704, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=678, collision_top_y=196, horizontal offset=116.\nFrame 312; furthest x reached=562.",
+    "level": "1-1",
+    "frame": 312,
+    "id": 90
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=772, feet_y=100, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-3 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=752..768, y=144..240; x=768..912, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=686, collision_top_y=196, horizontal offset=-86; goomba at x=782, collision_top_y=196, horizontal offset=10; goomba at x=805, collision_top_y=196, horizontal offset=33.\nFrame 432; furthest x reached=772.",
+    "level": "1-1",
+    "frame": 432,
+    "id": 91
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=1016, feet_y=147, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=5 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=992..1104, y=208..240; x=1024..1040, y=128..144; x=1136..1152, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 588; furthest x reached=1016.",
+    "level": "1-1",
+    "frame": 588,
+    "id": 92
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=667, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=640..736, y=208..240; x=736..768, y=144..240; x=768..800, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=715, collision_top_y=196, horizontal offset=48.\nFrame 372; furthest x reached=667.",
+    "level": "1-1",
+    "frame": 372,
+    "id": 93
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=793, feet_y=78, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=768..912, y=208..240; x=912..928, y=144..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=774, collision_top_y=196, horizontal offset=-19; goomba at x=797, collision_top_y=196, horizontal offset=4.\nFrame 444; furthest x reached=793.",
+    "level": "1-1",
+    "frame": 444,
+    "id": 94
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=604, feet_y=142, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=576..608, y=208..240; x=608..640, y=160..240; x=640..736, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=693, collision_top_y=196, horizontal offset=89.\nFrame 336; furthest x reached=604.",
+    "level": "1-1",
+    "frame": 336,
+    "id": 95
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=331, feet_y=144, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=304..448, y=208..240; x=320..400, y=144..160; x=352..368, y=80..96; x=448..464, y=176..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=291, collision_top_y=196, horizontal offset=-40.\nFrame 180; furthest x reached=331.",
+    "level": "1-1",
+    "frame": 180,
+    "id": 96
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=40, feet_y=208, size=small, grounded=True, horizontal velocity=0.0 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: wait.\nVisible solid terrain rectangles (world pixels): x=16..192, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 0; furthest x reached=40.",
+    "level": "1-1",
+    "frame": 0,
+    "id": 97
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=1037, feet_y=207, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=5 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=1008..1104, y=208..240; x=1024..1040, y=128..144; x=1136..1168, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 600; furthest x reached=1037.",
+    "level": "1-1",
+    "frame": 600,
+    "id": 98
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=121, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=96..272, y=208..240; x=256..272, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 60; furthest x reached=121.",
+    "level": "1-1",
+    "frame": 60,
+    "id": 99
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=1205, feet_y=164, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-3 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=1184..1344, y=208..240; x=1232..1280, y=144..160; x=1280..1344, y=80..96. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=1240, collision_top_y=132, horizontal offset=35; goomba at x=1284, collision_top_y=68, horizontal offset=79.\nFrame 696; furthest x reached=1205.",
+    "level": "1-1",
+    "frame": 696,
+    "id": 100
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=394, feet_y=78, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=368..400, y=144..160; x=368..448, y=208..240; x=448..480, y=176..240; x=480..528, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 216; furthest x reached=394.",
+    "level": "1-1",
+    "frame": 216,
+    "id": 101
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=1100, feet_y=142, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=1072..1104, y=208..240; x=1136..1232, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 636; furthest x reached=1100.",
+    "level": "1-1",
+    "frame": 636,
+    "id": 102
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=900, feet_y=142, size=small, grounded=False, horizontal velocity=0.56 pixels/frame, vertical velocity=-1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=880..912, y=208..240; x=912..944, y=144..240; x=944..1040, y=208..240; x=1024..1040, y=128..144. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=790, collision_top_y=196, horizontal offset=-110; goomba at x=815, collision_top_y=196, horizontal offset=-85.\nFrame 516; furthest x reached=900.",
+    "level": "1-1",
+    "frame": 516,
+    "id": 103
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=44, feet_y=144, size=small, grounded=False, horizontal velocity=0.75 pixels/frame, vertical velocity=5 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=16..192, y=208..240; x=96..192, y=32..48; x=160..192, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=241, collision_top_y=196, horizontal offset=197.\nFrame 12; furthest x reached=44.",
+    "level": "1-2",
+    "frame": 12,
+    "id": 104
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=58, feet_y=207, size=small, grounded=False, horizontal velocity=1.5 pixels/frame, vertical velocity=5 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=32..208, y=208..240; x=96..208, y=32..48; x=160..208, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=233, collision_top_y=196, horizontal offset=175; goomba at x=249, collision_top_y=196, horizontal offset=191.\nFrame 24; furthest x reached=58.",
+    "level": "1-2",
+    "frame": 24,
+    "id": 105
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=100, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=80..256, y=208..240; x=96..256, y=32..48; x=160..240, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=218, collision_top_y=196, horizontal offset=118; goomba at x=234, collision_top_y=196, horizontal offset=134.\nFrame 48; furthest x reached=100.",
+    "level": "1-2",
+    "frame": 48,
+    "id": 106
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=121, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=96..272, y=32..48; x=96..272, y=208..240; x=160..240, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=211, collision_top_y=196, horizontal offset=90; goomba at x=227, collision_top_y=196, horizontal offset=106.\nFrame 60; furthest x reached=121.",
+    "level": "1-2",
+    "frame": 60,
+    "id": 107
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=40, feet_y=83, size=small, grounded=False, horizontal velocity=0.0 pixels/frame, vertical velocity=4 pixels/frame. Previous buttons: wait.\nVisible solid terrain rectangles (world pixels): x=16..192, y=208..240; x=96..192, y=32..48; x=160..192, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=248, collision_top_y=196, horizontal offset=208.\nFrame 0; furthest x reached=40.",
+    "level": "1-2",
+    "frame": 0,
+    "id": 108
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=79, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=48..224, y=208..240; x=96..224, y=32..48; x=160..224, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=226, collision_top_y=196, horizontal offset=147; goomba at x=242, collision_top_y=196, horizontal offset=163.\nFrame 36; furthest x reached=79.",
+    "level": "1-2",
+    "frame": 36,
+    "id": 109
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=163, feet_y=173, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=144..304, y=32..48; x=144..272, y=208..240; x=160..240, y=144..160; x=272..288, y=192..240; x=288..304, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=196, collision_top_y=196, horizontal offset=33; goomba at x=212, collision_top_y=196, horizontal offset=49.\nFrame 84; furthest x reached=163.",
+    "level": "1-2",
+    "frame": 84,
+    "id": 110
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=142, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=112..288, y=32..48; x=112..272, y=208..240; x=160..240, y=144..160; x=272..288, y=192..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=203, collision_top_y=196, horizontal offset=61; goomba at x=219, collision_top_y=196, horizontal offset=77.\nFrame 72; furthest x reached=142.",
+    "level": "1-2",
+    "frame": 72,
+    "id": 111
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=163, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=144..304, y=208..240; x=240..288, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 84; furthest x reached=163.",
+    "level": "2-1",
+    "frame": 84,
+    "id": 112
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=391, feet_y=120, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=5 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=368..384, y=144..240; x=384..400, y=128..240; x=400..528, y=208..240; x=448..512, y=80..96; x=448..464, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: green koopa at x=471, collision_top_y=193, horizontal offset=80; green koopa at x=493, collision_top_y=193, horizontal offset=102.\nFrame 240; furthest x reached=391.",
+    "level": "2-1",
+    "frame": 240,
+    "id": 113
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=601, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=576..720, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=651, collision_top_y=196, horizontal offset=50; goomba at x=674, collision_top_y=196, horizontal offset=73.\nFrame 384; furthest x reached=601.",
+    "level": "2-1",
+    "frame": 384,
+    "id": 114
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=790, feet_y=189, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=5 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=768..912, y=208..240; x=848..912, y=80..96; x=848..912, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: piranha plant at x=744, collision_top_y=156, horizontal offset=-46; green koopa at x=848, collision_top_y=129, horizontal offset=58.\nFrame 492; furthest x reached=790.",
+    "level": "2-1",
+    "frame": 492,
+    "id": 115
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=142, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=112..288, y=208..240; x=240..288, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 72; furthest x reached=142.",
+    "level": "2-1",
+    "frame": 72,
+    "id": 116
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=310, feet_y=142, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=288..320, y=208..240; x=320..336, y=192..240; x=336..352, y=176..240; x=352..368, y=160..240; x=368..384, y=144..240; x=384..400, y=128..240; x=400..448, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=342, collision_top_y=148, horizontal offset=32.\nFrame 168; furthest x reached=310.",
+    "level": "2-1",
+    "frame": 168,
+    "id": 117
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=664, feet_y=152, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=4 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=640..736, y=208..240; x=736..768, y=144..240; x=768..784, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: piranha plant at x=744, collision_top_y=135, horizontal offset=80; goomba at x=629, collision_top_y=196, horizontal offset=-35; goomba at x=652, collision_top_y=196, horizontal offset=-12.\nFrame 420; furthest x reached=664.",
+    "level": "2-1",
+    "frame": 420,
+    "id": 118
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=517, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=496..512, y=80..96; x=496..544, y=208..240; x=544..560, y=144..240; x=560..576, y=176..240; x=576..640, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: green koopa at x=426, collision_top_y=193, horizontal offset=-91; green koopa at x=468, collision_top_y=193, horizontal offset=-49.\nFrame 312; furthest x reached=517.",
+    "level": "2-1",
+    "frame": 312,
+    "id": 119
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=706, feet_y=164, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-3 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=688..736, y=208..240; x=736..768, y=144..240; x=768..832, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: piranha plant at x=744, collision_top_y=147, horizontal offset=38; goomba at x=614, collision_top_y=196, horizontal offset=-92; goomba at x=637, collision_top_y=196, horizontal offset=-69.\nFrame 444; furthest x reached=706.",
+    "level": "2-1",
+    "frame": 444,
+    "id": 120
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=580, feet_y=184, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=5 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=560..576, y=176..240; x=576..704, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: green koopa at x=468, collision_top_y=193, horizontal offset=-112; goomba at x=659, collision_top_y=196, horizontal offset=79; goomba at x=682, collision_top_y=196, horizontal offset=102.\nFrame 372; furthest x reached=580.",
+    "level": "2-1",
+    "frame": 372,
+    "id": 121
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=531, feet_y=142, size=small, grounded=False, horizontal velocity=0.38 pixels/frame, vertical velocity=-1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=512..544, y=208..240; x=544..560, y=144..240; x=560..576, y=176..240; x=576..656, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: green koopa at x=468, collision_top_y=193, horizontal offset=-63.\nFrame 336; furthest x reached=531.",
+    "level": "2-1",
+    "frame": 336,
+    "id": 122
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=331, feet_y=152, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=4 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=304..320, y=208..240; x=320..336, y=192..240; x=336..352, y=176..240; x=352..368, y=160..240; x=368..384, y=144..240; x=384..400, y=128..240; x=400..464, y=208..240; x=448..464, y=80..96; x=448..464, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: goomba at x=334, collision_top_y=166, horizontal offset=3.\nFrame 180; furthest x reached=331.",
+    "level": "2-1",
+    "frame": 180,
+    "id": 123
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=40, feet_y=208, size=small, grounded=True, horizontal velocity=0.0 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: wait.\nVisible solid terrain rectangles (world pixels): x=16..192, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 0; furthest x reached=40.",
+    "level": "2-1",
+    "frame": 0,
+    "id": 124
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=371, feet_y=97, size=small, grounded=False, horizontal velocity=1.44 pixels/frame, vertical velocity=-1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=352..368, y=160..240; x=368..384, y=144..240; x=384..400, y=128..240; x=400..496, y=208..240; x=448..496, y=80..96; x=448..464, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: green koopa at x=478, collision_top_y=193, horizontal offset=107; green koopa at x=501, collision_top_y=193, horizontal offset=130.\nFrame 228; furthest x reached=371.",
+    "level": "2-1",
+    "frame": 228,
+    "id": 125
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=58, feet_y=208, size=small, grounded=True, horizontal velocity=1.5 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=32..208, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 24; furthest x reached=58.",
+    "level": "2-1",
+    "frame": 24,
+    "id": 126
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=79, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=48..224, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 36; furthest x reached=79.",
+    "level": "2-1",
+    "frame": 36,
+    "id": 127
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=205, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=176..320, y=208..240; x=240..288, y=144..160; x=320..336, y=192..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 108; furthest x reached=205.",
+    "level": "2-1",
+    "frame": 108,
+    "id": 128
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=685, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=656..736, y=208..240; x=736..768, y=144..240; x=768..816, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: piranha plant at x=744, collision_top_y=141, horizontal offset=59; goomba at x=621, collision_top_y=196, horizontal offset=-64; goomba at x=644, collision_top_y=196, horizontal offset=-41.\nFrame 432; furthest x reached=685.",
+    "level": "2-1",
+    "frame": 432,
+    "id": 129
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=622, feet_y=164, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-3 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=592..736, y=208..240; x=736..752, y=144..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: piranha plant at x=744, collision_top_y=132, horizontal offset=122; goomba at x=644, collision_top_y=196, horizontal offset=22; goomba at x=667, collision_top_y=196, horizontal offset=45.\nFrame 396; furthest x reached=622.",
+    "level": "2-1",
+    "frame": 396,
+    "id": 130
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=727, feet_y=142, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=704..736, y=208..240; x=736..768, y=144..240; x=768..848, y=208..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: piranha plant at x=744, collision_top_y=153, horizontal offset=17; goomba at x=606, collision_top_y=196, horizontal offset=-121; goomba at x=629, collision_top_y=196, horizontal offset=-98.\nFrame 456; furthest x reached=727.",
+    "level": "2-1",
+    "frame": 456,
+    "id": 131
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=643, feet_y=142, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=-1 pixels/frame. Previous buttons: jump_right.\nVisible solid terrain rectangles (world pixels): x=624..736, y=208..240; x=736..768, y=144..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: piranha plant at x=744, collision_top_y=132, horizontal offset=101; goomba at x=636, collision_top_y=196, horizontal offset=-7; goomba at x=659, collision_top_y=196, horizontal offset=16.\nFrame 408; furthest x reached=643.",
+    "level": "2-1",
+    "frame": 408,
+    "id": 132
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=412, feet_y=152, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=5 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=384..400, y=128..240; x=400..544, y=208..240; x=448..512, y=80..96; x=448..464, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: green koopa at x=463, collision_top_y=193, horizontal offset=51; green koopa at x=486, collision_top_y=193, horizontal offset=74.\nFrame 252; furthest x reached=412.",
+    "level": "2-1",
+    "frame": 252,
+    "id": 133
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=769, feet_y=144, size=small, grounded=False, horizontal velocity=1.75 pixels/frame, vertical velocity=1 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=752..768, y=144..240; x=768..896, y=208..240; x=848..896, y=80..96; x=848..896, y=144..160. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: piranha plant at x=744, collision_top_y=156, horizontal offset=-25; green koopa at x=855, collision_top_y=129, horizontal offset=86.\nFrame 480; furthest x reached=769.",
+    "level": "2-1",
+    "frame": 480,
+    "id": 134
+  },
+  {
+    "game": "mario",
+    "state": "Mario x=226, feet_y=208, size=small, grounded=True, horizontal velocity=1.75 pixels/frame, vertical velocity=0 pixels/frame. Previous buttons: right.\nVisible solid terrain rectangles (world pixels): x=208..320, y=208..240; x=240..288, y=144..160; x=320..336, y=192..240; x=336..352, y=176..240; x=352..368, y=160..240. Empty space between rectangles is air, including pits where no floor exists.\nVisible enemies: none.\nFrame 120; furthest x reached=226.",
+    "level": "2-1",
+    "frame": 120,
+    "id": 135
+  }
+]

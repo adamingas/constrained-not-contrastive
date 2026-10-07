@@ -1,0 +1,475 @@
+{
+  "matched": {
+    "trex_clm_False": {
+      "n": 80,
+      "median_ms": 348.735771025531,
+      "p95_ms": 413.7404372333549,
+      "median_input_tokens": 306.5,
+      "prefix_tokens": 191,
+      "median_processed_tokens": 306.5,
+      "fraction_within_decision_interval": 0.0
+    },
+    "trex_clm_True": {
+      "n": 80,
+      "median_ms": 153.44516653567553,
+      "p95_ms": 227.8183830436319,
+      "median_input_tokens": 306.5,
+      "prefix_tokens": 191,
+      "median_processed_tokens": 115.5,
+      "fraction_within_decision_interval": 0.0
+    },
+    "trex_qwen_False": {
+      "n": 80,
+      "median_ms": 460.7476874953136,
+      "p95_ms": 479.9081605160609,
+      "median_input_tokens": 385.5,
+      "prefix_tokens": 262,
+      "median_processed_tokens": 385.5,
+      "fraction_within_decision_interval": 0.0
+    },
+    "trex_qwen_True": {
+      "n": 80,
+      "median_ms": 155.73443740140647,
+      "p95_ms": 236.29921289393678,
+      "median_input_tokens": 385.5,
+      "prefix_tokens": 262,
+      "median_processed_tokens": 123.5,
+      "fraction_within_decision_interval": 0.0
+    },
+    "mario_clm_False": {
+      "n": 56,
+      "median_ms": 463.41141697485,
+      "p95_ms": 524.4208540534601,
+      "median_input_tokens": 409.0,
+      "prefix_tokens": 211,
+      "median_processed_tokens": 409.0,
+      "fraction_within_decision_interval": 0.0
+    },
+    "mario_clm_True": {
+      "n": 56,
+      "median_ms": 299.8435205081478,
+      "p95_ms": 323.36209394270554,
+      "median_input_tokens": 409.0,
+      "prefix_tokens": 211,
+      "median_processed_tokens": 198.0,
+      "fraction_within_decision_interval": 0.07142857142857142
+    },
+    "mario_qwen_False": {
+      "n": 56,
+      "median_ms": 578.2460414338857,
+      "p95_ms": 607.8978125588037,
+      "median_input_tokens": 518.0,
+      "prefix_tokens": 312,
+      "median_processed_tokens": 518.0,
+      "fraction_within_decision_interval": 0.0
+    },
+    "mario_qwen_True": {
+      "n": 56,
+      "median_ms": 300.6163960089907,
+      "p95_ms": 328.4643433871679,
+      "median_input_tokens": 518.0,
+      "prefix_tokens": 312,
+      "median_processed_tokens": 206.0,
+      "fraction_within_decision_interval": 0.07142857142857142
+    }
+  },
+  "comparisons": {
+    "trex_clm_cached_over_uncached": {
+      "median_paired_ratio": 0.44398857158870286,
+      "bootstrap95": [
+        0.44290285100290505,
+        0.44550954023437256
+      ],
+      "choice_agreement": 79,
+      "n": 80,
+      "max_probability_difference": 0.026708006858825684
+    },
+    "trex_qwen_cached_over_uncached": {
+      "median_paired_ratio": 0.3352185097416306,
+      "bootstrap95": [
+        0.33335340845211375,
+        0.374110158611476
+      ],
+      "choice_agreement": 80,
+      "n": 80,
+      "max_probability_difference": 0.030198633670806885
+    },
+    "trex_cached_qwen_over_clm": {
+      "median_paired_ratio": 1.010595598864191,
+      "bootstrap95": [
+        1.008730371646474,
+        1.01339196142127
+      ]
+    },
+    "mario_clm_cached_over_uncached": {
+      "median_paired_ratio": 0.627414985024884,
+      "bootstrap95": [
+        0.5739705592818022,
+        0.6374467785398927
+      ],
+      "choice_agreement": 56,
+      "n": 56,
+      "max_probability_difference": 0.013484865427017212
+    },
+    "mario_qwen_cached_over_uncached": {
+      "median_paired_ratio": 0.5130768424174255,
+      "bootstrap95": [
+        0.4827860193377804,
+        0.5182515994961552
+      ],
+      "choice_agreement": 54,
+      "n": 56,
+      "max_probability_difference": 0.11334294080734253
+    },
+    "mario_cached_qwen_over_clm": {
+      "median_paired_ratio": 1.0100536032371383,
+      "bootstrap95": [
+        1.0060436604739738,
+        1.0136624940807788
+      ]
+    }
+  },
+  "trex_safety": {
+    "clm_all": {
+      "safe": 79,
+      "n": 80,
+      "percent": 98.75
+    },
+    "clm_critical": {
+      "safe": 21,
+      "n": 22,
+      "percent": 95.45454545454545
+    },
+    "clm_forced": {
+      "safe": 0,
+      "n": 1,
+      "percent": 0.0
+    },
+    "qwen_all": {
+      "safe": 79,
+      "n": 80,
+      "percent": 98.75
+    },
+    "qwen_critical": {
+      "safe": 21,
+      "n": 22,
+      "percent": 95.45454545454545
+    },
+    "qwen_forced": {
+      "safe": 0,
+      "n": 1,
+      "percent": 0.0
+    }
+  },
+  "episodes": [
+    {
+      "game": "trex",
+      "seed": 0,
+      "method": "clm",
+      "frames": 505,
+      "score": 74,
+      "survived": false
+    },
+    {
+      "game": "trex",
+      "seed": 0,
+      "method": "qwen",
+      "frames": 333,
+      "score": 46,
+      "survived": false
+    },
+    {
+      "game": "trex",
+      "seed": 1,
+      "method": "qwen",
+      "frames": 333,
+      "score": 46,
+      "survived": false
+    },
+    {
+      "game": "trex",
+      "seed": 1,
+      "method": "clm",
+      "frames": 398,
+      "score": 56,
+      "survived": false
+    },
+    {
+      "game": "trex",
+      "seed": 2,
+      "method": "clm",
+      "frames": 546,
+      "score": 80,
+      "survived": false
+    },
+    {
+      "game": "trex",
+      "seed": 2,
+      "method": "qwen",
+      "frames": 333,
+      "score": 46,
+      "survived": false
+    },
+    {
+      "game": "trex",
+      "seed": 3,
+      "method": "qwen",
+      "frames": 333,
+      "score": 46,
+      "survived": false
+    },
+    {
+      "game": "trex",
+      "seed": 3,
+      "method": "clm",
+      "frames": 624,
+      "score": 93,
+      "survived": false
+    },
+    {
+      "game": "trex",
+      "seed": 4,
+      "method": "clm",
+      "frames": 448,
+      "score": 64,
+      "survived": false
+    },
+    {
+      "game": "trex",
+      "seed": 4,
+      "method": "qwen",
+      "frames": 333,
+      "score": 46,
+      "survived": false
+    },
+    {
+      "game": "mario",
+      "level": "1-1",
+      "method": "clm",
+      "frames": 300,
+      "max_x": 40,
+      "flag_get": false,
+      "died": false,
+      "stalled": true
+    },
+    {
+      "game": "mario",
+      "level": "1-1",
+      "method": "qwen",
+      "frames": 160,
+      "max_x": 296,
+      "flag_get": false,
+      "died": true,
+      "stalled": false
+    },
+    {
+      "game": "mario",
+      "level": "1-2",
+      "method": "qwen",
+      "frames": 94,
+      "max_x": 180,
+      "flag_get": false,
+      "died": true,
+      "stalled": false
+    },
+    {
+      "game": "mario",
+      "level": "1-2",
+      "method": "clm",
+      "frames": 300,
+      "max_x": 40,
+      "flag_get": false,
+      "died": false,
+      "stalled": true
+    },
+    {
+      "game": "mario",
+      "level": "2-1",
+      "method": "clm",
+      "frames": 300,
+      "max_x": 40,
+      "flag_get": false,
+      "died": false,
+      "stalled": true
+    },
+    {
+      "game": "mario",
+      "level": "2-1",
+      "method": "qwen",
+      "frames": 228,
+      "max_x": 307,
+      "flag_get": false,
+      "died": true,
+      "stalled": false
+    }
+  ],
+  "setup": {
+    "trex": {
+      "qwen": {
+        "setup_prefix_ms": 358.10695798136294,
+        "labels": [
+          32,
+          33,
+          34
+        ]
+      },
+      "clm": {
+        "setup_prefix_ms": 250.76283304952085,
+        "setup_actions_ms": 179.78379200212657
+      }
+    },
+    "mario": {
+      "qwen": {
+        "setup_prefix_ms": 339.85195797868073,
+        "labels": [
+          32,
+          33,
+          34,
+          35,
+          36,
+          37
+        ]
+      },
+      "clm": {
+        "setup_prefix_ms": 298.171125119552,
+        "setup_actions_ms": 260.35562506876886
+      }
+    }
+  },
+  "audits": {
+    "full_vocab_choice_agreement": 10,
+    "n": 10,
+    "label_ids": {
+      "trex": [
+        32,
+        33,
+        34
+      ],
+      "mario": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    }
+  },
+  "raw_ablation": {
+    "exploratory": true,
+    "episodes": [
+      {
+        "game": "trex",
+        "seed": 0,
+        "method": "qwen_raw",
+        "frames": 333,
+        "score": 46,
+        "survived": false
+      },
+      {
+        "game": "trex",
+        "seed": 1,
+        "method": "qwen_raw",
+        "frames": 333,
+        "score": 46,
+        "survived": false
+      },
+      {
+        "game": "trex",
+        "seed": 2,
+        "method": "qwen_raw",
+        "frames": 333,
+        "score": 46,
+        "survived": false
+      },
+      {
+        "game": "trex",
+        "seed": 3,
+        "method": "qwen_raw",
+        "frames": 333,
+        "score": 46,
+        "survived": false
+      },
+      {
+        "game": "trex",
+        "seed": 4,
+        "method": "qwen_raw",
+        "frames": 333,
+        "score": 46,
+        "survived": false
+      },
+      {
+        "game": "mario",
+        "level": "1-1",
+        "method": "qwen_raw",
+        "frames": 300,
+        "max_x": 40,
+        "flag_get": false,
+        "died": false,
+        "stalled": true
+      },
+      {
+        "game": "mario",
+        "level": "1-2",
+        "method": "qwen_raw",
+        "frames": 300,
+        "max_x": 40,
+        "flag_get": false,
+        "died": false,
+        "stalled": true
+      },
+      {
+        "game": "mario",
+        "level": "2-1",
+        "method": "qwen_raw",
+        "frames": 300,
+        "max_x": 40,
+        "flag_get": false,
+        "died": false,
+        "stalled": true
+      }
+    ],
+    "timings": {
+      "trex": {
+        "n": 80,
+        "median_ms": 152.8504998423159
+      },
+      "mario": {
+        "n": 56,
+        "median_ms": 298.7961875041947
+      }
+    },
+    "choices": {
+      "trex": {
+        "run": 80
+      },
+      "mario": {
+        "jump_right": 44,
+        "wait": 11,
+        "jump": 1
+      }
+    }
+  },
+  "aggregate_play": {
+    "clm": {
+      "trex_mean_survival_s": 8.403333333333332,
+      "trex_completed": 0,
+      "mario_cleared": 0,
+      "mario_forward_progress_pixels": [
+        0,
+        0,
+        0
+      ]
+    },
+    "qwen": {
+      "trex_mean_survival_s": 5.55,
+      "trex_completed": 0,
+      "mario_cleared": 0,
+      "mario_forward_progress_pixels": [
+        256,
+        140,
+        267
+      ]
+    }
+  }
+}

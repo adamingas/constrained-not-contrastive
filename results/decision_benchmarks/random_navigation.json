@@ -1,0 +1,38 @@
+{
+  "policy": "Uniform random outgoing link, no planner, maximum 8 clicks",
+  "seed": 918273,
+  "pairs": [
+    {
+      "id": "Great_Lakes_Storm_of_1913__Alexander_Hamilton",
+      "runs": 10000,
+      "success": 39,
+      "rate": 0.0039
+    },
+    {
+      "id": "Aztec__Cell_%28biology%29",
+      "runs": 10000,
+      "success": 34,
+      "rate": 0.0034
+    },
+    {
+      "id": "Rugby_football__United_Arab_Emirates",
+      "runs": 10000,
+      "success": 26,
+      "rate": 0.0026
+    },
+    {
+      "id": "Plutonium__Western_Sahara",
+      "runs": 10000,
+      "success": 18,
+      "rate": 0.0018
+    },
+    {
+      "id": "Abhidhamma_Pitaka__Mozambique",
+      "runs": 10000,
+      "success": 27,
+      "rate": 0.0027
+    }
+  ],
+  "total_runs": 50000,
+  "success_rate": 0.00288
+}
