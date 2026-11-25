@@ -1,0 +1,89 @@
+{
+  "sample_size": 500,
+  "seed": 20261004,
+  "sampling": "Uniform random 500 from the two categories combined, excluding the previous 20 Qwen sample requests. Preserve original dataset order; no regrouping.",
+  "counts": {
+    "multiple": 78,
+    "live_multiple": 422
+  },
+  "variant": "name_description ONLY",
+  "rules": "Choose the available function that best fulfills the request. Reply with exactly one option letter, without explanation.\n\nAvailable functions:\n\n",
+  "qwen_cache": "16-entry LRU of exact-token fixed preambles. Reuse longest matching prefix from a previous request, including partial matches. Cache contains system and user-start marker only, never the changing question. Empty at start. Each request predicted once.",
+  "clm_cache": "Upstream Engine with 32MiB projected-action-vector arena, empty at start. State-vector cache bypassed so every request recomputes its state; some distinct dataset IDs share request wording. No separately cached encoder vectors.",
+  "model": "Original BF16 Qwen3-8B via MLX for both; original CLM PyTorch heads on CPU, four threads.",
+  "qwen_output": "Native output-head rows for single-token allowed letters only; argmax; thinking disabled. Algebraically identical allowed logits without computing unused vocabulary rows.",
+  "latency": "Single observation per request per method, alternating execution order. Includes tokenizer, cache lookup/update, all cache misses and output scoring. Excludes model load, file I/O, and one unrelated runtime warmup whose KV is discarded. No per-question warmup or repeats.",
+  "scope": "Function selection only; no argument evaluation. Earlier CLM reconstruction has seen these public requests; Qwen small sample excluded. No prompt tuning.",
+  "inputs_sha256": "c760751694cf6832c7e359d42f63e61f07ba306b34547ed8cc5d83354cf8f78c",
+  "script_sha256": "e818b6d352aa8cbe6af1b35a00b734cc143fcc1bd4b54f4549e0412eafb3ab16",
+  "head_sha256": "b2b4a8c9c2d39263eff78a351eb909a342ce9b3bf21a3f07c1d1bf15f1c4eda5",
+  "sources": {
+    "repo": "ShishirPatil/gorilla",
+    "commit": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+    "files": {
+      "BFCL_v4_multiple.json": {
+        "url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multiple.json",
+        "sha256": "aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a",
+        "rows": 200
+      },
+      "answers_BFCL_v4_multiple.json": {
+        "url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer/BFCL_v4_multiple.json",
+        "sha256": "244e00ce9395df948bcafc7bee64e8f9c87ef70887587d83cae45b13699f3047",
+        "rows": 200
+      },
+      "BFCL_v4_live_multiple.json": {
+        "url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_multiple.json",
+        "sha256": "fd8ccfad4d911420d0e3341dbe2fff77d1d341da934248b9bb2bda24ab3a10c8",
+        "rows": 1053
+      },
+      "answers_BFCL_v4_live_multiple.json": {
+        "url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer/BFCL_v4_live_multiple.json",
+        "sha256": "97e90d59c5bd76c55a2920ce93e5566e9046307d3f558578f085f9d3a56c3084",
+        "rows": 1053
+      }
+    }
+  },
+  "excluded_pilot_ids": [
+    "multiple_1",
+    "multiple_1",
+    "multiple_7",
+    "multiple_7",
+    "multiple_27",
+    "multiple_27",
+    "multiple_36",
+    "multiple_36",
+    "multiple_73",
+    "multiple_73",
+    "multiple_86",
+    "multiple_86",
+    "multiple_127",
+    "multiple_127",
+    "multiple_134",
+    "multiple_134",
+    "multiple_156",
+    "multiple_156",
+    "multiple_158",
+    "multiple_158",
+    "live_multiple_37-13-0",
+    "live_multiple_37-13-0",
+    "live_multiple_104-43-2",
+    "live_multiple_104-43-2",
+    "live_multiple_116-45-1",
+    "live_multiple_116-45-1",
+    "live_multiple_254-118-0",
+    "live_multiple_254-118-0",
+    "live_multiple_260-124-0",
+    "live_multiple_260-124-0",
+    "live_multiple_610-159-3",
+    "live_multiple_610-159-3",
+    "live_multiple_771-171-4",
+    "live_multiple_771-171-4",
+    "live_multiple_793-174-7",
+    "live_multiple_793-174-7",
+    "live_multiple_975-214-1",
+    "live_multiple_975-214-1",
+    "live_multiple_1047-274-0",
+    "live_multiple_1047-274-0"
+  ],
+  "fixture_sha256": "73b73cac054c7922387918cbc8a805fba16f45378a537a1e71d1065cc9336023"
+}

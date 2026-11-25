@@ -1,0 +1,32 @@
+[project]
+name = "constrained-not-contrastive"
+version = "0.1.0"
+description = "Reproduce the CLM versus constrained Qwen experiments on Apple Silicon"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "contrastive-lm",
+  "click==8.5.0",
+  "huggingface-hub==1.33.0",
+  "mlx==0.32.3",
+  "mlx-lm==0.32.0",
+]
+
+[project.scripts]
+compare = "decisions.__main__:cli"
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "decisions"
+source-include = ["uv.lock", ".gitmodules", "fixtures/**", "results/published/**", "upstream/pyproject.toml", "upstream/README.md", "upstream/LICENSE", "upstream/src/clm/**"]
+source-exclude = ["upstream/examples/t_rex/README.md", "upstream/examples/t_rex/run.py", "upstream/examples/t_rex/results"]
+data = { purelib = "upstream/examples/t_rex" }
+
+[tool.uv.sources]
+contrastive-lm = { path = "upstream", editable = true }
+
+[tool.uv]
+environments = ["sys_platform == 'darwin' and platform_machine == 'arm64'"]

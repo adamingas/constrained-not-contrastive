@@ -1,0 +1,32 @@
+[
+  {
+    "id": "Great_Lakes_Storm_of_1913__Alexander_Hamilton",
+    "src": "Great_Lakes_Storm_of_1913",
+    "target": "Alexander_Hamilton",
+    "distance": 2
+  },
+  {
+    "id": "Aztec__Cell_%28biology%29",
+    "src": "Aztec",
+    "target": "Cell_%28biology%29",
+    "distance": 3
+  },
+  {
+    "id": "Rugby_football__United_Arab_Emirates",
+    "src": "Rugby_football",
+    "target": "United_Arab_Emirates",
+    "distance": 3
+  },
+  {
+    "id": "Plutonium__Western_Sahara",
+    "src": "Plutonium",
+    "target": "Western_Sahara",
+    "distance": 2
+  },
+  {
+    "id": "Abhidhamma_Pitaka__Mozambique",
+    "src": "Abhidhamma_Pitaka",
+    "target": "Mozambique",
+    "distance": 3
+  }
+]

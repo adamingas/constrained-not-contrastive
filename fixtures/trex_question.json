@@ -1,0 +1,11 @@
+{
+  "action": {
+    "type": "choice",
+    "instructions": "What should the dinosaur do for the next six frames only? It will get another observation afterward. Decide whether to keep running, jump now, or duck now.",
+    "criteria": {
+      "run": "Run.",
+      "jump": "Jump.",
+      "duck": "Duck."
+    }
+  }
+}

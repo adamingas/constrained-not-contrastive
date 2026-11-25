@@ -8,3 +8,8 @@ __pycache__/
 
 .env
 .env.*
+runs/
+*.egg-info/
+build/
+dist/
+.DS_Store

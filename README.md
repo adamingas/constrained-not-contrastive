@@ -1,223 +1,354 @@
-# CLM versus single-token constrained Qwen3
+# Constrained not Contrastive Language Models
 
-An October 2, 2026 investigation using an Apple M4 Max with 64 GB unified memory.
-See the [RACE-M prompt ablations](results/race_ablations/report.html) for the
-latest system-prompt and chat-template comparison, the
-[RACE-M context-ratio benchmark](results/race_context/report.html) for the
-latest controlled reading-comprehension comparison, the
-[long-context benchmark report](results/long_context/report.html) for the
-197-question follow-up, and the [initial investigation](results/report.html)
-for the small-task and game experiments.
+A new wave of “decision models”, classifiers in plain terms, has landed on the
+scene. [TypeSafe AI’s Jev](https://typesafe.ai/) offers a commercial implementation,
+while open-source releases such as [Contrastive Language Model (CLM)](https://github.com/Contrastive-LM/CLM)
+position themselves as competitors. Their promise is to make decisions faster
+than conventional language models.
 
-The original repository is included as a Git submodule under `upstream/`, pinned to commit
-`bb42c6c5bf914fd449bed2f6ca65be80602cb1f7`. No upstream source was modified.
+This prompted our investigation: does a new decision model offer enough to justify
+the added machinery? In our 500-request function-selection experiment, CLM performed
+worse than a language model restricted to the same choices. When successive requests
+reused the same instructions and choices, the difference in median latency was small.
+In this setting, the extra trained component did not earn its place.
 
-After cloning this repository, initialize the upstream checkout:
+We compare CLM with constrained decoding using the same Qwen3-8B backbone. We use the
+released CLM scoring heads, its T-Rex simulator, and public BFCL data, following the
+repository’s implementation where possible. The authors’ exact BFCL test setup was
+not released. We are testing CLM against constrained Qwen, not reproducing the
+published comparison with Jev.
+
+<details>
+<summary>What is a decision model?</summary>
+
+A decision model takes an input and selects from a fixed set of choices. These
+might be true or false, named categories, or ordered labels such as low, medium,
+and high. In a game, they are the available actions.
+
+CLM encodes the question and each possible answer separately as vectors using an
+existing language model. Two trained projection networks, or MLPs, transform the
+question and answer vectors. A dot product scores each pair, and the highest
+score selects the answer.
+
+</details>
+
+## Constrain the language model instead
+
+Our approach needs no additional trained component. We put the choices in the
+prompt and restrict the model’s output to one of them. To avoid generating a
+multi-word answer over several forward passes, we assign each choice a letter
+that is a single token. The model chooses one permitted letter.
+
+For a request about a triangle, the choice mapping might be:
+
+```text
+[System prompt: instructions and available functions]
+
+A: triangle_properties.get: Retrieve the dimensions of a triangle…
+B: circle_properties.get: Retrieve the dimensions of a circle…
+
+…
+```
+
+We choose the output token among the allowed choices with the highest probability.
+Thinking is disabled. We use the corresponding rows of Qwen’s native output head,
+so the restriction is enforced in code.
+
+<details>
+<summary>Caching the actions</summary>
+
+Qwen receives the instructions and available functions before the changing request.
+If a later request starts with the same tokens, it can reuse the model’s saved work
+for that prefix, called the KV cache. CLM can save each function’s action vector
+and reuse it whenever that function appears again.
+
+Both caches start empty in the BFCL experiment. For T-Rex, we prepare both fixed
+prompts before play, then time decisions with warm caches. Each model answers each
+request once. A first encounter pays the cost of processing new choices; later
+requests can reuse them.
+
+</details>
+
+## Results
+
+### T-Rex
+
+We use the T-Rex simulator from the CLM repository to compare the two approaches
+on repeated game decisions. Both receive the dinosaur’s position and motion and
+the nearest obstacle as text. Each chooses run, jump, or duck for the next six frames.
+
+We use different prompts for each model because both needed extensive prompt tuning
+to play for 30 seconds without crashing. CLM needed many more worked examples and
+had much higher latency, even with cached input.
+
+Across three tries with different seeds:
+
+| 900 decisions per model | CLM | Constrained Qwen |
+|---|---:|---:|
+| Median decision | 182.5 ms | **113.4 ms** |
+| Mean decision | 182.1 ms | **124.7 ms** |
+| 95th percentile | 229.7 ms | **192.3 ms** |
+
+Measured on an M4 Max with 64 GB memory and BF16 Qwen3-8B; CLM’s scoring heads ran
+on the CPU. Timings cover each decision, excluding model loading and initial cache
+preparation. The game paused during inference.
+
+[Watch the replay on the website](https://constrained-not-contrastive.deploy.chatgpt.site/#trex).
+The animation reconstructs recorded actions and omits model waiting time.
+
+<details>
+<summary>Exact constrained Qwen prompt</summary>
+
+**System message**
+
+```text
+You are playing T-Rex runner. Stay alive by avoiding collisions. At each turn, choose A, B, or C for the next 6 frames, then you will receive a new state and choose again. The game pauses while you decide.
+
+A continues automatic running, or lets an existing jump continue.
+B starts a jump from the ground. It does nothing extra in the air.
+C crouches on the ground, or rapidly descends in the air.
+
+Obstacles move left. The state gives distances, sizes, and heights above ground. The dinosaur is 44 pixels wide and 47 pixels tall when standing. Feet height zero means grounded. Contact ends the game. A jump rises, reaches its peak, falls, and ends; it cannot be extended by repeatedly selecting B. Duck does not stop horizontal motion.
+
+Output only the chosen letter.
+
+Controls:
+A = run: Release duck. Running is automatic; an existing jump continues.
+B = jump: Release duck and start a jump if grounded. No second jump while airborne.
+C = duck: Crouch if grounded; start a rapid descent if airborne.
+
+State: The dinosaur is on the ground. A cactus is 500 pixels beyond its front, moving toward it at 6 pixels per frame.
+Answer: A (run).
+Explanation: A jump now would finish before the cactus arrived. Continue running for this turn and reconsider at the next observation.
+State: The dinosaur is on the ground. A cactus is 60 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.
+Answer: B (jump).
+Explanation: Begin rising now so the dinosaur can pass above the approaching cactus. Continuing on the ground would bring it into the cactus.
+State: The dinosaur is on the ground. A cactus is 180 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame.
+Answer: A (run).
+Explanation: This is still too early to start the jump. The dinosaur would descend while the cactus was passing. Keep running for this six-frame turn, then reassess the smaller distance.
+State: The dinosaur is in the air, with its feet 80 pixels above the ground, falling at 2 pixels per frame. A cactus is 20 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.
+Answer: A (run).
+Explanation: Let the current jump carry the dinosaur over the cactus. Ducking would accelerate its descent into the obstacle; another jump command cannot add height while airborne.
+```
+
+**User message at frame 300 of the first course**
+
+```text
+State: The dinosaur is on the ground. A cactus is 192 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.
+Answer:
+```
+
+[Prompt file](fixtures/trex_qwen.txt)
+
+</details>
+
+<details>
+<summary>Exact CLM inputs</summary>
+
+State input at the same frame, without a chat template. Everything before
+“Current observation” is fixed.
+
+```text
+T-Rex runner: avoid collisions. Choose the next control for six frames. Run continues forward motion and any existing jump. Jump starts a jump from the ground. Duck crouches on the ground or accelerates descent in the air. Cacti are ground obstacles; birds may leave room underneath. The game pauses while the model decides. Obstacles move left. The dinosaur is 44 pixels wide and 47 pixels tall when standing. Feet height zero means grounded. Contact ends the game. A jump rises, reaches its peak, falls, and ends; it cannot be extended by repeatedly choosing jump. Duck does not stop horizontal motion. The examples below describe other situations. Choose for the current observation at the end, using the examples to understand timing.
+
+Example state: The dinosaur is on the ground. A cactus is 60 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame. Answer: jump. Explanation: Start rising to clear the approaching cactus; staying on the ground would cause a collision.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |------| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 500 pixels beyond its front, moving toward it at 6 pixels per frame. Answer: run. Explanation: A jump now would finish before the cactus arrived.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |--------------------------------------------------| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 180 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame. Answer: run. Explanation: Wait for this six-frame turn. Jumping now would put the descent too early, while the cactus is still passing.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |------------------| obstacle.
+
+Example state: The dinosaur is in the air with its feet 80 pixels above the ground, falling at 2 pixels per frame. A cactus is 20 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame. Answer: run. Explanation: Let the current jump continue over the cactus. Ducking would force the dinosaur down into it.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |--| obstacle.
+
+Compare two cases with the same grounded dinosaur, cactus size, and speed of 6 pixels per frame. At a distance of 180 pixels, choose run: the cactus arrives too late for a jump started now. At a distance of 60 pixels, choose jump: the cactus will arrive soon enough for this jump to clear it. The distance changes the answer even though both observations mention a cactus.
+
+Example state: The dinosaur is on the ground. A cactus is 40 pixels beyond its front, approaching at 6 pixels per frame. Answer: jump. Explanation: Waiting another six frames would leave almost no clearance; begin rising now.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |----| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 300 pixels beyond its front, approaching at 6 pixels per frame. Answer: run. Explanation: An obstacle being visible does not mean it is time to jump. It will still be far ahead after this six-frame turn.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |------------------------------| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 120 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: Keep running for this six-frame turn. There is time to get closer before starting a jump, so it will not land too early.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |------------| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 200 pixels beyond its front, 34 pixels wide and 35 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: This shorter cactus is still too far away. Continue running for six frames and look again before jumping.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |--------------------| obstacle.
+
+Example state: The dinosaur is on the ground. A cactus is 150 pixels beyond its front, 17 pixels wide and 35 pixels tall, moving toward it at 6 pixels per frame. Answer: run. Explanation: This small cactus is still too far away. A jump started now would finish while the cactus was passing the dinosaur. Wait for the next observation before starting the jump.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |---------------| obstacle.
+
+Current observation:
+State: The dinosaur is on the ground. A cactus is 192 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.
+Side view of the gap, each dash is approximately 10 pixels: dinosaur |-------------------| obstacle.
+
+What should the dinosaur do for the next six frames only? It will get another observation afterward. Decide whether to keep running, jump now, or duck now.
+```
+
+**Separately encoded action inputs**
+
+```text
+Run.
+```
+
+```text
+Jump.
+```
+
+```text
+Duck.
+```
+
+[Prompt file](fixtures/trex_clm.txt) · [Question and actions](fixtures/trex_question.json) ·
+[CLM decisions](results/published/trex_clm_trace.json.gz) ·
+[Qwen decisions](results/published/trex_qwen_trace.json.gz)
+
+These seeds were used during prompt development or checks. A later
+[unseen-seed run](results/published/trex_new_seed.json) is separate from these timings.
+
+</details>
+
+### BFCL: choosing a software function
+
+We tested 500 examples from the Berkeley Function Calling Leaderboard (BFCL),
+giving each model a question and a set of tools and asking it to select the right
+tool. Both models received the tool names and descriptions, without parameter schemas.
+
+We score tool selection only, not arguments or execution. This is not a full BFCL score.
+
+| 500 requests | CLM | Constrained Qwen |
+|---|---:|---:|
+| Correct function choices | 362/500 · 72.4% | **477/500 · 95.4%** |
+
+We could not reproduce the CLM repository’s reported
+[95.2% BFCL accuracy](https://github.com/Contrastive-LM/CLM/blob/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7/assets/zero-shot.png)
+in this experiment.
+
+Both caches started empty and warmed as earlier requests supplied reusable
+instructions and tools. On the 264 requests where both models’ fixed inputs were
+cached, median latency differed by 3.7 ms.
+
+| Decision time | CLM | Constrained Qwen |
+|---|---:|---:|
+| Median, all 500 requests | **92.9 ms** | 134.3 ms |
+| Mean, all 500 requests | 202.9 ms | **148.8 ms** |
+| Median, 264 requests with both fixed inputs cached | **83.0 ms** | 86.7 ms |
+
+CLM’s mean was higher because new tools were encoded one at a time. These timings
+reflect our Mac implementation, not an optimized batched server.
+
+<details>
+<summary>Exact BFCL prompts: the first request</summary>
+
+**Qwen system message**
+
+```text
+Choose the available function that best fulfills the request. Reply with exactly one option letter, without explanation.
+
+Available functions:
+
+A:
+triangle_properties.get: Retrieve the dimensions, such as area and perimeter, of a triangle if lengths of three sides are given.
+
+B:
+circle_properties.get: Retrieve the dimensions, such as area and circumference, of a circle if radius is given.
+```
+
+**Qwen user message and CLM state encoder input**
+
+```text
+User: Can I find the dimensions and properties of a triangle, if I know its three sides are 5 units, 4 units and 3 units long?
+
+Which function should be called to fulfill this request?
+```
+
+Qwen uses its non-thinking chat template and is restricted to the A and B tokens.
+CLM sees the raw state above and separately encodes these actions:
+
+```text
+triangle_properties.get: Retrieve the dimensions, such as area and perimeter, of a triangle if lengths of three sides are given.
+```
+
+```text
+circle_properties.get: Retrieve the dimensions, such as area and circumference, of a circle if radius is given.
+```
+
+[Complete sample](fixtures/bfcl.jsonl)
+
+</details>
+
+<details>
+<summary>BFCL experiment details</summary>
+
+We kept the original choices and their order, added no “no tool” option, and gave
+neither model examples or answer hints. Each model answered each request once.
+
+Both categories ask for one tool from several choices. **Live multiple** uses
+user-contributed requests and tool descriptions.
+
+| BFCL category | Requests | CLM | Constrained Qwen |
+|---|---:|---:|---:|
+| Multiple | 78 | 63/78 · 80.8% | **77/78 · 98.7%** |
+| Live multiple | 422 | 299/422 · 70.9% | **400/422 · 94.8%** |
+| Combined | 500 | 362/500 · 72.4% | **477/500 · 95.4%** |
+
+We sampled with seed 20261004, excluded the 20-request pilot, and kept dataset
+order. The prompt was fixed before this run; these public data had been used in
+earlier CLM checks. Neither model reused completed answers.
+
+Timings include input processing, caching, and scoring. Model loading and file
+writing are excluded. The models ran in alternating order on the same M4 Max.
+
+[Original protocol and source revisions](results/published/bfcl_protocol.json) ·
+[Recorded predictions](results/published/bfcl_predictions.json.gz) ·
+[Recorded summary](results/published/bfcl_summary.json)
+
+</details>
+
+### Wikipedia: both struggled
+
+We asked the models to reach a target Wikipedia article by following links.
+Across five routes with at most eight clicks each, Qwen finished one and CLM none.
+
+[Routes](fixtures/wiki_routes.json) · [Recorded decisions](results/published/wiki.json.gz)
+
+## Reproduce
+
+Requires an Apple Silicon Mac and Python 3.12. Model weights take about 16.5 GB,
+with additional memory needed for inference.
+
+**Installation blocker:** upstream’s vLLM dependency requires
+`nvidia-cudnn-frontend`, which has no macOS distribution. This must be resolved
+before the commands below can run.
 
 ```sh
 git submodule update --init --recursive
+uv sync --locked
+uv run compare download
 ```
 
-Alternatively, clone this repository with `git clone --recurse-submodules`.
-
-## Reproduce on Apple Silicon
+View saved results:
 
 ```sh
-uv venv --python 3.12 .venv
-uv pip install --python .venv/bin/python -r experiments/requirements-lock.txt
-.venv/bin/python experiments/download.py
-.venv/bin/python -u experiments/compare.py
-.venv/bin/python -u experiments/validate_backbone.py
-.venv/bin/python -u experiments/trex_compare.py
-.venv/bin/python experiments/report.py
+uv run compare results
 ```
 
-The downloads are approximately 16.5 GB. Both decision paths share the original
-BF16 Qwen3-8B weights. The released CLM heads are evaluated in FP32 with the same
-last-token pooling, input normalization, output normalization and temperature
-clamp used by the repository. MLX replaces vLLM for local Apple Silicon execution.
-
-`compare.py` runs 35 hand-authored diagnostic questions, reversed-option checks,
-and four latency scenarios. Each timing has three warm-ups and 25 timed samples;
-method order is shuffled with seed 42. CLM action projections and Qwen system-prefix
-KV tensors are warmed before timing. State computation is repeated on every timed
-call; whole-state/whole-request cache hits are excluded. Timings include prompt
-construction, tokenization, cache copying, inference, scoring and extraction of
-probabilities, but not model loading, cache setup or HTTP serving. GPU results are
-materialized before stopping the timer. The full-vocabulary baseline computes the
-output projection at the last position only, then restricts it to allowed labels.
-
-The Qwen prefix contains the system options and user-message opening; no changing
-state tokens are cached. `enable_thinking=False` is used. Each option letter is
-checked to be exactly one tokenizer token. Selected-row projection uses the actual
-LM output weights, not the input token embeddings. No autoregressive decoding loop
-or second transformer pass is used.
-
-`validate_backbone.py` compares six MLX embeddings with Transformers/PyTorch MPS
-using the same BF16 weights and compares the billing probabilities. This is a
-numerical spot-check, not a complete vLLM parity test.
-
-`trex_compare.py` uses the upstream game physics, question construction and planner.
-Two seeds, 20 simulated seconds each, one decision per six frames, no shield or
-emergency override. Game time pauses during inference. Planner Safe/Unsafe/Best
-labels remain visible to both models. Identical full requests are memoized for
-both methods in this game-only experiment; gameplay timing is not used as a latency
-benchmark. A planner-only control checks that the courses can be survived.
-
-## Outputs
-
-- `results/comparison.json`: every diagnostic answer and all timing samples.
-- `results/cases.json`: diagnostic inputs and expected answers.
-- `results/backbone_validation.json`: numerical cross-check.
-- `results/trex.json`: full game decision traces and summaries.
-- `results/report.html`: readable research report.
-
-These are exploratory local experiments, not a representative accuracy benchmark,
-an NVIDIA/vLLM speed comparison, a training-data-controlled ablation, or a claim
-that either approach is universally better. The Mario questions are textual
-scenarios, not an actual Mario game. The T-Rex test is planner-assisted.
-
-## Long-context follow-up
-
-The second evaluation uses 197 public-dataset questions: 80 QuALITY articles,
-90 ContractNLI contracts, and 27 LongBench v2 documents. Every selected document
-is complete; no accuracy input is truncated. The same model is evaluated with
-the document removed, and ten questions per dataset receive an option-order
-audit. Full methodology and statistics are in `results/long_context/report.html`.
+Start with small samples:
 
 ```sh
-uv pip install --python .venv/bin/python -r experiments/requirements-long-context-lock.txt
-.venv/bin/python experiments/download_long_context.py
-.venv/bin/python experiments/prepare_long_context.py
-.venv/bin/python -u experiments/long_context_bench.py
-.venv/bin/python experiments/analyze_long_context.py
+uv run compare bfcl --limit 5 --output runs/bfcl-smoke
+uv run compare trex --seed 42 --seconds 1 --output runs/trex-smoke
+uv run compare wiki --routes 1 --clicks 1 --output runs/wiki-smoke
 ```
 
-The primary samples, option order, no-document controls and order-audit samples
-were fixed before inference. `manifest.json` records source revisions and hashes.
-QuALITY is balanced across easy/hard questions with high annotated context needs;
-ContractNLI is label-balanced; LongBench is the complete eligible subset of the
-publisher's short category within a 16K-token prompt limit. These are selected
-diagnostic subsets, not official leaderboard scores.
-
-The inference runner resumes its append-only `answers.jsonl`; it does not overwrite
-prior outputs. Preserve the existing results and change the output path or use a
-separate project copy to perform a fresh replication. It uses 1024-token prefill
-chunks with a full KV cache, not context-window truncation. The seven-point latency
-sweep is separate from the accuracy test and holds four candidate descriptions fixed.
-
-## Context-rich, moderate-length reading comprehension
-
-The RACE-M follow-up tests the user's precise ratio condition: passage plus question
-must contain more than five times the tokens of **all four formatted choices
-combined**. The frozen test sample contains 200 distinct passages, 131–524 tokens
-including the question, with a median ratio of 9.02. No input is padded or truncated.
-
-A separate 40-question development pilot selected the standard passage–question–
-options prompt before test inference. It scored 37/40 with context and 27/40 without;
-the original options-in-system layout scored 24/40 and 26/40. Both pilot results are
-retained. The acceptance rule (≥70% full accuracy, ≥15-point context gain) was set
-before the pilot. No test questions were filtered using model outputs.
+Reproduce the reported experiments:
 
 ```sh
-.venv/bin/python experiments/prepare_race_context.py
-.venv/bin/python -u experiments/bench_race_context.py --original-pilot
-.venv/bin/python -u experiments/bench_race_context.py
-.venv/bin/python experiments/validate_race_output.py
-.venv/bin/python experiments/analyze_race_context.py
+uv run compare bfcl --limit 500 --output runs/bfcl-500
+uv run compare trex --seed 42 --seed 314159 --seed 271828 --seconds 30 --output runs/trex-three-seeds
+uv run compare wiki --routes 5 --clicks 8 --output runs/wiki-five-routes
 ```
 
-The primary Qwen result processes the entire prompt including choices, with one
-constrained output letter and no thinking tokens. A secondary variant caches only
-the shared instruction prefix; choices follow the passage and cannot be reused as
-a prefix. CLM retains its released heads and canonical state/question format.
-Four main full/no-context accuracy conditions, the cached-prefix comparison and
-20 preselected option-order audits produce 1,020 test predictions. See
-`results/race_context/report.html`, `summary.json`, and the raw JSONL predictions.
-
-## System-prompt and template ablations
-
-The same 200 test cases are rerun under seven Qwen prompt conditions: original,
-short system instruction, no system message, raw text with/without the full
-instruction and an `Answer:` cue, and literal template stripping with/without
-the instruction. CLM is rerun as a contemporaneous cached-action reference.
-Every condition has a no-passage control; each Qwen condition also has 20
-preselected option-reversal audits. No Qwen prefix caching is used.
-
-```sh
-.venv/bin/python -u experiments/bench_race_ablations.py
-.venv/bin/python experiments/analyze_race_ablations.py
-```
-
-The primary restriction is always one bare A/B/C/D token. A secondary diagnostic
-allows a bare or single-leading-space letter token, aggregating aliases from the
-same hidden state. Full-vocabulary checks on the first ten frozen cases reveal
-whether template removal changes the preferred output format. These diagnostics
-are outside the primary timing region and do not alter primary scores.
-The 3,340 predictions, exact first-example prompts, metadata, plots and statistics
-are saved under `results/race_ablations/`. All cases and conditions are fixed
-before inference; these are exploratory ablations on a previously evaluated subset.
-
-## Repeated-state games with prefix caching
-
-`experiments/games/bench.py` compares CLM and bare-letter constrained Qwen on
-identical changing game states with both prefixes cached and uncached. CLM also
-caches its action vectors in both conditions. Both models use fixed rules;
-Qwen additionally caches its fixed action definitions inside the system message.
-No per-state planner labels, shield, or whole-request memoization is used.
-
-The same script runs unassisted closed-loop T-Rex (five seeds) and actual NES
-Super Mario Bros. (levels 1-1, 1-2, 2-1), using symbolic visible observations.
-Inference is lockstep: game time pauses while the model chooses an action.
-Mario runs in a separate Python 3.13 worker environment:
-
-```sh
-uv venv --python 3.13 .venv-games
-uv pip install --python .venv-games/bin/python -r experiments/games/requirements-games.txt
-.venv/bin/python -u experiments/games/bench.py
-.venv/bin/python -u experiments/games/raw_check.py
-.venv/bin/python experiments/games/analyze.py
-```
-
-Results, exact prompts, synchronized timings, complete action traces, and actual
-Mario GIF replays are in `results/cached_games/`. Setup times exclude model load;
-decision timings include tokenization, cache copy, backbone, and output scoring.
-The CLM state sequence uses raw rules + state + final question; the Qwen sequence
-uses the same rules/state/question with the standard non-thinking chat template.
-
-## T-Rex prompt tuning with a 5% latency limit
-
-The follow-up in `results/trex_prompt_tuning/` changes only Qwen's cached system
-prompt. The selected prompt includes explicit jump-timing guidance and worked
-examples, with no live planner answers or shielding. Ten diagnostic states and
-one development seed were used; the prompt was frozen before a single fresh
-holdout seed. Original CLM and CLM supplied the same improved instructions are
-both retained as controls. The changing state, question, chat template, backbone,
-and one-token A/B/C restriction remain the same.
-
-The final prompt is `results/trex_prompt_tuning/final_system_prompt.txt`.
-A reproducible run uses the persistent worker's JSON-lines input:
-
-```sh
-.venv/bin/python -u experiments/games/tune_prompt.py <<'JSONL'
-{"op":"register_file","path":"results/trex_prompt_tuning/candidate_timing_v4.json"}
-{"op":"play","name":"timing_v4","seed":17,"seconds":30,"tag":"reproduce"}
-JSONL
-```
-
-`validate_tuned.py` runs the frozen-prompt output and latency audit;
-`analyze_tuning.py` builds the report. The latency gate measures matched-state
-median and paired-median steady-state latency, excluding one-time prefix setup.
-Raw timings retain outliers; the report does not promise a per-call deadline.
-
-## Same-planner T-Rex comparison
-
-`experiments/games/planner_assisted.py` gives both models the exact released
-`build_question(prompt="labeled")` state/question/candidate annotations. CLM
-keeps its canonical state/question encoding and caches exact candidate texts;
-Qwen caches a fixed instruction and action mapping, then reads the changing
-annotations. Cache misses are timed, and entire requests are not memoized.
-Ten matched cases and one 30-second course isolate model decisions with the shield
-off for both. This is not the repository's full real-time, shielded configuration.
-Run `experiments/games/analyze_assisted.py` to generate the report under
-`results/trex_planner_assisted/`.
+[Dataset sources and checksums](fixtures/sources.json) · [Upstream license](upstream/LICENSE)

@@ -1,0 +1,27 @@
+You are playing T-Rex runner. Stay alive by avoiding collisions. At each turn, choose A, B, or C for the next 6 frames, then you will receive a new state and choose again. The game pauses while you decide.
+
+A continues automatic running, or lets an existing jump continue.
+B starts a jump from the ground. It does nothing extra in the air.
+C crouches on the ground, or rapidly descends in the air.
+
+Obstacles move left. The state gives distances, sizes, and heights above ground. The dinosaur is 44 pixels wide and 47 pixels tall when standing. Feet height zero means grounded. Contact ends the game. A jump rises, reaches its peak, falls, and ends; it cannot be extended by repeatedly selecting B. Duck does not stop horizontal motion.
+
+Output only the chosen letter.
+
+Controls:
+A = run: Release duck. Running is automatic; an existing jump continues.
+B = jump: Release duck and start a jump if grounded. No second jump while airborne.
+C = duck: Crouch if grounded; start a rapid descent if airborne.
+
+State: The dinosaur is on the ground. A cactus is 500 pixels beyond its front, moving toward it at 6 pixels per frame.
+Answer: A (run).
+Explanation: A jump now would finish before the cactus arrived. Continue running for this turn and reconsider at the next observation.
+State: The dinosaur is on the ground. A cactus is 60 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.
+Answer: B (jump).
+Explanation: Begin rising now so the dinosaur can pass above the approaching cactus. Continuing on the ground would bring it into the cactus.
+State: The dinosaur is on the ground. A cactus is 180 pixels beyond its front, 25 pixels wide and 50 pixels tall, approaching at 6 pixels per frame.
+Answer: A (run).
+Explanation: This is still too early to start the jump. The dinosaur would descend while the cactus was passing. Keep running for this six-frame turn, then reassess the smaller distance.
+State: The dinosaur is in the air, with its feet 80 pixels above the ground, falling at 2 pixels per frame. A cactus is 20 pixels beyond its front, 25 pixels wide and 50 pixels tall, moving toward it at 6 pixels per frame.
+Answer: A (run).
+Explanation: Let the current jump carry the dinosaur over the cactus. Ducking would accelerate its descent into the obstacle; another jump command cannot add height while airborne.
